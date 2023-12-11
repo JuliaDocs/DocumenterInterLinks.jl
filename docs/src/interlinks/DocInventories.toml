@@ -1,0 +1,65 @@
+[Inventory]
+format = "DocInventories v1"
+project = "DocInventories.jl"
+version = "0.1.0+dev"
+
+[[jl.func]]
+name = "Base.filter-Tuple{Any, Inventory}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.auto_mime-Tuple{Any}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.dispname-Tuple{InventoryItem}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.find_in_inventory-Tuple{Any, Any}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.spec-Tuple{InventoryItem}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.uri-Tuple{Inventory, Any}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.uri-Tuple{InventoryItem}"
+uri = "#readme"
+[[jl.func]]
+name = "DocInventories.write_inventory"
+uri = "#readme"
+
+[[jl.obj]]
+name = "DocInventories.MIME_TYPES"
+uri = "#readme"
+
+[[jl.type]]
+name = "DocInventories.Inventory"
+uri = "#readme"
+[[jl.type]]
+name = "DocInventories.InventoryFormatError"
+uri = "#readme"
+[[jl.type]]
+name = "DocInventories.InventoryItem"
+uri = "#readme"
+
+[[std.doc]]
+dispname = "API"
+name = "api"
+uri = "#readme"
+[[std.doc]]
+dispname = "Home"
+name = "index"
+uri = "#readme"
+
+[[std.label]]
+name = "API"
+uri = "#readme"
+[[std.label]]
+name = "Details"
+uri = "#readme"
+[[std.label]]
+name = "DocInventories.jl"
+uri = "#readme"
+[[std.label]]
+name = "Usage"
+uri = "#readme"
