@@ -133,7 +133,25 @@ Some examples:
 `DocumenterInterLinks` is much less strict than Sphinx (which requires that domains are formally defined). The optional domain and role in `@extref` links are for disambiguation only. If a domain or role is not specified, anything will match.
 
 
-# Usage of DocumenterInterLinks inventory files with Sphinx
+## Available link targets
+
+In order to search for available link targets in an inventory, you can exploit the ability of the `DocInventories.Inventory` to perform [free-form search](https://github.com/JuliaDocs/DocInventories.jl/blob/e053c30938b5ff85dfbe04acb49d280d12ba17cf/src/inventory.jl#L112-L127).
+
+The easiest way to accomplish this is to `include` the `docs/make.jl` file in a REPL (building the documentation, but more importantly in this case, ensuring the `links` (`InterSphinx`) object is loaded into the REPL).
+
+Then, in the same session, run searches like
+
+```
+links["Documenter"]("makedocs")
+links["Documenter"](":label:")
+links["matplotlib"](":doc:")
+links["matplotlib"](r":py:function:.*subplots")
+```
+
+to see a list of `InventoryItems` that match the query.
+
+
+## Usage of DocumenterInterLinks inventory files with Sphinx
 
 See [`index.rst`](https://raw.githubusercontent.com/goerz-testing/test-sphinx-to-documenter-links/master/docs/source/index.rst) in [`goerz-testing/test-sphinx-documenter-links`](https://github.com/goerz-testing/test-sphinx-to-documenter-links) for an example of how to use the inventory from within Sphinx.
 
