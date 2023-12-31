@@ -1,103 +1,197 @@
 [Inventory]
-format="DocInventories v0"
+format = "DocInventories v0"
 project = "The Julia Language"
 version = "1.10.0"
-[[jl.type]]
-name="Base.AbstractIrrational"
-uri="base/numbers/#$"
-[[jl.type]]
-name = "Test.TestLogger"
-uri = "stdlib/Test/#$"
-[[jl.type]]
-name = "Base.AbstractLock"
-uri = "base/parallel/#$"
-[[jl.type]]
-name = "Base.Broadcast.BroadcastStyle"
-uri = "base/arrays/#$"
-[[jl.type]]
-name = "Base.IndexStyle"
-uri = "base/arrays/#$"
-[[jl.type]]
-name = "Base.IteratorEltype"
-uri = "base/collections/#$"
-[[jl.type]]
-name = "Base.IteratorSize"
-uri = "base/collections/#$"
-[[jl.type]]
-name = "Base.Multimedia.AbstractDisplay"
+
+[[jl.constant]]
+name = "Base.ARGS"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.C_NULL"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.DEPOT_PATH"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.DL_LOAD_PATH"
+uri = "stdlib/Libdl/#$"
+[[jl.constant]]
+name = "Base.ENDIAN_BOM"
 uri = "base/io-network/#$"
-[[jl.type]]
-name = "Base.Order.Ordering"
+[[jl.constant]]
+name = "Base.ENV"
+uri = "base/base/#$"
+[[jl.constant]]
+name = "Base.Inf"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.Inf16"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.Inf32"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.Inf64"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.LOAD_PATH"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Libc.Libdl.RTLD_NOW"
+uri = "stdlib/Libdl/#$"
+[[jl.constant]]
+name = "Base.Libc.Libdl.dlext"
+uri = "stdlib/Libdl/#$"
+[[jl.constant]]
+name = "Base.MainInclude.ans"
+uri = "base/base/#$"
+[[jl.constant]]
+name = "Base.MainInclude.err"
+uri = "base/base/#$"
+[[jl.constant]]
+name = "Base.MathConstants.catalan"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.MathConstants.eulergamma"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.MathConstants.golden"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.MathConstants.pi"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.MathConstants.ℯ"
+uri = "base/numbers/#Base.MathConstants.%E2%84%AF"
+[[jl.constant]]
+name = "Base.NaN"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.NaN16"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.NaN32"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.NaN64"
+uri = "base/numbers/#$"
+[[jl.constant]]
+name = "Base.Order.Forward"
 uri = "base/sort/#$"
-[[jl.type]]
-name = "Core.AbstractChar"
-uri = "base/strings/#$"
-[[jl.type]]
-name = "Core.AbstractFloat"
-uri = "base/numbers/#$"
-[[jl.type]]
-name = "Core.AbstractString"
-uri = "base/strings/#$"
-[[jl.type]]
-name = "Core.Any"
+[[jl.constant]]
+name = "Base.Order.Reverse"
+uri = "base/sort/#$"
+[[jl.constant]]
+name = "Base.PROGRAM_FILE"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundDown"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundFromZero"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundNearest"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundNearestTiesAway"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundNearestTiesUp"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundToZero"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Rounding.RoundUp"
+uri = "base/math/#$"
+[[jl.constant]]
+name = "Base.Sort.InsertionSort"
+uri = "base/sort/#$"
+[[jl.constant]]
+name = "Base.Sort.MergeSort"
+uri = "base/sort/#$"
+[[jl.constant]]
+name = "Base.Sort.QuickSort"
+uri = "base/sort/#$"
+[[jl.constant]]
+name = "Base.Sys.ARCH"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Sys.BINDIR"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Sys.CPU_THREADS"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Sys.KERNEL"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Sys.MACHINE"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.Sys.STDLIB"
 uri = "base/base/#$"
-[[jl.type]]
-name = "Core.Function"
+[[jl.constant]]
+name = "Base.Sys.WORD_SIZE"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.VERSION"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Base.devnull"
 uri = "base/base/#$"
-[[jl.type]]
-name = "Core.Integer"
+[[jl.constant]]
+name = "Base.im"
 uri = "base/numbers/#$"
-[[jl.type]]
-name = "Core.Number"
-uri = "base/numbers/#$"
-[[jl.type]]
-name = "Core.Real"
-uri = "base/numbers/#$"
-[[jl.type]]
-name = "Core.Signed"
-uri = "base/numbers/#$"
-[[jl.type]]
-name = "Core.Unsigned"
-uri = "base/numbers/#$"
-[[jl.type]]
-name = "Dates.Instant"
+[[jl.constant]]
+name = "Base.missing"
+uri = "base/base/#$"
+[[jl.constant]]
+name = "Base.stderr"
+uri = "base/io-network/#$"
+[[jl.constant]]
+name = "Base.stdin"
+uri = "base/io-network/#$"
+[[jl.constant]]
+name = "Base.stdout"
+uri = "base/io-network/#$"
+[[jl.constant]]
+name = "Core.Vararg"
+uri = "base/base/#$"
+[[jl.constant]]
+name = "Core.nothing"
+uri = "base/constants/#$"
+[[jl.constant]]
+name = "Core.undef"
+uri = "base/arrays/#$"
+[[jl.constant]]
+name = "Dates.ISODateFormat"
 uri = "stdlib/Dates/#$"
-[[jl.type]]
-name = "Dates.Period"
+[[jl.constant]]
+name = "Dates.ISODateTimeFormat"
 uri = "stdlib/Dates/#$"
-[[jl.type]]
-name = "Dates.Period-Tuple{Any}"
-uri = "stdlib/Dates/#Dates.Period-Tuple%7BAny%7D"
-[[jl.type]]
-name = "Dates.TimeType"
+[[jl.constant]]
+name = "Dates.ISOTimeFormat"
 uri = "stdlib/Dates/#$"
-[[jl.type]]
-name = "Dates.TimeZone"
+[[jl.constant]]
+name = "Dates.RFC1123Format"
 uri = "stdlib/Dates/#$"
-[[jl.type]]
-name = "Distributed.AbstractWorkerPool"
-uri = "stdlib/Distributed/#$"
-[[jl.type]]
-name = "Distributed.ClusterManager"
-uri = "stdlib/Distributed/#$"
-[[jl.type]]
-name = "LibGit2.GitObject"
-uri = "stdlib/LibGit2/#$"
-[[jl.type]]
-name = "LibGit2.GitObject-Tuple{LibGit2.GitTreeEntry}"
-uri = "stdlib/LibGit2/#LibGit2.GitObject-Tuple%7BLibGit2.GitTreeEntry%7D"
-[[jl.type]]
-name = "Logging.AbstractLogger"
+[[jl.constant]]
+name = "LinearAlgebra.I"
+uri = "stdlib/LinearAlgebra/#$"
+[[jl.constant]]
+name = "Logging.Debug"
 uri = "stdlib/Logging/#$"
-[[jl.type]]
-name = "Random.AbstractRNG"
-uri = "stdlib/Random/#$"
-[[jl.type]]
-name = "Sockets.IPAddr"
-uri = "stdlib/Sockets/#$"
-[[jl.type]]
-name = "Test.Result"
-uri = "stdlib/Test/#$"
+[[jl.constant]]
+name = "Logging.Error"
+uri = "stdlib/Logging/#$"
+[[jl.constant]]
+name = "Logging.Info"
+uri = "stdlib/Logging/#$"
+[[jl.constant]]
+name = "Logging.Warn"
+uri = "stdlib/Logging/#$"
 
 [[jl.function]]
 name = "ArgTools.arg_isdir"
@@ -139,29 +233,11 @@ uri = "base/math/#Base.%3A%21%3D%3D"
 name = "Base.:&"
 uri = "base/math/#Base.%3A%26"
 [[jl.function]]
-name = "Base.:*-Tuple{AbstractMatrix, AbstractMatrix}"
-uri = "stdlib/LinearAlgebra/#Base.%3A%2A-Tuple%7BAbstractMatrix%2C%20AbstractMatrix%7D"
-[[jl.function]]
-name = "Base.:*-Tuple{Any, Vararg{Any}}"
-uri = "base/math/#Base.%3A%2A-Tuple%7BAny%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Base.:*-Tuple{Union{AbstractChar, AbstractString}, Vararg{Union{AbstractChar, AbstractString}}}"
-uri = "base/strings/#Base.%3A%2A-Tuple%7BUnion%7BAbstractChar%2C%20AbstractString%7D%2C%20Vararg%7BUnion%7BAbstractChar%2C%20AbstractString%7D%7D%7D"
-[[jl.function]]
 name = "Base.:+"
 uri = "base/math/#Base.%3A%2B"
 [[jl.function]]
-name = "Base.:--Tuple{Any, Any}"
-uri = "base/math/#Base.%3A--Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Base.:--Tuple{Any}"
-uri = "base/math/#Base.%3A--Tuple%7BAny%7D"
-[[jl.function]]
 name = "Base.:/"
 uri = "base/math/#Base.%3A%2F"
-[[jl.function]]
-name = "Base.:/-Tuple{AbstractVecOrMat, AbstractVecOrMat}"
-uri = "stdlib/LinearAlgebra/#Base.%3A%2F-Tuple%7BAbstractVecOrMat%2C%20AbstractVecOrMat%7D"
 [[jl.function]]
 name = "Base.://"
 uri = "base/math/#Base.%3A%2F%2F"
@@ -181,9 +257,6 @@ uri = "base/math/#Base.%3A%3C%3D"
 name = "Base.:=="
 uri = "base/math/#Base.%3A%3D%3D"
 [[jl.function]]
-name = "Base.:==-Tuple{AbstractString, AbstractString}"
-uri = "base/strings/#Base.%3A%3D%3D-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.function]]
 name = "Base.:>"
 uri = "base/math/#Base.%3A%3E"
 [[jl.function]]
@@ -198,24 +271,6 @@ uri = "base/math/#Base.%3A%3E%3E"
 [[jl.function]]
 name = "Base.:>>>"
 uri = "base/math/#Base.%3A%3E%3E%3E"
-[[jl.function]]
-name = "Base.:\\-Tuple{AbstractMatrix, AbstractVecOrMat}"
-uri = "stdlib/LinearAlgebra/#Base.%3A%5C-Tuple%7BAbstractMatrix%2C%20AbstractVecOrMat%7D"
-[[jl.function]]
-name = "Base.:\\-Tuple{Any, Any}"
-uri = "base/math/#Base.%3A%5C-Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Base.:^-Tuple{AbstractMatrix, Number}"
-uri = "stdlib/LinearAlgebra/#Base.%3A%5E-Tuple%7BAbstractMatrix%2C%20Number%7D"
-[[jl.function]]
-name = "Base.:^-Tuple{Number, AbstractMatrix}"
-uri = "stdlib/LinearAlgebra/#Base.%3A%5E-Tuple%7BNumber%2C%20AbstractMatrix%7D"
-[[jl.function]]
-name = "Base.:^-Tuple{Number, Number}"
-uri = "base/math/#Base.%3A%5E-Tuple%7BNumber%2C%20Number%7D"
-[[jl.function]]
-name = "Base.:^-Tuple{Union{AbstractChar, AbstractString}, Integer}"
-uri = "base/strings/#Base.%3A%5E-Tuple%7BUnion%7BAbstractChar%2C%20AbstractString%7D%2C%20Integer%7D"
 [[jl.function]]
 name = "Base.:|"
 uri = "base/math/#Base.%3A%7C"
@@ -310,12 +365,6 @@ uri = "base/file/#$"
 name = "Base.Filesystem.basename"
 uri = "base/file/#$"
 [[jl.function]]
-name = "Base.Filesystem.cd-Tuple{AbstractString}"
-uri = "base/file/#Base.Filesystem.cd-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "Base.Filesystem.cd-Tuple{Function}"
-uri = "base/file/#Base.Filesystem.cd-Tuple%7BFunction%7D"
-[[jl.function]]
 name = "Base.Filesystem.chmod"
 uri = "base/file/#$"
 [[jl.function]]
@@ -406,18 +455,6 @@ uri = "base/file/#$"
 name = "Base.Filesystem.mkpath"
 uri = "base/file/#$"
 [[jl.function]]
-name = "Base.Filesystem.mktemp-Tuple{AbstractString}"
-uri = "base/file/#Base.Filesystem.mktemp-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "Base.Filesystem.mktemp-Tuple{Function, AbstractString}"
-uri = "base/file/#Base.Filesystem.mktemp-Tuple%7BFunction%2C%20AbstractString%7D"
-[[jl.function]]
-name = "Base.Filesystem.mktempdir-Tuple{AbstractString}"
-uri = "base/file/#Base.Filesystem.mktempdir-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "Base.Filesystem.mktempdir-Tuple{Function, AbstractString}"
-uri = "base/file/#Base.Filesystem.mktempdir-Tuple%7BFunction%2C%20AbstractString%7D"
-[[jl.function]]
 name = "Base.Filesystem.mtime"
 uri = "base/file/#$"
 [[jl.function]]
@@ -474,9 +511,6 @@ uri = "base/file/#$"
 [[jl.function]]
 name = "Base.Filesystem.touch"
 uri = "base/file/#$"
-[[jl.function]]
-name = "Base.Filesystem.touch-Tuple{FileWatching.Pidfile.LockMonitor}"
-uri = "stdlib/FileWatching/#Base.Filesystem.touch-Tuple%7BFileWatching.Pidfile.LockMonitor%7D"
 [[jl.function]]
 name = "Base.Filesystem.uperm"
 uri = "base/file/#$"
@@ -622,12 +656,6 @@ uri = "base/libc/#$"
 name = "Base.Libc.systemsleep"
 uri = "base/libc/#$"
 [[jl.function]]
-name = "Base.Libc.time-Tuple{Base.Libc.TmStruct}"
-uri = "base/libc/#Base.Libc.time-Tuple%7BBase.Libc.TmStruct%7D"
-[[jl.function]]
-name = "Base.Libc.time-Tuple{}"
-uri = "base/base/#Base.Libc.time-Tuple%7B%7D"
-[[jl.function]]
 name = "Base.MPFR.setprecision"
 uri = "base/numbers/#$"
 [[jl.function]]
@@ -640,50 +668,14 @@ uri = "base/base/#$"
 name = "Base.Math.acosd"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.Math.acot-Tuple{Number}"
-uri = "base/math/#Base.Math.acot-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.acot-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.acot-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.Math.acotd"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.Math.acoth-Tuple{Number}"
-uri = "base/math/#Base.Math.acoth-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.acoth-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.acoth-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.Math.acsc-Tuple{Number}"
-uri = "base/math/#Base.Math.acsc-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.acsc-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.acsc-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.Math.acscd"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.Math.acsch-Tuple{Number}"
-uri = "base/math/#Base.Math.acsch-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.acsch-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.acsch-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.Math.asec-Tuple{Number}"
-uri = "base/math/#Base.Math.asec-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.asec-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.asec-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.Math.asecd"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.Math.asech-Tuple{Number}"
-uri = "base/math/#Base.Math.asech-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.asech-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.asech-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.Math.asind"
 uri = "base/math/#$"
@@ -709,35 +701,11 @@ uri = "base/math/#$"
 name = "Base.Math.cospi"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.Math.cot-Tuple{Number}"
-uri = "base/math/#Base.Math.cot-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.cot-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.cot-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.Math.cotd"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.Math.coth-Tuple{Number}"
-uri = "base/math/#Base.Math.coth-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.coth-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.coth-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.Math.csc-Tuple{Number}"
-uri = "base/math/#Base.Math.csc-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.csc-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.csc-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.Math.cscd"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.Math.csch-Tuple{Number}"
-uri = "base/math/#Base.Math.csch-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.csch-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.csch-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.Math.deg2rad"
 uri = "base/math/#$"
@@ -769,32 +737,14 @@ uri = "base/math/#$"
 name = "Base.Math.rem2pi"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.Math.sec-Tuple{Number}"
-uri = "base/math/#Base.Math.sec-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.sec-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.sec-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.Math.secd"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.Math.sech-Tuple{Number}"
-uri = "base/math/#Base.Math.sech-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.Math.sech-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.Math.sech-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.Math.significand"
 uri = "base/numbers/#$"
 [[jl.function]]
 name = "Base.Math.sinc"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.Math.sincos-Tuple{Float64}"
-uri = "base/math/#Base.Math.sincos-Tuple%7BFloat64%7D"
-[[jl.function]]
-name = "Base.Math.sincos-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
-uri = "stdlib/LinearAlgebra/#Base.Math.sincos-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
 [[jl.function]]
 name = "Base.Math.sincosd"
 uri = "base/math/#$"
@@ -813,12 +763,6 @@ uri = "base/math/#$"
 [[jl.function]]
 name = "Base.Meta.lower"
 uri = "base/base/#$"
-[[jl.function]]
-name = "Base.Meta.parse-Tuple{AbstractString, Int64}"
-uri = "base/base/#Base.Meta.parse-Tuple%7BAbstractString%2C%20Int64%7D"
-[[jl.function]]
-name = "Base.Meta.parse-Tuple{AbstractString}"
-uri = "base/base/#Base.Meta.parse-Tuple%7BAbstractString%7D"
 [[jl.function]]
 name = "Base.Meta.quot"
 uri = "base/base/#$"
@@ -864,12 +808,6 @@ uri = "base/numbers/#$"
 [[jl.function]]
 name = "Base.Rounding.set_zero_subnormals"
 uri = "base/numbers/#$"
-[[jl.function]]
-name = "Base.Rounding.setrounding-Tuple{Function, Type, RoundingMode}"
-uri = "base/numbers/#Base.Rounding.setrounding-Tuple%7BFunction%2C%20Type%2C%20RoundingMode%7D"
-[[jl.function]]
-name = "Base.Rounding.setrounding-Tuple{Type, Any}"
-uri = "base/numbers/#Base.Rounding.setrounding-Tuple%7BType%2C%20Any%7D"
 [[jl.function]]
 name = "Base.Sort.insorted"
 uri = "base/sort/#$"
@@ -1087,18 +1025,6 @@ uri = "base/arrays/#$"
 name = "Base.accumulate!"
 uri = "base/arrays/#Base.accumulate%21"
 [[jl.function]]
-name = "Base.acos-Tuple{Number}"
-uri = "base/math/#Base.acos-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.acos-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.acos-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.acosh-Tuple{Number}"
-uri = "base/math/#Base.acosh-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.acosh-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.acosh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.acquire"
 uri = "base/parallel/#$"
 [[jl.function]]
@@ -1117,12 +1043,6 @@ uri = "stdlib/LinearAlgebra/#$"
 name = "Base.all!"
 uri = "base/collections/#Base.all%21"
 [[jl.function]]
-name = "Base.all-Tuple{AbstractArray, Any}"
-uri = "base/collections/#Base.all-Tuple%7BAbstractArray%2C%20Any%7D"
-[[jl.function]]
-name = "Base.all-Tuple{Any}"
-uri = "base/collections/#Base.all-Tuple%7BAny%7D"
-[[jl.function]]
 name = "Base.allequal"
 uri = "base/collections/#$"
 [[jl.function]]
@@ -1134,12 +1054,6 @@ uri = "base/math/#$"
 [[jl.function]]
 name = "Base.any!"
 uri = "base/collections/#Base.any%21"
-[[jl.function]]
-name = "Base.any-Tuple{AbstractArray, Any}"
-uri = "base/collections/#Base.any-Tuple%7BAbstractArray%2C%20Any%7D"
-[[jl.function]]
-name = "Base.any-Tuple{Any}"
-uri = "base/collections/#Base.any-Tuple%7BAny%7D"
 [[jl.function]]
 name = "Base.append!"
 uri = "base/collections/#Base.append%21"
@@ -1153,47 +1067,17 @@ uri = "base/collections/#$"
 name = "Base.ascii"
 uri = "base/strings/#$"
 [[jl.function]]
-name = "Base.asin-Tuple{Number}"
-uri = "base/math/#Base.asin-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.asin-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.asin-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.asinh-Tuple{Number}"
-uri = "base/math/#Base.asinh-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.asinh-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.asinh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.asyncmap"
 uri = "base/parallel/#$"
 [[jl.function]]
 name = "Base.asyncmap!"
 uri = "base/parallel/#Base.asyncmap%21"
 [[jl.function]]
-name = "Base.atan-Tuple{Number}"
-uri = "base/math/#Base.atan-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.atan-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.atan-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.atanh-Tuple{Number}"
-uri = "base/math/#Base.atanh-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.atanh-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.atanh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.atexit"
 uri = "base/base/#$"
 [[jl.function]]
 name = "Base.atreplinit"
 uri = "stdlib/REPL/#$"
-[[jl.function]]
-name = "Base.axes-Tuple{AbstractArray, Any}"
-uri = "base/arrays/#Base.axes-Tuple%7BAbstractArray%2C%20Any%7D"
-[[jl.function]]
-name = "Base.axes-Tuple{Any}"
-uri = "base/arrays/#Base.axes-Tuple%7BAny%7D"
 [[jl.function]]
 name = "Base.backtrace"
 uri = "base/base/#$"
@@ -1203,9 +1087,6 @@ uri = "base/numbers/#$"
 [[jl.function]]
 name = "Base.bind"
 uri = "stdlib/Sockets/#$"
-[[jl.function]]
-name = "Base.bind-Tuple{Channel, Task}"
-uri = "base/parallel/#Base.bind-Tuple%7BChannel%2C%20Task%7D"
 [[jl.function]]
 name = "Base.binomial"
 uri = "base/math/#$"
@@ -1236,12 +1117,6 @@ uri = "base/c/#$"
 [[jl.function]]
 name = "Base.ceil"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.ceil-Tuple{TimeType, Period}"
-uri = "stdlib/Dates/#Base.ceil-Tuple%7BTimeType%2C%20Period%7D"
-[[jl.function]]
-name = "Base.ceil-Tuple{Union{Day, Week, TimePeriod}, Union{Day, Week, TimePeriod}}"
-uri = "stdlib/Dates/#Base.ceil-Tuple%7BUnion%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20Union%7BDay%2C%20Week%2C%20TimePeriod%7D%7D"
 [[jl.function]]
 name = "Base.checkbounds"
 uri = "base/arrays/#$"
@@ -1276,9 +1151,6 @@ uri = "base/arrays/#Base.circshift%21"
 name = "Base.cis"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.cis-Tuple{AbstractMatrix}"
-uri = "stdlib/LinearAlgebra/#Base.cis-Tuple%7BAbstractMatrix%7D"
-[[jl.function]]
 name = "Base.cispi"
 uri = "base/math/#$"
 [[jl.function]]
@@ -1288,20 +1160,11 @@ uri = "base/math/#$"
 name = "Base.close"
 uri = "base/io-network/#$"
 [[jl.function]]
-name = "Base.close-Tuple{Channel}"
-uri = "base/parallel/#Base.close-Tuple%7BChannel%7D"
-[[jl.function]]
-name = "Base.close-Tuple{FileWatching.Pidfile.LockMonitor}"
-uri = "stdlib/FileWatching/#Base.close-Tuple%7BFileWatching.Pidfile.LockMonitor%7D"
-[[jl.function]]
 name = "Base.closewrite"
 uri = "base/io-network/#$"
 [[jl.function]]
 name = "Base.cmp"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.cmp-Tuple{AbstractString, AbstractString}"
-uri = "base/strings/#Base.cmp-Tuple%7BAbstractString%2C%20AbstractString%7D"
 [[jl.function]]
 name = "Base.coalesce"
 uri = "base/base/#$"
@@ -1321,17 +1184,8 @@ uri = "base/strings/#$"
 name = "Base.codeunits"
 uri = "base/strings/#$"
 [[jl.function]]
-name = "Base.collect-Tuple{Any}"
-uri = "base/collections/#Base.collect-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.collect-Tuple{Type, Any}"
-uri = "base/collections/#Base.collect-Tuple%7BType%2C%20Any%7D"
-[[jl.function]]
 name = "Base.compilecache"
 uri = "base/base/#$"
-[[jl.function]]
-name = "Base.complex-Tuple{Complex}"
-uri = "base/numbers/#Base.complex-Tuple%7BComplex%7D"
 [[jl.function]]
 name = "Base.conj"
 uri = "base/math/#$"
@@ -1351,29 +1205,11 @@ uri = "base/base/#$"
 name = "Base.copy!"
 uri = "base/arrays/#Base.copy%21"
 [[jl.function]]
-name = "Base.copy-Tuple{Union{Adjoint, Transpose}}"
-uri = "stdlib/LinearAlgebra/#Base.copy-Tuple%7BUnion%7BAdjoint%2C%20Transpose%7D%7D"
-[[jl.function]]
 name = "Base.copysign"
 uri = "base/math/#$"
 [[jl.function]]
 name = "Base.copyto!"
 uri = "base/c/#Base.copyto%21"
-[[jl.function]]
-name = "Base.copyto!-Tuple{AbstractArray, CartesianIndices, AbstractArray, CartesianIndices}"
-uri = "base/arrays/#Base.copyto%21-Tuple%7BAbstractArray%2C%20CartesianIndices%2C%20AbstractArray%2C%20CartesianIndices%7D"
-[[jl.function]]
-name = "Base.cos-Tuple{Number}"
-uri = "base/math/#Base.cos-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.cos-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
-uri = "stdlib/LinearAlgebra/#Base.cos-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
-[[jl.function]]
-name = "Base.cosh-Tuple{Number}"
-uri = "base/math/#Base.cosh-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.cosh-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.cosh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.count"
 uri = "base/collections/#$"
@@ -1498,15 +1334,6 @@ uri = "base/strings/#$"
 name = "Base.eof"
 uri = "base/io-network/#$"
 [[jl.function]]
-name = "Base.eps-Tuple{AbstractFloat}"
-uri = "base/base/#Base.eps-Tuple%7BAbstractFloat%7D"
-[[jl.function]]
-name = "Base.eps-Tuple{Type{<:AbstractFloat}}"
-uri = "base/base/#Base.eps-Tuple%7BType%7B%3C%3AAbstractFloat%7D%7D"
-[[jl.function]]
-name = "Base.eps-Tuple{Union{Type{Date}, Type{DateTime}, Type{Time}, TimeType}}"
-uri = "stdlib/Dates/#Base.eps-Tuple%7BUnion%7BType%7BDate%7D%2C%20Type%7BDateTime%7D%2C%20Type%7BTime%7D%2C%20TimeType%7D%7D"
-[[jl.function]]
 name = "Base.error"
 uri = "base/base/#$"
 [[jl.function]]
@@ -1527,12 +1354,6 @@ uri = "base/base/#$"
 [[jl.function]]
 name = "Base.exit_on_sigint"
 uri = "base/c/#$"
-[[jl.function]]
-name = "Base.exp-Tuple{Float64}"
-uri = "base/math/#Base.exp-Tuple%7BFloat64%7D"
-[[jl.function]]
-name = "Base.exp-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Union{Float32, Float64, ComplexF64, ComplexF32}}"
-uri = "stdlib/LinearAlgebra/#Base.exp-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AUnion%7BFloat32%2C%20Float64%2C%20ComplexF64%2C%20ComplexF32%7D%7D"
 [[jl.function]]
 name = "Base.exp10"
 uri = "base/math/#$"
@@ -1560,21 +1381,6 @@ uri = "base/io-network/#$"
 [[jl.function]]
 name = "Base.fdio"
 uri = "base/io-network/#$"
-[[jl.function]]
-name = "Base.fetch-Tuple{Any}"
-uri = "base/parallel/#Base.fetch-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.fetch-Tuple{Channel}"
-uri = "base/parallel/#Base.fetch-Tuple%7BChannel%7D"
-[[jl.function]]
-name = "Base.fetch-Tuple{Distributed.Future}"
-uri = "stdlib/Distributed/#Base.fetch-Tuple%7BDistributed.Future%7D"
-[[jl.function]]
-name = "Base.fetch-Tuple{RemoteChannel}"
-uri = "stdlib/Distributed/#Base.fetch-Tuple%7BRemoteChannel%7D"
-[[jl.function]]
-name = "Base.fetch-Tuple{Task}"
-uri = "base/parallel/#Base.fetch-Tuple%7BTask%7D"
 [[jl.function]]
 name = "Base.fieldcount"
 uri = "base/base/#$"
@@ -1612,33 +1418,6 @@ uri = "base/base/#$"
 name = "Base.finalizer"
 uri = "base/base/#$"
 [[jl.function]]
-name = "Base.findall-Tuple{Any}"
-uri = "base/arrays/#Base.findall-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.findall-Tuple{Function, Any}"
-uri = "base/arrays/#Base.findall-Tuple%7BFunction%2C%20Any%7D"
-[[jl.function]]
-name = "Base.findfirst-Tuple{AbstractString, AbstractString}"
-uri = "base/strings/#Base.findfirst-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.function]]
-name = "Base.findfirst-Tuple{Any}"
-uri = "base/arrays/#Base.findfirst-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.findfirst-Tuple{Function, Any}"
-uri = "base/arrays/#Base.findfirst-Tuple%7BFunction%2C%20Any%7D"
-[[jl.function]]
-name = "Base.findlast-Tuple{AbstractChar, AbstractString}"
-uri = "base/strings/#Base.findlast-Tuple%7BAbstractChar%2C%20AbstractString%7D"
-[[jl.function]]
-name = "Base.findlast-Tuple{AbstractString, AbstractString}"
-uri = "base/strings/#Base.findlast-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.function]]
-name = "Base.findlast-Tuple{Any}"
-uri = "base/arrays/#Base.findlast-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.findlast-Tuple{Function, Any}"
-uri = "base/arrays/#Base.findlast-Tuple%7BFunction%2C%20Any%7D"
-[[jl.function]]
 name = "Base.findmax"
 uri = "base/collections/#$"
 [[jl.function]]
@@ -1651,32 +1430,8 @@ uri = "base/collections/#$"
 name = "Base.findmin!"
 uri = "base/collections/#Base.findmin%21"
 [[jl.function]]
-name = "Base.findnext-Tuple{AbstractChar, AbstractString, Integer}"
-uri = "base/strings/#Base.findnext-Tuple%7BAbstractChar%2C%20AbstractString%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.findnext-Tuple{AbstractString, AbstractString, Integer}"
-uri = "base/strings/#Base.findnext-Tuple%7BAbstractString%2C%20AbstractString%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.findnext-Tuple{Any, Integer}"
-uri = "base/arrays/#Base.findnext-Tuple%7BAny%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.findnext-Tuple{Function, Any, Integer}"
-uri = "base/arrays/#Base.findnext-Tuple%7BFunction%2C%20Any%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.findprev-Tuple{AbstractString, AbstractString, Integer}"
-uri = "base/strings/#Base.findprev-Tuple%7BAbstractString%2C%20AbstractString%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.findprev-Tuple{Any, Integer}"
-uri = "base/arrays/#Base.findprev-Tuple%7BAny%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.findprev-Tuple{Function, Any, Integer}"
-uri = "base/arrays/#Base.findprev-Tuple%7BFunction%2C%20Any%2C%20Integer%7D"
-[[jl.function]]
 name = "Base.first"
 uri = "base/collections/#$"
-[[jl.function]]
-name = "Base.first-Tuple{AbstractString, Integer}"
-uri = "base/strings/#Base.first-Tuple%7BAbstractString%2C%20Integer%7D"
 [[jl.function]]
 name = "Base.firstindex"
 uri = "base/collections/#$"
@@ -1696,9 +1451,6 @@ uri = "base/math/#$"
 name = "Base.flipsign"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.float-Tuple{Any}"
-uri = "base/numbers/#Base.float-Tuple%7BAny%7D"
-[[jl.function]]
 name = "Base.floatmax"
 uri = "base/base/#$"
 [[jl.function]]
@@ -1708,23 +1460,11 @@ uri = "base/base/#$"
 name = "Base.floor"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.floor-Tuple{TimeType, Period}"
-uri = "stdlib/Dates/#Base.floor-Tuple%7BTimeType%2C%20Period%7D"
-[[jl.function]]
-name = "Base.floor-Union{Tuple{T}, Tuple{Union{Day, Week, TimePeriod}, T}} where T<:Union{Day, Week, TimePeriod}"
-uri = "stdlib/Dates/#Base.floor-Union%7BTuple%7BT%7D%2C%20Tuple%7BUnion%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20T%7D%7D%20where%20T%3C%3AUnion%7BDay%2C%20Week%2C%20TimePeriod%7D"
-[[jl.function]]
 name = "Base.flush"
 uri = "base/io-network/#$"
 [[jl.function]]
 name = "Base.fma"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.foldl-Tuple{Any, Any}"
-uri = "base/collections/#Base.foldl-Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Base.foldr-Tuple{Any, Any}"
-uri = "base/collections/#Base.foldr-Tuple%7BAny%2C%20Any%7D"
 [[jl.function]]
 name = "Base.foreach"
 uri = "base/collections/#$"
@@ -1734,12 +1474,6 @@ uri = "base/collections/#$"
 [[jl.function]]
 name = "Base.fullname"
 uri = "base/base/#$"
-[[jl.function]]
-name = "Base.functionloc-Tuple{Any, Any}"
-uri = "base/base/#Base.functionloc-Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Base.functionloc-Tuple{Method}"
-uri = "base/base/#Base.functionloc-Tuple%7BMethod%7D"
 [[jl.function]]
 name = "Base.gcd"
 uri = "base/math/#$"
@@ -1761,12 +1495,6 @@ uri = "base/base/#$"
 [[jl.function]]
 name = "Base.getindex"
 uri = "base/collections/#$"
-[[jl.function]]
-name = "Base.getindex-Tuple{AbstractArray, Vararg{Any}}"
-uri = "base/arrays/#Base.getindex-Tuple%7BAbstractArray%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Base.getindex-Tuple{Type, Vararg{Any}}"
-uri = "base/arrays/#Base.getindex-Tuple%7BType%2C%20Vararg%7BAny%7D%7D"
 [[jl.function]]
 name = "Base.getkey"
 uri = "base/collections/#$"
@@ -1852,12 +1580,6 @@ uri = "base/collections/#$"
 name = "Base.intersect!"
 uri = "base/collections/#Base.intersect%21"
 [[jl.function]]
-name = "Base.inv-Tuple{AbstractMatrix}"
-uri = "stdlib/LinearAlgebra/#Base.inv-Tuple%7BAbstractMatrix%7D"
-[[jl.function]]
-name = "Base.inv-Tuple{Number}"
-uri = "base/math/#Base.inv-Tuple%7BNumber%7D"
-[[jl.function]]
 name = "Base.invmod"
 uri = "base/math/#$"
 [[jl.function]]
@@ -1884,9 +1606,6 @@ uri = "base/strings/#$"
 [[jl.function]]
 name = "Base.isassigned"
 uri = "base/arrays/#$"
-[[jl.function]]
-name = "Base.isassigned-Tuple{Base.RefValue}"
-uri = "base/c/#Base.isassigned-Tuple%7BBase.RefValue%7D"
 [[jl.function]]
 name = "Base.isbinaryoperator"
 uri = "base/base/#$"
@@ -1945,9 +1664,6 @@ uri = "base/base/#$"
 name = "Base.isless"
 uri = "base/base/#$"
 [[jl.function]]
-name = "Base.isless-Tuple{AbstractString, AbstractString}"
-uri = "base/strings/#Base.isless-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.function]]
 name = "Base.islocked"
 uri = "base/parallel/#$"
 [[jl.function]]
@@ -2002,15 +1718,6 @@ uri = "base/io-network/#$"
 name = "Base.isreadonly"
 uri = "base/io-network/#$"
 [[jl.function]]
-name = "Base.isready-Tuple{Channel}"
-uri = "base/parallel/#Base.isready-Tuple%7BChannel%7D"
-[[jl.function]]
-name = "Base.isready-Tuple{Distributed.Future}"
-uri = "stdlib/Distributed/#Base.isready-Tuple%7BDistributed.Future%7D"
-[[jl.function]]
-name = "Base.isready-Tuple{RemoteChannel, Vararg{Any}}"
-uri = "stdlib/Distributed/#Base.isready-Tuple%7BRemoteChannel%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
 name = "Base.isreal"
 uri = "base/numbers/#$"
 [[jl.function]]
@@ -2047,15 +1754,6 @@ uri = "base/base/#$"
 name = "Base.isunordered"
 uri = "base/base/#$"
 [[jl.function]]
-name = "Base.isvalid-Tuple{AbstractString, Integer}"
-uri = "base/strings/#Base.isvalid-Tuple%7BAbstractString%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.isvalid-Tuple{Any, Any}"
-uri = "base/strings/#Base.isvalid-Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Base.isvalid-Tuple{Any}"
-uri = "base/strings/#Base.isvalid-Tuple%7BAny%7D"
-[[jl.function]]
 name = "Base.iswritable"
 uri = "base/io-network/#$"
 [[jl.function]]
@@ -2077,20 +1775,8 @@ uri = "base/collections/#Base.keepat%21"
 name = "Base.keys"
 uri = "base/collections/#$"
 [[jl.function]]
-name = "Base.keys-Tuple{AbstractArray}"
-uri = "base/arrays/#Base.keys-Tuple%7BAbstractArray%7D"
-[[jl.function]]
-name = "Base.keys-Tuple{RegexMatch}"
-uri = "base/strings/#Base.keys-Tuple%7BRegexMatch%7D"
-[[jl.function]]
 name = "Base.keytype"
 uri = "base/collections/#$"
-[[jl.function]]
-name = "Base.kill-Tuple{Base.Process, Integer}"
-uri = "base/base/#Base.kill-Tuple%7BBase.Process%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.kill-Tuple{ClusterManager, Int64, WorkerConfig}"
-uri = "stdlib/Distributed/#Base.kill-Tuple%7BClusterManager%2C%20Int64%2C%20WorkerConfig%7D"
 [[jl.function]]
 name = "Base.kron"
 uri = "stdlib/LinearAlgebra/#$"
@@ -2100,9 +1786,6 @@ uri = "stdlib/LinearAlgebra/#Base.kron%21"
 [[jl.function]]
 name = "Base.last"
 uri = "base/collections/#$"
-[[jl.function]]
-name = "Base.last-Tuple{AbstractString, Integer}"
-uri = "base/strings/#Base.last-Tuple%7BAbstractString%2C%20Integer%7D"
 [[jl.function]]
 name = "Base.lastindex"
 uri = "base/collections/#$"
@@ -2119,26 +1802,11 @@ uri = "base/numbers/#$"
 name = "Base.length"
 uri = "base/collections/#$"
 [[jl.function]]
-name = "Base.length-Tuple{AbstractArray}"
-uri = "base/arrays/#Base.length-Tuple%7BAbstractArray%7D"
-[[jl.function]]
-name = "Base.length-Tuple{AbstractString}"
-uri = "base/strings/#Base.length-Tuple%7BAbstractString%7D"
-[[jl.function]]
 name = "Base.locate_package"
 uri = "base/base/#$"
 [[jl.function]]
 name = "Base.lock"
 uri = "base/parallel/#$"
-[[jl.function]]
-name = "Base.log-Tuple{Number, Number}"
-uri = "base/math/#Base.log-Tuple%7BNumber%2C%20Number%7D"
-[[jl.function]]
-name = "Base.log-Tuple{Number}"
-uri = "base/math/#Base.log-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.log-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.log-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.log10"
 uri = "base/math/#$"
@@ -2166,15 +1834,6 @@ uri = "base/collections/#$"
 [[jl.function]]
 name = "Base.map!"
 uri = "base/collections/#Base.map%21"
-[[jl.function]]
-name = "Base.mapfoldl-Tuple{Any, Any, Any}"
-uri = "base/collections/#Base.mapfoldl-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.function]]
-name = "Base.mapfoldr-Tuple{Any, Any, Any}"
-uri = "base/collections/#Base.mapfoldr-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.function]]
-name = "Base.mapreduce-Tuple{Any, Any, Any}"
-uri = "base/collections/#Base.mapreduce-Tuple%7BAny%2C%20Any%2C%20Any%7D"
 [[jl.function]]
 name = "Base.mapslices"
 uri = "base/arrays/#$"
@@ -2251,23 +1910,11 @@ uri = "base/base/#$"
 name = "Base.muladd"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.nameof-Tuple{DataType}"
-uri = "base/base/#Base.nameof-Tuple%7BDataType%7D"
-[[jl.function]]
-name = "Base.nameof-Tuple{Function}"
-uri = "base/base/#Base.nameof-Tuple%7BFunction%7D"
-[[jl.function]]
-name = "Base.nameof-Tuple{Module}"
-uri = "base/base/#Base.nameof-Tuple%7BModule%7D"
-[[jl.function]]
 name = "Base.names"
 uri = "base/base/#$"
 [[jl.function]]
 name = "Base.nand"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.ncodeunits-Tuple{AbstractString}"
-uri = "base/strings/#Base.ncodeunits-Tuple%7BAbstractString%7D"
 [[jl.function]]
 name = "Base.ndigits"
 uri = "base/math/#$"
@@ -2344,35 +1991,14 @@ uri = "base/base/#$"
 name = "Base.parse"
 uri = "base/numbers/#$"
 [[jl.function]]
-name = "Base.pathof-Tuple{Module}"
-uri = "base/base/#Base.pathof-Tuple%7BModule%7D"
-[[jl.function]]
 name = "Base.peek"
 uri = "base/io-network/#$"
-[[jl.function]]
-name = "Base.permute!-Tuple{Any, AbstractVector}"
-uri = "base/arrays/#Base.permute%21-Tuple%7BAny%2C%20AbstractVector%7D"
-[[jl.function]]
-name = "Base.permute!-Union{Tuple{Tq}, Tuple{Tp}, Tuple{Ti}, Tuple{Tv}, Tuple{SparseMatrixCSC{Tv, Ti}, SparseMatrixCSC{Tv, Ti}, AbstractVector{Tp}, AbstractVector{Tq}}} where {Tv, Ti, Tp<:Integer, Tq<:Integer}"
-uri = "stdlib/SparseArrays/#Base.permute%21-Union%7BTuple%7BTq%7D%2C%20Tuple%7BTp%7D%2C%20Tuple%7BTi%7D%2C%20Tuple%7BTv%7D%2C%20Tuple%7BSparseMatrixCSC%7BTv%2C%20Ti%7D%2C%20SparseMatrixCSC%7BTv%2C%20Ti%7D%2C%20AbstractVector%7BTp%7D%2C%20AbstractVector%7BTq%7D%7D%7D%20where%20%7BTv%2C%20Ti%2C%20Tp%3C%3AInteger%2C%20Tq%3C%3AInteger%7D"
 [[jl.function]]
 name = "Base.permutedims"
 uri = "base/arrays/#$"
 [[jl.function]]
 name = "Base.permutedims!"
 uri = "base/arrays/#Base.permutedims%21"
-[[jl.function]]
-name = "Base.pipeline-Tuple{Any, Any, Any, Vararg{Any}}"
-uri = "base/base/#Base.pipeline-Tuple%7BAny%2C%20Any%2C%20Any%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Base.pipeline-Tuple{Base.AbstractCmd}"
-uri = "base/base/#Base.pipeline-Tuple%7BBase.AbstractCmd%7D"
-[[jl.function]]
-name = "Base.pkgdir-Tuple{Module}"
-uri = "base/base/#Base.pkgdir-Tuple%7BModule%7D"
-[[jl.function]]
-name = "Base.pkgversion-Tuple{Module}"
-uri = "base/base/#Base.pkgversion-Tuple%7BModule%7D"
 [[jl.function]]
 name = "Base.pointer"
 uri = "base/c/#$"
@@ -2382,9 +2008,6 @@ uri = "base/c/#$"
 [[jl.function]]
 name = "Base.pop!"
 uri = "base/collections/#Base.pop%21"
-[[jl.function]]
-name = "Base.pop!-Tuple{Any, Any, Any}"
-uri = "base/collections/#Base.pop%21-Tuple%7BAny%2C%20Any%2C%20Any%7D"
 [[jl.function]]
 name = "Base.popat!"
 uri = "base/collections/#Base.popat%21"
@@ -2461,15 +2084,6 @@ uri = "base/collections/#Base.push%21"
 name = "Base.pushfirst!"
 uri = "base/collections/#Base.pushfirst%21"
 [[jl.function]]
-name = "Base.put!-Tuple{Channel, Any}"
-uri = "base/parallel/#Base.put%21-Tuple%7BChannel%2C%20Any%7D"
-[[jl.function]]
-name = "Base.put!-Tuple{Distributed.Future, Any}"
-uri = "stdlib/Distributed/#Base.put%21-Tuple%7BDistributed.Future%2C%20Any%7D"
-[[jl.function]]
-name = "Base.put!-Tuple{RemoteChannel, Vararg{Any}}"
-uri = "stdlib/Distributed/#Base.put%21-Tuple%7BRemoteChannel%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
 name = "Base.rand"
 uri = "stdlib/Random/#$"
 [[jl.function]]
@@ -2515,29 +2129,14 @@ uri = "base/math/#$"
 name = "Base.redirect_stderr"
 uri = "base/io-network/#$"
 [[jl.function]]
-name = "Base.redirect_stderr-Tuple{Function, Any}"
-uri = "base/io-network/#Base.redirect_stderr-Tuple%7BFunction%2C%20Any%7D"
-[[jl.function]]
 name = "Base.redirect_stdin"
 uri = "base/io-network/#$"
-[[jl.function]]
-name = "Base.redirect_stdin-Tuple{Function, Any}"
-uri = "base/io-network/#Base.redirect_stdin-Tuple%7BFunction%2C%20Any%7D"
 [[jl.function]]
 name = "Base.redirect_stdio"
 uri = "base/io-network/#$"
 [[jl.function]]
 name = "Base.redirect_stdout"
 uri = "base/io-network/#$"
-[[jl.function]]
-name = "Base.redirect_stdout-Tuple{Function, Any}"
-uri = "base/io-network/#Base.redirect_stdout-Tuple%7BFunction%2C%20Any%7D"
-[[jl.function]]
-name = "Base.reduce-Tuple{Any, AbstractArray}"
-uri = "base/collections/#Base.reduce-Tuple%7BAny%2C%20AbstractArray%7D"
-[[jl.function]]
-name = "Base.reduce-Tuple{Any, Any}"
-uri = "base/collections/#Base.reduce-Tuple%7BAny%2C%20Any%7D"
 [[jl.function]]
 name = "Base.reenable_sigint"
 uri = "base/c/#$"
@@ -2557,41 +2156,14 @@ uri = "base/math/#$"
 name = "Base.repeat"
 uri = "base/arrays/#$"
 [[jl.function]]
-name = "Base.repeat-Tuple{AbstractChar, Integer}"
-uri = "base/strings/#Base.repeat-Tuple%7BAbstractChar%2C%20Integer%7D"
-[[jl.function]]
-name = "Base.repeat-Tuple{AbstractString, Integer}"
-uri = "base/strings/#Base.repeat-Tuple%7BAbstractString%2C%20Integer%7D"
-[[jl.function]]
 name = "Base.replace!"
 uri = "base/collections/#Base.replace%21"
-[[jl.function]]
-name = "Base.replace-Tuple{Any, Vararg{Pair}}"
-uri = "base/collections/#Base.replace-Tuple%7BAny%2C%20Vararg%7BPair%7D%7D"
-[[jl.function]]
-name = "Base.replace-Tuple{IO, AbstractString, Vararg{Pair}}"
-uri = "base/strings/#Base.replace-Tuple%7BIO%2C%20AbstractString%2C%20Vararg%7BPair%7D%7D"
-[[jl.function]]
-name = "Base.replace-Tuple{Union{Function, Type}, Any}"
-uri = "base/collections/#Base.replace-Tuple%7BUnion%7BFunction%2C%20Type%7D%2C%20Any%7D"
 [[jl.function]]
 name = "Base.replaceproperty!"
 uri = "base/base/#Base.replaceproperty%21"
 [[jl.function]]
-name = "Base.repr-Tuple{Any}"
-uri = "base/strings/#Base.repr-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.repr-Tuple{MIME, Any}"
-uri = "base/io-network/#Base.repr-Tuple%7BMIME%2C%20Any%7D"
-[[jl.function]]
 name = "Base.require"
 uri = "base/base/#$"
-[[jl.function]]
-name = "Base.reset-Tuple{Base.Event}"
-uri = "base/parallel/#Base.reset-Tuple%7BBase.Event%7D"
-[[jl.function]]
-name = "Base.reset-Tuple{IO}"
-uri = "base/io-network/#Base.reset-Tuple%7BIO%7D"
 [[jl.function]]
 name = "Base.reshape"
 uri = "base/arrays/#$"
@@ -2611,12 +2183,6 @@ uri = "base/base/#$"
 name = "Base.reverse!"
 uri = "base/arrays/#Base.reverse%21"
 [[jl.function]]
-name = "Base.reverse-Tuple{AbstractVector}"
-uri = "base/arrays/#Base.reverse-Tuple%7BAbstractVector%7D"
-[[jl.function]]
-name = "Base.reverse-Tuple{Union{SubString{String}, String}}"
-uri = "base/strings/#Base.reverse-Tuple%7BUnion%7BSubString%7BString%7D%2C%20String%7D%7D"
-[[jl.function]]
 name = "Base.reverseind"
 uri = "base/arrays/#$"
 [[jl.function]]
@@ -2628,18 +2194,6 @@ uri = "base/arrays/#$"
 [[jl.function]]
 name = "Base.rotr90"
 uri = "base/arrays/#$"
-[[jl.function]]
-name = "Base.round-Tuple{Complex{<:AbstractFloat}, RoundingMode, RoundingMode}"
-uri = "base/math/#Base.round-Tuple%7BComplex%7B%3C%3AAbstractFloat%7D%2C%20RoundingMode%2C%20RoundingMode%7D"
-[[jl.function]]
-name = "Base.round-Tuple{TimeType, Period, RoundingMode{:NearestTiesUp}}"
-uri = "stdlib/Dates/#Base.round-Tuple%7BTimeType%2C%20Period%2C%20RoundingMode%7B%3ANearestTiesUp%7D%7D"
-[[jl.function]]
-name = "Base.round-Tuple{Type, Any}"
-uri = "base/math/#Base.round-Tuple%7BType%2C%20Any%7D"
-[[jl.function]]
-name = "Base.round-Tuple{Union{Day, Week, TimePeriod}, Union{Day, Week, TimePeriod}, RoundingMode{:NearestTiesUp}}"
-uri = "stdlib/Dates/#Base.round-Tuple%7BUnion%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20Union%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20RoundingMode%7B%3ANearestTiesUp%7D%7D"
 [[jl.function]]
 name = "Base.rpad"
 uri = "base/strings/#$"
@@ -2689,17 +2243,8 @@ uri = "base/base/#$"
 name = "Base.setindex!"
 uri = "base/collections/#Base.setindex%21"
 [[jl.function]]
-name = "Base.setindex!-Tuple{AbstractArray, Any, Vararg{Any}}"
-uri = "base/arrays/#Base.setindex%21-Tuple%7BAbstractArray%2C%20Any%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
 name = "Base.setproperty!"
 uri = "base/base/#Base.setproperty%21"
-[[jl.function]]
-name = "Base.show-Tuple{IO, Any, Any}"
-uri = "base/io-network/#Base.show-Tuple%7BIO%2C%20Any%2C%20Any%7D"
-[[jl.function]]
-name = "Base.show-Tuple{IO, Any}"
-uri = "base/io-network/#Base.show-Tuple%7BIO%2C%20Any%7D"
 [[jl.function]]
 name = "Base.showerror"
 uri = "base/io-network/#$"
@@ -2716,32 +2261,11 @@ uri = "base/numbers/#$"
 name = "Base.similar"
 uri = "base/arrays/#$"
 [[jl.function]]
-name = "Base.similar-Tuple{SparseArrays.AbstractSparseMatrixCSC, Type}"
-uri = "stdlib/SparseArrays/#Base.similar-Tuple%7BSparseArrays.AbstractSparseMatrixCSC%2C%20Type%7D"
-[[jl.function]]
-name = "Base.sin-Tuple{Number}"
-uri = "base/math/#Base.sin-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.sin-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
-uri = "stdlib/LinearAlgebra/#Base.sin-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
-[[jl.function]]
-name = "Base.sinh-Tuple{Number}"
-uri = "base/math/#Base.sinh-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.sinh-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.sinh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
 name = "Base.size"
 uri = "base/arrays/#$"
 [[jl.function]]
 name = "Base.sizehint!"
 uri = "base/collections/#Base.sizehint%21"
-[[jl.function]]
-name = "Base.sizeof-Tuple{AbstractString}"
-uri = "base/strings/#Base.sizeof-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "Base.sizeof-Tuple{Type}"
-uri = "base/base/#Base.sizeof-Tuple%7BType%7D"
 [[jl.function]]
 name = "Base.skip"
 uri = "base/io-network/#$"
@@ -2784,12 +2308,6 @@ uri = "base/collections/#$"
 [[jl.function]]
 name = "Base.sprint"
 uri = "base/io-network/#$"
-[[jl.function]]
-name = "Base.sqrt-Tuple{Number}"
-uri = "base/math/#Base.sqrt-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.sqrt-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.sqrt-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
 [[jl.function]]
 name = "Base.stack"
 uri = "base/arrays/#$"
@@ -2848,36 +2366,6 @@ uri = "base/c/#$"
 name = "Base.tail"
 uri = "base/collections/#$"
 [[jl.function]]
-name = "Base.take!-Tuple{Base.GenericIOBuffer}"
-uri = "base/io-network/#Base.take%21-Tuple%7BBase.GenericIOBuffer%7D"
-[[jl.function]]
-name = "Base.take!-Tuple{Channel}"
-uri = "base/parallel/#Base.take%21-Tuple%7BChannel%7D"
-[[jl.function]]
-name = "Base.take!-Tuple{RemoteChannel, Vararg{Any}}"
-uri = "stdlib/Distributed/#Base.take%21-Tuple%7BRemoteChannel%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Base.tan-Tuple{Number}"
-uri = "base/math/#Base.tan-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.tan-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
-uri = "stdlib/LinearAlgebra/#Base.tan-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
-[[jl.function]]
-name = "Base.tanh-Tuple{Number}"
-uri = "base/math/#Base.tanh-Tuple%7BNumber%7D"
-[[jl.function]]
-name = "Base.tanh-Tuple{StridedMatrix{T} where T}"
-uri = "stdlib/LinearAlgebra/#Base.tanh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
-[[jl.function]]
-name = "Base.task_local_storage-Tuple{Any, Any}"
-uri = "base/parallel/#Base.task_local_storage-Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Base.task_local_storage-Tuple{Any}"
-uri = "base/parallel/#Base.task_local_storage-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Base.task_local_storage-Tuple{Function, Any, Any}"
-uri = "base/parallel/#Base.task_local_storage-Tuple%7BFunction%2C%20Any%2C%20Any%7D"
-[[jl.function]]
 name = "Base.thisind"
 uri = "base/strings/#$"
 [[jl.function]]
@@ -2907,9 +2395,6 @@ uri = "base/arrays/#$"
 [[jl.function]]
 name = "Base.trunc"
 uri = "base/math/#$"
-[[jl.function]]
-name = "Base.trunc-Tuple{TimeType, Type{Period}}"
-uri = "stdlib/Dates/#Base.trunc-Tuple%7BTimeType%2C%20Type%7BPeriod%7D%7D"
 [[jl.function]]
 name = "Base.truncate"
 uri = "base/io-network/#$"
@@ -2956,12 +2441,6 @@ uri = "base/io-network/#$"
 name = "Base.unsafe_convert"
 uri = "base/c/#$"
 [[jl.function]]
-name = "Base.unsafe_copyto!-Union{Tuple{T}, Tuple{Array{T}, Any, Array{T}, Any, Any}} where T"
-uri = "base/c/#Base.unsafe_copyto%21-Union%7BTuple%7BT%7D%2C%20Tuple%7BArray%7BT%7D%2C%20Any%2C%20Array%7BT%7D%2C%20Any%2C%20Any%7D%7D%20where%20T"
-[[jl.function]]
-name = "Base.unsafe_copyto!-Union{Tuple{T}, Tuple{Ptr{T}, Ptr{T}, Any}} where T"
-uri = "base/c/#Base.unsafe_copyto%21-Union%7BTuple%7BT%7D%2C%20Tuple%7BPtr%7BT%7D%2C%20Ptr%7BT%7D%2C%20Any%7D%7D%20where%20T"
-[[jl.function]]
 name = "Base.unsafe_load"
 uri = "base/c/#$"
 [[jl.function]]
@@ -2989,9 +2468,6 @@ uri = "base/c/#Base.unsafe_swap%21"
 name = "Base.unsafe_trunc"
 uri = "base/math/#$"
 [[jl.function]]
-name = "Base.unsafe_wrap-Union{Tuple{N}, Tuple{T}, Tuple{Union{Type{Array}, Type{Array{T}}, Type{Array{T, N}}}, Ptr{T}, Tuple{Vararg{Int64, N}}}} where {T, N}"
-uri = "base/c/#Base.unsafe_wrap-Union%7BTuple%7BN%7D%2C%20Tuple%7BT%7D%2C%20Tuple%7BUnion%7BType%7BArray%7D%2C%20Type%7BArray%7BT%7D%7D%2C%20Type%7BArray%7BT%2C%20N%7D%7D%7D%2C%20Ptr%7BT%7D%2C%20Tuple%7BVararg%7BInt64%2C%20N%7D%7D%7D%7D%20where%20%7BT%2C%20N%7D"
-[[jl.function]]
 name = "Base.unsafe_write"
 uri = "base/io-network/#$"
 [[jl.function]]
@@ -3018,9 +2494,6 @@ uri = "base/arrays/#$"
 [[jl.function]]
 name = "Base.wait"
 uri = "base/parallel/#$"
-[[jl.function]]
-name = "Base.which-Tuple{Any, Any}"
-uri = "base/base/#Base.which-Tuple%7BAny%2C%20Any%7D"
 [[jl.function]]
 name = "Base.widemul"
 uri = "base/math/#$"
@@ -3063,9 +2536,6 @@ uri = "stdlib/Base64/#$"
 [[jl.function]]
 name = "CRC32c.crc32c"
 uri = "stdlib/CRC32c/#$"
-[[jl.function]]
-name = "CRC32c.crc32c-Tuple{IO, Integer, UInt32}"
-uri = "stdlib/CRC32c/#CRC32c.crc32c-Tuple%7BIO%2C%20Integer%2C%20UInt32%7D"
 [[jl.function]]
 name = "Core.:<:"
 uri = "base/base/#Core.%3A%3C%3A"
@@ -3214,9 +2684,6 @@ uri = "stdlib/Dates/#$"
 name = "Dates.floorceil"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
-name = "Dates.format-Tuple{TimeType, AbstractString}"
-uri = "stdlib/Dates/#Dates.format-Tuple%7BTimeType%2C%20AbstractString%7D"
-[[jl.function]]
 name = "Dates.hour"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
@@ -3262,12 +2729,6 @@ uri = "stdlib/Dates/#$"
 name = "Dates.nanosecond"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
-name = "Dates.now-Tuple{Type{UTC}}"
-uri = "stdlib/Dates/#Dates.now-Tuple%7BType%7BUTC%7D%7D"
-[[jl.function]]
-name = "Dates.now-Tuple{}"
-uri = "stdlib/Dates/#Dates.now-Tuple%7B%7D"
-[[jl.function]]
 name = "Dates.periods"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
@@ -3289,18 +2750,6 @@ uri = "stdlib/Dates/#$"
 name = "Dates.tolast"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
-name = "Dates.tonext-Tuple{Function, TimeType}"
-uri = "stdlib/Dates/#Dates.tonext-Tuple%7BFunction%2C%20TimeType%7D"
-[[jl.function]]
-name = "Dates.tonext-Tuple{TimeType, Int64}"
-uri = "stdlib/Dates/#Dates.tonext-Tuple%7BTimeType%2C%20Int64%7D"
-[[jl.function]]
-name = "Dates.toprev-Tuple{Function, TimeType}"
-uri = "stdlib/Dates/#Dates.toprev-Tuple%7BFunction%2C%20TimeType%7D"
-[[jl.function]]
-name = "Dates.toprev-Tuple{TimeType, Int64}"
-uri = "stdlib/Dates/#Dates.toprev-Tuple%7BTimeType%2C%20Int64%7D"
-[[jl.function]]
 name = "Dates.unix2datetime"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
@@ -3319,24 +2768,6 @@ uri = "stdlib/Dates/#$"
 name = "Dates.yearmonthday"
 uri = "stdlib/Dates/#$"
 [[jl.function]]
-name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar, AbstractChar}"
-uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%2C%20AbstractChar%7D"
-[[jl.function]]
-name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar, Type, AbstractChar}"
-uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%2C%20Type%2C%20AbstractChar%7D"
-[[jl.function]]
-name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar, Type}"
-uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%2C%20Type%7D"
-[[jl.function]]
-name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar}"
-uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%7D"
-[[jl.function]]
-name = "DelimitedFiles.readdlm-Tuple{Any, Type}"
-uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20Type%7D"
-[[jl.function]]
-name = "DelimitedFiles.readdlm-Tuple{Any}"
-uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%7D"
-[[jl.function]]
 name = "DelimitedFiles.writedlm"
 uri = "stdlib/DelimitedFiles/#$"
 [[jl.function]]
@@ -3345,18 +2776,6 @@ uri = "stdlib/Distributed/#$"
 [[jl.function]]
 name = "Distributed.channel_from_id"
 uri = "stdlib/Distributed/#$"
-[[jl.function]]
-name = "Distributed.clear!-Tuple{Any, Any}"
-uri = "stdlib/Distributed/#Distributed.clear%21-Tuple%7BAny%2C%20Any%7D"
-[[jl.function]]
-name = "Distributed.clear!-Tuple{CachingPool}"
-uri = "stdlib/Distributed/#Distributed.clear%21-Tuple%7BCachingPool%7D"
-[[jl.function]]
-name = "Distributed.cluster_cookie-Tuple{Any}"
-uri = "stdlib/Distributed/#Distributed.cluster_cookie-Tuple%7BAny%7D"
-[[jl.function]]
-name = "Distributed.cluster_cookie-Tuple{}"
-uri = "stdlib/Distributed/#Distributed.cluster_cookie-Tuple%7B%7D"
 [[jl.function]]
 name = "Distributed.default_addprocs_params"
 uri = "stdlib/Distributed/#$"
@@ -3391,41 +2810,8 @@ uri = "stdlib/Distributed/#$"
 name = "Distributed.process_messages"
 uri = "stdlib/Distributed/#$"
 [[jl.function]]
-name = "Distributed.procs-Tuple{Integer}"
-uri = "stdlib/Distributed/#Distributed.procs-Tuple%7BInteger%7D"
-[[jl.function]]
-name = "Distributed.procs-Tuple{SharedArray}"
-uri = "stdlib/SharedArrays/#Distributed.procs-Tuple%7BSharedArray%7D"
-[[jl.function]]
-name = "Distributed.procs-Tuple{}"
-uri = "stdlib/Distributed/#Distributed.procs-Tuple%7B%7D"
-[[jl.function]]
 name = "Distributed.remote"
 uri = "stdlib/Distributed/#$"
-[[jl.function]]
-name = "Distributed.remote_do-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remote_do-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remote_do-Tuple{Any, Integer, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remote_do-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remotecall-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remotecall-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remotecall-Tuple{Any, Integer, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remotecall-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remotecall_fetch-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remotecall_fetch-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remotecall_fetch-Tuple{Any, Integer, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remotecall_fetch-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remotecall_wait-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remotecall_wait-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
-[[jl.function]]
-name = "Distributed.remotecall_wait-Tuple{Any, Integer, Vararg{Any}}"
-uri = "stdlib/Distributed/#Distributed.remotecall_wait-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
 [[jl.function]]
 name = "Distributed.remoteref_id"
 uri = "stdlib/Distributed/#$"
@@ -3507,18 +2893,6 @@ uri = "stdlib/InteractiveUtils/#$"
 [[jl.function]]
 name = "InteractiveUtils.define_editor"
 uri = "stdlib/InteractiveUtils/#$"
-[[jl.function]]
-name = "InteractiveUtils.edit-Tuple{AbstractString, Integer}"
-uri = "stdlib/InteractiveUtils/#InteractiveUtils.edit-Tuple%7BAbstractString%2C%20Integer%7D"
-[[jl.function]]
-name = "InteractiveUtils.edit-Tuple{Any}"
-uri = "stdlib/InteractiveUtils/#InteractiveUtils.edit-Tuple%7BAny%7D"
-[[jl.function]]
-name = "InteractiveUtils.less-Tuple{AbstractString}"
-uri = "stdlib/InteractiveUtils/#InteractiveUtils.less-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "InteractiveUtils.less-Tuple{Any}"
-uri = "stdlib/InteractiveUtils/#InteractiveUtils.less-Tuple%7BAny%7D"
 [[jl.function]]
 name = "InteractiveUtils.methodswith"
 uri = "stdlib/InteractiveUtils/#$"
@@ -3694,15 +3068,6 @@ uri = "stdlib/LibGit2/#$"
 name = "LibGit2.map"
 uri = "stdlib/LibGit2/#$"
 [[jl.function]]
-name = "LibGit2.merge!-Tuple{GitRepo, Vector{LibGit2.GitAnnotated}, Bool}"
-uri = "stdlib/LibGit2/#LibGit2.merge%21-Tuple%7BGitRepo%2C%20Vector%7BLibGit2.GitAnnotated%7D%2C%20Bool%7D"
-[[jl.function]]
-name = "LibGit2.merge!-Tuple{GitRepo, Vector{LibGit2.GitAnnotated}}"
-uri = "stdlib/LibGit2/#LibGit2.merge%21-Tuple%7BGitRepo%2C%20Vector%7BLibGit2.GitAnnotated%7D%7D"
-[[jl.function]]
-name = "LibGit2.merge!-Tuple{GitRepo}"
-uri = "stdlib/LibGit2/#LibGit2.merge%21-Tuple%7BGitRepo%7D"
-[[jl.function]]
 name = "LibGit2.merge_analysis"
 uri = "stdlib/LibGit2/#$"
 [[jl.function]]
@@ -3738,9 +3103,6 @@ uri = "stdlib/LibGit2/#$"
 [[jl.function]]
 name = "LibGit2.push"
 uri = "stdlib/LibGit2/#$"
-[[jl.function]]
-name = "LibGit2.push!-Tuple{LibGit2.GitRevWalker, LibGit2.GitHash}"
-uri = "stdlib/LibGit2/#LibGit2.push%21-Tuple%7BLibGit2.GitRevWalker%2C%20LibGit2.GitHash%7D"
 [[jl.function]]
 name = "LibGit2.push_head!"
 uri = "stdlib/LibGit2/#LibGit2.push_head%21"
@@ -3868,20 +3230,8 @@ uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gbmv%21"
 name = "LinearAlgebra.BLAS.gemm!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemm%21"
 [[jl.function]]
-name = "LinearAlgebra.BLAS.gemm-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemm-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.gemm-NTuple{5, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemm-NTuple%7B5%2C%20Any%7D"
-[[jl.function]]
 name = "LinearAlgebra.BLAS.gemv!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemv%21"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.gemv-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemv-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.gemv-Tuple{Any, Any, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemv-Tuple%7BAny%2C%20Any%2C%20Any%7D"
 [[jl.function]]
 name = "LinearAlgebra.BLAS.ger!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.ger%21"
@@ -3892,20 +3242,8 @@ uri = "stdlib/LinearAlgebra/#$"
 name = "LinearAlgebra.BLAS.hemm!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemm%21"
 [[jl.function]]
-name = "LinearAlgebra.BLAS.hemm-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemm-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.hemm-NTuple{5, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemm-NTuple%7B5%2C%20Any%7D"
-[[jl.function]]
 name = "LinearAlgebra.BLAS.hemv!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemv%21"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.hemv-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemv-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.hemv-Tuple{Any, Any, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemv-Tuple%7BAny%2C%20Any%2C%20Any%7D"
 [[jl.function]]
 name = "LinearAlgebra.BLAS.her!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.her%21"
@@ -3937,12 +3275,6 @@ uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.rot%21"
 name = "LinearAlgebra.BLAS.sbmv!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.sbmv%21"
 [[jl.function]]
-name = "LinearAlgebra.BLAS.sbmv-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.sbmv-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.sbmv-NTuple{5, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.sbmv-NTuple%7B5%2C%20Any%7D"
-[[jl.function]]
 name = "LinearAlgebra.BLAS.scal"
 uri = "stdlib/LinearAlgebra/#$"
 [[jl.function]]
@@ -3961,20 +3293,8 @@ uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.spr%21"
 name = "LinearAlgebra.BLAS.symm!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symm%21"
 [[jl.function]]
-name = "LinearAlgebra.BLAS.symm-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symm-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.symm-NTuple{5, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symm-NTuple%7B5%2C%20Any%7D"
-[[jl.function]]
 name = "LinearAlgebra.BLAS.symv!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symv%21"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.symv-NTuple{4, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symv-NTuple%7B4%2C%20Any%7D"
-[[jl.function]]
-name = "LinearAlgebra.BLAS.symv-Tuple{Any, Any, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symv-Tuple%7BAny%2C%20Any%2C%20Any%7D"
 [[jl.function]]
 name = "LinearAlgebra.BLAS.syr!"
 uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.syr%21"
@@ -4320,9 +3640,6 @@ uri = "stdlib/LinearAlgebra/#$"
 [[jl.function]]
 name = "LinearAlgebra.dot"
 uri = "stdlib/LinearAlgebra/#$"
-[[jl.function]]
-name = "LinearAlgebra.dot-Tuple{Any, Any, Any}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.dot-Tuple%7BAny%2C%20Any%2C%20Any%7D"
 [[jl.function]]
 name = "LinearAlgebra.eigen"
 uri = "stdlib/LinearAlgebra/#$"
@@ -4810,15 +4127,6 @@ uri = "stdlib/SharedArrays/#$"
 name = "Sockets.accept"
 uri = "stdlib/Sockets/#$"
 [[jl.function]]
-name = "Sockets.connect-Tuple{AbstractString}"
-uri = "stdlib/Sockets/#Sockets.connect-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "Sockets.connect-Tuple{ClusterManager, Int64, WorkerConfig}"
-uri = "stdlib/Distributed/#Sockets.connect-Tuple%7BClusterManager%2C%20Int64%2C%20WorkerConfig%7D"
-[[jl.function]]
-name = "Sockets.connect-Tuple{TCPSocket, Integer}"
-uri = "stdlib/Sockets/#Sockets.connect-Tuple%7BTCPSocket%2C%20Integer%7D"
-[[jl.function]]
 name = "Sockets.getaddrinfo"
 uri = "stdlib/Sockets/#$"
 [[jl.function]]
@@ -4842,12 +4150,6 @@ uri = "stdlib/Sockets/#$"
 [[jl.function]]
 name = "Sockets.islinklocaladdr"
 uri = "stdlib/Sockets/#$"
-[[jl.function]]
-name = "Sockets.listen-Tuple{AbstractString}"
-uri = "stdlib/Sockets/#Sockets.listen-Tuple%7BAbstractString%7D"
-[[jl.function]]
-name = "Sockets.listen-Tuple{Any}"
-uri = "stdlib/Sockets/#Sockets.listen-Tuple%7BAny%7D"
 [[jl.function]]
 name = "Sockets.listenany"
 uri = "stdlib/Sockets/#$"
@@ -5055,6 +4357,139 @@ uri = "stdlib/Unicode/#$"
 [[jl.function]]
 name = "Unicode.normalize"
 uri = "stdlib/Unicode/#$"
+
+[[jl.keyword]]
+name = "&&"
+uri = "base/math/#%26%26"
+[[jl.keyword]]
+name = "..."
+uri = "base/base/#$"
+[[jl.keyword]]
+name = ";"
+uri = "base/base/#%3B"
+[[jl.keyword]]
+name = "="
+uri = "base/base/#%3D"
+[[jl.keyword]]
+name = "?:"
+uri = "base/base/#%3F%3A"
+[[jl.keyword]]
+name = "Union{}"
+uri = "base/base/#Union%7B%7D"
+[[jl.keyword]]
+name = "__init__"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "__module__"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "__source__"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "abstract type"
+uri = "base/base/#abstract%20type"
+[[jl.keyword]]
+name = "as"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "atomic"
+uri = "base/multi-threading/#$"
+[[jl.keyword]]
+name = "baremodule"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "begin"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "break"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "ccall"
+uri = "base/c/#$"
+[[jl.keyword]]
+name = "const"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "continue"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "do"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "end"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "export"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "finally"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "for"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "function"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "global"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "if"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "import"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "let"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "local"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "macro"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "module"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "mutable struct"
+uri = "base/base/#mutable%20struct"
+[[jl.keyword]]
+name = "new"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "outer"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "primitive type"
+uri = "base/base/#primitive%20type"
+[[jl.keyword]]
+name = "quote"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "return"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "struct"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "try"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "using"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "var\"name\""
+uri = "base/base/#var%22name%22"
+[[jl.keyword]]
+name = "where"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "while"
+uri = "base/base/#$"
+[[jl.keyword]]
+name = "||"
+uri = "base/math/#%7C%7C"
 
 [[jl.macro]]
 name = "ArgTools.@arg_test"
@@ -5417,6 +4852,961 @@ uri = "stdlib/Test/#Test.%40test_warn"
 name = "Test.@testset"
 uri = "stdlib/Test/#Test.%40testset"
 
+[[jl.method]]
+name = "Base.:*-Tuple{AbstractMatrix, AbstractMatrix}"
+uri = "stdlib/LinearAlgebra/#Base.%3A%2A-Tuple%7BAbstractMatrix%2C%20AbstractMatrix%7D"
+[[jl.method]]
+name = "Base.:*-Tuple{Any, Vararg{Any}}"
+uri = "base/math/#Base.%3A%2A-Tuple%7BAny%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.:*-Tuple{Union{AbstractChar, AbstractString}, Vararg{Union{AbstractChar, AbstractString}}}"
+uri = "base/strings/#Base.%3A%2A-Tuple%7BUnion%7BAbstractChar%2C%20AbstractString%7D%2C%20Vararg%7BUnion%7BAbstractChar%2C%20AbstractString%7D%7D%7D"
+[[jl.method]]
+name = "Base.:--Tuple{Any, Any}"
+uri = "base/math/#Base.%3A--Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.:--Tuple{Any}"
+uri = "base/math/#Base.%3A--Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.:/-Tuple{AbstractVecOrMat, AbstractVecOrMat}"
+uri = "stdlib/LinearAlgebra/#Base.%3A%2F-Tuple%7BAbstractVecOrMat%2C%20AbstractVecOrMat%7D"
+[[jl.method]]
+name = "Base.:==-Tuple{AbstractString, AbstractString}"
+uri = "base/strings/#Base.%3A%3D%3D-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.:\\-Tuple{AbstractMatrix, AbstractVecOrMat}"
+uri = "stdlib/LinearAlgebra/#Base.%3A%5C-Tuple%7BAbstractMatrix%2C%20AbstractVecOrMat%7D"
+[[jl.method]]
+name = "Base.:\\-Tuple{Any, Any}"
+uri = "base/math/#Base.%3A%5C-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.:^-Tuple{AbstractMatrix, Number}"
+uri = "stdlib/LinearAlgebra/#Base.%3A%5E-Tuple%7BAbstractMatrix%2C%20Number%7D"
+[[jl.method]]
+name = "Base.:^-Tuple{Number, AbstractMatrix}"
+uri = "stdlib/LinearAlgebra/#Base.%3A%5E-Tuple%7BNumber%2C%20AbstractMatrix%7D"
+[[jl.method]]
+name = "Base.:^-Tuple{Number, Number}"
+uri = "base/math/#Base.%3A%5E-Tuple%7BNumber%2C%20Number%7D"
+[[jl.method]]
+name = "Base.:^-Tuple{Union{AbstractChar, AbstractString}, Integer}"
+uri = "base/strings/#Base.%3A%5E-Tuple%7BUnion%7BAbstractChar%2C%20AbstractString%7D%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.AsyncCondition-Tuple{Function}"
+uri = "base/base/#Base.AsyncCondition-Tuple%7BFunction%7D"
+[[jl.method]]
+name = "Base.BitArray-Tuple{Any}"
+uri = "base/arrays/#Base.BitArray-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.BitArray-Tuple{UndefInitializer, Vararg{Integer}}"
+uri = "base/arrays/#Base.BitArray-Tuple%7BUndefInitializer%2C%20Vararg%7BInteger%7D%7D"
+[[jl.method]]
+name = "Base.Channel-Tuple{Function}"
+uri = "base/parallel/#Base.Channel-Tuple%7BFunction%7D"
+[[jl.method]]
+name = "Base.Filesystem.cd-Tuple{AbstractString}"
+uri = "base/file/#Base.Filesystem.cd-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.Filesystem.cd-Tuple{Function}"
+uri = "base/file/#Base.Filesystem.cd-Tuple%7BFunction%7D"
+[[jl.method]]
+name = "Base.Filesystem.mktemp-Tuple{AbstractString}"
+uri = "base/file/#Base.Filesystem.mktemp-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.Filesystem.mktemp-Tuple{Function, AbstractString}"
+uri = "base/file/#Base.Filesystem.mktemp-Tuple%7BFunction%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.Filesystem.mktempdir-Tuple{AbstractString}"
+uri = "base/file/#Base.Filesystem.mktempdir-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.Filesystem.mktempdir-Tuple{Function, AbstractString}"
+uri = "base/file/#Base.Filesystem.mktempdir-Tuple%7BFunction%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.Filesystem.touch-Tuple{FileWatching.Pidfile.LockMonitor}"
+uri = "stdlib/FileWatching/#Base.Filesystem.touch-Tuple%7BFileWatching.Pidfile.LockMonitor%7D"
+[[jl.method]]
+name = "Base.GMP.BigInt-Tuple{Any}"
+uri = "base/numbers/#Base.GMP.BigInt-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.IOContext-Tuple{IO, IOContext}"
+uri = "base/io-network/#Base.IOContext-Tuple%7BIO%2C%20IOContext%7D"
+[[jl.method]]
+name = "Base.IOContext-Tuple{IO, Pair}"
+uri = "base/io-network/#Base.IOContext-Tuple%7BIO%2C%20Pair%7D"
+[[jl.method]]
+name = "Base.Libc.time-Tuple{Base.Libc.TmStruct}"
+uri = "base/libc/#Base.Libc.time-Tuple%7BBase.Libc.TmStruct%7D"
+[[jl.method]]
+name = "Base.Libc.time-Tuple{}"
+uri = "base/base/#Base.Libc.time-Tuple%7B%7D"
+[[jl.method]]
+name = "Base.MPFR.BigFloat-Tuple{Any, RoundingMode}"
+uri = "base/numbers/#Base.MPFR.BigFloat-Tuple%7BAny%2C%20RoundingMode%7D"
+[[jl.method]]
+name = "Base.Math.acot-Tuple{Number}"
+uri = "base/math/#Base.Math.acot-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.acot-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.acot-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.acoth-Tuple{Number}"
+uri = "base/math/#Base.Math.acoth-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.acoth-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.acoth-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.acsc-Tuple{Number}"
+uri = "base/math/#Base.Math.acsc-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.acsc-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.acsc-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.acsch-Tuple{Number}"
+uri = "base/math/#Base.Math.acsch-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.acsch-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.acsch-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.asec-Tuple{Number}"
+uri = "base/math/#Base.Math.asec-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.asec-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.asec-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.asech-Tuple{Number}"
+uri = "base/math/#Base.Math.asech-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.asech-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.asech-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.cot-Tuple{Number}"
+uri = "base/math/#Base.Math.cot-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.cot-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.cot-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.coth-Tuple{Number}"
+uri = "base/math/#Base.Math.coth-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.coth-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.coth-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.csc-Tuple{Number}"
+uri = "base/math/#Base.Math.csc-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.csc-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.csc-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.csch-Tuple{Number}"
+uri = "base/math/#Base.Math.csch-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.csch-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.csch-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.sec-Tuple{Number}"
+uri = "base/math/#Base.Math.sec-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.sec-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.sec-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.sech-Tuple{Number}"
+uri = "base/math/#Base.Math.sech-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.Math.sech-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.Math.sech-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.Math.sincos-Tuple{Float64}"
+uri = "base/math/#Base.Math.sincos-Tuple%7BFloat64%7D"
+[[jl.method]]
+name = "Base.Math.sincos-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
+uri = "stdlib/LinearAlgebra/#Base.Math.sincos-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
+[[jl.method]]
+name = "Base.Matrix-Tuple{Missing, Any, Any}"
+uri = "base/arrays/#Base.Matrix-Tuple%7BMissing%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.Matrix-Tuple{Nothing, Any, Any}"
+uri = "base/arrays/#Base.Matrix-Tuple%7BNothing%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.Matrix-Tuple{UndefInitializer, Any, Any}"
+uri = "base/arrays/#Base.Matrix-Tuple%7BUndefInitializer%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.Meta.parse-Tuple{AbstractString, Int64}"
+uri = "base/base/#Base.Meta.parse-Tuple%7BAbstractString%2C%20Int64%7D"
+[[jl.method]]
+name = "Base.Meta.parse-Tuple{AbstractString}"
+uri = "base/base/#Base.Meta.parse-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.Rounding.setrounding-Tuple{Function, Type, RoundingMode}"
+uri = "base/numbers/#Base.Rounding.setrounding-Tuple%7BFunction%2C%20Type%2C%20RoundingMode%7D"
+[[jl.method]]
+name = "Base.Rounding.setrounding-Tuple{Type, Any}"
+uri = "base/numbers/#Base.Rounding.setrounding-Tuple%7BType%2C%20Any%7D"
+[[jl.method]]
+name = "Base.Timer-Tuple{Function, Real}"
+uri = "base/base/#Base.Timer-Tuple%7BFunction%2C%20Real%7D"
+[[jl.method]]
+name = "Base.Vector-Tuple{Missing, Any}"
+uri = "base/arrays/#Base.Vector-Tuple%7BMissing%2C%20Any%7D"
+[[jl.method]]
+name = "Base.Vector-Tuple{Nothing, Any}"
+uri = "base/arrays/#Base.Vector-Tuple%7BNothing%2C%20Any%7D"
+[[jl.method]]
+name = "Base.Vector-Tuple{UndefInitializer, Any}"
+uri = "base/arrays/#Base.Vector-Tuple%7BUndefInitializer%2C%20Any%7D"
+[[jl.method]]
+name = "Base.acos-Tuple{Number}"
+uri = "base/math/#Base.acos-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.acos-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.acos-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.acosh-Tuple{Number}"
+uri = "base/math/#Base.acosh-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.acosh-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.acosh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.all-Tuple{AbstractArray, Any}"
+uri = "base/collections/#Base.all-Tuple%7BAbstractArray%2C%20Any%7D"
+[[jl.method]]
+name = "Base.all-Tuple{Any}"
+uri = "base/collections/#Base.all-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.any-Tuple{AbstractArray, Any}"
+uri = "base/collections/#Base.any-Tuple%7BAbstractArray%2C%20Any%7D"
+[[jl.method]]
+name = "Base.any-Tuple{Any}"
+uri = "base/collections/#Base.any-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.asin-Tuple{Number}"
+uri = "base/math/#Base.asin-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.asin-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.asin-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.asinh-Tuple{Number}"
+uri = "base/math/#Base.asinh-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.asinh-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.asinh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.atan-Tuple{Number}"
+uri = "base/math/#Base.atan-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.atan-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.atan-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.atanh-Tuple{Number}"
+uri = "base/math/#Base.atanh-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.atanh-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.atanh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.axes-Tuple{AbstractArray, Any}"
+uri = "base/arrays/#Base.axes-Tuple%7BAbstractArray%2C%20Any%7D"
+[[jl.method]]
+name = "Base.axes-Tuple{Any}"
+uri = "base/arrays/#Base.axes-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.bind-Tuple{Channel, Task}"
+uri = "base/parallel/#Base.bind-Tuple%7BChannel%2C%20Task%7D"
+[[jl.method]]
+name = "Base.ceil-Tuple{TimeType, Period}"
+uri = "stdlib/Dates/#Base.ceil-Tuple%7BTimeType%2C%20Period%7D"
+[[jl.method]]
+name = "Base.ceil-Tuple{Union{Day, Week, TimePeriod}, Union{Day, Week, TimePeriod}}"
+uri = "stdlib/Dates/#Base.ceil-Tuple%7BUnion%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20Union%7BDay%2C%20Week%2C%20TimePeriod%7D%7D"
+[[jl.method]]
+name = "Base.cis-Tuple{AbstractMatrix}"
+uri = "stdlib/LinearAlgebra/#Base.cis-Tuple%7BAbstractMatrix%7D"
+[[jl.method]]
+name = "Base.close-Tuple{Channel}"
+uri = "base/parallel/#Base.close-Tuple%7BChannel%7D"
+[[jl.method]]
+name = "Base.close-Tuple{FileWatching.Pidfile.LockMonitor}"
+uri = "stdlib/FileWatching/#Base.close-Tuple%7BFileWatching.Pidfile.LockMonitor%7D"
+[[jl.method]]
+name = "Base.cmp-Tuple{AbstractString, AbstractString}"
+uri = "base/strings/#Base.cmp-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.collect-Tuple{Any}"
+uri = "base/collections/#Base.collect-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.collect-Tuple{Type, Any}"
+uri = "base/collections/#Base.collect-Tuple%7BType%2C%20Any%7D"
+[[jl.method]]
+name = "Base.complex-Tuple{Complex}"
+uri = "base/numbers/#Base.complex-Tuple%7BComplex%7D"
+[[jl.method]]
+name = "Base.copy-Tuple{Union{Adjoint, Transpose}}"
+uri = "stdlib/LinearAlgebra/#Base.copy-Tuple%7BUnion%7BAdjoint%2C%20Transpose%7D%7D"
+[[jl.method]]
+name = "Base.copyto!-Tuple{AbstractArray, CartesianIndices, AbstractArray, CartesianIndices}"
+uri = "base/arrays/#Base.copyto%21-Tuple%7BAbstractArray%2C%20CartesianIndices%2C%20AbstractArray%2C%20CartesianIndices%7D"
+[[jl.method]]
+name = "Base.cos-Tuple{Number}"
+uri = "base/math/#Base.cos-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.cos-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
+uri = "stdlib/LinearAlgebra/#Base.cos-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
+[[jl.method]]
+name = "Base.cosh-Tuple{Number}"
+uri = "base/math/#Base.cosh-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.cosh-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.cosh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.eps-Tuple{AbstractFloat}"
+uri = "base/base/#Base.eps-Tuple%7BAbstractFloat%7D"
+[[jl.method]]
+name = "Base.eps-Tuple{Type{<:AbstractFloat}}"
+uri = "base/base/#Base.eps-Tuple%7BType%7B%3C%3AAbstractFloat%7D%7D"
+[[jl.method]]
+name = "Base.eps-Tuple{Union{Type{Date}, Type{DateTime}, Type{Time}, TimeType}}"
+uri = "stdlib/Dates/#Base.eps-Tuple%7BUnion%7BType%7BDate%7D%2C%20Type%7BDateTime%7D%2C%20Type%7BTime%7D%2C%20TimeType%7D%7D"
+[[jl.method]]
+name = "Base.exp-Tuple{Float64}"
+uri = "base/math/#Base.exp-Tuple%7BFloat64%7D"
+[[jl.method]]
+name = "Base.exp-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Union{Float32, Float64, ComplexF64, ComplexF32}}"
+uri = "stdlib/LinearAlgebra/#Base.exp-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AUnion%7BFloat32%2C%20Float64%2C%20ComplexF64%2C%20ComplexF32%7D%7D"
+[[jl.method]]
+name = "Base.fetch-Tuple{Any}"
+uri = "base/parallel/#Base.fetch-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.fetch-Tuple{Channel}"
+uri = "base/parallel/#Base.fetch-Tuple%7BChannel%7D"
+[[jl.method]]
+name = "Base.fetch-Tuple{Distributed.Future}"
+uri = "stdlib/Distributed/#Base.fetch-Tuple%7BDistributed.Future%7D"
+[[jl.method]]
+name = "Base.fetch-Tuple{RemoteChannel}"
+uri = "stdlib/Distributed/#Base.fetch-Tuple%7BRemoteChannel%7D"
+[[jl.method]]
+name = "Base.fetch-Tuple{Task}"
+uri = "base/parallel/#Base.fetch-Tuple%7BTask%7D"
+[[jl.method]]
+name = "Base.findall-Tuple{Any}"
+uri = "base/arrays/#Base.findall-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.findall-Tuple{Function, Any}"
+uri = "base/arrays/#Base.findall-Tuple%7BFunction%2C%20Any%7D"
+[[jl.method]]
+name = "Base.findfirst-Tuple{AbstractString, AbstractString}"
+uri = "base/strings/#Base.findfirst-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.findfirst-Tuple{Any}"
+uri = "base/arrays/#Base.findfirst-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.findfirst-Tuple{Function, Any}"
+uri = "base/arrays/#Base.findfirst-Tuple%7BFunction%2C%20Any%7D"
+[[jl.method]]
+name = "Base.findlast-Tuple{AbstractChar, AbstractString}"
+uri = "base/strings/#Base.findlast-Tuple%7BAbstractChar%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.findlast-Tuple{AbstractString, AbstractString}"
+uri = "base/strings/#Base.findlast-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.findlast-Tuple{Any}"
+uri = "base/arrays/#Base.findlast-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.findlast-Tuple{Function, Any}"
+uri = "base/arrays/#Base.findlast-Tuple%7BFunction%2C%20Any%7D"
+[[jl.method]]
+name = "Base.findnext-Tuple{AbstractChar, AbstractString, Integer}"
+uri = "base/strings/#Base.findnext-Tuple%7BAbstractChar%2C%20AbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.findnext-Tuple{AbstractString, AbstractString, Integer}"
+uri = "base/strings/#Base.findnext-Tuple%7BAbstractString%2C%20AbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.findnext-Tuple{Any, Integer}"
+uri = "base/arrays/#Base.findnext-Tuple%7BAny%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.findnext-Tuple{Function, Any, Integer}"
+uri = "base/arrays/#Base.findnext-Tuple%7BFunction%2C%20Any%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.findprev-Tuple{AbstractString, AbstractString, Integer}"
+uri = "base/strings/#Base.findprev-Tuple%7BAbstractString%2C%20AbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.findprev-Tuple{Any, Integer}"
+uri = "base/arrays/#Base.findprev-Tuple%7BAny%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.findprev-Tuple{Function, Any, Integer}"
+uri = "base/arrays/#Base.findprev-Tuple%7BFunction%2C%20Any%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.first-Tuple{AbstractString, Integer}"
+uri = "base/strings/#Base.first-Tuple%7BAbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.float-Tuple{Any}"
+uri = "base/numbers/#Base.float-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.floor-Tuple{TimeType, Period}"
+uri = "stdlib/Dates/#Base.floor-Tuple%7BTimeType%2C%20Period%7D"
+[[jl.method]]
+name = "Base.floor-Union{Tuple{T}, Tuple{Union{Day, Week, TimePeriod}, T}} where T<:Union{Day, Week, TimePeriod}"
+uri = "stdlib/Dates/#Base.floor-Union%7BTuple%7BT%7D%2C%20Tuple%7BUnion%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20T%7D%7D%20where%20T%3C%3AUnion%7BDay%2C%20Week%2C%20TimePeriod%7D"
+[[jl.method]]
+name = "Base.foldl-Tuple{Any, Any}"
+uri = "base/collections/#Base.foldl-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.foldr-Tuple{Any, Any}"
+uri = "base/collections/#Base.foldr-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.functionloc-Tuple{Any, Any}"
+uri = "base/base/#Base.functionloc-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.functionloc-Tuple{Method}"
+uri = "base/base/#Base.functionloc-Tuple%7BMethod%7D"
+[[jl.method]]
+name = "Base.getindex-Tuple{AbstractArray, Vararg{Any}}"
+uri = "base/arrays/#Base.getindex-Tuple%7BAbstractArray%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.getindex-Tuple{Type, Vararg{Any}}"
+uri = "base/arrays/#Base.getindex-Tuple%7BType%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.inv-Tuple{AbstractMatrix}"
+uri = "stdlib/LinearAlgebra/#Base.inv-Tuple%7BAbstractMatrix%7D"
+[[jl.method]]
+name = "Base.inv-Tuple{Number}"
+uri = "base/math/#Base.inv-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.isassigned-Tuple{Base.RefValue}"
+uri = "base/c/#Base.isassigned-Tuple%7BBase.RefValue%7D"
+[[jl.method]]
+name = "Base.isless-Tuple{AbstractString, AbstractString}"
+uri = "base/strings/#Base.isless-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Base.isready-Tuple{Channel}"
+uri = "base/parallel/#Base.isready-Tuple%7BChannel%7D"
+[[jl.method]]
+name = "Base.isready-Tuple{Distributed.Future}"
+uri = "stdlib/Distributed/#Base.isready-Tuple%7BDistributed.Future%7D"
+[[jl.method]]
+name = "Base.isready-Tuple{RemoteChannel, Vararg{Any}}"
+uri = "stdlib/Distributed/#Base.isready-Tuple%7BRemoteChannel%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.isvalid-Tuple{AbstractString, Integer}"
+uri = "base/strings/#Base.isvalid-Tuple%7BAbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.isvalid-Tuple{Any, Any}"
+uri = "base/strings/#Base.isvalid-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.isvalid-Tuple{Any}"
+uri = "base/strings/#Base.isvalid-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.keys-Tuple{AbstractArray}"
+uri = "base/arrays/#Base.keys-Tuple%7BAbstractArray%7D"
+[[jl.method]]
+name = "Base.keys-Tuple{RegexMatch}"
+uri = "base/strings/#Base.keys-Tuple%7BRegexMatch%7D"
+[[jl.method]]
+name = "Base.kill-Tuple{Base.Process, Integer}"
+uri = "base/base/#Base.kill-Tuple%7BBase.Process%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.kill-Tuple{ClusterManager, Int64, WorkerConfig}"
+uri = "stdlib/Distributed/#Base.kill-Tuple%7BClusterManager%2C%20Int64%2C%20WorkerConfig%7D"
+[[jl.method]]
+name = "Base.last-Tuple{AbstractString, Integer}"
+uri = "base/strings/#Base.last-Tuple%7BAbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.length-Tuple{AbstractArray}"
+uri = "base/arrays/#Base.length-Tuple%7BAbstractArray%7D"
+[[jl.method]]
+name = "Base.length-Tuple{AbstractString}"
+uri = "base/strings/#Base.length-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.log-Tuple{Number, Number}"
+uri = "base/math/#Base.log-Tuple%7BNumber%2C%20Number%7D"
+[[jl.method]]
+name = "Base.log-Tuple{Number}"
+uri = "base/math/#Base.log-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.log-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.log-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.mapfoldl-Tuple{Any, Any, Any}"
+uri = "base/collections/#Base.mapfoldl-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.mapfoldr-Tuple{Any, Any, Any}"
+uri = "base/collections/#Base.mapfoldr-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.mapreduce-Tuple{Any, Any, Any}"
+uri = "base/collections/#Base.mapreduce-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.nameof-Tuple{DataType}"
+uri = "base/base/#Base.nameof-Tuple%7BDataType%7D"
+[[jl.method]]
+name = "Base.nameof-Tuple{Function}"
+uri = "base/base/#Base.nameof-Tuple%7BFunction%7D"
+[[jl.method]]
+name = "Base.nameof-Tuple{Module}"
+uri = "base/base/#Base.nameof-Tuple%7BModule%7D"
+[[jl.method]]
+name = "Base.ncodeunits-Tuple{AbstractString}"
+uri = "base/strings/#Base.ncodeunits-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.pathof-Tuple{Module}"
+uri = "base/base/#Base.pathof-Tuple%7BModule%7D"
+[[jl.method]]
+name = "Base.permute!-Tuple{Any, AbstractVector}"
+uri = "base/arrays/#Base.permute%21-Tuple%7BAny%2C%20AbstractVector%7D"
+[[jl.method]]
+name = "Base.permute!-Union{Tuple{Tq}, Tuple{Tp}, Tuple{Ti}, Tuple{Tv}, Tuple{SparseMatrixCSC{Tv, Ti}, SparseMatrixCSC{Tv, Ti}, AbstractVector{Tp}, AbstractVector{Tq}}} where {Tv, Ti, Tp<:Integer, Tq<:Integer}"
+uri = "stdlib/SparseArrays/#Base.permute%21-Union%7BTuple%7BTq%7D%2C%20Tuple%7BTp%7D%2C%20Tuple%7BTi%7D%2C%20Tuple%7BTv%7D%2C%20Tuple%7BSparseMatrixCSC%7BTv%2C%20Ti%7D%2C%20SparseMatrixCSC%7BTv%2C%20Ti%7D%2C%20AbstractVector%7BTp%7D%2C%20AbstractVector%7BTq%7D%7D%7D%20where%20%7BTv%2C%20Ti%2C%20Tp%3C%3AInteger%2C%20Tq%3C%3AInteger%7D"
+[[jl.method]]
+name = "Base.pipeline-Tuple{Any, Any, Any, Vararg{Any}}"
+uri = "base/base/#Base.pipeline-Tuple%7BAny%2C%20Any%2C%20Any%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.pipeline-Tuple{Base.AbstractCmd}"
+uri = "base/base/#Base.pipeline-Tuple%7BBase.AbstractCmd%7D"
+[[jl.method]]
+name = "Base.pkgdir-Tuple{Module}"
+uri = "base/base/#Base.pkgdir-Tuple%7BModule%7D"
+[[jl.method]]
+name = "Base.pkgversion-Tuple{Module}"
+uri = "base/base/#Base.pkgversion-Tuple%7BModule%7D"
+[[jl.method]]
+name = "Base.pop!-Tuple{Any, Any, Any}"
+uri = "base/collections/#Base.pop%21-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.put!-Tuple{Channel, Any}"
+uri = "base/parallel/#Base.put%21-Tuple%7BChannel%2C%20Any%7D"
+[[jl.method]]
+name = "Base.put!-Tuple{Distributed.Future, Any}"
+uri = "stdlib/Distributed/#Base.put%21-Tuple%7BDistributed.Future%2C%20Any%7D"
+[[jl.method]]
+name = "Base.put!-Tuple{RemoteChannel, Vararg{Any}}"
+uri = "stdlib/Distributed/#Base.put%21-Tuple%7BRemoteChannel%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.redirect_stderr-Tuple{Function, Any}"
+uri = "base/io-network/#Base.redirect_stderr-Tuple%7BFunction%2C%20Any%7D"
+[[jl.method]]
+name = "Base.redirect_stdin-Tuple{Function, Any}"
+uri = "base/io-network/#Base.redirect_stdin-Tuple%7BFunction%2C%20Any%7D"
+[[jl.method]]
+name = "Base.redirect_stdout-Tuple{Function, Any}"
+uri = "base/io-network/#Base.redirect_stdout-Tuple%7BFunction%2C%20Any%7D"
+[[jl.method]]
+name = "Base.reduce-Tuple{Any, AbstractArray}"
+uri = "base/collections/#Base.reduce-Tuple%7BAny%2C%20AbstractArray%7D"
+[[jl.method]]
+name = "Base.reduce-Tuple{Any, Any}"
+uri = "base/collections/#Base.reduce-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.repeat-Tuple{AbstractChar, Integer}"
+uri = "base/strings/#Base.repeat-Tuple%7BAbstractChar%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.repeat-Tuple{AbstractString, Integer}"
+uri = "base/strings/#Base.repeat-Tuple%7BAbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "Base.replace-Tuple{Any, Vararg{Pair}}"
+uri = "base/collections/#Base.replace-Tuple%7BAny%2C%20Vararg%7BPair%7D%7D"
+[[jl.method]]
+name = "Base.replace-Tuple{IO, AbstractString, Vararg{Pair}}"
+uri = "base/strings/#Base.replace-Tuple%7BIO%2C%20AbstractString%2C%20Vararg%7BPair%7D%7D"
+[[jl.method]]
+name = "Base.replace-Tuple{Union{Function, Type}, Any}"
+uri = "base/collections/#Base.replace-Tuple%7BUnion%7BFunction%2C%20Type%7D%2C%20Any%7D"
+[[jl.method]]
+name = "Base.repr-Tuple{Any}"
+uri = "base/strings/#Base.repr-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.repr-Tuple{MIME, Any}"
+uri = "base/io-network/#Base.repr-Tuple%7BMIME%2C%20Any%7D"
+[[jl.method]]
+name = "Base.reset-Tuple{Base.Event}"
+uri = "base/parallel/#Base.reset-Tuple%7BBase.Event%7D"
+[[jl.method]]
+name = "Base.reset-Tuple{IO}"
+uri = "base/io-network/#Base.reset-Tuple%7BIO%7D"
+[[jl.method]]
+name = "Base.reverse-Tuple{AbstractVector}"
+uri = "base/arrays/#Base.reverse-Tuple%7BAbstractVector%7D"
+[[jl.method]]
+name = "Base.reverse-Tuple{Union{SubString{String}, String}}"
+uri = "base/strings/#Base.reverse-Tuple%7BUnion%7BSubString%7BString%7D%2C%20String%7D%7D"
+[[jl.method]]
+name = "Base.round-Tuple{Complex{<:AbstractFloat}, RoundingMode, RoundingMode}"
+uri = "base/math/#Base.round-Tuple%7BComplex%7B%3C%3AAbstractFloat%7D%2C%20RoundingMode%2C%20RoundingMode%7D"
+[[jl.method]]
+name = "Base.round-Tuple{TimeType, Period, RoundingMode{:NearestTiesUp}}"
+uri = "stdlib/Dates/#Base.round-Tuple%7BTimeType%2C%20Period%2C%20RoundingMode%7B%3ANearestTiesUp%7D%7D"
+[[jl.method]]
+name = "Base.round-Tuple{Type, Any}"
+uri = "base/math/#Base.round-Tuple%7BType%2C%20Any%7D"
+[[jl.method]]
+name = "Base.round-Tuple{Union{Day, Week, TimePeriod}, Union{Day, Week, TimePeriod}, RoundingMode{:NearestTiesUp}}"
+uri = "stdlib/Dates/#Base.round-Tuple%7BUnion%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20Union%7BDay%2C%20Week%2C%20TimePeriod%7D%2C%20RoundingMode%7B%3ANearestTiesUp%7D%7D"
+[[jl.method]]
+name = "Base.setindex!-Tuple{AbstractArray, Any, Vararg{Any}}"
+uri = "base/arrays/#Base.setindex%21-Tuple%7BAbstractArray%2C%20Any%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.show-Tuple{IO, Any, Any}"
+uri = "base/io-network/#Base.show-Tuple%7BIO%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.show-Tuple{IO, Any}"
+uri = "base/io-network/#Base.show-Tuple%7BIO%2C%20Any%7D"
+[[jl.method]]
+name = "Base.similar-Tuple{SparseArrays.AbstractSparseMatrixCSC, Type}"
+uri = "stdlib/SparseArrays/#Base.similar-Tuple%7BSparseArrays.AbstractSparseMatrixCSC%2C%20Type%7D"
+[[jl.method]]
+name = "Base.sin-Tuple{Number}"
+uri = "base/math/#Base.sin-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.sin-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
+uri = "stdlib/LinearAlgebra/#Base.sin-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
+[[jl.method]]
+name = "Base.sinh-Tuple{Number}"
+uri = "base/math/#Base.sinh-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.sinh-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.sinh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.sizeof-Tuple{AbstractString}"
+uri = "base/strings/#Base.sizeof-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Base.sizeof-Tuple{Type}"
+uri = "base/base/#Base.sizeof-Tuple%7BType%7D"
+[[jl.method]]
+name = "Base.sqrt-Tuple{Number}"
+uri = "base/math/#Base.sqrt-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.sqrt-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.sqrt-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.take!-Tuple{Base.GenericIOBuffer}"
+uri = "base/io-network/#Base.take%21-Tuple%7BBase.GenericIOBuffer%7D"
+[[jl.method]]
+name = "Base.take!-Tuple{Channel}"
+uri = "base/parallel/#Base.take%21-Tuple%7BChannel%7D"
+[[jl.method]]
+name = "Base.take!-Tuple{RemoteChannel, Vararg{Any}}"
+uri = "stdlib/Distributed/#Base.take%21-Tuple%7BRemoteChannel%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Base.tan-Tuple{Number}"
+uri = "base/math/#Base.tan-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.tan-Tuple{StridedMatrix{var\"#s51\"} where var\"#s51\"<:Real}"
+uri = "stdlib/LinearAlgebra/#Base.tan-Tuple%7BStridedMatrix%7Bvar%22%23s51%22%7D%20where%20var%22%23s51%22%3C%3AReal%7D"
+[[jl.method]]
+name = "Base.tanh-Tuple{Number}"
+uri = "base/math/#Base.tanh-Tuple%7BNumber%7D"
+[[jl.method]]
+name = "Base.tanh-Tuple{StridedMatrix{T} where T}"
+uri = "stdlib/LinearAlgebra/#Base.tanh-Tuple%7BStridedMatrix%7BT%7D%20where%20T%7D"
+[[jl.method]]
+name = "Base.task_local_storage-Tuple{Any, Any}"
+uri = "base/parallel/#Base.task_local_storage-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Base.task_local_storage-Tuple{Any}"
+uri = "base/parallel/#Base.task_local_storage-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Base.task_local_storage-Tuple{Function, Any, Any}"
+uri = "base/parallel/#Base.task_local_storage-Tuple%7BFunction%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Base.trunc-Tuple{TimeType, Type{Period}}"
+uri = "stdlib/Dates/#Base.trunc-Tuple%7BTimeType%2C%20Type%7BPeriod%7D%7D"
+[[jl.method]]
+name = "Base.unsafe_copyto!-Union{Tuple{T}, Tuple{Array{T}, Any, Array{T}, Any, Any}} where T"
+uri = "base/c/#Base.unsafe_copyto%21-Union%7BTuple%7BT%7D%2C%20Tuple%7BArray%7BT%7D%2C%20Any%2C%20Array%7BT%7D%2C%20Any%2C%20Any%7D%7D%20where%20T"
+[[jl.method]]
+name = "Base.unsafe_copyto!-Union{Tuple{T}, Tuple{Ptr{T}, Ptr{T}, Any}} where T"
+uri = "base/c/#Base.unsafe_copyto%21-Union%7BTuple%7BT%7D%2C%20Tuple%7BPtr%7BT%7D%2C%20Ptr%7BT%7D%2C%20Any%7D%7D%20where%20T"
+[[jl.method]]
+name = "Base.unsafe_wrap-Union{Tuple{N}, Tuple{T}, Tuple{Union{Type{Array}, Type{Array{T}}, Type{Array{T, N}}}, Ptr{T}, Tuple{Vararg{Int64, N}}}} where {T, N}"
+uri = "base/c/#Base.unsafe_wrap-Union%7BTuple%7BN%7D%2C%20Tuple%7BT%7D%2C%20Tuple%7BUnion%7BType%7BArray%7D%2C%20Type%7BArray%7BT%7D%7D%2C%20Type%7BArray%7BT%2C%20N%7D%7D%7D%2C%20Ptr%7BT%7D%2C%20Tuple%7BVararg%7BInt64%2C%20N%7D%7D%7D%7D%20where%20%7BT%2C%20N%7D"
+[[jl.method]]
+name = "Base.which-Tuple{Any, Any}"
+uri = "base/base/#Base.which-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "CRC32c.crc32c-Tuple{IO, Integer, UInt32}"
+uri = "stdlib/CRC32c/#CRC32c.crc32c-Tuple%7BIO%2C%20Integer%2C%20UInt32%7D"
+[[jl.method]]
+name = "Core.Array-Tuple{Missing, Any}"
+uri = "base/arrays/#Core.Array-Tuple%7BMissing%2C%20Any%7D"
+[[jl.method]]
+name = "Core.Array-Tuple{Nothing, Any}"
+uri = "base/arrays/#Core.Array-Tuple%7BNothing%2C%20Any%7D"
+[[jl.method]]
+name = "Core.Array-Tuple{UndefInitializer, Any}"
+uri = "base/arrays/#Core.Array-Tuple%7BUndefInitializer%2C%20Any%7D"
+[[jl.method]]
+name = "Core.Float32-Tuple{Any}"
+uri = "base/numbers/#Core.Float32-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Core.Float64-Tuple{Any}"
+uri = "base/numbers/#Core.Float64-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Core.String-Tuple{AbstractString}"
+uri = "base/strings/#Core.String-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Core.Symbol-Tuple"
+uri = "base/base/#$"
+[[jl.method]]
+name = "Dates.CompoundPeriod-Tuple{Vector{<:Period}}"
+uri = "stdlib/Dates/#Dates.CompoundPeriod-Tuple%7BVector%7B%3C%3APeriod%7D%7D"
+[[jl.method]]
+name = "Dates.Date-Tuple{AbstractString, AbstractString}"
+uri = "stdlib/Dates/#Dates.Date-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Dates.Date-Tuple{AbstractString, DateFormat}"
+uri = "stdlib/Dates/#Dates.Date-Tuple%7BAbstractString%2C%20DateFormat%7D"
+[[jl.method]]
+name = "Dates.Date-Tuple{Function, Any, Any, Any}"
+uri = "stdlib/Dates/#Dates.Date-Tuple%7BFunction%2C%20Any%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Dates.Date-Tuple{Int64, Int64, Int64}"
+uri = "stdlib/Dates/#Dates.Date-Tuple%7BInt64%2C%20Int64%2C%20Int64%7D"
+[[jl.method]]
+name = "Dates.Date-Tuple{Period}"
+uri = "stdlib/Dates/#Dates.Date-Tuple%7BPeriod%7D"
+[[jl.method]]
+name = "Dates.Date-Tuple{TimeType}"
+uri = "stdlib/Dates/#Dates.Date-Tuple%7BTimeType%7D"
+[[jl.method]]
+name = "Dates.DateTime-NTuple{7, Int64}"
+uri = "stdlib/Dates/#Dates.DateTime-NTuple%7B7%2C%20Int64%7D"
+[[jl.method]]
+name = "Dates.DateTime-Tuple{AbstractString, AbstractString}"
+uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Dates.DateTime-Tuple{AbstractString, DateFormat}"
+uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BAbstractString%2C%20DateFormat%7D"
+[[jl.method]]
+name = "Dates.DateTime-Tuple{Function, Vararg{Any}}"
+uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BFunction%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Dates.DateTime-Tuple{Period}"
+uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BPeriod%7D"
+[[jl.method]]
+name = "Dates.DateTime-Tuple{TimeType}"
+uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BTimeType%7D"
+[[jl.method]]
+name = "Dates.Day-Tuple{TimeType}"
+uri = "stdlib/Dates/#Dates.Day-Tuple%7BTimeType%7D"
+[[jl.method]]
+name = "Dates.Hour-Tuple{DateTime}"
+uri = "stdlib/Dates/#Dates.Hour-Tuple%7BDateTime%7D"
+[[jl.method]]
+name = "Dates.Microsecond-Tuple{Time}"
+uri = "stdlib/Dates/#Dates.Microsecond-Tuple%7BTime%7D"
+[[jl.method]]
+name = "Dates.Millisecond-Tuple{DateTime}"
+uri = "stdlib/Dates/#Dates.Millisecond-Tuple%7BDateTime%7D"
+[[jl.method]]
+name = "Dates.Minute-Tuple{DateTime}"
+uri = "stdlib/Dates/#Dates.Minute-Tuple%7BDateTime%7D"
+[[jl.method]]
+name = "Dates.Month-Tuple{TimeType}"
+uri = "stdlib/Dates/#Dates.Month-Tuple%7BTimeType%7D"
+[[jl.method]]
+name = "Dates.Nanosecond-Tuple{Time}"
+uri = "stdlib/Dates/#Dates.Nanosecond-Tuple%7BTime%7D"
+[[jl.method]]
+name = "Dates.Period-Tuple{Any}"
+uri = "stdlib/Dates/#Dates.Period-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Dates.Second-Tuple{DateTime}"
+uri = "stdlib/Dates/#Dates.Second-Tuple%7BDateTime%7D"
+[[jl.method]]
+name = "Dates.Time-NTuple{5, Int64}"
+uri = "stdlib/Dates/#Dates.Time-NTuple%7B5%2C%20Int64%7D"
+[[jl.method]]
+name = "Dates.Time-Tuple{AbstractString, AbstractString}"
+uri = "stdlib/Dates/#Dates.Time-Tuple%7BAbstractString%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Dates.Time-Tuple{AbstractString, DateFormat}"
+uri = "stdlib/Dates/#Dates.Time-Tuple%7BAbstractString%2C%20DateFormat%7D"
+[[jl.method]]
+name = "Dates.Time-Tuple{DateTime}"
+uri = "stdlib/Dates/#Dates.Time-Tuple%7BDateTime%7D"
+[[jl.method]]
+name = "Dates.Time-Tuple{Function, Vararg{Any}}"
+uri = "stdlib/Dates/#Dates.Time-Tuple%7BFunction%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Dates.Time-Tuple{TimePeriod}"
+uri = "stdlib/Dates/#Dates.Time-Tuple%7BTimePeriod%7D"
+[[jl.method]]
+name = "Dates.Week-Tuple{TimeType}"
+uri = "stdlib/Dates/#Dates.Week-Tuple%7BTimeType%7D"
+[[jl.method]]
+name = "Dates.Year-Tuple{TimeType}"
+uri = "stdlib/Dates/#Dates.Year-Tuple%7BTimeType%7D"
+[[jl.method]]
+name = "Dates.format-Tuple{TimeType, AbstractString}"
+uri = "stdlib/Dates/#Dates.format-Tuple%7BTimeType%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Dates.now-Tuple{Type{UTC}}"
+uri = "stdlib/Dates/#Dates.now-Tuple%7BType%7BUTC%7D%7D"
+[[jl.method]]
+name = "Dates.now-Tuple{}"
+uri = "stdlib/Dates/#Dates.now-Tuple%7B%7D"
+[[jl.method]]
+name = "Dates.tonext-Tuple{Function, TimeType}"
+uri = "stdlib/Dates/#Dates.tonext-Tuple%7BFunction%2C%20TimeType%7D"
+[[jl.method]]
+name = "Dates.tonext-Tuple{TimeType, Int64}"
+uri = "stdlib/Dates/#Dates.tonext-Tuple%7BTimeType%2C%20Int64%7D"
+[[jl.method]]
+name = "Dates.toprev-Tuple{Function, TimeType}"
+uri = "stdlib/Dates/#Dates.toprev-Tuple%7BFunction%2C%20TimeType%7D"
+[[jl.method]]
+name = "Dates.toprev-Tuple{TimeType, Int64}"
+uri = "stdlib/Dates/#Dates.toprev-Tuple%7BTimeType%2C%20Int64%7D"
+[[jl.method]]
+name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar, AbstractChar}"
+uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%2C%20AbstractChar%7D"
+[[jl.method]]
+name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar, Type, AbstractChar}"
+uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%2C%20Type%2C%20AbstractChar%7D"
+[[jl.method]]
+name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar, Type}"
+uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%2C%20Type%7D"
+[[jl.method]]
+name = "DelimitedFiles.readdlm-Tuple{Any, AbstractChar}"
+uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20AbstractChar%7D"
+[[jl.method]]
+name = "DelimitedFiles.readdlm-Tuple{Any, Type}"
+uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%2C%20Type%7D"
+[[jl.method]]
+name = "DelimitedFiles.readdlm-Tuple{Any}"
+uri = "stdlib/DelimitedFiles/#DelimitedFiles.readdlm-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Distributed.clear!-Tuple{Any, Any}"
+uri = "stdlib/Distributed/#Distributed.clear%21-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Distributed.clear!-Tuple{CachingPool}"
+uri = "stdlib/Distributed/#Distributed.clear%21-Tuple%7BCachingPool%7D"
+[[jl.method]]
+name = "Distributed.cluster_cookie-Tuple{Any}"
+uri = "stdlib/Distributed/#Distributed.cluster_cookie-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Distributed.cluster_cookie-Tuple{}"
+uri = "stdlib/Distributed/#Distributed.cluster_cookie-Tuple%7B%7D"
+[[jl.method]]
+name = "Distributed.procs-Tuple{Integer}"
+uri = "stdlib/Distributed/#Distributed.procs-Tuple%7BInteger%7D"
+[[jl.method]]
+name = "Distributed.procs-Tuple{SharedArray}"
+uri = "stdlib/SharedArrays/#Distributed.procs-Tuple%7BSharedArray%7D"
+[[jl.method]]
+name = "Distributed.procs-Tuple{}"
+uri = "stdlib/Distributed/#Distributed.procs-Tuple%7B%7D"
+[[jl.method]]
+name = "Distributed.remote_do-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remote_do-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remote_do-Tuple{Any, Integer, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remote_do-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remotecall-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remotecall-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remotecall-Tuple{Any, Integer, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remotecall-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remotecall_fetch-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remotecall_fetch-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remotecall_fetch-Tuple{Any, Integer, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remotecall_fetch-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remotecall_wait-Tuple{Any, AbstractWorkerPool, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remotecall_wait-Tuple%7BAny%2C%20AbstractWorkerPool%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "Distributed.remotecall_wait-Tuple{Any, Integer, Vararg{Any}}"
+uri = "stdlib/Distributed/#Distributed.remotecall_wait-Tuple%7BAny%2C%20Integer%2C%20Vararg%7BAny%7D%7D"
+[[jl.method]]
+name = "InteractiveUtils.edit-Tuple{AbstractString, Integer}"
+uri = "stdlib/InteractiveUtils/#InteractiveUtils.edit-Tuple%7BAbstractString%2C%20Integer%7D"
+[[jl.method]]
+name = "InteractiveUtils.edit-Tuple{Any}"
+uri = "stdlib/InteractiveUtils/#InteractiveUtils.edit-Tuple%7BAny%7D"
+[[jl.method]]
+name = "InteractiveUtils.less-Tuple{AbstractString}"
+uri = "stdlib/InteractiveUtils/#InteractiveUtils.less-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "InteractiveUtils.less-Tuple{Any}"
+uri = "stdlib/InteractiveUtils/#InteractiveUtils.less-Tuple%7BAny%7D"
+[[jl.method]]
+name = "LibGit2.GitObject-Tuple{LibGit2.GitTreeEntry}"
+uri = "stdlib/LibGit2/#LibGit2.GitObject-Tuple%7BLibGit2.GitTreeEntry%7D"
+[[jl.method]]
+name = "LibGit2.merge!-Tuple{GitRepo, Vector{LibGit2.GitAnnotated}, Bool}"
+uri = "stdlib/LibGit2/#LibGit2.merge%21-Tuple%7BGitRepo%2C%20Vector%7BLibGit2.GitAnnotated%7D%2C%20Bool%7D"
+[[jl.method]]
+name = "LibGit2.merge!-Tuple{GitRepo, Vector{LibGit2.GitAnnotated}}"
+uri = "stdlib/LibGit2/#LibGit2.merge%21-Tuple%7BGitRepo%2C%20Vector%7BLibGit2.GitAnnotated%7D%7D"
+[[jl.method]]
+name = "LibGit2.merge!-Tuple{GitRepo}"
+uri = "stdlib/LibGit2/#LibGit2.merge%21-Tuple%7BGitRepo%7D"
+[[jl.method]]
+name = "LibGit2.push!-Tuple{LibGit2.GitRevWalker, LibGit2.GitHash}"
+uri = "stdlib/LibGit2/#LibGit2.push%21-Tuple%7BLibGit2.GitRevWalker%2C%20LibGit2.GitHash%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.gemm-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemm-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.gemm-NTuple{5, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemm-NTuple%7B5%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.gemv-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemv-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.gemv-Tuple{Any, Any, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.gemv-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.hemm-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemm-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.hemm-NTuple{5, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemm-NTuple%7B5%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.hemv-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemv-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.hemv-Tuple{Any, Any, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.hemv-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.sbmv-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.sbmv-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.sbmv-NTuple{5, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.sbmv-NTuple%7B5%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.symm-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symm-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.symm-NTuple{5, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symm-NTuple%7B5%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.symv-NTuple{4, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symv-NTuple%7B4%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.BLAS.symv-Tuple{Any, Any, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.BLAS.symv-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "LinearAlgebra.UniformScaling-Tuple{Integer}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.UniformScaling-Tuple%7BInteger%7D"
+[[jl.method]]
+name = "LinearAlgebra.dot-Tuple{Any, Any, Any}"
+uri = "stdlib/LinearAlgebra/#LinearAlgebra.dot-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Sockets.connect-Tuple{AbstractString}"
+uri = "stdlib/Sockets/#Sockets.connect-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Sockets.connect-Tuple{ClusterManager, Int64, WorkerConfig}"
+uri = "stdlib/Distributed/#Sockets.connect-Tuple%7BClusterManager%2C%20Int64%2C%20WorkerConfig%7D"
+[[jl.method]]
+name = "Sockets.connect-Tuple{TCPSocket, Integer}"
+uri = "stdlib/Sockets/#Sockets.connect-Tuple%7BTCPSocket%2C%20Integer%7D"
+[[jl.method]]
+name = "Sockets.listen-Tuple{AbstractString}"
+uri = "stdlib/Sockets/#Sockets.listen-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Sockets.listen-Tuple{Any}"
+uri = "stdlib/Sockets/#Sockets.listen-Tuple%7BAny%7D"
+
 [[jl.module]]
 name = "Base"
 uri = "base/base/#$"
@@ -5472,340 +5862,24 @@ uri = "stdlib/Random/#$"
 name = "Sockets.Sockets"
 uri = "stdlib/Sockets/#$"
 
-[[jl.obj]]
-name = "&&"
-uri = "base/math/#%26%26"
-[[jl.obj]]
-name = "..."
-uri = "base/base/#$"
-[[jl.obj]]
-name = ";"
-uri = "base/base/#%3B"
-[[jl.obj]]
-name = "="
-uri = "base/base/#%3D"
-[[jl.obj]]
-name = "?:"
-uri = "base/base/#%3F%3A"
-[[jl.obj]]
+[[jl.type]]
 name = "ArgTools.ArgRead"
 uri = "stdlib/ArgTools/#$"
-[[jl.obj]]
+[[jl.type]]
 name = "ArgTools.ArgWrite"
 uri = "stdlib/ArgTools/#$"
-[[jl.obj]]
-name = "Base.ARGS"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.C_NULL"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.DEPOT_PATH"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.DL_LOAD_PATH"
-uri = "stdlib/Libdl/#$"
-[[jl.obj]]
-name = "Base.ENDIAN_BOM"
-uri = "base/io-network/#$"
-[[jl.obj]]
-name = "Base.ENV"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Base.Inf"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.Inf16"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.Inf32"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.Inf64"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.LOAD_PATH"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Libc.Libdl.RTLD_NOW"
-uri = "stdlib/Libdl/#$"
-[[jl.obj]]
-name = "Base.Libc.Libdl.dlext"
-uri = "stdlib/Libdl/#$"
-[[jl.obj]]
-name = "Base.MainInclude.ans"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Base.MainInclude.err"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Base.MathConstants.catalan"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.MathConstants.eulergamma"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.MathConstants.golden"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.MathConstants.pi"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.MathConstants.ℯ"
-uri = "base/numbers/#Base.MathConstants.%E2%84%AF"
-[[jl.obj]]
-name = "Base.NaN"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.NaN16"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.NaN32"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.NaN64"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.Order.Forward"
-uri = "base/sort/#$"
-[[jl.obj]]
-name = "Base.Order.Reverse"
-uri = "base/sort/#$"
-[[jl.obj]]
-name = "Base.PROGRAM_FILE"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundDown"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundFromZero"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundNearest"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundNearestTiesAway"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundNearestTiesUp"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundToZero"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Rounding.RoundUp"
-uri = "base/math/#$"
-[[jl.obj]]
-name = "Base.Sort.InsertionSort"
-uri = "base/sort/#$"
-[[jl.obj]]
-name = "Base.Sort.MergeSort"
-uri = "base/sort/#$"
-[[jl.obj]]
-name = "Base.Sort.QuickSort"
-uri = "base/sort/#$"
-[[jl.obj]]
-name = "Base.Sys.ARCH"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Sys.BINDIR"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Sys.CPU_THREADS"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Sys.KERNEL"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Sys.MACHINE"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.Sys.STDLIB"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Base.Sys.WORD_SIZE"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.VERSION"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Base.devnull"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Base.im"
-uri = "base/numbers/#$"
-[[jl.obj]]
-name = "Base.missing"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Base.stderr"
-uri = "base/io-network/#$"
-[[jl.obj]]
-name = "Base.stdin"
-uri = "base/io-network/#$"
-[[jl.obj]]
-name = "Base.stdout"
-uri = "base/io-network/#$"
-[[jl.obj]]
-name = "Core.Vararg"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "Core.nothing"
-uri = "base/constants/#$"
-[[jl.obj]]
-name = "Core.undef"
-uri = "base/arrays/#$"
-[[jl.obj]]
-name = "Dates.ISODateFormat"
-uri = "stdlib/Dates/#$"
-[[jl.obj]]
-name = "Dates.ISODateTimeFormat"
-uri = "stdlib/Dates/#$"
-[[jl.obj]]
-name = "Dates.ISOTimeFormat"
-uri = "stdlib/Dates/#$"
-[[jl.obj]]
-name = "Dates.RFC1123Format"
-uri = "stdlib/Dates/#$"
-[[jl.obj]]
-name = "LinearAlgebra.I"
-uri = "stdlib/LinearAlgebra/#$"
-[[jl.obj]]
-name = "Logging.Debug"
-uri = "stdlib/Logging/#$"
-[[jl.obj]]
-name = "Logging.Error"
-uri = "stdlib/Logging/#$"
-[[jl.obj]]
-name = "Logging.Info"
-uri = "stdlib/Logging/#$"
-[[jl.obj]]
-name = "Logging.Warn"
-uri = "stdlib/Logging/#$"
-[[jl.obj]]
-name = "Union{}"
-uri = "base/base/#Union%7B%7D"
-[[jl.obj]]
-name = "__init__"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "__module__"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "__source__"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "abstract type"
-uri = "base/base/#abstract%20type"
-[[jl.obj]]
-name = "as"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "atomic"
-uri = "base/multi-threading/#$"
-[[jl.obj]]
-name = "baremodule"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "begin"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "break"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "ccall"
-uri = "base/c/#$"
-[[jl.obj]]
-name = "const"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "continue"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "do"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "end"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "export"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "finally"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "for"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "function"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "global"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "if"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "import"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "let"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "local"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "macro"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "module"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "mutable struct"
-uri = "base/base/#mutable%20struct"
-[[jl.obj]]
-name = "new"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "outer"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "primitive type"
-uri = "base/base/#primitive%20type"
-[[jl.obj]]
-name = "quote"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "return"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "struct"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "try"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "using"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "var\"name\""
-uri = "base/base/#var%22name%22"
-[[jl.obj]]
-name = "where"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "while"
-uri = "base/base/#$"
-[[jl.obj]]
-name = "||"
-uri = "base/math/#%7C%7C"
-
 [[jl.type]]
 name = "Base.AbstractChannel"
 uri = "base/parallel/#$"
 [[jl.type]]
 name = "Base.AbstractDict"
 uri = "base/collections/#$"
+[[jl.type]]
+name = "Base.AbstractIrrational"
+uri = "base/numbers/#$"
+[[jl.type]]
+name = "Base.AbstractLock"
+uri = "base/parallel/#$"
 [[jl.type]]
 name = "Base.AbstractMatrix"
 uri = "base/arrays/#$"
@@ -5828,17 +5902,8 @@ uri = "base/arrays/#$"
 name = "Base.AsyncCondition"
 uri = "base/base/#$"
 [[jl.type]]
-name = "Base.AsyncCondition-Tuple{Function}"
-uri = "base/base/#Base.AsyncCondition-Tuple%7BFunction%7D"
-[[jl.type]]
 name = "Base.BitArray"
 uri = "base/arrays/#$"
-[[jl.type]]
-name = "Base.BitArray-Tuple{Any}"
-uri = "base/arrays/#Base.BitArray-Tuple%7BAny%7D"
-[[jl.type]]
-name = "Base.BitArray-Tuple{UndefInitializer, Vararg{Integer}}"
-uri = "base/arrays/#Base.BitArray-Tuple%7BUndefInitializer%2C%20Vararg%7BInteger%7D%7D"
 [[jl.type]]
 name = "Base.BitSet"
 uri = "base/collections/#$"
@@ -5847,6 +5912,9 @@ name = "Base.Broadcast.AbstractArrayStyle"
 uri = "base/arrays/#$"
 [[jl.type]]
 name = "Base.Broadcast.ArrayStyle"
+uri = "base/arrays/#$"
+[[jl.type]]
+name = "Base.Broadcast.BroadcastStyle"
 uri = "base/arrays/#$"
 [[jl.type]]
 name = "Base.Broadcast.DefaultArrayStyle"
@@ -5866,9 +5934,6 @@ uri = "base/c/#$"
 [[jl.type]]
 name = "Base.Channel"
 uri = "base/parallel/#$"
-[[jl.type]]
-name = "Base.Channel-Tuple{Function}"
-uri = "base/parallel/#Base.Channel-Tuple%7BFunction%7D"
 [[jl.type]]
 name = "Base.Cint"
 uri = "base/c/#$"
@@ -5984,20 +6049,11 @@ uri = "base/base/#$"
 name = "Base.GMP.BigInt"
 uri = "base/numbers/#$"
 [[jl.type]]
-name = "Base.GMP.BigInt-Tuple{Any}"
-uri = "base/numbers/#Base.GMP.BigInt-Tuple%7BAny%7D"
-[[jl.type]]
 name = "Base.IOBuffer"
 uri = "base/io-network/#$"
 [[jl.type]]
 name = "Base.IOContext"
 uri = "base/io-network/#$"
-[[jl.type]]
-name = "Base.IOContext-Tuple{IO, IOContext}"
-uri = "base/io-network/#Base.IOContext-Tuple%7BIO%2C%20IOContext%7D"
-[[jl.type]]
-name = "Base.IOContext-Tuple{IO, Pair}"
-uri = "base/io-network/#Base.IOContext-Tuple%7BIO%2C%20Pair%7D"
 [[jl.type]]
 name = "Base.IOStream"
 uri = "base/io-network/#$"
@@ -6014,8 +6070,17 @@ uri = "base/arrays/#$"
 name = "Base.IndexLinear"
 uri = "base/arrays/#$"
 [[jl.type]]
+name = "Base.IndexStyle"
+uri = "base/arrays/#$"
+[[jl.type]]
 name = "Base.Irrational"
 uri = "base/numbers/#$"
+[[jl.type]]
+name = "Base.IteratorEltype"
+uri = "base/collections/#$"
+[[jl.type]]
+name = "Base.IteratorSize"
+uri = "base/collections/#$"
 [[jl.type]]
 name = "Base.Iterators.Stateful"
 uri = "base/iterators/#$"
@@ -6047,20 +6112,8 @@ uri = "base/arrays/#$"
 name = "Base.MPFR.BigFloat"
 uri = "base/numbers/#$"
 [[jl.type]]
-name = "Base.MPFR.BigFloat-Tuple{Any, RoundingMode}"
-uri = "base/numbers/#Base.MPFR.BigFloat-Tuple%7BAny%2C%20RoundingMode%7D"
-[[jl.type]]
 name = "Base.Matrix"
 uri = "base/arrays/#$"
-[[jl.type]]
-name = "Base.Matrix-Tuple{Missing, Any, Any}"
-uri = "base/arrays/#Base.Matrix-Tuple%7BMissing%2C%20Any%2C%20Any%7D"
-[[jl.type]]
-name = "Base.Matrix-Tuple{Nothing, Any, Any}"
-uri = "base/arrays/#Base.Matrix-Tuple%7BNothing%2C%20Any%2C%20Any%7D"
-[[jl.type]]
-name = "Base.Matrix-Tuple{UndefInitializer, Any, Any}"
-uri = "base/arrays/#Base.Matrix-Tuple%7BUndefInitializer%2C%20Any%2C%20Any%7D"
 [[jl.type]]
 name = "Base.Meta.ParseError"
 uri = "base/base/#$"
@@ -6070,6 +6123,9 @@ uri = "base/base/#$"
 [[jl.type]]
 name = "Base.MissingException"
 uri = "base/base/#$"
+[[jl.type]]
+name = "Base.Multimedia.AbstractDisplay"
+uri = "base/io-network/#$"
 [[jl.type]]
 name = "Base.Multimedia.MIME"
 uri = "base/io-network/#$"
@@ -6084,6 +6140,9 @@ name = "Base.Order.By"
 uri = "base/sort/#$"
 [[jl.type]]
 name = "Base.Order.Lt"
+uri = "base/sort/#$"
+[[jl.type]]
+name = "Base.Order.Ordering"
 uri = "base/sort/#$"
 [[jl.type]]
 name = "Base.Order.Perm"
@@ -6191,9 +6250,6 @@ uri = "base/multi-threading/#$"
 name = "Base.Timer"
 uri = "base/base/#$"
 [[jl.type]]
-name = "Base.Timer-Tuple{Function, Real}"
-uri = "base/base/#Base.Timer-Tuple%7BFunction%2C%20Real%7D"
-[[jl.type]]
 name = "Base.UnitRange"
 uri = "base/collections/#$"
 [[jl.type]]
@@ -6205,15 +6261,6 @@ uri = "base/arrays/#$"
 [[jl.type]]
 name = "Base.Vector"
 uri = "base/arrays/#$"
-[[jl.type]]
-name = "Base.Vector-Tuple{Missing, Any}"
-uri = "base/arrays/#Base.Vector-Tuple%7BMissing%2C%20Any%7D"
-[[jl.type]]
-name = "Base.Vector-Tuple{Nothing, Any}"
-uri = "base/arrays/#Base.Vector-Tuple%7BNothing%2C%20Any%7D"
-[[jl.type]]
-name = "Base.Vector-Tuple{UndefInitializer, Any}"
-uri = "base/arrays/#Base.Vector-Tuple%7BUndefInitializer%2C%20Any%7D"
 [[jl.type]]
 name = "Base.VersionNumber"
 uri = "base/base/#$"
@@ -6230,20 +6277,23 @@ uri = "stdlib/Base64/#$"
 name = "Core.AbstractArray"
 uri = "base/arrays/#$"
 [[jl.type]]
+name = "Core.AbstractChar"
+uri = "base/strings/#$"
+[[jl.type]]
+name = "Core.AbstractFloat"
+uri = "base/numbers/#$"
+[[jl.type]]
+name = "Core.AbstractString"
+uri = "base/strings/#$"
+[[jl.type]]
+name = "Core.Any"
+uri = "base/base/#$"
+[[jl.type]]
 name = "Core.ArgumentError"
 uri = "base/base/#$"
 [[jl.type]]
 name = "Core.Array"
 uri = "base/arrays/#$"
-[[jl.type]]
-name = "Core.Array-Tuple{Missing, Any}"
-uri = "base/arrays/#Core.Array-Tuple%7BMissing%2C%20Any%7D"
-[[jl.type]]
-name = "Core.Array-Tuple{Nothing, Any}"
-uri = "base/arrays/#Core.Array-Tuple%7BNothing%2C%20Any%7D"
-[[jl.type]]
-name = "Core.Array-Tuple{UndefInitializer, Any}"
-uri = "base/arrays/#Core.Array-Tuple%7BUndefInitializer%2C%20Any%7D"
 [[jl.type]]
 name = "Core.AssertionError"
 uri = "base/base/#$"
@@ -6287,14 +6337,11 @@ uri = "base/numbers/#$"
 name = "Core.Float32"
 uri = "base/numbers/#$"
 [[jl.type]]
-name = "Core.Float32-Tuple{Any}"
-uri = "base/numbers/#Core.Float32-Tuple%7BAny%7D"
-[[jl.type]]
 name = "Core.Float64"
 uri = "base/numbers/#$"
 [[jl.type]]
-name = "Core.Float64-Tuple{Any}"
-uri = "base/numbers/#Core.Float64-Tuple%7BAny%7D"
+name = "Core.Function"
+uri = "base/base/#$"
 [[jl.type]]
 name = "Core.InexactError"
 uri = "base/base/#$"
@@ -6315,6 +6362,9 @@ name = "Core.Int64"
 uri = "base/numbers/#$"
 [[jl.type]]
 name = "Core.Int8"
+uri = "base/numbers/#$"
+[[jl.type]]
+name = "Core.Integer"
 uri = "base/numbers/#$"
 [[jl.type]]
 name = "Core.InterruptException"
@@ -6338,6 +6388,9 @@ uri = "base/base/#$"
 name = "Core.Nothing"
 uri = "base/base/#$"
 [[jl.type]]
+name = "Core.Number"
+uri = "base/numbers/#$"
+[[jl.type]]
 name = "Core.OutOfMemoryError"
 uri = "base/base/#$"
 [[jl.type]]
@@ -6356,19 +6409,19 @@ uri = "base/base/#$"
 name = "Core.ReadOnlyMemoryError"
 uri = "base/base/#$"
 [[jl.type]]
+name = "Core.Real"
+uri = "base/numbers/#$"
+[[jl.type]]
 name = "Core.Ref"
 uri = "base/c/#$"
+[[jl.type]]
+name = "Core.Signed"
+uri = "base/numbers/#$"
 [[jl.type]]
 name = "Core.StackOverflowError"
 uri = "base/base/#$"
 [[jl.type]]
-name = "Core.String-Tuple{AbstractString}"
-uri = "base/strings/#Core.String-Tuple%7BAbstractString%7D"
-[[jl.type]]
 name = "Core.Symbol"
-uri = "base/base/#$"
-[[jl.type]]
-name = "Core.Symbol-Tuple"
 uri = "base/base/#$"
 [[jl.type]]
 name = "Core.Task"
@@ -6416,35 +6469,17 @@ uri = "base/base/#$"
 name = "Core.UnionAll"
 uri = "base/base/#$"
 [[jl.type]]
+name = "Core.Unsigned"
+uri = "base/numbers/#$"
+[[jl.type]]
 name = "Core.WeakRef"
 uri = "base/base/#$"
 [[jl.type]]
 name = "Dates.CompoundPeriod"
 uri = "stdlib/Dates/#$"
 [[jl.type]]
-name = "Dates.CompoundPeriod-Tuple{Vector{<:Period}}"
-uri = "stdlib/Dates/#Dates.CompoundPeriod-Tuple%7BVector%7B%3C%3APeriod%7D%7D"
-[[jl.type]]
 name = "Dates.Date"
 uri = "stdlib/Dates/#$"
-[[jl.type]]
-name = "Dates.Date-Tuple{AbstractString, AbstractString}"
-uri = "stdlib/Dates/#Dates.Date-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.type]]
-name = "Dates.Date-Tuple{AbstractString, DateFormat}"
-uri = "stdlib/Dates/#Dates.Date-Tuple%7BAbstractString%2C%20DateFormat%7D"
-[[jl.type]]
-name = "Dates.Date-Tuple{Function, Any, Any, Any}"
-uri = "stdlib/Dates/#Dates.Date-Tuple%7BFunction%2C%20Any%2C%20Any%2C%20Any%7D"
-[[jl.type]]
-name = "Dates.Date-Tuple{Int64, Int64, Int64}"
-uri = "stdlib/Dates/#Dates.Date-Tuple%7BInt64%2C%20Int64%2C%20Int64%7D"
-[[jl.type]]
-name = "Dates.Date-Tuple{Period}"
-uri = "stdlib/Dates/#Dates.Date-Tuple%7BPeriod%7D"
-[[jl.type]]
-name = "Dates.Date-Tuple{TimeType}"
-uri = "stdlib/Dates/#Dates.Date-Tuple%7BTimeType%7D"
 [[jl.type]]
 name = "Dates.DateFormat"
 uri = "stdlib/Dates/#$"
@@ -6452,68 +6487,20 @@ uri = "stdlib/Dates/#$"
 name = "Dates.DateTime"
 uri = "stdlib/Dates/#$"
 [[jl.type]]
-name = "Dates.DateTime-NTuple{7, Int64}"
-uri = "stdlib/Dates/#Dates.DateTime-NTuple%7B7%2C%20Int64%7D"
+name = "Dates.Instant"
+uri = "stdlib/Dates/#$"
 [[jl.type]]
-name = "Dates.DateTime-Tuple{AbstractString, AbstractString}"
-uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.type]]
-name = "Dates.DateTime-Tuple{AbstractString, DateFormat}"
-uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BAbstractString%2C%20DateFormat%7D"
-[[jl.type]]
-name = "Dates.DateTime-Tuple{Function, Vararg{Any}}"
-uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BFunction%2C%20Vararg%7BAny%7D%7D"
-[[jl.type]]
-name = "Dates.DateTime-Tuple{Period}"
-uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BPeriod%7D"
-[[jl.type]]
-name = "Dates.DateTime-Tuple{TimeType}"
-uri = "stdlib/Dates/#Dates.DateTime-Tuple%7BTimeType%7D"
-[[jl.type]]
-name = "Dates.Day-Tuple{TimeType}"
-uri = "stdlib/Dates/#Dates.Day-Tuple%7BTimeType%7D"
-[[jl.type]]
-name = "Dates.Hour-Tuple{DateTime}"
-uri = "stdlib/Dates/#Dates.Hour-Tuple%7BDateTime%7D"
-[[jl.type]]
-name = "Dates.Microsecond-Tuple{Time}"
-uri = "stdlib/Dates/#Dates.Microsecond-Tuple%7BTime%7D"
-[[jl.type]]
-name = "Dates.Millisecond-Tuple{DateTime}"
-uri = "stdlib/Dates/#Dates.Millisecond-Tuple%7BDateTime%7D"
-[[jl.type]]
-name = "Dates.Minute-Tuple{DateTime}"
-uri = "stdlib/Dates/#Dates.Minute-Tuple%7BDateTime%7D"
-[[jl.type]]
-name = "Dates.Month-Tuple{TimeType}"
-uri = "stdlib/Dates/#Dates.Month-Tuple%7BTimeType%7D"
-[[jl.type]]
-name = "Dates.Nanosecond-Tuple{Time}"
-uri = "stdlib/Dates/#Dates.Nanosecond-Tuple%7BTime%7D"
-[[jl.type]]
-name = "Dates.Second-Tuple{DateTime}"
-uri = "stdlib/Dates/#Dates.Second-Tuple%7BDateTime%7D"
+name = "Dates.Period"
+uri = "stdlib/Dates/#$"
 [[jl.type]]
 name = "Dates.Time"
 uri = "stdlib/Dates/#$"
 [[jl.type]]
-name = "Dates.Time-NTuple{5, Int64}"
-uri = "stdlib/Dates/#Dates.Time-NTuple%7B5%2C%20Int64%7D"
+name = "Dates.TimeType"
+uri = "stdlib/Dates/#$"
 [[jl.type]]
-name = "Dates.Time-Tuple{AbstractString, AbstractString}"
-uri = "stdlib/Dates/#Dates.Time-Tuple%7BAbstractString%2C%20AbstractString%7D"
-[[jl.type]]
-name = "Dates.Time-Tuple{AbstractString, DateFormat}"
-uri = "stdlib/Dates/#Dates.Time-Tuple%7BAbstractString%2C%20DateFormat%7D"
-[[jl.type]]
-name = "Dates.Time-Tuple{DateTime}"
-uri = "stdlib/Dates/#Dates.Time-Tuple%7BDateTime%7D"
-[[jl.type]]
-name = "Dates.Time-Tuple{Function, Vararg{Any}}"
-uri = "stdlib/Dates/#Dates.Time-Tuple%7BFunction%2C%20Vararg%7BAny%7D%7D"
-[[jl.type]]
-name = "Dates.Time-Tuple{TimePeriod}"
-uri = "stdlib/Dates/#Dates.Time-Tuple%7BTimePeriod%7D"
+name = "Dates.TimeZone"
+uri = "stdlib/Dates/#$"
 [[jl.type]]
 name = "Dates.UTC"
 uri = "stdlib/Dates/#$"
@@ -6521,13 +6508,13 @@ uri = "stdlib/Dates/#$"
 name = "Dates.UTInstant"
 uri = "stdlib/Dates/#$"
 [[jl.type]]
-name = "Dates.Week-Tuple{TimeType}"
-uri = "stdlib/Dates/#Dates.Week-Tuple%7BTimeType%7D"
-[[jl.type]]
-name = "Dates.Year-Tuple{TimeType}"
-uri = "stdlib/Dates/#Dates.Year-Tuple%7BTimeType%7D"
+name = "Distributed.AbstractWorkerPool"
+uri = "stdlib/Distributed/#$"
 [[jl.type]]
 name = "Distributed.CachingPool"
+uri = "stdlib/Distributed/#$"
+[[jl.type]]
+name = "Distributed.ClusterManager"
 uri = "stdlib/Distributed/#$"
 [[jl.type]]
 name = "Distributed.Future"
@@ -6615,6 +6602,9 @@ name = "LibGit2.GitConfig"
 uri = "stdlib/LibGit2/#$"
 [[jl.type]]
 name = "LibGit2.GitHash"
+uri = "stdlib/LibGit2/#$"
+[[jl.type]]
+name = "LibGit2.GitObject"
 uri = "stdlib/LibGit2/#$"
 [[jl.type]]
 name = "LibGit2.GitRemote"
@@ -6782,9 +6772,6 @@ uri = "stdlib/LinearAlgebra/#$"
 name = "LinearAlgebra.UniformScaling"
 uri = "stdlib/LinearAlgebra/#$"
 [[jl.type]]
-name = "LinearAlgebra.UniformScaling-Tuple{Integer}"
-uri = "stdlib/LinearAlgebra/#LinearAlgebra.UniformScaling-Tuple%7BInteger%7D"
-[[jl.type]]
 name = "LinearAlgebra.UnitLowerTriangular"
 uri = "stdlib/LinearAlgebra/#$"
 [[jl.type]]
@@ -6799,6 +6786,9 @@ uri = "stdlib/LinearAlgebra/#$"
 [[jl.type]]
 name = "LinearAlgebra.ZeroPivotException"
 uri = "stdlib/LinearAlgebra/#$"
+[[jl.type]]
+name = "Logging.AbstractLogger"
+uri = "stdlib/Logging/#$"
 [[jl.type]]
 name = "Logging.ConsoleLogger"
 uri = "stdlib/Logging/#$"
@@ -6826,6 +6816,9 @@ uri = "stdlib/REPL/#$"
 [[jl.type]]
 name = "REPL.TerminalMenus.RadioMenu"
 uri = "stdlib/REPL/#$"
+[[jl.type]]
+name = "Random.AbstractRNG"
+uri = "stdlib/Random/#$"
 [[jl.type]]
 name = "Random.MersenneTwister"
 uri = "stdlib/Random/#$"
@@ -6905,6 +6898,9 @@ uri = "stdlib/SharedArrays/#$"
 name = "Sockets.DNSError"
 uri = "stdlib/Sockets/#$"
 [[jl.type]]
+name = "Sockets.IPAddr"
+uri = "stdlib/Sockets/#$"
+[[jl.type]]
 name = "Sockets.IPv4"
 uri = "stdlib/Sockets/#$"
 [[jl.type]]
@@ -6969,6 +6965,12 @@ name = "Test.LogRecord"
 uri = "stdlib/Test/#$"
 [[jl.type]]
 name = "Test.Pass"
+uri = "stdlib/Test/#$"
+[[jl.type]]
+name = "Test.Result"
+uri = "stdlib/Test/#$"
+[[jl.type]]
+name = "Test.TestLogger"
 uri = "stdlib/Test/#$"
 [[jl.type]]
 name = "Test.TestSetException"
@@ -7514,6 +7516,7 @@ uri = "stdlib/UUIDs/"
 dispname = "Unicode"
 name = "stdlib/Unicode"
 uri = "stdlib/Unicode/"
+
 [[std.label]]
 dispname = "\"Value types\""
 name = "\"Value-types\""
