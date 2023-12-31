@@ -1,30 +1,30 @@
 [Inventory]
-format = "DocInventories v1"
+format = "DocInventories v0"
 project = "DocInventories.jl"
 version = "0.1.0+dev"
 
-[[jl.func]]
+[[jl.function]]
 name = "Base.filter-Tuple{Any, Inventory}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.auto_mime-Tuple{Any}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.dispname-Tuple{InventoryItem}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.find_in_inventory-Tuple{Any, Any}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.spec-Tuple{InventoryItem}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.uri-Tuple{Inventory, Any}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.uri-Tuple{InventoryItem}"
 uri = "#readme"
-[[jl.func]]
+[[jl.function]]
 name = "DocInventories.write_inventory"
 uri = "#readme"
 

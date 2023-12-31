@@ -11,7 +11,7 @@ MarkdownAST = "d0879d2d-cac2-40c8-9cee-1863dc0c7391"
 
 [compat]
 Documenter = "1"
-DocInventories =  "0.1"
+DocInventories =  ">=0.1"
 Markdown = "1"
 MarkdownAST = "0.1.2"
 julia = "1.6"

@@ -1,5 +1,5 @@
 using Documenter: Plugin
-using DocInventories: Inventory, uri
+using DocInventories: Inventory, uri, spec, split_url
 
 
 """
@@ -87,6 +87,10 @@ The `InterLinks` object also acts as a (read-only) ordered dictionary so that,
 e.g., `links["project1"]` returns the [`DocInventories.Inventory`](@extref) for
 that project.
 
+# Methods
+
+* [`find_in_interlinks(links, extref)`](@ref) – find the URL for an `extref`
+
 # See also
 
 The `InterLinks` mapping is deliberately reminiscent of the
@@ -118,24 +122,6 @@ struct InterLinks <: Plugin
 end
 
 
-# split off last filename from url
-function _split_url(url)
-    url_match = match(r"^https?://", url)
-    if isnothing(url_match)
-        msg = "Url $(repr(url)) must start with 'http://' or 'https://'"
-        throw(ArgumentError(msg))
-    end
-    offset = length(url_match.match)
-    last_slash_index = findlast('/', url[1+offset:end])
-    if isnothing(last_slash_index)
-        return (url, "")
-    else
-        l = offset + last_slash_index
-        return url[1:l], url[(l+1):end]
-    end
-end
-
-
 function InterLinks(mapping...; _objects_inv="objects.inv")
     names = String[]
     inventories_list = Inventory[]
@@ -145,7 +131,7 @@ function InterLinks(mapping...; _objects_inv="objects.inv")
                 if endswith(spec, "/")
                     spec = (spec, spec * _objects_inv)
                 else
-                    root_url, filename = _split_url(spec)
+                    root_url, filename = split_url(spec)
                     if isempty(filename)
                         spec = (spec, spec * "/" * _objects_inv)
                     else
@@ -172,7 +158,7 @@ function InterLinks(mapping...; _objects_inv="objects.inv")
                         break  # stop after first successful source
                     catch exc
                         msg = "Failed to load inventory $(repr(name)) from possible source $(repr(source))."
-                        @warn msg exception=(exc, catch_backtrace())
+                        @warn msg exception = (exc, catch_backtrace())
                     end
                 end
             end
@@ -217,6 +203,31 @@ struct InventoryItemNotFoundError <: Exception
 end
 
 
+function (links::InterLinks)(search)
+    results = String[]
+    for (name, inventory) in links
+        for item in inventory(search)
+            push!(results, "@extref $name $(spec(item))")
+        end
+    end
+    return results
+end
+
+
+"""Find an `@extref` link in any of the [`InterLinks`](@ref) inventories.
+
+```julia
+url = find_in_interlinks(links, extref)
+```
+
+finds `extref` in `links` and returns the full URL that resolves the link.
+
+# Arguments
+
+* `links`: the [`InterLinks`] instance to resolve the reference in
+* `extref`: a string of the form
+   `"@extref [inventory] [[:domain][:role]:]name"`
+"""
 function find_in_interlinks(links::InterLinks, extref::AbstractString)
     m = match(links.rx, extref)
     msg = "Invalid query $(repr(extref)). Should be \"@extref [inventory] [[:domain][:role]:]name\" where the optional \"inventory\" is one of $(keys(links))."
@@ -233,11 +244,8 @@ function find_in_interlinks(links::InterLinks, extref::AbstractString)
                 # the recommended approach of naming their inventories in
                 # InterLinks according to the project name.
                 try
-                    project_name = chop(
-                        m["name"][findfirst(r"^`(\w+)\.", m["name"])],
-                        head=1,
-                        tail=1,
-                    )
+                    project_name =
+                        chop(m["name"][findfirst(r"^`(\w+)\.", m["name"])], head=1, tail=1,)
                     return _uri(links, project_name, m["spec"])
                 catch exc
                     msg = "Failed short-circuit resolution"

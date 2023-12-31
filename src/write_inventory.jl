@@ -1,8 +1,8 @@
 using Documenter.Builder: DocumentPipeline
 using Documenter.HTMLWriter: HTML, HTMLContext, get_url, pretty_url, getpage, pagetitle
 using Documenter.MDFlatten: mdflatten
-using Documenter: Documenter, anchor_fragment
-using DocInventories: Inventory, InventoryItem, get_inventory_role
+using Documenter: Documenter, anchor_fragment, doccat
+using DocInventories: Inventory, InventoryItem, save as save_inventory
 import Documenter: Selectors
 
 
@@ -65,7 +65,7 @@ end
 function get_navnode_dispname(navnode, ctx)
     dispname = navnode.title_override
     if isnothing(dispname)
-        page  = getpage(ctx, navnode)
+        page = getpage(ctx, navnode)
         title_node = pagetitle(page.mdast)
         if isnothing(title_node)
             dispname = "-"
@@ -127,24 +127,12 @@ function Selectors.runner(::Type{WriteInventory}, doc::Documenter.Document)
             continue
         end
         uri = get_inventory_uri(doc, ctx, name, anchor)
-        role = "obj"
-        try
-            obj = getproperty(anchor.object.binding.mod, anchor.object.binding.var)
-            role = get_inventory_role(obj)
-        catch exc
-            # This shouldn't generally happen, but it can, if a package is
-            # doing something "weird". A prime example is how Julia itself
-            # documents its keywords in `base/docs/basedocs.jl`. Not really
-            # something to worry about: we can just identify these as `obj`
-            #!format: off
-            @debug "Cannot get object" mod=anchor.object.binding.mod var=anchor.object.binding.var exception=(exc, catch_backtrace())
-            #!format: on
-        end
+        role = lowercase(doccat(anchor.object))
         dispname = "-"
         push!(inventory, InventoryItem(name, domain, role, priority, uri, dispname))
     end
 
     filename = joinpath(doc.user.build, "objects.inv")
-    write(filename, inventory)
+    save_inventory(filename, inventory)
 
 end

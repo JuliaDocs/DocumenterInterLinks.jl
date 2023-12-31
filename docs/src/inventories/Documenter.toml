@@ -1,451 +1,451 @@
 [Inventory]
-format = "DocInventories v1"
+format = "DocInventories v0"
 project = "Documenter.jl"
 version = ""
 
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.CheckDocument"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.CrossReferences"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.Doctest"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.DocumentPipeline"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.ExpandTemplates"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.Populate"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.RenderDocument"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Builder.SetupBuildDirectory"
 uri = "lib/internals/builder/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.DeployConfig"
 uri = "man/hosting/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.AutoDocsBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.ContentsBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.DocsBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.EvalBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.ExampleBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.ExpanderPipeline"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.IndexBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.MetaBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.NestedExpanderPipeline"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.REPLBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.SetupBlocks"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Expanders.TrackHeaders"
 uri = "lib/internals/expanders/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Plugin"
 uri = "lib/internals/writers/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Remotes.Remote"
 uri = "lib/remote-links/#$"
-[[jl.abstract]]
+[[jl.type]]
 name = "Documenter.Selectors.AbstractSelector"
 uri = "lib/internals/selectors/#$"
 
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DOM.escapehtml-Tuple{AbstractString}"
 uri = "lib/internals/dom/#Documenter.DOM.escapehtml-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DOM.flatten!-Tuple{Any, Any, Union{AbstractString, Symbol, Documenter.DOM.Node, Pair}}"
 uri = "lib/internals/dom/#Documenter.DOM.flatten%21-Tuple%7BAny%2C%20Any%2C%20Union%7BAbstractString%2C%20Symbol%2C%20Documenter.DOM.Node%2C%20Pair%7D%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocMeta.getdocmeta"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocMeta.initdocmeta!"
 uri = "lib/internals/docmeta/#Documenter.DocMeta.initdocmeta%21"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocMeta.setdocmeta!"
 uri = "lib/public/#Documenter.DocMeta.setdocmeta%21"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocSystem.binding-Tuple{Any}"
 uri = "lib/internals/docsystem/#Documenter.DocSystem.binding-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocSystem.convertmeta-Tuple{IdDict{Any, Any}}"
 uri = "lib/internals/docsystem/#Documenter.DocSystem.convertmeta-Tuple%7BIdDict%7BAny%2C%20Any%7D%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocSystem.docstr-Tuple{Markdown.MD}"
 uri = "lib/internals/docsystem/#Documenter.DocSystem.docstr-Tuple%7BMarkdown.MD%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocSystem.getspecificdocs"
 uri = "lib/internals/docsystem/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocSystem.multidoc"
 uri = "lib/internals/docsystem/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.DocSystem.parsedoc-Tuple{Base.Docs.DocStr}"
 uri = "lib/internals/docsystem/#Documenter.DocSystem.parsedoc-Tuple%7BBase.Docs.DocStr%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.MathJax"
 uri = "lib/internals/writers/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.RD.highlightjs!"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.RD.highlightjs%21"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.asset"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.canonical_url-Tuple{Any, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.canonical_url-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.collect_subsections-Tuple{MarkdownAST.Node}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.collect_subsections-Tuple%7BMarkdownAST.Node%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.copy_asset-Tuple{Any, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.copy_asset-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.dataslug-Tuple{Union{AbstractString, Vector{UInt8}}}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.dataslug-Tuple%7BUnion%7BAbstractString%2C%20Vector%7BUInt8%7D%7D%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.edit_link-Tuple{Any, Any, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.edit_link-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.format_units-Tuple{Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.format_units-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.get_url-Tuple{Any, AbstractString}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.get_url-Tuple%7BAny%2C%20AbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.get_url-Tuple{Any, Documenter.NavNode}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.get_url-Tuple%7BAny%2C%20Documenter.NavNode%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.getpage-Tuple{Documenter.HTMLWriter.HTMLContext, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.getpage-Tuple%7BDocumenter.HTMLWriter.HTMLContext%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.navhref-Tuple{Any, Any, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.navhref-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.navitem-Tuple{Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.navitem-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.pagetitle-Tuple{MarkdownAST.Node}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.pagetitle-Tuple%7BMarkdownAST.Node%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.pretty_url-Tuple{Any, AbstractString}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.pretty_url-Tuple%7BAny%2C%20AbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.relhref-Tuple{Any, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.relhref-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.render_html"
 uri = "lib/internals/writers/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.render_page-Tuple{Any, Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.render_page-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.render_settings-Tuple{Any}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.render_settings-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.write_data_file-Tuple{Documenter.HTMLWriter.DCtx, Union{AbstractString, Vector{UInt8}}}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.write_data_file-Tuple%7BDocumenter.HTMLWriter.DCtx%2C%20Union%7BAbstractString%2C%20Vector%7BUInt8%7D%7D%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.HTMLWriter.write_html-Tuple{Documenter.HTMLWriter.HTMLContext, Documenter.NavNode, Documenter.DOM.HTMLDocument}"
 uri = "lib/internals/writers/#Documenter.HTMLWriter.write_html-Tuple%7BDocumenter.HTMLWriter.HTMLContext%2C%20Documenter.NavNode%2C%20Documenter.DOM.HTMLDocument%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.JSDependencies.jsescape-Tuple{Any}"
 uri = "lib/internals/jsdependencies/#Documenter.JSDependencies.jsescape-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.JSDependencies.json_jsescape-Tuple"
 uri = "lib/internals/jsdependencies/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.JSDependencies.parse_snippet"
 uri = "lib/internals/jsdependencies/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.JSDependencies.verify-Tuple{Documenter.JSDependencies.RequireJS}"
 uri = "lib/internals/jsdependencies/#Documenter.JSDependencies.verify-Tuple%7BDocumenter.JSDependencies.RequireJS%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.JSDependencies.writejs"
 uri = "lib/internals/jsdependencies/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.MDFlatten.mdflatten-Tuple{Any}"
 uri = "lib/internals/mdflatten/#Documenter.MDFlatten.mdflatten-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Remotes.fileurl"
 uri = "lib/remote-links/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Remotes.issueurl"
 uri = "lib/remote-links/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Remotes.repofile"
 uri = "lib/internals/utilities/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Remotes.repourl"
 uri = "lib/remote-links/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.disable-Union{Tuple{Type{T}}, Tuple{T}} where T<:Documenter.Selectors.AbstractSelector"
 uri = "lib/internals/selectors/#Documenter.Selectors.disable-Union%7BTuple%7BType%7BT%7D%7D%2C%20Tuple%7BT%7D%7D%20where%20T%3C%3ADocumenter.Selectors.AbstractSelector"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.dispatch-Union{Tuple{T}, Tuple{Type{T}, Vararg{Any}}} where T<:Documenter.Selectors.AbstractSelector"
 uri = "lib/internals/selectors/#Documenter.Selectors.dispatch-Union%7BTuple%7BT%7D%2C%20Tuple%7BType%7BT%7D%2C%20Vararg%7BAny%7D%7D%7D%20where%20T%3C%3ADocumenter.Selectors.AbstractSelector"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.leaf_subtypes-Union{Tuple{Type{T}}, Tuple{T}} where T"
 uri = "lib/internals/selectors/#Documenter.Selectors.leaf_subtypes-Union%7BTuple%7BType%7BT%7D%7D%2C%20Tuple%7BT%7D%7D%20where%20T"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.matcher"
 uri = "lib/internals/selectors/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.order"
 uri = "lib/internals/selectors/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.runner"
 uri = "lib/internals/selectors/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.Selectors.strict-Union{Tuple{Type{T}}, Tuple{T}} where T<:Documenter.Selectors.AbstractSelector"
 uri = "lib/internals/selectors/#Documenter.Selectors.strict-Union%7BTuple%7BType%7BT%7D%7D%2C%20Tuple%7BT%7D%7D%20where%20T%3C%3ADocumenter.Selectors.AbstractSelector"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.TextDiff.splitby-Tuple{Regex, AbstractString}"
 uri = "lib/internals/textdiff/#Documenter.TextDiff.splitby-Tuple%7BRegex%2C%20AbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter._doctest-Tuple{Documenter.DocumentBlueprint, Documenter.Document}"
 uri = "lib/internals/doctests/#Documenter._doctest-Tuple%7BDocumenter.DocumentBlueprint%2C%20Documenter.Document%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.anchor-Tuple{Documenter.AnchorMap, Any}"
 uri = "lib/internals/anchors/#Documenter.anchor-Tuple%7BDocumenter.AnchorMap%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.anchor_add!-Tuple{Documenter.AnchorMap, Documenter.Anchor, Any, Any}"
 uri = "lib/internals/anchors/#Documenter.anchor_add%21-Tuple%7BDocumenter.AnchorMap%2C%20Documenter.Anchor%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.anchor_exists-Tuple{Documenter.AnchorMap, Any, Any, Any}"
 uri = "lib/internals/anchors/#Documenter.anchor_exists-Tuple%7BDocumenter.AnchorMap%2C%20Any%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.anchor_fragment-Tuple{Documenter.Anchor}"
 uri = "lib/internals/anchors/#Documenter.anchor_fragment-Tuple%7BDocumenter.Anchor%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.anchor_isunique-Tuple{Documenter.AnchorMap, Any}"
 uri = "lib/internals/anchors/#Documenter.anchor_isunique-Tuple%7BDocumenter.AnchorMap%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.anchor_label-Tuple{Documenter.Anchor}"
 uri = "lib/internals/anchors/#Documenter.anchor_label-Tuple%7BDocumenter.Anchor%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.assetsdir-Tuple{}"
 uri = "lib/internals/utilities/#Documenter.assetsdir-Tuple%7B%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.authenticated_repo_url"
 uri = "man/hosting/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.authentication_method"
 uri = "man/hosting/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.codelang-Tuple{AbstractString}"
 uri = "lib/internals/utilities/#Documenter.codelang-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.crossref"
 uri = "lib/internals/documenter/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.currentdir-Tuple{}"
 uri = "lib/internals/utilities/#Documenter.currentdir-Tuple%7B%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.deploy_folder"
 uri = "man/hosting/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.deploydocs"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.doccat-Tuple{Documenter.Object}"
 uri = "lib/internals/utilities/#Documenter.doccat-Tuple%7BDocumenter.Object%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.docs"
 uri = "lib/internals/utilities/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.doctest"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.documenter_key"
 uri = "man/hosting/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.documenter_key_previews"
 uri = "man/hosting/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.except"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.expand_recursively-Tuple{Any, Any, Any}"
 uri = "lib/internals/expanders/#Documenter.expand_recursively-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.filterdocs-Tuple{Markdown.MD, Set{Module}}"
 uri = "lib/internals/utilities/#Documenter.filterdocs-Tuple%7BMarkdown.MD%2C%20Set%7BModule%7D%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.find_object"
 uri = "lib/internals/documenter/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.find_root_parent-Tuple{Any, Any}"
 uri = "lib/internals/utilities/#Documenter.find_root_parent-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.footnotes-Tuple{Documenter.Document}"
 uri = "lib/internals/docchecks/#Documenter.footnotes-Tuple%7BDocumenter.Document%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.getplugin-Union{Tuple{T}, Tuple{Documenter.Document, Type{T}}} where T<:Documenter.Plugin"
 uri = "lib/internals/documents/#Documenter.getplugin-Union%7BTuple%7BT%7D%2C%20Tuple%7BDocumenter.Document%2C%20Type%7BT%7D%7D%7D%20where%20T%3C%3ADocumenter.Plugin"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.getremote-Tuple{AbstractString}"
 uri = "lib/internals/utilities/#Documenter.getremote-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.git_push"
 uri = "lib/internals/documenter/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.git_remote_head_branch-Tuple{Any, Any}"
 uri = "lib/internals/utilities/#Documenter.git_remote_head_branch-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.gitrm_copy"
 uri = "lib/internals/documenter/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.hide"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.is_git_repo_root-Tuple{AbstractString}"
 uri = "lib/internals/utilities/#Documenter.is_git_repo_root-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.is_strict-Tuple{Documenter.Document, Symbol}"
 uri = "lib/internals/documents/#Documenter.is_strict-Tuple%7BDocumenter.Document%2C%20Symbol%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.isabsurl-Tuple{Any}"
 uri = "lib/internals/utilities/#Documenter.isabsurl-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.issubmodule-Tuple{Any, Any}"
 uri = "lib/internals/utilities/#Documenter.issubmodule-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.linkcheck-Tuple{Documenter.Document}"
 uri = "lib/internals/docchecks/#Documenter.linkcheck-Tuple%7BDocumenter.Document%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.lt_page-Tuple{Any, Any}"
 uri = "lib/internals/builder/#Documenter.lt_page-Tuple%7BAny%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.makedocs"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.mdparse-Tuple{AbstractString}"
 uri = "lib/internals/utilities/#Documenter.mdparse-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.missingdocs-Tuple{Documenter.Document}"
 uri = "lib/internals/docchecks/#Documenter.missingdocs-Tuple%7BDocumenter.Document%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.navpath-Tuple{Documenter.NavNode}"
 uri = "lib/internals/documents/#Documenter.navpath-Tuple%7BDocumenter.NavNode%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.nodocs-Tuple{Any}"
 uri = "lib/internals/utilities/#Documenter.nodocs-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.object-Tuple{Union{Expr, Symbol}, AbstractString}"
 uri = "lib/internals/utilities/#Documenter.object-Tuple%7BUnion%7BExpr%2C%20Symbol%7D%2C%20AbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.parseblock-Tuple{AbstractString, Any, Any}"
 uri = "lib/internals/utilities/#Documenter.parseblock-Tuple%7BAbstractString%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.populate!-Tuple{Documenter.Document}"
 uri = "lib/internals/documents/#Documenter.populate%21-Tuple%7BDocumenter.Document%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.relpath_from_remote_root-Tuple{Documenter.Document, AbstractString}"
 uri = "lib/internals/documents/#Documenter.relpath_from_remote_root-Tuple%7BDocumenter.Document%2C%20AbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.render-Tuple{Documenter.Document}"
 uri = "lib/internals/writers/#Documenter.render-Tuple%7BDocumenter.Document%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.shortcommit-Tuple{Documenter.RemoteRepository}"
 uri = "lib/internals/documents/#Documenter.shortcommit-Tuple%7BDocumenter.RemoteRepository%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.slugify-Tuple{AbstractString}"
 uri = "lib/internals/utilities/#Documenter.slugify-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.srcpath-Tuple{Any, Any, Any}"
 uri = "lib/internals/utilities/#Documenter.srcpath-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.submodules-Tuple{Vector{Module}}"
 uri = "lib/internals/utilities/#Documenter.submodules-Tuple%7BVector%7BModule%7D%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.user_host_upstream"
 uri = "lib/internals/documenter/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.walk_navpages-NTuple{6, Any}"
 uri = "lib/internals/builder/#Documenter.walk_navpages-NTuple%7B6%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Documenter.xrefname"
 uri = "lib/internals/documenter/#$"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Generator.gitignore-Tuple{}"
 uri = "lib/internals/documentertools/#DocumenterTools.Generator.gitignore-Tuple%7B%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Generator.index-Tuple{Any}"
 uri = "lib/internals/documentertools/#DocumenterTools.Generator.index-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Generator.make-Tuple{Any}"
 uri = "lib/internals/documentertools/#DocumenterTools.Generator.make-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Generator.mkdocs-Tuple{Any}"
 uri = "lib/internals/documentertools/#DocumenterTools.Generator.mkdocs-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Generator.project-Tuple{}"
 uri = "lib/internals/documentertools/#DocumenterTools.Generator.project-Tuple%7B%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Generator.savefile-Tuple{Any, Any, Any}"
 uri = "lib/internals/documentertools/#DocumenterTools.Generator.savefile-Tuple%7BAny%2C%20Any%2C%20Any%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.OutdatedWarning.generate"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Themes.compile"
 uri = "lib/internals/documentertools/#$"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Themes.compile_native_theme-Tuple{Any}"
 uri = "lib/internals/documentertools/#DocumenterTools.Themes.compile_native_theme-Tuple%7BAny%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.Themes.themewatcher-Tuple{}"
 uri = "lib/internals/documentertools/#DocumenterTools.Themes.themewatcher-Tuple%7B%7D"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.generate"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.genkeys"
 uri = "lib/public/#$"
-[[jl.func]]
+[[jl.function]]
 name = "DocumenterTools.package_devpath"
 uri = "lib/internals/documentertools/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Main.DocumenterShowcase.bar"
 uri = "showcase/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Main.DocumenterShowcase.bar-showcase"
 uri = "showcase/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Main.DocumenterShowcase.baz"
 uri = "showcase/#$"
-[[jl.func]]
+[[jl.function]]
 name = "Main.DocumenterShowcase.foo-Tuple{AbstractString}"
 uri = "showcase/#Main.DocumenterShowcase.foo-Tuple%7BAbstractString%7D"
-[[jl.func]]
+[[jl.function]]
 name = "Main.DocumenterShowcase.foo-Tuple{Integer}"
 uri = "showcase/#Main.DocumenterShowcase.foo-Tuple%7BInteger%7D"
 
@@ -456,49 +456,49 @@ uri = "lib/internals/utilities/#Documenter.%40docerror-Tuple%7BAny%2C%20Any%2C%2
 name = "Documenter.DOM.@tags-Tuple"
 uri = "lib/internals/dom/#Documenter.DOM.%40tags-Tuple"
 
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter"
 uri = "lib/public/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.Builder"
 uri = "lib/internals/builder/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.DOM"
 uri = "lib/internals/dom/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.DocMeta"
 uri = "lib/public/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.DocSystem"
 uri = "lib/internals/docsystem/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.HTMLWriter"
 uri = "lib/internals/writers/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.HTMLWriter.RD"
 uri = "lib/internals/writers/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.JSDependencies"
 uri = "lib/internals/jsdependencies/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.LaTeXWriter"
 uri = "lib/internals/writers/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.MDFlatten"
 uri = "lib/internals/mdflatten/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.Remotes"
 uri = "lib/remote-links/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "Documenter.Selectors"
 uri = "lib/internals/selectors/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "DocumenterShowcase"
 uri = "showcase/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "DocumenterTools.Generator"
 uri = "lib/internals/documentertools/#$"
-[[jl.mod]]
+[[jl.module]]
 name = "DocumenterTools.Themes"
 uri = "lib/internals/documentertools/#$"
 

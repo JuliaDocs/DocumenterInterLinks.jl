@@ -11,15 +11,15 @@ GITHUB = "https://github.com/JuliaDocs/DocumenterInterLinks.jl"
 links = InterLinks(
     "Documenter" => (
         "https://documenter.juliadocs.org/stable/",
-        joinpath(@__DIR__, "src", "interlinks", "Documenter.toml")
+        joinpath(@__DIR__, "src", "inventories", "Documenter.toml")
     ),
     "Julia" => (
         "https://docs.julialang.org/en/v1/",
-        joinpath(@__DIR__, "src", "interlinks", "Julia.toml")
+        joinpath(@__DIR__, "src", "inventories", "Julia.toml")
     ),
     "DocInventories" => (
         "https://github.com/JuliaDocs/DocInventories.jl/",
-        joinpath(@__DIR__, "src", "interlinks", "DocInventories.toml")
+        joinpath(@__DIR__, "src", "inventories", "DocInventories.toml")
     ),
     "sphinx" => "https://www.sphinx-doc.org/en/master/",
     "sphobjinv" => "https://sphobjinv.readthedocs.io/en/stable/",
@@ -41,7 +41,7 @@ makedocs(
         canonical="https://juliadocs.org/DocumenterInterLinks.jl",
         footer="[$NAME.jl]($GITHUB) v$VERSION docs powered by [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl).",
     ),
-    pages=["Home"      => "index.md", "Internals" => "internals.md",],
+    pages=["Home" => "index.md", "Internals" => "internals.md",],
     plugins=[links]
 )
 
