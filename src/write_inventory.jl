@@ -126,14 +126,7 @@ end
 @inline _issafe(c::Char) =
     c == '-' || c == '.' || c == '_' || (isascii(c) && (isletter(c) || isnumeric(c)))
 
-_utf8_chars(str::AbstractString) = (Char(c) for c in _bytes(str))
-
-_bytes(s::SubArray{UInt8}) = unsafe_wrap(Array, pointer(s), length(s))
-
-_bytes(s::Union{Vector{UInt8},Base.CodeUnits}) = _bytes(String(s))
-_bytes(s::AbstractString) = codeunits(s)
-
-_bytes(s::Vector{UInt8}) = s
+_utf8_chars(str::AbstractString) = (Char(c) for c in codeunits(str))
 
 escapeuri(c::Char) = string('%', uppercase(string(Int(c), base=16, pad=2)))
 escapeuri(str::AbstractString) =

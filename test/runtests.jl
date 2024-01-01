@@ -1,16 +1,25 @@
 using Test
 using SafeTestsets
+using DocumenterInterLinks
+
 
 # Note: comment outer @testset to stop after first @safetestset failure
 @time @testset verbose = true "DocumenterInterLinks" begin
 
-    @test true
-    #=
-    println("\n* read inventory (test_read_inventory.jl):")
-    @time @safetestset "read inventory" begin
-        include("test_read_inventory.jl")
+    println("\n* instantiate interlinks (test_interlinks.jl):")
+    @time @safetestset "expand extrefs" begin
+        include("test_interlinks.jl")
     end
-    =#
+
+    println("\n* expand extrefs (test_expand_extrefs.jl):")
+    @time @safetestset "expand extrefs" begin
+        include("test_expand_extrefs.jl")
+    end
+
+    println("\n* integration test (test_integration.jl):")
+    @time @safetestset "integration" begin
+        include("test_integration.jl")
+    end
 
 end
 

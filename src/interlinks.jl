@@ -12,7 +12,8 @@ links = InterLinks(
     "project3" => (
         "https://project3.url/",
         joinpath(@__DIR__, "src", "interlinks", "inventory.file")
-    )
+    );
+    default_inventory_file="objects.inv"
 )
 ```
 
@@ -49,9 +50,9 @@ any of the following forms:
   "sphinx" => "https://www.sphinx-doc.org/en/master/",
   ````
 
-  which must end with slash. This is exactly equivalent to previous example: it
-  assumes `"objects.inv"` (the standard [Sphinx](@extref sphinx :doc:`index`)
-  inventory file) to be reachable directly underneath the given URL.
+  which must end with slash. This looks for the inventory file with the name
+  corresponding to `default_inventory_file` directly underneath the given root
+  URL.
 
 * A tuple of strings, where the first element is the project root URL and all
   subsequent elements are locations (URLs or local file paths) to an inventory
@@ -87,6 +88,27 @@ The `InterLinks` object also acts as a (read-only) ordered dictionary so that,
 e.g., `links["project1"]` returns the [`DocInventories.Inventory`](@extref) for
 that project.
 
+# Search
+
+Free-form search in a particular inventory is possible with, e.g.,
+
+```julia
+links["Julia"](search)
+```
+
+See the discussion on search in the [`DocInventories.Inventory`](@extref)
+documentation. Such a search returns a list of matching
+[`DocInventories.InventoryItem`](@extref) instances.
+
+In addition,
+
+```
+links(search)
+```
+
+allows to search across *all* inventories. This returns a list of `@extref`
+strings that could be used to reference the matching items.
+
 # Methods
 
 * [`find_in_interlinks(links, extref)`](@ref) – find the URL for an `extref`
@@ -105,11 +127,11 @@ struct InterLinks <: Plugin
     function InterLinks(names::Vector{String}, inventories::Dict{String,Inventory})
         for name in names
             if isnothing(match(r"^[A-Za-z0-9]+$", name))
-                msg = "Name '$name' is invalid: must be an alphanumeric ASCII string"
+                msg = "Name $(repr(name)) is invalid: must be an alphanumeric ASCII string"
                 throw(ArgumentError(msg))
             end
             if !haskey(inventories, name)
-                msg = "Name '$name' not found in inventories"
+                msg = "Name $(repr(name)) not found in inventories"
                 throw(ArgumentError(msg))
             end
         end
@@ -122,21 +144,17 @@ struct InterLinks <: Plugin
 end
 
 
-function InterLinks(mapping...; _objects_inv="objects.inv")
+function InterLinks(mapping...; default_inventory_file="objects.inv")
     names = String[]
     inventories_list = Inventory[]
     try
         for (name, spec) in mapping
             if spec isa AbstractString  # -> convert to tuple
                 if endswith(spec, "/")
-                    spec = (spec, spec * _objects_inv)
+                    spec = (spec, spec * default_inventory_file)
                 else
-                    root_url, filename = split_url(spec)
-                    if isempty(filename)
-                        spec = (spec, spec * "/" * _objects_inv)
-                    else
-                        spec = (root_url, spec)
-                    end
+                    root_url = split_url(spec)[1]
+                    spec = (root_url, spec)
                 end
             end
             inventory = nothing
@@ -145,7 +163,7 @@ function InterLinks(mapping...; _objects_inv="objects.inv")
                 try
                     inventory = _validate_inventory(spec)
                 catch exc
-                    @error "Invalid inventory for $(repr(name))." exceptions = exc
+                    @error "Invalid inventory for $(repr(name))." exception = exc
                     continue  # next name
                 end
             else  # assume Tuple
@@ -156,9 +174,9 @@ function InterLinks(mapping...; _objects_inv="objects.inv")
                         inventory = Inventory(source; root_url=root_url)
                         @debug "Successfully loaded inventory $(repr(name)) from source $(repr(source))."
                         break  # stop after first successful source
-                    catch exc
+                    catch exception
                         msg = "Failed to load inventory $(repr(name)) from possible source $(repr(source))."
-                        @warn msg exception = (exc, catch_backtrace())
+                        @warn msg exception
                     end
                 end
             end
@@ -170,7 +188,7 @@ function InterLinks(mapping...; _objects_inv="objects.inv")
             end
         end
     catch exc
-        @error "Invalid InterLinks specification" exceptions = exc
+        @error "Invalid InterLinks specification" exception = (exc, catch_backtrace())
     end
     N = length(names)
     if (length(mapping) > 0) && (N == 0)
@@ -244,8 +262,8 @@ function find_in_interlinks(links::InterLinks, extref::AbstractString)
                 # the recommended approach of naming their inventories in
                 # InterLinks according to the project name.
                 try
-                    project_name =
-                        chop(m["name"][findfirst(r"^`(\w+)\.", m["name"])], head=1, tail=1,)
+                    r = findfirst(r"^`(\w+)\.", m["name"])
+                    project_name = chop(m["name"][r], head=1, tail=1,)
                     return _uri(links, project_name, m["spec"])
                 catch exc
                     msg = "Failed short-circuit resolution"
@@ -288,7 +306,7 @@ function Base.show(io::IO, links::InterLinks)
     print(io, "InterLinks(")
     for (i, (name, inventory)) in enumerate(collect(links))
         print(io, "$(repr(name)) => $(repr(inventory))")
-        (i < N) && print(io, ",")
+        (i < N) && print(io, ", ")
     end
     print(io, ")")
 end
@@ -317,7 +335,7 @@ function _validate_inventory(inventory::Inventory)
             msg = "Inventory has an invalid `root_url=$(repr(root_url))`: must start with \"http://\" or \"https://\""
             throw(ArgumentError(msg))
         end
-        if !startswith(root_url, r"/")
+        if !endswith(root_url, r"/")
             msg = "Inventory has an invalid `root_url=$(repr(root_url))`: must end with \"/\""
             throw(ArgumentError(msg))
         end

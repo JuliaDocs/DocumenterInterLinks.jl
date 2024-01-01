@@ -1,6 +1,14 @@
 # DocumenterInterLinks.jl
 
+[![Version](https://juliahub.com/docs/DocumenterInterLinks/version.svg)](https://juliahub.com/ui/Packages/General/DocumenterInterLinks)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliadocs.org/DocumenterInterLinks.jl/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://juliadocs.org/DocumenterInterLinks.jl/dev)
+[![Build Status](https://github.com/JuliaDocs/DocumenterInterLinks.jl/workflows/CI/badge.svg)](https://github.com/JuliaDocs/DocumenterInterLinks.jl/actions)
+[![Coverage](https://codecov.io/gh/JuliaDocs/DocumenterInterLinks.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/JuliaDocs/DocumenterInterLinks.jl)
+
 A plugin for [Documenter.jl](https://documenter.juliadocs.org/) that enables linking between projects.
+
+**WARNING: This is a prototype. If you use this package pre-1.0, be prepared to having to adapt to breaking changes at any time.**
 
 Loading `DocumenterInterLinks` in `Docs/make.jl` causes Documenter to produce an "inventory file" `objects.inv` in the output folder, which should get deployed together with the documentation. This file contains a mapping from names to URLs for all link targets in the documentation.
 
@@ -9,9 +17,19 @@ Other projects may use this inventory file to resolve `@extref` links, see [Exte
 
 ## Installation
 
-This package is currently under active development, and serves as a prototype for https://github.com/JuliaDocs/Documenter.jl/issues/2366. It is pending registration, and thus must be dev-installed.
+As usual, the package can be installed via
 
-It depends on `DocInventories`, which should be dev-installed from https://github.com/JuliaDocs/DocInventories.jl first.
+```
+] add DocumenterInterLinks
+```
+
+in the Julia REPL, or by adding
+
+```
+DocumenterInterLinks = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
+```
+
+to the relevant `Project.toml` file.
 
 
 ## Plugin Instantiation

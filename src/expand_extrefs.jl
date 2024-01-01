@@ -38,26 +38,31 @@ function expand_extrefs!(doc::Documenter.Document, page, mdast::MarkdownAST.Node
             end
             node
         else
-            expand_extref(doc, node, page, links)
+            expand_extref(doc, node, page.source, links)
         end
     end
 end
 
 
 function expand_extref(
-    doc::Documenter.Document,
+    doc::Union{Nothing,Documenter.Document},
     node::MarkdownAST.Node,
-    page,
-    links::InterLinks
+    source::String,
+    links::InterLinks;
+    quiet=false
 )
     (node.element isa MarkdownAST.Link) || return node
     startswith(lowercase(node.element.destination), "@extref") || return node
     extref = node.element.destination
     m = match(links.rx, extref)
     if isnothing(m)
-        msg = "On $(page.source), invalid @extref $(repr(extref)). Should be \"@extref [[inventory] [[:domain][:role]:]name]\"."
-        @error msg node
-        push!(doc.internal.errors, :external_cross_references)
+        if !quiet
+            msg = "On $(repr(source)), invalid @extref $(repr(extref)). Should be \"@extref [[inventory] [[:domain][:role]:]name]\"."
+            @error msg node
+        end
+        if !isnothing(doc)
+            push!(doc.internal.errors, :external_cross_references)
+        end
         node.element.destination = ""
         # We clear the link destination to remove the link from
         # consideration in Documenter.crossref or the link checker.
@@ -70,14 +75,18 @@ function expand_extref(
         try
             node.element.destination = find_in_interlinks(links, extref)
         catch exc
-            msg = "On $(page.source), cannot resolve external link: "
-            if exc isa Union{ArgumentError,InventoryItemNotFoundError}
-                msg *= exc.msg
-            else
-                msg *= sprint(showerror, exc)
+            if !quiet
+                msg = "On $(repr(source)), cannot resolve external link: "
+                if exc isa Union{ArgumentError,InventoryItemNotFoundError}
+                    msg *= exc.msg
+                else
+                    msg *= sprint(showerror, exc)
+                end
+                @error msg node # exception=(exc, catch_backtrace())
             end
-            @error msg node # exception=(exc, catch_backtrace())
-            push!(doc.internal.errors, :external_cross_references)
+            if !isnothing(doc)
+                push!(doc.internal.errors, :external_cross_references)
+            end
             node.element.destination = ""
         end
     end

@@ -1,0 +1,168 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+      - dev
+      - 'release-*'
+    tags:
+      - '*'
+  pull_request:
+    branches:
+      - master
+concurrency:
+  # Skip intermediate builds: always.
+  # Cancel intermediate builds: only if it is a pull request build.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+jobs:
+  test:
+    name: Test ${{ matrix.title }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - title: 'Linux - Latest'
+            os: ubuntu-latest
+            version: '1'
+          - title: 'Windows - Latest'
+            os: windows-latest
+            version: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: ${{ matrix.version }}
+      - uses: julia-actions/cache@v1
+      - name: "Instantiate test environment"
+        shell: julia --color=yes --project=test {0}
+        run: |
+          import Pkg
+          Pkg.develop(path=".")
+          Pkg.develop(url="https://github.com/JuliaDocs/DocInventories.jl")
+          Pkg.instantiate()
+      - name: "Run tests"
+        shell: julia --color=yes --project=test --code-coverage="@" --depwarn="yes" --check-bounds="yes" {0}
+        run: |
+          include(joinpath(pwd(), "test", "runtests.jl"))
+      - name: "Summarize coverage"
+        run: julia --project=test -L devrepl.jl -e 'display(show_coverage())'
+      - uses: julia-actions/julia-processcoverage@v1
+      - uses: codecov/codecov-action@v3
+        with:
+          files: lcov.info
+  testoldest:
+    name: Test Lower Compat Bounds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.6
+      - uses: julia-actions/cache@v1
+      - name: "Instantiate test environment"
+        shell: julia --color=yes --project=test {0}
+        run: |
+          import Pkg
+          println("*** Dev-Installing DocumenterInterLinks")
+          Pkg.develop(path=".")
+          println("*** Pinning minimal dependencies")
+          Pkg.pin([
+              Pkg.PackageSpec(name="Documenter", version="1.0.0"),
+              Pkg.PackageSpec(name="DocInventories", version="0.2.0"),
+              Pkg.PackageSpec(name="MarkdownAST", version="0.1.2"),
+          ])
+          Pkg.precompile()
+          Pkg.status()
+      - name: "Run tests"
+        shell: julia --color=yes --project=test {0}
+        run: |
+          include(joinpath(pwd(), "test", "runtests.jl"))
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      statuses: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1'
+      - name: "Instantiate build environment"
+        shell: julia --color=yes --project=test {0}
+        run: |
+          import Pkg
+          Pkg.develop(path=".")
+          Pkg.develop(url="https://github.com/JuliaDocs/DocInventories.jl")
+          Pkg.instantiate()
+      - name: "Build documentation"
+        run: julia --project=test docs/make.jl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: documenter-interlinks-docs
+          path: docs/build/
+  codestyle:
+    name: Codestyle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1'
+      - name: Install JuliaFormatter and format
+        # This will use the latest version by default but you can set the version like so:
+        #
+        # julia  -e 'using Pkg; Pkg.add(PackageSpec(name="JuliaFormatter", version="0.13.0"))'
+        shell: julia {0}
+        run: |
+          using Pkg
+          Pkg.add(PackageSpec(name="JuliaFormatter"))
+          using JuliaFormatter
+          format(["src", "docs", "test", "devrepl.jl"], verbose=true)
+      - name: Format Check
+        shell: julia {0}
+        run: |
+          out = Cmd(`git diff -U0`) |> read |> String
+          if out == ""
+              exit(0)
+          else
+              @error "Some files have not been formatted !!!\n\n$out"
+              exit(1)
+          end
+      - name: Spell Check
+        uses: crate-ci/typos@master
+      - name: Version Check
+        shell: julia {0}
+        run: |
+          using Pkg
+          VERSION = VersionNumber(Pkg.TOML.parsefile("Project.toml")["version"])
+          BRANCH = ENV["GITHUB_REF_NAME"]
+          if ENV["GITHUB_EVENT_NAME"] == "pull_request"
+              # For pull_request events, return the head (aka., "from") branch,
+              # not the base (aka., "to") branch.
+              BRANCH = ENV["GITHUB_HEAD_REF"]
+          end
+          if startswith(BRANCH, "release-")
+              if (length(VERSION.prerelease) == length(VERSION.build))
+                  println("Version $VERSION on release branch OK")
+              else
+                  @error "Invalid version $VERSION on release branch"
+                  exit(1)
+              end
+          elseif (ENV["GITHUB_REF_TYPE"] == "branch") && (BRANCH != "master")
+              if ("dev" in VERSION.prerelease) || ("dev" in VERSION.build)
+                  println("Version $VERSION OK with dev-suffix on $BRANCH")
+              else
+                  @error "Invalid version $VERSION on branch $BRANCH: must contain dev suffix"
+                  exit(1)
+              end
+          else
+              println("Version $VERSION OK on $BRANCH")
+          end
+          exit(0)

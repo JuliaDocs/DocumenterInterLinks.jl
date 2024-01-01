@@ -47,4 +47,4 @@ makedocs(
 
 println("Finished makedocs")
 
-# deploydocs(; repo="github.com/JuliaDocs/DocumenterInterLinks.jl.git", push_preview=true)
+deploydocs(; repo="github.com/JuliaDocs/DocumenterInterLinks.jl.git", push_preview=true)
