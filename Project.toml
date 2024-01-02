@@ -1,7 +1,7 @@
 name = "DocumenterInterLinks"
 uuid = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
 authors = ["Michael Goerz <mail@michaelgoerz.net>"]
-version = "0.1.0+dev"
+version = "0.2.0"
 
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
@@ -11,7 +11,7 @@ MarkdownAST = "d0879d2d-cac2-40c8-9cee-1863dc0c7391"
 
 [compat]
 Documenter = "1"
-DocInventories =  ">=0.1"
+DocInventories =  "0.2.0"
 Markdown = "1"
 MarkdownAST = "0.1.2"
 julia = "1.6"
