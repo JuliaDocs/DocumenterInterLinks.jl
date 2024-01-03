@@ -46,7 +46,7 @@ function write_inventory(filename::AbstractString, doc::Documenter.Document)
     role = "doc"
     priority = -1
     for navnode in doc.internal.navlist
-        name = splitext(navnode.page)[1]
+        name = replace(splitext(navnode.page)[1], "\\" => "/")
         uri = pretty_url(ctx, get_url(ctx, navnode.page))
         dispname = get_navnode_dispname(navnode, ctx)
         push!(inventory, InventoryItem(name, domain, role, priority, uri, dispname))
