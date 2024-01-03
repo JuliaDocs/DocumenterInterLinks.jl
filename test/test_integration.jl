@@ -1,4 +1,5 @@
 using DocumenterInterLinks
+using DocInventories
 using Documenter
 using Test
 
@@ -27,6 +28,11 @@ include("run_makedocs.jl")
         "matplotlib" => "https://matplotlib.org/3.7.3/",
     )
 
+    Base.eval(Main, quote
+        using DocumenterInterLinks
+        PAGES = []
+    end)
+
     run_makedocs(
         joinpath(@__DIR__, "..", "docs");
         sitename="DocumenterInterLinks.jl",
@@ -38,11 +44,23 @@ include("run_makedocs.jl")
             edit_link  = "",
             repolink   = ""
         ),
-        pages=["Home" => "index.md", "Internals" => "internals.md",],
         check_success=true
     ) do dir, result, success, backtrace, output
 
-        @test success
+        inventory_file = joinpath(dir, "build", "objects.inv")
+        @test isfile(inventory_file)
+        if isfile(inventory_file)
+            inventory = Inventory(inventory_file; root_url="")
+            specs = [
+                ":jl:type:`DocumenterInterLinks.InterLinks`",
+                ":jl:method:`DocumenterInterLinks.find_in_interlinks-Tuple{InterLinks, AbstractString}`",
+                ":std:doc:`api/internals`",
+                # :doc: names should always use unix path separators
+            ]
+            for spec in specs
+                @test !isnothing(inventory[spec])
+            end
+        end
 
     end
 

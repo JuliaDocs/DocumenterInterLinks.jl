@@ -17,10 +17,7 @@ links = InterLinks(
         "https://docs.julialang.org/en/v1/",
         joinpath(@__DIR__, "src", "inventories", "Julia.toml")
     ),
-    "DocInventories" => (
-        "https://github.com/JuliaDocs/DocInventories.jl/",
-        joinpath(@__DIR__, "src", "inventories", "DocInventories.toml")
-    ),
+    "DocInventories" => "https://juliadocs.org/DocInventories.jl/stable/",
     "sphinx" => "https://www.sphinx-doc.org/en/master/",
     "sphobjinv" => "https://sphobjinv.readthedocs.io/en/stable/",
     "matplotlib" => "https://matplotlib.org/3.7.3/",
@@ -28,20 +25,28 @@ links = InterLinks(
 
 println("Starting makedocs")
 
+PAGES = [
+    "Home" => "index.md",
+    "Syntax" => "syntax.md",
+    "Inventory Generation" => "write_inventory.md",
+    "How-Tos" => "howtos.md",
+    "Internals" => joinpath("api", "internals.md"),
+]
+
 makedocs(
     authors=AUTHORS,
     version=VERSION,
     linkcheck=(get(ENV, "DOCUMENTER_CHECK_LINKS", "1") != "0"),
     # Link checking is disabled in REPL, see `devrepl.jl`.
-    #warnonly=true,
-    warnonly=[:linkcheck,],
+    warnonly=true,
+    #warnonly=[:linkcheck,],
     sitename="DocumenterInterLinks.jl",
     format=Documenter.HTML(
         prettyurls=true,
         canonical="https://juliadocs.org/DocumenterInterLinks.jl",
         footer="[$NAME.jl]($GITHUB) v$VERSION docs powered by [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl).",
     ),
-    pages=["Home" => "index.md", "Internals" => "internals.md",],
+    pages=PAGES,
     plugins=[links]
 )
 

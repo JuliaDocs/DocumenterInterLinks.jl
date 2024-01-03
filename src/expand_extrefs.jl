@@ -99,7 +99,9 @@ end
 function _basic_xref_text(node)
     @assert node.element isa MarkdownAST.Link
     if length(node.children) == 1 && isa(first(node.children).element, MarkdownAST.Code)
-        return first(node.children).element.code
+        return "`$(first(node.children).element.code)`"
+        # Preserving the backticks allows for short-circuit resolution in
+        # `find_in_interlinks`
     else
         ast = MarkdownAST.@ast MarkdownAST.Document() do
             MarkdownAST.Paragraph() do

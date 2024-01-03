@@ -264,19 +264,22 @@ function find_in_interlinks(links::InterLinks, extref::AbstractString)
                 try
                     r = findfirst(r"^`(\w+)\.", m["name"])
                     project_name = chop(m["name"][r], head=1, tail=1,)
+                    @debug "Trying short-circuit resolution" extref project_name
                     return _uri(links, project_name, m["spec"])
-                catch exc
+                catch exception
                     msg = "Failed short-circuit resolution"
-                    @debug msg exception = (exc, catch_bactrace())
+                    @debug msg exception # = (exception, catch_backtrace())
                     # If anything fails (e.g., the project name is not an
                     # inventory name), we just continue with the normal
                     # approach of iterating through all inventories until we
                     # can resolve the link.
                 end
             end
+            @debug "Looking in *all* inventories" extref
             for (project, inventory) in links
                 item = inventory[m["spec"]]
                 if !isnothing(item)
+                    @debug "Found in inventory \"$(project)\""
                     return uri(item; root_url=inventory.root_url)
                 end
             end

@@ -1,6 +1,7 @@
 using Test
 using TestingUtilities: @Test
 using DocumenterInterLinks
+using Logging
 using Markdown
 using MarkdownAST
 using DocInventories
@@ -247,6 +248,99 @@ end
     text = "[the `PYTHONPATH` env var](@extref python :envvar:`PYTHONPATH`)"
     result = _expand_extref(text, links)
     @Test result == "[the `PYTHONPATH` env var]($ppp_url)"
+
+end
+
+
+@testset "short-circuit resolution" begin
+
+    links = InterLinks(
+        "Documenter" => Inventory(
+            joinpath(@__DIR__, "inventories", "Documenter.toml");
+            root_url="https://documenter.juliadocs.org/stable/"
+        ),
+        "Julia" => Inventory(
+            joinpath(@__DIR__, "inventories", "Julia.toml");
+            root_url="https://docs.julialang.org/en/v1/"
+        ),
+    )
+
+    text = "[`Documenter.makedocs`](@extref)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test contains(c.output, "Debug: Trying short-circuit resolution")
+    @test !contains(c.output, "Debug: Looking in *all* inventories")
+    @test contains(c.value, "#Documenter.makedocs")
+
+    text = "[The `makedocs` function](@extref `Documenter.makedocs`)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test contains(c.output, "Debug: Trying short-circuit resolution")
+    @test !contains(c.output, "Debug: Looking in *all* inventories")
+    @test contains(c.value, "#Documenter.makedocs")
+
+    text = "[The `makedocs` function](@extref :function:`Documenter.makedocs`)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test contains(c.output, "Debug: Trying short-circuit resolution")
+    @test contains(c.value, "#Documenter.makedocs")
+
+    text = "[The `makedocs` function](@extref :jl:function:`Documenter.makedocs`)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test contains(c.output, "Debug: Trying short-circuit resolution")
+    @test contains(c.value, "#Documenter.makedocs")
+
+    # The backticks around `Documenter.makedocs` are essential. Without them,
+    # short-circuiting won't work:
+
+    text = "[The `makedocs` function](@extref Documenter.makedocs)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test !contains(c.output, "Debug: Trying short-circuit resolution")
+    @test contains(c.output, "Debug: Looking in *all* inventories")
+    @test contains(c.value, "#Documenter.makedocs")
+
+    # For Base, short-circuit will fail, because it's in the Julia project
+
+    text = "[`Base.sort`](@extref)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test contains(c.output, "Debug: Trying short-circuit resolution")
+    @test contains(c.output, "Debug: Failed short-circuit resolution")
+    @test contains(c.output, "KeyError: key \"Base\" not found")
+    @test contains(c.output, "Debug: Looking in *all* inventories")
+    @test contains(c.value, "#Base.sort")
+
+    # This is how Base should be referenced:
+
+    text = "[`Base.sort`](@extref Julia)"
+    c = IOCapture.capture() do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            _expand_extref(text, links)
+        end
+    end
+    @test !contains(c.output, "Debug: Trying short-circuit resolution")
+    @test !contains(c.output, "Debug: Looking in *all* inventories")
+    @test contains(c.value, "#Base.sort")
 
 end
 

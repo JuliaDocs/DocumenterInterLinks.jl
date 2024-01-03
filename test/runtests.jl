@@ -1,6 +1,5 @@
 using Test
 using SafeTestsets
-using DocumenterInterLinks
 
 
 # Note: comment outer @testset to stop after first @safetestset failure
