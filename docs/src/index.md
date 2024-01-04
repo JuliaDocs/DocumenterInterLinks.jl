@@ -27,7 +27,7 @@ else
 end
 ```
 
-[DocumenterInterLinks.jl](https://github.com/JuliaDocs/DocumenterInterLinks.jl#readme) is a plugin for [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) to link to external projects. It is interoperable with [Intersphinx](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html).
+[DocumenterInterLinks.jl](https://github.com/JuliaDocs/DocumenterInterLinks.jl#readme) is a plugin for [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) to link to external projects. It is interoperable with [Intersphinx](@extref sphinx :doc:`usage/extensions/intersphinx`).
 
 
 ## Installation Instructions
@@ -47,10 +47,16 @@ DocumenterInterLinks = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
 
 to the relevant `Project.toml` file.
 
+## Usage
 
-## Telling Documenter.jl about External Projects
+* In your `docs/make.jl` file, load the `DocumenterInterLinks` package (`using DocumenterInterLinks`).
+* [Declare external projects](@ref Declaring-External-Projects) by instantiating an [`InterLinks`](@ref) object and passing it as part of `plugins` to [`Documenter.makedocs`](@extref).
+* Reference items from any external project with an [`@extref` link](@ref Using-External-References) in your documentation.
 
-In [`docs/make.jl`](https://github.com/JuliaDocs/DocumenterInterLinks.jl/blob/master/docs/make.jl) instantiate an [`InterLinks`](@ref) object to define external projects you want to link to. For example,
+
+## Declaring External Projects
+
+In [`docs/make.jl`](https://github.com/JuliaDocs/DocumenterInterLinks.jl/blob/master/docs/make.jl), instantiate an [`InterLinks`](@ref) object to define external projects you want to link to. For example,
 
 ```@example usage
 using DocumenterInterLinks
@@ -70,49 +76,70 @@ links = InterLinks(
 nothing # hide
 ```
 
-defines the external projects "[sphinx](https://www.sphinx-doc.org/)", "[matplotlib](https://matplotlib.org)", and "[Julia](https://docs.julialang.org/en/v1/)", . For each project, it specifies the root URL of that project's online documentation and the location of an [inventory file](@ref Inventory-Files).
+defines the external projects "[sphinx](https://www.sphinx-doc.org/)", "[matplotlib](https://matplotlib.org)", and "[Julia](https://docs.julialang.org/en/v1/)". For each project, it specifies the root URL of that project's online documentation and the location of an [inventory file](@ref Inventories).
 
 The above examples illustrates three possibilities for specifying the root url and inventory location
 
-* Map the project name to the URL of an inventory file. The project root URL is the given URL with the filename stripped
+* Map the project name to the URL of an inventory file. The project root URL is the given URL without the filename.
 * Map that project name to project root URL. This will look for an inventory file `objects.inv` directly underneath the given URL.
-* Map the project name to a tuple containing the root URL first, and then one ore more possible locations for an inventory file. These may be local file paths, which allows using an self-maintained inventory file for a project that does not provide one.
+* Map the project name to a tuple containing the root URL first, and then one or more possible locations for an inventory file. These may be local file paths, which allows using [a self-maintained inventory file](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) for a project that does not provide one.
 
-See the documentation of [`InterLinks`](@ref) for details.
+See the doc-string of [`InterLinks`](@ref) for details.
 
-The instantiated `links` object must be passed to [`Documenter.makedocs`](@extref) as an element to the `plugins` keyword argument.
+!!! warning
+    The instantiated `links` object **must** be passed to [`Documenter.makedocs`](@extref) as an element to the `plugins` keyword argument.
 
-## Inventory Files
+## Inventories
 
-Inventory files contain a mapping of names to linkable locations relative to the root URL of a project's online documentation. The [Sphinx documentation generator](@extref sphinx :doc:`index`) automatically creates an `objects.inv` inventory file.
+The inventory files referenced when instantiating [`InterLinks`](@ref) are assumed to have been created by a documentation generator, see [Inventory Generation](@ref). The [`DocInventories` package](@extref DocInventories :doc:`index`) is used as a backend to parse these files into [`DocInventories.Inventory`](@extref) objects. These are accessible by using `links` as an ordered dict:
 
-Inventory files are handled by the [`DocInventories`](@extref DocInventories :doc:`index`) package.
+```@example usage
+links["sphinx"]
+```
+
+As we can see, inventories contain a mapping of names to linkable locations relative to the root URL of a project's online documentation, see [`DocInventories.InventoryItem`](@extref).
+
+The [`DocInventories` package](@extref DocInventories :doc:`index`) provides tools for interactively searching inventories for items to reference. See [Exploring Inventories](@extref DocInventories) and [How do I figure out the correct name for the `@extref` link?](@ref howto-find-extref).
 
 
-## How to Use External References in Your Documentation.
+## Using External References
 
-The `DocumenterInterLinks` plugin adds support for `@extref` link targets to `Documenter`. At the most fundamental level, they work just like Documenter's standard `@ref` link targets. Replacing `@ref` with `@extref` switches from a *local* reference to an *external* one:
+The `DocumenterInterLinks` plugin adds support for `@extref` link targets to `Documenter`. At the most fundamental level, they work just like [Documenter's standard `@ref` link targets](@extref Documenter `@ref-link`). Replacing `@ref` with `@extref` switches from a *local* reference to an *external* one:
 
 ```
 * [`Documenter.makedocs`](@extref)
-* [Documenter's `makedocs` function](@extref Documenter.makedocs)
+* [Documenter's `makedocs` function](@extref `Documenter.makedocs`)
 * See the section about Documenter's [Writers](@extref).
 ```
 
 The above markdown code renders as follows:
 
 > * [`Documenter.makedocs`](@extref)
-> * [Documenter's `makedocs` function](@extref Documenter.makedocs)
+> * [Documenter's `makedocs` function](@extref `Documenter.makedocs`)
 > * See the section about Documenter's [Writers](@extref).
 
 
-To disambiguate (and speed up) the references, the name of the inventory (as defined when instantiating `InterLinks`) can be included in the `@extref`. The previous example would have been better written as
+To disambiguate (and [speed up](@ref Performance-Tips)) the references, the name of the inventory (as defined when instantiating `InterLinks`) can be included in the `@extref`. The previous example would have been better written as
 
 ```
 * See the section about Documenter's [Writers](@extref Documenter).
 ```
 
-to clarify that we are linking to the section name "Writers" in Documenter's documentation. When the link text and link target differ, the inventory name should be given between `@extref` and the target name, e.g., ```[`Regex`](@extref Julia Base.Regex)```, which turns into "[`Regex`](@extref Julia Base.Regex)".
+to clarify that we are linking to the section name "Writers" found in `links["Documenter"]`. When the link text and link target differ, the inventory name should be given between `@extref` and the target name, e.g., ```[`Regex`](@extref Julia Base.Regex)```, which turns into "[`Regex`](@extref Julia Base.Regex)".
 
+Since `DocumenterInterLinks` is fully compatible with [Sphinx](@extref sphinx :doc:`index`) inventories, it also provides an extended `@extref` syntax that builds on the Sphinx concept of ["domains"](@extref sphinx :term:`domain`) and ["roles"](@extref sphinx :term:`role`). You will see these when inspecting an [`InventoryItem`](@extref `DocInventories.InventoryItem`):
 
-Since `DocumenterInterLinks` is fully compatible with Sphinx inventories, it also provides an extended `@extref` syntax that builds on the Sphinx concept of ["domains"](https://www.sphinx-doc.org/en/master/glossary.html#term-domain) and ["roles"](https://www.sphinx-doc.org/en/master/glossary.html#term-role).
+```@example usage
+using DocInventories
+
+DocInventories.show_full(links["Documenter"]["Documenter.makedocs"])
+```
+
+We can include the domain and role in an `@extref` link as
+
+```
+* [`makedocs`](@extref :function:`Documenter.makedocs`)
+* [`makedocs`](@extref :jl:function:`Documenter.makedocs`)
+```
+
+using a [syntax](@ref Syntax) that is reminiscent of the [Sphinx cross-referencing syntax](@extref sphinx xref-syntax). The use of domains and roles in `DocumenterInterLinks` ([unlike in Sphinx](@ref Compatibility-with-Sphinx)) is for disambiguation only, in case there are multiple items with the same `name`. In general, follow the [Recommended Syntax](@ref) guidelines.

@@ -61,6 +61,7 @@ function expand_extref(
             @error msg node
         end
         if !isnothing(doc)
+            # `doc` is `nothing` during unit tests
             push!(doc.internal.errors, :external_cross_references)
         end
         node.element.destination = ""
@@ -76,6 +77,7 @@ function expand_extref(
             node.element.destination = find_in_interlinks(links, extref)
         catch exc
             if !quiet
+                # TODO: check if we forgot the leading colon in a role
                 msg = "On $(repr(source)), cannot resolve external link: "
                 if exc isa Union{ArgumentError,InventoryItemNotFoundError}
                     msg *= exc.msg
@@ -109,8 +111,8 @@ function _basic_xref_text(node)
             end
         end
         md = convert(Markdown.MD, ast)
-        text =
-            strip(sprint(Markdown.plain, Markdown.Paragraph(md.content[1].content[1].text)))
+        md_paragraph = Markdown.Paragraph(md.content[1].content[1].text)
+        text = strip(sprint(Markdown.plain, md_paragraph))
         return Documenter.slugify(text)
     end
 end

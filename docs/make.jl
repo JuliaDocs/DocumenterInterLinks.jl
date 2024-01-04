@@ -9,13 +9,13 @@ AUTHORS = join(PROJECT_TOML["authors"], ", ") * " and contributors"
 GITHUB = "https://github.com/JuliaDocs/DocumenterInterLinks.jl"
 
 links = InterLinks(
-    "Documenter" => (
-        "https://documenter.juliadocs.org/stable/",
-        joinpath(@__DIR__, "src", "inventories", "Documenter.toml")
-    ),
     "Julia" => (
         "https://docs.julialang.org/en/v1/",
         joinpath(@__DIR__, "src", "inventories", "Julia.toml")
+    ),
+    "Documenter" => (
+        "https://documenter.juliadocs.org/stable/",
+        joinpath(@__DIR__, "src", "inventories", "Documenter.toml")
     ),
     "DocInventories" => "https://juliadocs.org/DocInventories.jl/stable/",
     "sphinx" => "https://www.sphinx-doc.org/en/master/",
@@ -29,6 +29,7 @@ PAGES = [
     "Home" => "index.md",
     "Syntax" => "syntax.md",
     "Inventory Generation" => "write_inventory.md",
+    "Compatibility with Sphinx" => "sphinx.md",
     "How-Tos" => "howtos.md",
     "Internals" => joinpath("api", "internals.md"),
 ]
