@@ -1,1 +1,1 @@
-LC_ALL=C find . -type f -exec sed -i '' 's/has-addons/has-addons/g' {} +
+LC_ALL=C find . -type f -name "*.html" -exec sed -i '' 's/has-addons visible/has-addons/g' {} +
