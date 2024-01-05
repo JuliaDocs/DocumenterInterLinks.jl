@@ -2,8 +2,15 @@ using Documenter.Builder: DocumentPipeline
 using Documenter.HTMLWriter: HTML, HTMLContext, get_url, pretty_url, getpage, pagetitle
 using Documenter.MDFlatten: mdflatten
 using Documenter: Documenter, anchor_fragment, doccat
-using DocInventories: Inventory, InventoryItem, save as save_inventory
 import Documenter: Selectors
+using CodecZlib
+
+
+# Note: this file does not use `DocInventories`, but writes out the inventory
+# files (.inv and .toml.gz) directly. This is so that the code could be moved
+# into Documenter without incurring a dependency on `DocInventories`. A
+# dependency on `CodecZlib` is still necessary, as we need to write compressed
+# data.
 
 
 """
@@ -21,17 +28,16 @@ function Selectors.matcher(::Type{WriteInventory}, doc::Documenter.Document)
 end
 
 function Selectors.runner(::Type{WriteInventory}, doc::Documenter.Document)
-    @info "WriteInventory: writing `objects.inv` file."
-    filename = joinpath(doc.user.build, "objects.inv")
-    write_inventory(filename, doc)
+    @info "WriteInventory: writing `objects.inv` and `inventory.toml.gz` file."
+    write_inventory(doc)
 end
 
 
-function write_inventory(filename::AbstractString, doc::Documenter.Document)
+function write_inventory(doc::Documenter.Document)
 
     project = doc.user.sitename
     version = doc.user.version
-    inventory = Inventory(project=project, version=version)
+
     if isempty(version)
         @warn "No `version` in `makedocs`. Please pass `version` as a keyword argument."
     end
@@ -42,6 +48,23 @@ function write_inventory(filename::AbstractString, doc::Documenter.Document)
     end
     ctx = HTMLContext(doc, doc.user.format[i_html])
 
+    io_inv_header = open(joinpath(doc.user.build, "objects.inv"), "w")
+    _io_toml = open(joinpath(doc.user.build, "inventory.toml.gz"), "w")
+    io_toml = GzipCompressorStream(_io_toml)
+
+    write(io_toml, "[Inventory]\n")
+    write(io_toml, "format = \"DocInventories v0\"\n")
+    # TODO: If this gets moved to Documenter, it should be
+    #     format = "Documenter Inventory v1"
+    write(io_toml, "project = $(_toml_repr(project))\n")
+    write(io_toml, "version = $(_toml_repr(version))\n\n")
+
+    write(io_inv_header, "# Sphinx inventory version 2\n")
+    write(io_inv_header, "# Project: $project\n")
+    write(io_inv_header, "# Version: $version\n")
+    write(io_inv_header, "# The remainder of this file is compressed using zlib.\n")
+    io_inv = ZlibCompressorStream(io_inv_header)
+
     domain = "std"
     role = "doc"
     priority = -1
@@ -49,8 +72,14 @@ function write_inventory(filename::AbstractString, doc::Documenter.Document)
         name = replace(splitext(navnode.page)[1], "\\" => "/")
         uri = pretty_url(ctx, get_url(ctx, navnode.page))
         dispname = get_navnode_dispname(navnode, ctx)
-        push!(inventory, InventoryItem(name, domain, role, priority, uri, dispname))
+        line = "$name $domain:$role $priority $uri $dispname\n"
+        write(io_inv, line)
+        write(io_toml, "[[$domain.$role]]\n")
+        write(io_toml, "name = $(_toml_repr(name))\n")
+        write(io_toml, "uri = $(_toml_repr(uri))\n")
+        (dispname != "-") && write(io_toml, "dispname = $(_toml_repr(dispname))\n")
     end
+    write(io_toml, "\n")
 
     domain = "std"
     role = "label"
@@ -63,8 +92,14 @@ function write_inventory(filename::AbstractString, doc::Documenter.Document)
         end
         uri = get_inventory_uri(doc, ctx, name, anchor)
         dispname = get_inventory_dispname(name, anchor)
-        push!(inventory, InventoryItem(name, domain, role, priority, uri, dispname))
+        line = "$name $domain:$role $priority $uri $dispname\n"
+        write(io_inv, line)
+        write(io_toml, "[[$domain.$role]]\n")
+        write(io_toml, "name = $(_toml_repr(name))\n")
+        write(io_toml, "uri = $(_toml_repr(uri))\n")
+        (dispname != "-") && write(io_toml, "dispname = $(_toml_repr(dispname))\n")
     end
+    write(io_toml, "\n")
 
     domain = "jl"
     priority = 1
@@ -77,11 +112,24 @@ function write_inventory(filename::AbstractString, doc::Documenter.Document)
         uri = get_inventory_uri(doc, ctx, name, anchor)
         role = lowercase(doccat(anchor.object))
         dispname = "-"
-        push!(inventory, InventoryItem(name, domain, role, priority, uri, dispname))
+        line = "$name $domain:$role $priority $uri $dispname\n"
+        write(io_inv, line)
+        write(io_toml, "[[$domain.$role]]\n")
+        write(io_toml, "name = $(_toml_repr(name))\n")
+        write(io_toml, "uri = $(_toml_repr(uri))\n")
     end
 
-    save_inventory(filename, inventory)
+    close(io_inv)
+    close(io_inv_header)
+    close(io_toml)
+    close(_io_toml)
 
+end
+
+
+function _toml_repr(str::AbstractString)
+    # We need to escape quotes in TOML, but not other things like `$`
+    return "\"$(replace(str, "\"" => "\\\""))\""
 end
 
 
@@ -122,7 +170,6 @@ function get_navnode_dispname(navnode, ctx)
 end
 
 
-# from URIs.jl
 @inline _issafe(c::Char) =
     c == '-' || c == '.' || c == '_' || (isascii(c) && (isletter(c) || isnumeric(c)))
 

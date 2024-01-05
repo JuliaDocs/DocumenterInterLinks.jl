@@ -69,6 +69,7 @@ jobs:
           Pkg.develop(path=".")
           println("*** Pinning minimal dependencies")
           Pkg.pin([
+              Pkg.PackageSpec(name="CodecZlib", version="0.7.0"),
               Pkg.PackageSpec(name="Documenter", version="1.0.0"),
               Pkg.PackageSpec(name="DocInventories", version="0.2.0"),
               Pkg.PackageSpec(name="MarkdownAST", version="0.1.2"),
