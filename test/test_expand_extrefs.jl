@@ -396,4 +396,11 @@ end
     msg = "cannot resolve external link: Invalid query \"@extref \""
     @test contains(c.output, msg)
 
+    text = "[release notes](@extref Julia doc:`NEWS`)"
+    c = IOCapture.capture() do
+        _expand_extref(text, links)
+    end
+    msg = "Did you forget a leading colon in \"doc:`NEWS`\"?"
+    @test contains(c.output, msg)
+
 end

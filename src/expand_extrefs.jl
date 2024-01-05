@@ -57,7 +57,7 @@ function expand_extref(
     m = match(links.rx, extref)
     if isnothing(m)
         if !quiet
-            msg = "On $(repr(source)), invalid @extref $(repr(extref)). Should be \"@extref [[inventory] [[:domain][:role]:]name]\"."
+            msg = "On $(repr(source)), invalid @extref $(repr(extref)). Should be \"@extref [[project] [[:domain][:role]:]name]\"."
             @error msg node
         end
         if !isnothing(doc)
@@ -77,7 +77,13 @@ function expand_extref(
             node.element.destination = find_in_interlinks(links, extref)
         catch exc
             if !quiet
-                # TODO: check if we forgot the leading colon in a role
+                if !isnothing(m["name"]) && startswith(m["name"], r"^[^:](\w+:)?\w+:.+$")
+                    # Writing "[text](@extref doc:`index`)" with a missing
+                    # colon has been my most common mistake, and not
+                    # immediately obvious from the standard error message
+                    msg = "Did you forget a leading colon in $(repr(m["name"]))?"
+                    @warn msg
+                end
                 msg = "On $(repr(source)), cannot resolve external link: "
                 if exc isa Union{ArgumentError,InventoryItemNotFoundError}
                     msg *= exc.msg
