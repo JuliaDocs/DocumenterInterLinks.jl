@@ -30,7 +30,7 @@ include("run_makedocs.jl")
 
     Base.eval(Main, quote
         using DocumenterInterLinks
-        PAGES = []
+        PAGES = []  # We don't care about the order of pages for the test
     end)
 
     run_makedocs(
@@ -60,12 +60,16 @@ include("run_makedocs.jl")
             for spec in specs
                 @test !isnothing(inventory[spec])
             end
+            for item in inventory
+                # URIs should never use Windows path separators
+                @test !contains(item.uri, "\\")
+            end
         end
 
         inventory_file = joinpath(dir, "build", "inventory.toml.gz")
         @test isfile(inventory_file)
         if isfile(inventory_file)
-            inventory = Inventory(inventory_file; root_url="")
+            inventory_toml = Inventory(inventory_file; root_url="")
             specs = [
                 ":jl:type:`DocumenterInterLinks.InterLinks`",
                 ":jl:method:`DocumenterInterLinks.find_in_interlinks-Tuple{InterLinks, AbstractString}`",
@@ -73,9 +77,11 @@ include("run_makedocs.jl")
                 # :doc: names should always use unix path separators
             ]
             for spec in specs
-                @test !isnothing(inventory[spec])
+                @test !isnothing(inventory_toml[spec])
             end
         end
+
+        @test collect(inventory_toml) == collect(inventory)
 
     end
 

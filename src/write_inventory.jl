@@ -72,8 +72,8 @@ function write_inventory(doc::Documenter.Document)
     priority = -1
     for navnode in doc.internal.navlist
         name = replace(splitext(navnode.page)[1], "\\" => "/")
-        uri = pretty_url(ctx, get_url(ctx, navnode.page))
-        dispname = get_navnode_dispname(navnode, ctx)
+        uri = _get_inventory_uri(doc, ctx, navnode)
+        dispname = _get_inventory_dispname(doc, ctx, navnode)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
@@ -92,8 +92,8 @@ function write_inventory(doc::Documenter.Document)
             # anchor not unique -> exclude from inventory
             continue
         end
-        uri = get_inventory_uri(doc, ctx, name, anchor)
-        dispname = get_inventory_dispname(name, anchor)
+        uri = _get_inventory_uri(doc, ctx, name, anchor)
+        dispname = _get_inventory_dispname(doc, ctx, name, anchor)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
@@ -111,7 +111,7 @@ function write_inventory(doc::Documenter.Document)
             # anchor not unique -> exclude from inventory
             continue
         end
-        uri = get_inventory_uri(doc, ctx, name, anchor)
+        uri = _get_inventory_uri(doc, ctx, name, anchor)
         role = lowercase(doccat(anchor.object))
         dispname = "-"
         line = "$name $domain:$role $priority $uri $dispname\n"
@@ -129,9 +129,13 @@ function write_inventory(doc::Documenter.Document)
 end
 
 
-function get_inventory_uri(doc, ctx, name, anchor)
+function _get_inventory_uri(doc, ctx, name::AbstractString, anchor::Documenter.Anchor)
     filename = relpath(anchor.file, doc.user.build)
     page_url = pretty_url(ctx, get_url(ctx, filename))
+    if Sys.iswindows()
+        # https://github.com/JuliaDocs/Documenter.jl/issues/2387
+        page_url = replace(page_url, "\\" => "/")
+    end
     label = escapeuri(Documenter.anchor_label(anchor))
     if label == name
         uri = page_url * raw"#$"
@@ -142,7 +146,17 @@ function get_inventory_uri(doc, ctx, name, anchor)
 end
 
 
-function get_inventory_dispname(name, anchor)
+function _get_inventory_uri(doc, ctx, navnode::Documenter.NavNode)
+    uri = pretty_url(ctx, get_url(ctx, navnode.page))
+    if Sys.iswindows()
+        # https://github.com/JuliaDocs/Documenter.jl/issues/2387
+        uri = replace(uri, "\\" => "/")
+    end
+    return uri
+end
+
+
+function _get_inventory_dispname(doc, ctx, name::AbstractString, anchor::Documenter.Anchor)
     dispname = mdflatten(anchor.node)
     if dispname == name
         dispname = "-"
@@ -151,7 +165,7 @@ function get_inventory_dispname(name, anchor)
 end
 
 
-function get_navnode_dispname(navnode, ctx)
+function _get_inventory_dispname(doc, ctx, navnode::Documenter.NavNode)
     dispname = navnode.title_override
     if isnothing(dispname)
         page = getpage(ctx, navnode)
