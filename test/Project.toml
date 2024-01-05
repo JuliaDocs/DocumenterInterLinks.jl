@@ -1,4 +1,5 @@
 [deps]
+CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
 Coverage = "a2441757-f6aa-5fb2-8edb-039e3f45d037"
 DocInventories = "43dc2714-ed3b-44b5-b226-857eda1aa7de"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
