@@ -3,6 +3,7 @@ using Documenter.HTMLWriter: HTML, HTMLContext, get_url, pretty_url, getpage, pa
 using Documenter.MDFlatten: mdflatten
 using Documenter: Documenter, anchor_fragment, doccat
 import Documenter: Selectors
+using TOML  # to properly escape strings
 using CodecZlib
 
 
@@ -56,8 +57,9 @@ function write_inventory(doc::Documenter.Document)
     write(io_toml, "format = \"DocInventories v0\"\n")
     # TODO: If this gets moved to Documenter, it should be
     #     format = "Documenter Inventory v1"
-    write(io_toml, "project = $(_toml_repr(project))\n")
-    write(io_toml, "version = $(_toml_repr(version))\n\n")
+    TOML.print(io_toml, Dict("project" => project))
+    TOML.print(io_toml, Dict("version" => version))
+    write(io_toml, "\n")
 
     write(io_inv_header, "# Sphinx inventory version 2\n")
     write(io_inv_header, "# Project: $project\n")
@@ -75,9 +77,9 @@ function write_inventory(doc::Documenter.Document)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
-        write(io_toml, "name = $(_toml_repr(name))\n")
-        write(io_toml, "uri = $(_toml_repr(uri))\n")
-        (dispname != "-") && write(io_toml, "dispname = $(_toml_repr(dispname))\n")
+        TOML.print(io_toml, Dict("name" => name))
+        TOML.print(io_toml, Dict("uri" => uri))
+        (dispname != "-") && TOML.print(io_toml, Dict("dispname" => dispname))
     end
     write(io_toml, "\n")
 
@@ -95,9 +97,9 @@ function write_inventory(doc::Documenter.Document)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
-        write(io_toml, "name = $(_toml_repr(name))\n")
-        write(io_toml, "uri = $(_toml_repr(uri))\n")
-        (dispname != "-") && write(io_toml, "dispname = $(_toml_repr(dispname))\n")
+        TOML.print(io_toml, Dict("name" => name))
+        TOML.print(io_toml, Dict("uri" => uri))
+        (dispname != "-") && TOML.print(io_toml, Dict("dispname" => dispname))
     end
     write(io_toml, "\n")
 
@@ -115,8 +117,8 @@ function write_inventory(doc::Documenter.Document)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
-        write(io_toml, "name = $(_toml_repr(name))\n")
-        write(io_toml, "uri = $(_toml_repr(uri))\n")
+        TOML.print(io_toml, Dict("name" => name))
+        TOML.print(io_toml, Dict("uri" => uri))
     end
 
     close(io_inv)
@@ -124,12 +126,6 @@ function write_inventory(doc::Documenter.Document)
     close(io_toml)
     close(_io_toml)
 
-end
-
-
-function _toml_repr(str::AbstractString)
-    # We need to escape quotes in TOML, but not other things like `$`
-    return "\"$(replace(str, "\"" => "\\\""))\""
 end
 
 
