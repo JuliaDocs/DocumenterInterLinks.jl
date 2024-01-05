@@ -172,8 +172,19 @@ end
     end
     @test c.value isa ArgumentError
     if c.value isa ArgumentError
-        @test contains(c.value.msg, "Name \"Julia\" not found in inventories")
+        @test contains(c.value.msg, "Project \"Julia\" not found in inventories")
     end
+
+    c = IOCapture.capture(rethrow=Union{}) do
+        links = InterLinks(
+            "docinventories" => (
+                "https://juliadocs.org/DocInventories.jl/stable/",
+                joinpath(@__DIR__, "inventories", "DocInventories.toml")
+            ),
+        )
+    end
+    msg = "Warning: The inventory for project \"docinventories\" mostly contains docstrings for `DocInventories.*` and should probably be named \"DocInventories\""
+    @test contains(c.output, msg)
 
 end
 

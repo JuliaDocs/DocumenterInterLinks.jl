@@ -125,30 +125,61 @@ struct InterLinks <: Plugin
     rx::Regex
 
     function InterLinks(names::Vector{String}, inventories::Dict{String,Inventory})
-        for name in names
-            if isnothing(match(r"^[A-Za-z0-9]+$", name))
-                msg = "Name $(repr(name)) is invalid: must be an alphanumeric ASCII string"
+        for project in names
+            if isnothing(match(r"^[A-Za-z0-9]+$", project))
+                msg = "Project $(repr(project)) is invalid: must be an alphanumeric ASCII string"
                 throw(ArgumentError(msg))
             end
-            if !haskey(inventories, name)
-                msg = "Name $(repr(name)) not found in inventories"
+            if !haskey(inventories, project)
+                msg = "Project $(repr(project)) not found in inventories"
                 throw(ArgumentError(msg))
             end
+            _check_project_name(project, inventories[project])
         end
-        rx_inventory_names = "(?<inventory>" * join(names, "|") * ")"
+        rx_project = "(?<project>" * join(names, "|") * ")"
         rx_spec = raw"(:((?<domain>\w+):)?((?<role>\w+):)?)?(?<name>.+)"
         # Cf. DocInventories._rx_domain_role_name
-        rx = "^@extref\\s*( $rx_inventory_names\\s*)?( (?<spec>$rx_spec))?\\s*\$"
+        rx = "^@extref\\s*( $rx_project\\s*)?( (?<spec>$rx_spec))?\\s*\$"
         new(names, inventories, Regex(rx))
     end
 end
+
+
+function _check_project_name(project, inventory)
+    # We count how many times each package / module is referenced in the
+    # inventory. If there's one that's referenced 90% of the time,
+    # that should be the project name for maximum efficiency, see
+    # https://juliadocs.org/DocumenterInterLinks.jl/dev/syntax/#Performance-Tips
+    counts = Dict{String,Int64}()
+    for item in inventory
+        (item.domain == "std") && continue
+        m = match(r"^(\w+)\.", item.name)
+        # Cf. the short-circuiting syntax rules
+        if !isnothing(m)
+            mod = m.captures[1]
+            counts[mod] = (mod in keys(counts)) ? counts[mod] + 1 : 1
+        end
+    end
+    if !isempty(counts)
+        N = float(sum(values(counts)))
+        mod = argmax(counts)
+        if (counts[mod] > 5) && ((counts[mod] / N) > 0.9)
+            # 90% should be a sufficiently high bar to justify a warning
+            if project != mod
+                msg = "The inventory for project $(repr(project)) mostly contains docstrings for `$mod.*` and should probably be named $(repr(mod))"
+                @warn msg
+            end
+        end
+    end
+end
+
 
 
 function InterLinks(mapping...; default_inventory_file="objects.inv")
     names = String[]
     inventories_list = Inventory[]
     try
-        for (name, spec) in mapping
+        for (project, spec) in mapping
             if spec isa AbstractString  # -> convert to tuple
                 if endswith(spec, "/")
                     spec = (spec, spec * default_inventory_file)
@@ -163,8 +194,8 @@ function InterLinks(mapping...; default_inventory_file="objects.inv")
                 try
                     inventory = _validate_inventory(spec)
                 catch exc
-                    @error "Invalid inventory for $(repr(name))." exception = exc
-                    continue  # next name
+                    @error "Invalid inventory for $(repr(project))." exception = exc
+                    continue  # next project
                 end
             else  # assume Tuple
                 root_url = spec[begin]
@@ -172,19 +203,19 @@ function InterLinks(mapping...; default_inventory_file="objects.inv")
                 for source in sources
                     try
                         inventory = Inventory(source; root_url=root_url)
-                        @debug "Successfully loaded inventory $(repr(name)) from source $(repr(source))."
+                        @debug "Successfully loaded inventory $(repr(project)) from source $(repr(source))."
                         break  # stop after first successful source
                     catch exception
-                        msg = "Failed to load inventory $(repr(name)) from possible source $(repr(source))."
+                        msg = "Failed to load inventory $(repr(project)) from possible source $(repr(source))."
                         @warn msg exception
                     end
                 end
             end
             if isnothing(inventory)
-                @error "Could not load inventory $(repr(name)) from any available sources." sources
+                @error "Could not load inventory $(repr(project)) from any available sources." sources
             else
                 push!(inventories_list, inventory)
-                push!(names, name)
+                push!(names, project)
             end
         end
     catch exc
@@ -244,18 +275,18 @@ finds `extref` in `links` and returns the full URL that resolves the link.
 
 * `links`: the [`InterLinks`] instance to resolve the reference in
 * `extref`: a string of the form
-   `"@extref [inventory] [[:domain][:role]:]name"`
+   `"@extref [project] [[:domain][:role]:]name"`
 """
 function find_in_interlinks(links::InterLinks, extref::AbstractString)
     m = match(links.rx, extref)
-    msg = "Invalid query $(repr(extref)). Should be \"@extref [inventory] [[:domain][:role]:]name\" where the optional \"inventory\" is one of $(keys(links))."
+    msg = "Invalid query $(repr(extref)). Should be \"@extref [project] [[:domain][:role]:]name\" where the optional \"project\" is one of $(keys(links))."
     if isnothing(m)
         throw(ArgumentError(msg))
     else
         if isnothing(m["spec"])
             throw(ArgumentError(msg * " Missing [[:domain][:role]:]name."))
         end
-        if isnothing(m["inventory"])
+        if isnothing(m["project"])
             if startswith(m["name"], "`")
                 # E.g., [`Documenter.makedocs`](@extref) looks in an inventory
                 # "Documenter" first, under the assumption the people follow
@@ -263,9 +294,9 @@ function find_in_interlinks(links::InterLinks, extref::AbstractString)
                 # InterLinks according to the project name.
                 try
                     r = findfirst(r"^`(\w+)\.", m["name"])
-                    project_name = chop(m["name"][r], head=1, tail=1,)
-                    @debug "Trying short-circuit resolution" extref project_name
-                    return _uri(links, project_name, m["spec"])
+                    project = chop(m["name"][r], head=1, tail=1,)
+                    @debug "Trying short-circuit resolution" extref project
+                    return _uri(links, project, m["spec"])
                 catch exception
                     msg = "Failed short-circuit resolution"
                     @debug msg exception # = (exception, catch_backtrace())
@@ -286,17 +317,17 @@ function find_in_interlinks(links::InterLinks, extref::AbstractString)
             msg = "Cannot find $(repr(m["spec"])) in any InterLinks inventory: $(links.names)\n"
             throw(InventoryItemNotFoundError(msg))
         else
-            return _uri(links, m["inventory"], m["spec"])
+            return _uri(links, m["project"], m["spec"])
         end
     end
 end
 
 
-function _uri(links::InterLinks, name::AbstractString, spec::AbstractString)
-    inventory = links[name]
+function _uri(links::InterLinks, project::AbstractString, spec::AbstractString)
+    inventory = links[project]
     item = inventory[spec]
     if isnothing(item)
-        msg = "Cannot find $(repr(spec)) in InterLinks inventory $(repr(name))"
+        msg = "Cannot find $(repr(spec)) in InterLinks inventory $(repr(project))"
         throw(InventoryItemNotFoundError(msg))
     else
         return uri(item; root_url=inventory.root_url)
@@ -307,8 +338,8 @@ end
 function Base.show(io::IO, links::InterLinks)
     N = length(links)
     print(io, "InterLinks(")
-    for (i, (name, inventory)) in enumerate(collect(links))
-        print(io, "$(repr(name)) => $(repr(inventory))")
+    for (i, (project, inventory)) in enumerate(collect(links))
+        print(io, "$(repr(project)) => $(repr(inventory))")
         (i < N) && print(io, ", ")
     end
     print(io, ")")
@@ -321,8 +352,8 @@ function Base.show(io::IO, ::MIME"text/plain", links::InterLinks)
         show(io, links)
     else
         println(io, "InterLinks(")
-        for (i, (name, inventory)) in enumerate(collect(links))
-            println(io, "    $(repr(name)) => $(repr(inventory)),")
+        for (i, (project, inventory)) in enumerate(collect(links))
+            println(io, "    $(repr(project)) => $(repr(inventory)),")
         end
         print(io, ")")
     end

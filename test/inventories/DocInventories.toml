@@ -1,0 +1,137 @@
+[Inventory]
+format = "DocInventories v0"
+project = "DocInventories.jl"
+version = "0.2.0+dev"
+
+[[jl.constant]]
+name = "DocInventories.MIME_TYPES"
+uri = "api/#$"
+
+[[jl.method]]
+name = "DocInventories.auto_mime-Tuple{Any}"
+uri = "api/#DocInventories.auto_mime-Tuple%7BAny%7D"
+[[jl.method]]
+name = "DocInventories.dispname-Tuple{InventoryItem}"
+uri = "api/#DocInventories.dispname-Tuple%7BInventoryItem%7D"
+[[jl.method]]
+name = "DocInventories.find_in_inventory-Tuple{Any, Any}"
+uri = "api/#DocInventories.find_in_inventory-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "DocInventories.root_url-Tuple{AbstractString}"
+uri = "api/#DocInventories.root_url-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "DocInventories.save-Tuple{AbstractString, Any}"
+uri = "api/#DocInventories.save-Tuple%7BAbstractString%2C%20Any%7D"
+[[jl.method]]
+name = "DocInventories.show_full-Tuple{InventoryItem}"
+uri = "api/#DocInventories.show_full-Tuple%7BInventoryItem%7D"
+[[jl.method]]
+name = "DocInventories.show_full-Tuple{Inventory}"
+uri = "api/#DocInventories.show_full-Tuple%7BInventory%7D"
+[[jl.method]]
+name = "DocInventories.spec-Tuple{InventoryItem}"
+uri = "api/#DocInventories.spec-Tuple%7BInventoryItem%7D"
+[[jl.method]]
+name = "DocInventories.split_url-Tuple{Any}"
+uri = "api/#DocInventories.split_url-Tuple%7BAny%7D"
+[[jl.method]]
+name = "DocInventories.uri-Tuple{Inventory, Any}"
+uri = "api/#DocInventories.uri-Tuple%7BInventory%2C%20Any%7D"
+[[jl.method]]
+name = "DocInventories.uri-Tuple{InventoryItem}"
+uri = "api/#DocInventories.uri-Tuple%7BInventoryItem%7D"
+
+[[jl.type]]
+name = "DocInventories.Inventory"
+uri = "api/#$"
+[[jl.type]]
+name = "DocInventories.InventoryFormatError"
+uri = "api/#$"
+[[jl.type]]
+name = "DocInventories.InventoryItem"
+uri = "api/#$"
+
+[[std.doc]]
+dispname = "API"
+name = "api"
+uri = "api/"
+[[std.doc]]
+dispname = "Creating Inventory Files"
+name = "creating"
+uri = "creating/"
+[[std.doc]]
+dispname = "Inventory File Formats"
+name = "formats"
+uri = "formats/"
+[[std.doc]]
+dispname = "Home"
+name = "index"
+uri = ""
+[[std.doc]]
+dispname = "Usage"
+name = "usage"
+uri = "usage/"
+
+[[std.label]]
+name = "API"
+uri = "api/#$"
+[[std.label]]
+name = "Contents"
+uri = "#$"
+[[std.label]]
+dispname = "Creating Inventory Files"
+name = "Creating-Inventory-Files"
+uri = "creating/#$"
+[[std.label]]
+name = "DocInventories.jl"
+uri = "#$"
+[[std.label]]
+dispname = "Exploring Inventories"
+name = "Exploring-Inventories"
+uri = "usage/#$"
+[[std.label]]
+name = "Installation"
+uri = "#$"
+[[std.label]]
+dispname = "Inventory File Formats"
+name = "Inventory-File-Formats"
+uri = "formats/#$"
+[[std.label]]
+dispname = "Inventory Items"
+name = "Inventory-Items"
+uri = "usage/#$"
+[[std.label]]
+dispname = "Loading Inventories"
+name = "Loading-Inventories"
+uri = "usage/#$"
+[[std.label]]
+dispname = "Maintain an Inventory TOML File by Hand"
+name = "Maintain-an-Inventory-TOML-File-by-Hand"
+uri = "creating/#$"
+[[std.label]]
+dispname = "Plain Text Format"
+name = "Plain-Text-Format"
+uri = "formats/#$"
+[[std.label]]
+dispname = "Populate an Inventory in the REPL"
+name = "Populate-an-Inventory-in-the-REPL"
+uri = "creating/#$"
+[[std.label]]
+dispname = "Saving Inventories to File"
+name = "Saving-Inventories-to-File"
+uri = "usage/#$"
+[[std.label]]
+dispname = "Size Comparison"
+name = "Size-Comparison"
+uri = "formats/#$"
+[[std.label]]
+dispname = "Sphinx Inventory Format"
+name = "Sphinx-Inventory-Format"
+uri = "formats/#$"
+[[std.label]]
+dispname = "TOML Format"
+name = "TOML-Format"
+uri = "formats/#$"
+[[std.label]]
+name = "Usage"
+uri = "usage/#$"
