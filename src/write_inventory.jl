@@ -3,7 +3,6 @@ using Documenter.HTMLWriter: HTML, HTMLContext, get_url, pretty_url, getpage, pa
 using Documenter.MDFlatten: mdflatten
 using Documenter: Documenter, anchor_fragment, doccat
 import Documenter: Selectors
-using TOML  # to properly escape strings
 using CodecZlib
 
 
@@ -42,6 +41,9 @@ function write_inventory(doc::Documenter.Document)
     if isempty(version)
         @warn "No `version` in `makedocs`. Please pass `version` as a keyword argument."
     end
+    # TODO: If this gets moved to Documenter, this function should be called
+    # at the end of the HTML Writer and we wouldn't need to check for HTML
+    # output here, or construct a dummy `ctx`.
     i_html = findfirst(fmt -> (fmt isa HTML), doc.user.format)
     if isnothing(i_html)
         @info "Skip writing $(repr(filename)): No HTML output"
@@ -57,8 +59,8 @@ function write_inventory(doc::Documenter.Document)
     write(io_toml, "format = \"DocInventories v0\"\n")
     # TODO: If this gets moved to Documenter, it should be
     #     format = "Documenter Inventory v1"
-    TOML.print(io_toml, Dict("project" => project))
-    TOML.print(io_toml, Dict("version" => version))
+    _write_toml_val(io_toml, "project", project)
+    _write_toml_val(io_toml, "version", version)
     write(io_toml, "\n")
 
     write(io_inv_header, "# Sphinx inventory version 2\n")
@@ -77,9 +79,9 @@ function write_inventory(doc::Documenter.Document)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
-        TOML.print(io_toml, Dict("name" => name))
-        TOML.print(io_toml, Dict("uri" => uri))
-        (dispname != "-") && TOML.print(io_toml, Dict("dispname" => dispname))
+        _write_toml_val(io_toml, "name", name)
+        _write_toml_val(io_toml, "uri", uri)
+        (dispname != "-") && _write_toml_val(io_toml, "dispname", dispname)
     end
     write(io_toml, "\n")
 
@@ -97,9 +99,9 @@ function write_inventory(doc::Documenter.Document)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
-        TOML.print(io_toml, Dict("name" => name))
-        TOML.print(io_toml, Dict("uri" => uri))
-        (dispname != "-") && TOML.print(io_toml, Dict("dispname" => dispname))
+        _write_toml_val(io_toml, "name", name)
+        _write_toml_val(io_toml, "uri", uri)
+        (dispname != "-") && _write_toml_val(io_toml, "dispname", dispname)
     end
     write(io_toml, "\n")
 
@@ -117,8 +119,8 @@ function write_inventory(doc::Documenter.Document)
         line = "$name $domain:$role $priority $uri $dispname\n"
         write(io_inv, line)
         write(io_toml, "[[$domain.$role]]\n")
-        TOML.print(io_toml, Dict("name" => name))
-        TOML.print(io_toml, Dict("uri" => uri))
+        _write_toml_val(io_toml, "name", name)
+        _write_toml_val(io_toml, "uri", uri)
     end
 
     close(io_inv)
@@ -129,6 +131,46 @@ function write_inventory(doc::Documenter.Document)
 end
 
 
+function _write_toml_val(io::IO, name::AbstractString, value::AbstractString)
+    # Cf. TOML.Internals.Printer.print_toml_escaped, but that's way too
+    # internal to just use.
+    write(io, name)
+    write(io, " = \"")
+    for c::AbstractChar in value
+        if !isvalid(c)
+            msg = "Invalid character $(repr(c)) encountered while writing TOML"
+            throw(ArgumentError(msg))
+        end
+        if c == '\b'
+            print(io, '\\', 'b')
+        elseif c == '\t'
+            print(io, '\\', 't')
+        elseif c == '\n'
+            print(io, '\\', 'n')
+        elseif c == '\f'
+            print(io, '\\', 'f')
+        elseif c == '\r'
+            print(io, '\\', 'r')
+        elseif c == '"'
+            print(io, '\\', '"')
+        elseif c == '\\'
+            print(io, "\\", '\\')
+        elseif iscntrl(c)
+            print(io, "\\u")
+            print(io, string(UInt32(c), base=16, pad=4))
+        else
+            print(io, c)
+        end
+    end
+    write(io, "\"\n")
+end
+
+
+function _write_toml_val(io::IO, name::AbstractString, value::Int64)
+    write(io, name, " = ", value, "\n")
+end
+
+
 function _get_inventory_uri(doc, ctx, name::AbstractString, anchor::Documenter.Anchor)
     filename = relpath(anchor.file, doc.user.build)
     page_url = pretty_url(ctx, get_url(ctx, filename))
@@ -136,7 +178,7 @@ function _get_inventory_uri(doc, ctx, name::AbstractString, anchor::Documenter.A
         # https://github.com/JuliaDocs/Documenter.jl/issues/2387
         page_url = replace(page_url, "\\" => "/")
     end
-    label = escapeuri(Documenter.anchor_label(anchor))
+    label = _escapeuri(Documenter.anchor_label(anchor))
     if label == name
         uri = page_url * raw"#$"
     else
@@ -185,6 +227,6 @@ end
 
 _utf8_chars(str::AbstractString) = (Char(c) for c in codeunits(str))
 
-escapeuri(c::Char) = string('%', uppercase(string(Int(c), base=16, pad=2)))
-escapeuri(str::AbstractString) =
-    join(_issafe(c) ? c : escapeuri(c) for c in _utf8_chars(str))
+_escapeuri(c::Char) = string('%', uppercase(string(Int(c), base=16, pad=2)))
+_escapeuri(str::AbstractString) =
+    join(_issafe(c) ? c : _escapeuri(c) for c in _utf8_chars(str))
