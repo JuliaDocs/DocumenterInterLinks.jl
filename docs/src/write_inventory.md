@@ -7,7 +7,7 @@ Just by loading `DocumenterInterLinks` in `docs/make.jl`, the [`WriteInventory`]
 !!! warning
     The creation of an `objects.inv` and/or some other inventory file should become part directly of the `Documenter.jl` package in the future. See [Documenter issue #2366](https://github.com/JuliaDocs/Documenter.jl/issues/2366).
 
-The inventory file should be deployed together with the rest of the documentation, so that it is [accessible to other projects](@ref howto-inventory-location). When a project does not use a documentation generator that writes an inventory file, it may be possible to [maintain an inventory by hand](@ref howto-manual-inventory).
+The inventory file should be deployed together with the rest of the documentation, so that it is [accessible to other projects](@ref howto-inventory-location). When a project does not use a documentation generator that writes an inventory file, it may be possible to [maintain an inventory by hand](@ref howto-manual-inventory). See also the [Wiki](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository) for a collection of inventory files for Julia and other projects.
 
 For a Documenter-based project, the automatic inventory contains:
 

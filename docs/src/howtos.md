@@ -92,6 +92,8 @@ julia> using DocumenterInterLinks
 
 in the same REPL. You should then find an `objects.inv` in the `docs/build` folder. [Use the `DocInventories` package to convert it](@extref DocInventories Saving-Inventories-to-File) to [TOML Format](@extref DocInventories). This is how the [inventory files](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) used in this documentation were generated, e.g., for the Julia project itself.
 
+These inventory files are also available in the [project wiki](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository). You may contribute your own generated inventories there.
+
 There may be projects that legitimately do not provide inventories. For example, some simple Julia projects write out their entire documentation in their README on Github. In that case, you should either use [standard links](@extref Julia `Links`) or [manually create an inventory file](@extref DocInventories Creating-Inventory-Files). The easiest way to do this is to write out an inventory in [TOML Format](@extref DocInventories) by hand.
 
 
