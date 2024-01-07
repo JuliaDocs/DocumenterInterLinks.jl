@@ -71,7 +71,7 @@ See the [documentation](https://juliadocs.org/DocumenterInterLinks.jl/dev/#Using
 
 ## Inventories
 
-Until [Documenter issue #2366](https://github.com/JuliaDocs/Documenter.jl/issues/2366) is resolved and a version of Documenter is released and widely adopted that automatically writes inventory files, you may obtain inventory files for some projects at the [Inventory File Repository (Wiki)](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository). Feel free to [generate your own inventory files](http://juliadocs.org/DocumenterInterLinks.jl/stable/howtos/#howto-manual-inventory) and attach them to a new issue.
+Until [Documenter issue #2366](https://github.com/JuliaDocs/Documenter.jl/issues/2366) is resolved and a version of Documenter is released and widely adopted that automatically writes inventory files, you may obtain inventory files for some projects at the [Inventory File Repository (Wiki)](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository). Feel free to [generate your own inventory files](http://juliadocs.org/DocumenterInterLinks.jl/stable/howtos/#howto-manual-inventory) and contribute them.
 
 
 ## Documentation
