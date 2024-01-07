@@ -36,7 +36,7 @@ PAGES = [
 
 makedocs(
     authors=AUTHORS,
-    version=VERSION,
+    #version=VERSION,  # https://github.com/JuliaDocs/Documenter.jl/issues/2385
     linkcheck=(get(ENV, "DOCUMENTER_CHECK_LINKS", "1") != "0"),
     # Link checking is disabled in REPL, see `devrepl.jl`.
     warnonly=true,

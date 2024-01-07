@@ -40,6 +40,8 @@ function write_inventory(doc::Documenter.Document)
 
     if isempty(version)
         @warn "No `version` in `makedocs`. Please pass `version` as a keyword argument."
+    else
+        @warn "Thank you for providing a `version` in `makedocs`! Currently, there is a bug in Documenter (#2385) that prevents the version selection menu from working properly if `version` is specified. So, until #2389 is merged, you may want to comment out the `version`."
     end
     # TODO: If this gets moved to Documenter, this function should be called
     # at the end of the HTML Writer and we wouldn't need to check for HTML
@@ -58,7 +60,7 @@ function write_inventory(doc::Documenter.Document)
     write(io_toml, "[Inventory]\n")
     write(io_toml, "format = \"DocInventories v0\"\n")
     # TODO: If this gets moved to Documenter, it should be
-    #     format = "Documenter Inventory v1"
+    #     format = "Documenter inventory version 1"
     _write_toml_val(io_toml, "project", project)
     _write_toml_val(io_toml, "version", version)
     write(io_toml, "\n")
