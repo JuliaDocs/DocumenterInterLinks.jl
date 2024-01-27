@@ -1,5 +1,4 @@
-[Inventory]
-format = "DocInventories v0"
+# DocInventory version 0
 project = "Documenter.jl"
 version = "1.2.1"
 

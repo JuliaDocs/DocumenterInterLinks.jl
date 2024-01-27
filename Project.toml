@@ -12,7 +12,7 @@ MarkdownAST = "d0879d2d-cac2-40c8-9cee-1863dc0c7391"
 
 [compat]
 CodecZlib = "0.7"
-DocInventories = "0.2,0.3"
+DocInventories = "0.3"
 Documenter = "1"
 Markdown = "1"
 MarkdownAST = "0.1.2"

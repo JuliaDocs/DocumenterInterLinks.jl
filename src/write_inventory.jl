@@ -61,10 +61,9 @@ function write_inventory(doc::Documenter.Document)
     _io_toml = open(joinpath(doc.user.build, "inventory.toml.gz"), "w")
     io_toml = GzipCompressorStream(_io_toml)
 
-    write(io_toml, "[Inventory]\n")
-    write(io_toml, "format = \"DocInventories v0\"\n")
+    write(io_toml, "# DocInventory version 0\n")
     # TODO: If this gets moved to Documenter, it should be
-    #     format = "Documenter inventory version 1"
+    #     "# Documenter inventory version 1"
     _write_toml_val(io_toml, "project", project)
     _write_toml_val(io_toml, "version", version)
     write(io_toml, "\n")
