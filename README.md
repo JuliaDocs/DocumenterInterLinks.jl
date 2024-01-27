@@ -12,7 +12,7 @@ A plugin for [Documenter.jl](https://documenter.juliadocs.org/) that enables lin
 
 Loading `DocumenterInterLinks` in `docs/make.jl` causes Documenter to produce an "inventory file" `objects.inv` in the output folder, which should get deployed together with the documentation. This file contains a mapping from names to URLs for all link targets in the documentation.
 
-Other projects may use this inventory file to resolve `@extref` links, see [External Citations](#external-citations).
+Other projects may use this inventory file to resolve `@extref` links, see [External References](#external-references).
 
 
 ## Installation
@@ -56,7 +56,7 @@ The resulting plugin object that must be passed as an element of the `plugins` k
 See [`docs/src/inventories`](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) for some exemplary inventory files in [TOML format](https://juliadocs.org/DocInventories.jl/stable/formats/#TOML-Format).
 
 
-## External Citations
+## External References
 
 Instead of [Documenter's `@ref`](https://documenter.juliadocs.org/stable/man/syntax/#@ref-link), the `@extref` link target can be used to resolve the link via any of the available projects defined in the `InterLinks` plugin:
 
