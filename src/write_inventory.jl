@@ -28,8 +28,12 @@ function Selectors.matcher(::Type{WriteInventory}, doc::Documenter.Document)
 end
 
 function Selectors.runner(::Type{WriteInventory}, doc::Documenter.Document)
-    @info "WriteInventory: writing `objects.inv` and `inventory.toml.gz` file."
-    write_inventory(doc)
+    if isdefined(Documenter.HTMLWriter, :write_inventory)
+        @debug "Skip writing inventories in DocumenterInterLinks: handled by Documenter"
+    else
+        @info "WriteInventory: writing `objects.inv` and `inventory.toml.gz` file."
+        write_inventory(doc)
+    end
 end
 
 
