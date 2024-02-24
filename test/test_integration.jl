@@ -66,23 +66,6 @@ include("run_makedocs.jl")
             end
         end
 
-        inventory_file = joinpath(dir, "build", "inventory.toml.gz")
-        @test isfile(inventory_file)
-        if isfile(inventory_file)
-            inventory_toml = Inventory(inventory_file; root_url="")
-            specs = [
-                ":jl:type:`DocumenterInterLinks.InterLinks`",
-                ":jl:method:`DocumenterInterLinks.find_in_interlinks-Tuple{InterLinks, AbstractString}`",
-                ":std:doc:`api/internals`",
-                # :doc: names should always use unix path separators
-            ]
-            for spec in specs
-                @test !isnothing(inventory_toml[spec])
-            end
-        end
-
-        @test collect(inventory_toml) == collect(inventory)
-
     end
 
 end

@@ -81,18 +81,60 @@ These matching `@extref` links should be modified according to the [Recommended 
 
 ### [What if I want to link to a project that does not provide an inventory file?](@id howto-manual-inventory)
 
-Inventory files really should created [automatically using a documentation generator](@ref Inventory-Generation). Try to get the project to use one that produces inventory files or help them set up their documentation system so that it does.
+Inventory files really should be created [automatically using a documentation generator](@ref Inventory-Generation). Try to get the project to use one that produces inventory files or help them set up their documentation system so that it does.
 
-Until `Documenter` incorporates the [Inventory Generation](@ref) currently provided by this plugin, one may produce an inventory file for an existing Julia/Documenter-based project by cloning the project, opening a REPL so that `include("docs/make.jl")` successfully builds the documentation for that projects, and then repeat `include("docs/make.jl")` after running
+For a Documenter-based project that does not have an inventory file (presumably because it is using `Documenter < v1.3.0`), you can use the [`DocumenterInventoryWritingBackport`](https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl) package to create one locally. As an example, let's create an inventory file for `Documenter v1.2` itself:
 
-```julia
-julia> ] add DocumenterInterLinks
-julia> using DocumenterInterLinks
+
+````@eval
+using Markdown
+SCRIPT = raw"""
+# Obtain a copy of the Documenter 1.2.0 source
+git clone https://github.com/JuliaDocs/Documenter.jl.git
+cd Documenter.jl
+git checkout -b inventory-writing v1.2.0
+
+# Instantiate the environment for building the documentation
+julia --project=docs -e '
+    using Pkg
+    Pkg.add(url="https://github.com/JuliaDocs/DocInventories.jl")
+    Pkg.add(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
+    Pkg.develop(path=".")
+    Pkg.instantiate()'
+
+# Build the documentation and convert the resulting inventory to TOML
+julia --project=docs -e '
+    using DocInventories
+    using DocumenterInventoryWritingBackport
+    include("docs/make.jl")
+    DocInventories.convert("docs/build/objects.inv", "Documenter.toml")'
+"""
+
+if get(ENV, "GITHUB_REF_NAME", "") == "master"
+    tmp = mktempdir(; cleanup=false)
+    println("---------------------------------------------------")
+    println("Eval howto-manual-inventory example in tempdir=$tmp")
+    cd(tmp) do
+        script = "generate_inventory.sh"
+        write(script, SCRIPT)
+        run(`/bin/bash $script`)
+        @assert isfile(joinpath("Documenter.jl", "Documenter.toml"))
+    end
+    println("---------------------------------------------------")
+end
+
+Markdown.parse("""
+```bash
+$SCRIPT
 ```
+""")
+````
 
-in the same REPL. You should then find an `objects.inv` in the `docs/build` folder. [Use the `DocInventories` package to convert it](@extref DocInventories Saving-Inventories-to-File) to [TOML Format](@extref DocInventories). This is how the [inventory files](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) used in this documentation were generated, e.g., for the Julia project itself.
+Essentially, what we've done here is to open a Julia REPL like we normally would when building the package documentation locally. Before executing the `docs/make.jl` script, we've loaded the `DocInventories` and `DocumenterInventoryWritingBackport` packages. The latter one ensures that when `Documenter` runs, it will automatically create a compressed `objects.inv` inventory file in the `docs/build` folder. In the last step, we've converted that to the [TOML Format](@extref DocInventories).
 
-These inventory files are also available in the [project wiki](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository). You may contribute your own generated inventories there.
+The above routine is how the local [inventory files](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) used in this documentation were generated. Using the TOML format is recommended for any inventory that will be committed to Git, as it is both human-readable and easier for `git` to track.
+
+Some local inventory files are also available in the [project wiki](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository). You may contribute your own generated inventories there.
 
 There may be projects that legitimately do not provide inventories. For example, some simple Julia projects write out their entire documentation in their README on Github. In that case, you should either use [standard links](@extref Julia `Links`) or [manually create an inventory file](@extref DocInventories Creating-Inventory-Files). The easiest way to do this is to write out an inventory in [TOML Format](@extref DocInventories) by hand.
 

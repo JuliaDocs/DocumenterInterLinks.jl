@@ -1,4 +1,4 @@
-# DocInventory version 0
+# DocInventory version 1
 project = "The Julia Language"
 version = "1.10.0"
 

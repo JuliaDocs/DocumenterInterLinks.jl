@@ -1,4 +1,4 @@
-# DocInventory version 0
+# DocInventory version 1
 project = "DocInventories.jl"
 version = "0.2.0-dev"
 

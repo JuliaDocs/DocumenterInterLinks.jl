@@ -27,7 +27,7 @@ else
 end
 ```
 
-[DocumenterInterLinks.jl](https://github.com/JuliaDocs/DocumenterInterLinks.jl#readme) is a plugin for [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) to link to external projects. It is interoperable with [Intersphinx](@extref sphinx :doc:`usage/extensions/intersphinx`).
+[DocumenterInterLinks.jl](https://github.com/JuliaDocs/DocumenterInterLinks.jl#readme) is a plugin for [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) to link to external projects. It is interoperable with [Intersphinx](@extref sphinx :doc:`usage/extensions/intersphinx`) for Python projects.
 
 
 ## Installation Instructions
@@ -45,7 +45,7 @@ in the Julia REPL, or by adding
 DocumenterInterLinks = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
 ```
 
-to the relevant `Project.toml` file.
+to the relevant `Project.toml` file (e.g., `docs/Project.toml`).
 
 ## Usage
 
@@ -62,15 +62,16 @@ In [`docs/make.jl`](https://github.com/JuliaDocs/DocumenterInterLinks.jl/blob/ma
 using DocumenterInterLinks
 
 links = InterLinks(
-    "sphinx" => "https://www.sphinx-doc.org/en/master/objects.inv",
-    "matplotlib" => "https://matplotlib.org/3.7.3/",
-    "Documenter" => (
-        "https://documenter.juliadocs.org/stable/",
-        joinpath(@__DIR__, "inventories", "Documenter.toml")
-    ),
+    "sphinx" => "https://www.sphinx-doc.org/en/master/",
+    "matplotlib" => "https://matplotlib.org/3.7.3/objects.inv",
     "Julia" => (
         "https://docs.julialang.org/en/v1/",
         joinpath(@__DIR__, "inventories", "Julia.toml")
+    ),
+    "Documenter" => (
+        "https://documenter.juliadocs.org/stable/",
+        "https://documenter.juliadocs.org/previews/PR2424/objects.inv",  # TODO
+        joinpath(@__DIR__, "inventories", "Documenter.toml")
     ),
 );
 nothing # hide
@@ -80,8 +81,8 @@ defines the external projects "[sphinx](https://www.sphinx-doc.org/)", "[matplot
 
 The above examples illustrates three possibilities for specifying the root url and inventory location
 
+* Map that project name to project root URL. This will look for an inventory file `objects.inv` directly underneath the given URL. This is the recommended from in most cases.
 * Map the project name to the URL of an inventory file. The project root URL is the given URL without the filename.
-* Map that project name to project root URL. This will look for an inventory file `objects.inv` directly underneath the given URL.
 * Map the project name to a tuple containing the root URL first, and then one or more possible locations for an inventory file. These may be local file paths, which allows using [a self-maintained inventory file](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) for a project that does not provide one.
 
 See the doc-string of [`InterLinks`](@ref) for details.
@@ -91,7 +92,7 @@ See the doc-string of [`InterLinks`](@ref) for details.
 
 ## Inventories
 
-The inventory files referenced when instantiating [`InterLinks`](@ref) are assumed to have been created by a documentation generator, see [Inventory Generation](@ref). The [`DocInventories` package](@extref DocInventories :doc:`index`) is used as a backend to parse these files into [`DocInventories.Inventory`](@extref) objects. These are accessible by using `links` as an ordered dict:
+The inventory files referenced when instantiating [`InterLinks`](@ref) are assumed to have been created by a documentation generator, see [Inventory Generation](@ref). The [`DocInventories` package](@extref DocInventories :doc:`index`) is used as a backend to parse these files into [`DocInventories.Inventory`](@extref) objects. These are accessible by using `links` as a dict:
 
 ```@example usage
 links["sphinx"]

@@ -15,9 +15,15 @@ using Pkg
 Pkg.activate("test")
 
 function _instantiate()
-    path_DocInventories = joinpath("..", "DocInventories.jl")
-    if isdir(path_DocInventories)
-        Pkg.develop(path=path_DocInventories)
+    path = joinpath("..", "DocumenterInventoryWritingBackport.jl")
+    if isdir(path)
+        Pkg.develop(path=path)
+    else
+        Pkg.add(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
+    end
+    path = joinpath("..", "DocInventories.jl")
+    if isdir(path)
+        Pkg.develop(path=path)
     end
     Pkg.develop(path=".")
 end

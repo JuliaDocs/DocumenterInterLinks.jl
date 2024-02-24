@@ -5,7 +5,6 @@ using Documenter: Documenter
 export InterLinks
 
 
-include("write_inventory.jl")
 include("interlinks.jl")
 include("expand_extrefs.jl")
 
@@ -17,5 +16,9 @@ function __init__()
         end
     end
 end
+
+# Ensure that any package loading DocumenterInterLinks also gets the
+# inventory-writing backport automatically.
+import DocumenterInventoryWritingBackport
 
 end
