@@ -110,7 +110,7 @@ julia --project=docs -e '
     DocInventories.convert("docs/build/objects.inv", "Documenter.toml")'
 """
 
-if get(ENV, "GITHUB_REF_NAME", "") == "master"
+if Sys.isunix() && (get(ENV, "GITHUB_REF_NAME", "") == "master")
     tmp = mktempdir(; cleanup=false)
     println("---------------------------------------------------")
     println("Eval howto-manual-inventory example in tempdir=$tmp")
