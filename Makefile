@@ -36,6 +36,7 @@ test/Manifest.toml:
 	$(JULIA) --project=test --banner=no --startup-file=yes -e 'include("devrepl.jl")'
 
 clean: ## Clean up build/doc/testing artifacts
+	make -C docs/src/sphinx-to-documenter-links clean
 	$(JULIA) -e 'include("test/clean.jl"); clean()'
 
 codestyle: test/Manifest.toml ## Apply the codestyle to the entire project

@@ -19,44 +19,19 @@ There is a [Sphinx-Julia](https://github.com/bastikr/sphinx-julia) package, but 
 Thus, any Sphinx project that wants to link to inventory items in the `jl` domain must first formally specify that domain. This could be done by adding the following code to the Sphinx [`conf.py` file](@extref sphinx :doc:`usage/quickstart`) (or an [extension](@extref sphinx :doc:`development/index`)):
 
 
+````@eval
+using Markdown
+julia_domain_py = joinpath(
+    @__DIR__, "..", "src", "sphinx-to-documenter-links",
+    "docs", "source", "_extensions", "julia_domain.py"
+)
+Markdown.parse("""
 ```python
-from sphinx.domains import Domain, ObjType
-from sphinx.roles import XRefRole
-
-class JuliaDomain(Domain):
-    """A minimal Julia language domain."""
-
-    name = 'jl'
-    label = 'Julia'
-    object_types = {
-        # name => (localized name, *roles)
-        'macro': ObjType('macro', 'macro', 'obj'),
-        'keyword': ObjType('keyword', 'keyword', 'obj'),
-        'function': ObjType('function', 'func', 'function', 'obj'),
-        'method': ObjType('method', 'meth', 'method', 'obj'),
-        'type': ObjType('type', 'type', 'obj'),
-        'module': ObjType('module', 'mod', 'module', 'obj'),
-        'constant': ObjType('constant', 'const', 'constant', 'obj'),
-    }
-
-    roles = {
-        'macro': XRefRole(fix_parens=True),
-        'keyword': XRefRole(),
-        'function': XRefRole(fix_parens=True),
-        'func': XRefRole(fix_parens=True),
-        'method': XRefRole(fix_parens=True),
-        'meth': XRefRole(fix_parens=True),
-        'type': XRefRole(fix_parens=True),
-        'module': XRefRole(),
-        'mod': XRefRole(),
-        'constant': XRefRole(),
-        'const': XRefRole(),
-        'obj': XRefRole(),
-    }
-
-
-def setup(app):
-    app.add_domain(JuliaDomain)
+$(read(julia_domain_py, String))
 ```
+""")
+````
 
 We have used Sphinx' [Domain API](@extref sphinx domain-api) here to define the object types matching our [Julia Domain](@ref The-Julia-Domain). For each object type, we define a role of the same name, as well as abbreviated roles in line with Sphinx' usual conventions, such as `:func:` as a shorthand for `:function:` and `obj` for any type.
+
+See [`sphinx-to-documenter-links`](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/sphinx-to-documenter-links) for a full example of a Python project with documentation linking to the documentation of Julia projects.
