@@ -4,25 +4,23 @@ The possible forms of an `@extref` link are as follows:
 
 1. ```[title](@extref)``` where `title` is a section title
 2. ```[`name`](@extref)``` where `name` is a fully specified code object 🏅
-3. ```[text](@extref name)``` where `text` is an arbitrary link text
-4. ```[text](@extref `name`)``` where `name` is a fully specified code object or sluggified section title  🏅
-5. ```[title](@extref project)``` where `project` is a known project in the underlying [`InterLinks`](@ref) object
-6. ```[`name`](@extref project)``` 🥈
-7. ```[text](@extref :role:`name`)```
-8. ```[text](@extref :domain:role:`name`)```
-9. ```[text](@extref project name)```
-10. ```[text](@extref project `name`)``` 🏅
-11. ```[text](@extref project :role:`name`)``` 🥈
-12. ```[text](@extref project :domain:role:`name`)```
+3. ```[text](@extref name)``` where `text` is an arbitrary link text and `name` (optionally enclosed in backticks) is a fully specified code object or sluggified section title. 🏅
+4. ```[title](@extref project)``` where `project` is a known project in the underlying [`InterLinks`](@ref) object
+5. ```[`name`](@extref project)``` 🥈
+6. ```[text](@extref :role:`name`)```
+7. ```[text](@extref :domain:role:`name`)```
+8. ```[text](@extref project name)``` 🏅
+9. ```[text](@extref project :role:`name`)``` 🥈
+10. ```[text](@extref project :domain:role:`name`)```
 
 
-The most commonly used forms of syntax should be (2), (4), and (10) 🏅, with (6), and (11) being useful in some situations 🥈, see the [Recommended Syntax](@ref).
+The most commonly used forms of syntax should be (2), (3), and (8) 🏅, with (5), and (9) being useful in some situations 🥈, see the [Recommended Syntax](@ref).
 
 Assuming an [`InterLinks`](@ref) instance `links`, all of the above will reference the [`DocInventories.InventoryItem`](@extref) `links[project][":domain:role:name"]`. If `project` is not specified, the first project in `links` that contains a matching item will be used (up to a [performance shortcut](@ref Performance-Tips)). If `domain` or `role` are not given, any domain or role will match.
 
-Forms (1-3) most directly extend [Documenter's built-in `@ref` syntax](@extref Documenter `@ref-link`), but are not universally recommended for [optimum performance](@ref Performance-Tips). Form (5) takes precedence over form (3) if `project` is a known element of `links`. The use of backticks in form (4) would avoid this ambiguity.
+Forms (1-3) most directly extend [Documenter's built-in `@ref` syntax](@extref Documenter `@ref-link`). Forms (4) and (5) take precedence over form (3) if `project` is a known element of `links`. The use of backticks around `name` in form (3) would avoid this ambiguity.
 
-Forms (1) and (5) apply a [`sluggification`](@extref `Documenter.slugify-Tuple{AbstractString}`) to transform `title` into a `name`.  This matches Documenter's `@ref` behavior for linking to section titles. The specifics of the sluggification algorithm are not guaranteed to be stable between different versions of Documenter, and they do not match the sluggification used by other documentation generators like [Sphinx](@extref sphinx :doc:`index`). For this reason, forms (1) and (5) only have limited usefulness.
+Forms (1) and (4) apply a [`sluggification`](@extref `Documenter.slugify-Tuple{AbstractString}`) to transform `title` into a `name`.  This matches Documenter's `@ref` behavior for linking to section titles. The specifics of the sluggification algorithm are not guaranteed to be stable between different versions of Documenter, and they do not match the sluggification used by other documentation generators like [Sphinx](@extref sphinx :doc:`index`). For this reason, forms (1) and (4) only have limited usefulness.
 
 ## Performance Tips
 
@@ -30,7 +28,7 @@ Although resolving external references is unlikely to have a significant impact 
 
 When no `project` is given in the `@extref` specification, all projects declared in the [`InterLinks`](@ref) object may have to be searched for a matching item. The projects are searched in order, so the ordering in the definition of [`InterLinks`](@ref) matters.
 
-However, `DocumenterInterLinks` implements a short-circuit mechanism to avoid having to specify the `project` when linking to code objects in most cases: If `name` is enclosed in backticks, and starts with the name of a `project` followed by a period, then that project is searched first.
+However, `DocumenterInterLinks` implements a short-circuit mechanism to avoid having to specify the `project` when linking to code objects in most cases: If `name` starts with the name of a `project` followed by a period, then that project is searched first.
 
 For example, in order to link to [`Documenter.makedocs`](@extref), we can use
 
@@ -47,20 +45,13 @@ to immediately search the inventory `links["Documenter"]`, making the reference 
 Further `@extref` calls that will use the short-circuit mechanism for efficient lookup are
 
 ```
+[`makedocs`](@extref Documenter.makedocs)
 [`makedocs`](@extref `Documenter.makedocs`)
 [`makedocs`](@extref :function:`Documenter.makedocs`)
 [`makedocs`](@extref :jl:function:`Documenter.makedocs`)
 ```
 
 where the latter two are unnecessarily verbose, as `Documenter.makedocs` is already uniquely specified without the `role` or `domain`.
-
-On the other hand,
-
-```
-[`makedocs`](@extref Documenter.makedocs)
-```
-
-will work, but it will *not* use the short-circuit mechanism, due to the lack of backticks.
 
 The short-circuit mechanism only works if the project name used in the instantiation of [`InterLinks`](@ref) matches the package name as it occurs in the fully specified name of any code object. That is, name the project `"Documenter"`, not, e.g., `"Documenter121"` for version `1.2.1` of `Documenter`.
 
@@ -85,7 +76,7 @@ looks in the `Julia` project first, avoiding the need for
 
 ## Recommended Syntax
 
-With the [Performance Tips](@ref) in mind, not all of the [12 possible Syntax forms](@ref Syntax) are recommended in practice. For maximum clarity and performance, use the following guidelines:
+With the [Performance Tips](@ref) in mind, not all of the [10 possible Syntax forms](@ref Syntax) are recommended in practice. For maximum clarity and performance, use the following guidelines:
 
 1. When referencing section headers in another project, e.g. the [Basic Markdown](@extref Documenter Basic-Markdown) section in Documenter's documentation, look up the appropriate sluggified name:
 
@@ -95,10 +86,10 @@ With the [Performance Tips](@ref) in mind, not all of the [12 possible Syntax fo
    links["Documenter"]("Basic Markdown")
    ```
 
-   and use form (10):
+   and use form (8):
 
    ```
-   [Basic Markdown](@extref Documenter `Basic-Markdown`)
+   [Basic Markdown](@extref Documenter Basic-Markdown)
    ```
 
 2. When directly referencing a code object, e.g., [`Documenter.makedocs`](@extref), use form (2):
@@ -115,19 +106,21 @@ With the [Performance Tips](@ref) in mind, not all of the [12 possible Syntax fo
    links["Documenter"]("parseblock")
    ```
 
-   and then use form (4),
+   and then use form (3),
 
    ```
    [`Documenter.parseblock`](@extref `Documenter.parseblock-Tuple{AbstractString, Any, Any}`)
    ```
 
-   If the module name of the object cannot match the project name (e.g., for the `Julia` documentation, which contains docstrings for `Base`, `Core`, `LinearAlgebra`, etc.), use form (6),
+   The use of backticks around the full method name is optional, but recommended when there are spaces in the name.
+
+   If the module name of the object cannot match the project name (e.g., for the `Julia` documentation, which contains docstrings for `Base`, `Core`, `LinearAlgebra`, etc.), use form (5),
 
    ```
    [`Base.sort!`](@extref Julia)
    ```
 
-3. When referencing a page, e.g. the [Home page of the Documenter documentation](@extref Documenter :doc:`index`), use form (11):
+3. When referencing a page, e.g. the [Home page of the Documenter documentation](@extref Documenter :doc:`index`), use form (9):
 
    ```
    [Home page of the Documenter documentation](@extref Documenter :doc:`index`)
@@ -136,4 +129,4 @@ With the [Performance Tips](@ref) in mind, not all of the [12 possible Syntax fo
    The `doc` role is not strictly necessary, but it clearly distinguishes references to documents from references to headings (especially when both may exist with the same `name`).
 
 
-Thus, the most commonly used forms of syntax for `@extref` links should be (2), (4), and (10), highlighted with 🏅 in [Syntax](@ref), with (6), and (11) being useful in some situations (🥈).
+Thus, the most commonly used forms of syntax for `@extref` links should be (2), (3), and (8), highlighted with 🏅 in [Syntax](@ref), with (5), and (9) being useful in some situations (🥈).

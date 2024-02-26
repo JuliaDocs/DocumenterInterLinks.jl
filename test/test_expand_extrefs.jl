@@ -303,8 +303,7 @@ end
     @test contains(c.output, "Debug: Trying short-circuit resolution")
     @test contains(c.value, "#Documenter.makedocs")
 
-    # The backticks around `Documenter.makedocs` are essential. Without them,
-    # short-circuiting won't work:
+    # The shortcircuit logic even works without backticks
 
     text = "[The `makedocs` function](@extref Documenter.makedocs)"
     c = IOCapture.capture() do
@@ -312,8 +311,7 @@ end
             _expand_extref(text, links)
         end
     end
-    @test !contains(c.output, "Debug: Trying short-circuit resolution")
-    @test contains(c.output, "Debug: Looking in *all* inventories")
+    @test contains(c.output, "Debug: Trying short-circuit resolution")
     @test contains(c.value, "#Documenter.makedocs")
 
     # For Base, short-circuit will fail, because it's in the Julia project

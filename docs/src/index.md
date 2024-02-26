@@ -109,18 +109,18 @@ The `DocumenterInterLinks` plugin adds support for `@extref` link targets to `Do
 
 ```
 * [`Documenter.makedocs`](@extref)
-* [Documenter's `makedocs` function](@extref `Documenter.makedocs`)
+* [Documenter's `makedocs` function](@extref Documenter.makedocs)
 * See the section about Documenter's [Writers](@extref).
 ```
 
 The above markdown code renders as follows:
 
 > * [`Documenter.makedocs`](@extref)
-> * [Documenter's `makedocs` function](@extref `Documenter.makedocs`)
+> * [Documenter's `makedocs` function](@extref Documenter.makedocs)
 > * See the section about Documenter's [Writers](@extref).
 
 
-To disambiguate (and [speed up](@ref Performance-Tips)) the references, the name of the inventory (as defined when instantiating `InterLinks`) can be included in the `@extref`. The previous example would have been better written as
+To disambiguate (and [speed up](@ref Performance-Tips)) the references, the name of the inventory (as defined when instantiating `InterLinks`) can be included in the `@extref`. In particular, the last example should have been written as
 
 ```
 * See the section about Documenter's [Writers](@extref Documenter).

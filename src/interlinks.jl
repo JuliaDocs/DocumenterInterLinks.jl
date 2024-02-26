@@ -287,14 +287,15 @@ function find_in_interlinks(links::InterLinks, extref::AbstractString)
             throw(ArgumentError(msg * " Missing [[:domain][:role]:]name."))
         end
         if isnothing(m["project"])
-            if startswith(m["name"], "`")
-                # E.g., [`Documenter.makedocs`](@extref) looks in an inventory
+            shortcircuit = match(r"^`?(?<project>\w+)\.", m["name"])
+            if !isnothing(shortcircuit)
+                # E.g., [`Documenter.makedocs`](@extref) or
+                # [text](@extref Documenter.makedocs) looks in an inventory
                 # "Documenter" first, under the assumption the people follow
                 # the recommended approach of naming their inventories in
                 # InterLinks according to the project name.
                 try
-                    r = findfirst(r"^`(\w+)\.", m["name"])
-                    project = chop(m["name"][r], head=1, tail=1,)
+                    project = shortcircuit["project"]
                     @debug "Trying short-circuit resolution" extref project
                     return _uri(links, project, m["spec"])
                 catch exception
