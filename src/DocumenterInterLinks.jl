@@ -2,11 +2,17 @@ module DocumenterInterLinks
 
 using Documenter: Documenter
 
-export InterLinks
+export InterLinks, ExternalFallbacks
 
 
 include("interlinks.jl")
 include("expand_extrefs.jl")
+
+if Documenter.DOCUMENTER_VERSION >= v"1.3.0-dev"
+    include("fallback.jl")
+else
+    include("fallback_not_available.jl")
+end
 
 
 function __init__()

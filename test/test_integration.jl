@@ -1,6 +1,6 @@
 using DocumenterInterLinks
-using DocInventories
 using Documenter
+using DocInventories
 using Test
 
 include("run_makedocs.jl")
@@ -28,15 +28,27 @@ include("run_makedocs.jl")
         "matplotlib" => "https://matplotlib.org/3.7.3/",
     )
 
+    fallbacks = ExternalFallbacks(
+        "makedocs" => "@extref Documenter.makedocs",
+        "Other-Output-Formats" => "@extref Documenter `Other-Output-Formats`",
+        "Inventory-File-Formats" => "@extref DocInventories `Inventory-File-Formats`",
+    )
+
     Base.eval(Main, quote
+        using DocInventories
         using DocumenterInterLinks
         PAGES = []  # We don't care about the order of pages for the test
     end)
 
+    warnonly = [:cross_references,]
+    if Documenter.DOCUMENTER_VERSION >= v"1.3.0-dev"
+        warnonly = false
+    end
+
     run_makedocs(
         joinpath(@__DIR__, "..", "docs");
         sitename="DocumenterInterLinks.jl",
-        plugins=[links],
+        plugins=[links, fallbacks],
         format=Documenter.HTML(;
             prettyurls = true,
             canonical  = "https://juliadocs.github.io/DocumenterInterLinks.jl",
@@ -44,6 +56,7 @@ include("run_makedocs.jl")
             edit_link  = "",
             repolink   = ""
         ),
+        warnonly=warnonly,
         check_success=true
     ) do dir, result, success, backtrace, output
 

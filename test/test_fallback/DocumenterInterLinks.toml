@@ -1,0 +1,133 @@
+# DocInventory version 1
+project = "DocumenterInterLinks.jl"
+version = "0.2.5+dev"
+
+[[jl.constant]]
+name = "DocInventories.MIME_TYPES"
+uri = "fallback/#$"
+
+[[jl.method]]
+name = "DocumenterInterLinks.find_in_interlinks-Tuple{InterLinks, AbstractString}"
+uri = "api/internals/#DocumenterInterLinks.find_in_interlinks-Tuple%7BInterLinks%2C%20AbstractString%7D"
+
+[[jl.type]]
+name = "DocumenterInterLinks.ExtCrossReferences"
+uri = "api/internals/#$"
+[[jl.type]]
+name = "DocumenterInterLinks.ExternalFallbacks"
+uri = "api/internals/#$"
+[[jl.type]]
+name = "DocumenterInterLinks.InterLinks"
+uri = "api/internals/#$"
+
+[[std.doc]]
+dispname = "Internals"
+name = "api/internals"
+uri = "api/internals/"
+[[std.doc]]
+dispname = "Fallback Resolution"
+name = "fallback"
+uri = "fallback/"
+[[std.doc]]
+dispname = "How-Tos"
+name = "howtos"
+uri = "howtos/"
+[[std.doc]]
+dispname = "Home"
+name = "index"
+uri = ""
+[[std.doc]]
+dispname = "Compatibility with Sphinx"
+name = "sphinx"
+uri = "sphinx/"
+[[std.doc]]
+dispname = "Syntax"
+name = "syntax"
+uri = "syntax/"
+[[std.doc]]
+dispname = "Inventory Generation"
+name = "write_inventory"
+uri = "write_inventory/"
+
+[[std.label]]
+dispname = "Building the Documentation"
+name = "Building-the-Documentation"
+uri = "sphinx-to-documenter-links/README/#$"
+[[std.label]]
+dispname = "Compatibility with Sphinx"
+name = "Compatibility-with-Sphinx"
+uri = "sphinx/#$"
+[[std.label]]
+dispname = "Declaring External Projects"
+name = "Declaring-External-Projects"
+uri = "#$"
+[[std.label]]
+dispname = "Demo for Linking from Sphinx to Documenter"
+name = "Demo-for-Linking-from-Sphinx-to-Documenter"
+uri = "sphinx-to-documenter-links/README/#$"
+[[std.label]]
+name = "DocumenterInterLinks.jl"
+uri = "#$"
+[[std.label]]
+dispname = "Fallback Resolution"
+name = "Fallback-Resolution"
+uri = "fallback/#$"
+[[std.label]]
+name = "How-Tos"
+uri = "howtos/#$"
+[[std.label]]
+dispname = "Installation Instructions"
+name = "Installation-Instructions"
+uri = "#$"
+[[std.label]]
+name = "Internals"
+uri = "api/internals/#$"
+[[std.label]]
+name = "Inventories"
+uri = "#$"
+[[std.label]]
+dispname = "Inventory Generation"
+name = "Inventory-Generation"
+uri = "write_inventory/#$"
+[[std.label]]
+dispname = "Performance Tips"
+name = "Performance-Tips"
+uri = "syntax/#$"
+[[std.label]]
+dispname = "Recommended Syntax"
+name = "Recommended-Syntax"
+uri = "syntax/#$"
+[[std.label]]
+dispname = "Referencing the Julia domain in Sphinx"
+name = "Referencing-the-Julia-domain-in-Sphinx"
+uri = "sphinx/#$"
+[[std.label]]
+name = "Syntax"
+uri = "syntax/#$"
+[[std.label]]
+dispname = "The Julia Domain"
+name = "The-Julia-Domain"
+uri = "write_inventory/#$"
+[[std.label]]
+name = "Usage"
+uri = "#$"
+[[std.label]]
+dispname = "Using External References"
+name = "Using-External-References"
+uri = "#$"
+[[std.label]]
+dispname = "Can I use this plugin for general external links?"
+name = "howto-external-links"
+uri = "howtos/#$"
+[[std.label]]
+dispname = "How do I figure out the correct name for the @extref link?"
+name = "howto-find-extref"
+uri = "howtos/#$"
+[[std.label]]
+dispname = "How do I find a project's inventory file?"
+name = "howto-inventory-location"
+uri = "howtos/#$"
+[[std.label]]
+dispname = "What if I want to link to a project that does not provide an inventory file?"
+name = "howto-manual-inventory"
+uri = "howtos/#$"

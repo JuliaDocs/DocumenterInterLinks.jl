@@ -1,4 +1,5 @@
 using Test
+using DocInventories
 using SafeTestsets
 
 
@@ -13,6 +14,11 @@ using SafeTestsets
     println("\n* expand extrefs (test_expand_extrefs.jl):")
     @time @safetestset "expand extrefs" begin
         include("test_expand_extrefs.jl")
+    end
+
+    println("\n* fallback test (test_fallback.jl):")
+    @time @safetestset "fallback" begin
+        include("test_fallback.jl")
     end
 
     println("\n* integration test (test_integration.jl):")

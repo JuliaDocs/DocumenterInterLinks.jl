@@ -1,5 +1,6 @@
 using DocumenterInterLinks
 using Documenter
+using DocInventories
 using Pkg
 
 PROJECT_TOML = Pkg.TOML.parsefile(joinpath(@__DIR__, "..", "Project.toml"))
@@ -23,11 +24,20 @@ links = InterLinks(
     "matplotlib" => "https://matplotlib.org/3.7.3/",
 )
 
+
+fallbacks = ExternalFallbacks(
+    "makedocs" => "@extref Documenter.makedocs",
+    "Other-Output-Formats" => "@extref Documenter `Other-Output-Formats`",
+    "Inventory-File-Formats" => "@extref DocInventories `Inventory-File-Formats`",
+)
+
+
 println("Starting makedocs")
 
 PAGES = [
     "Home" => "index.md",
     "Syntax" => "syntax.md",
+    "Fallback Resolution" => "fallback.md",
     "Inventory Generation" => "write_inventory.md",
     "Compatibility with Sphinx" => "sphinx.md",
     "How-Tos" => "howtos.md",
@@ -48,7 +58,7 @@ makedocs(
         footer="[$NAME.jl]($GITHUB) v$VERSION docs powered by [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl).",
     ),
     pages=PAGES,
-    plugins=[links],
+    plugins=[links, fallbacks],
 )
 
 println("Finished makedocs")

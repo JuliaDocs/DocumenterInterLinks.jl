@@ -17,7 +17,7 @@ For a Documenter-based project, the automatic inventory contains:
 
 ## The Julia Domain
 
-!!! tip
+!!! info
     You  probably will not need to worry about the information in this section.
 
 The inventory for a `Documenter`-based documentation includes [entries](@extref `DocInventories.InventoryItem`) for docstrings using an [ad-hoc](@ref Compatibility-with-Sphinx) `jl` domain. The `role` for each entry matches how `Documenter` identifies the underlying object with [`Documenter.doccat`](@extref `Documenter.doccat-Tuple{Documenter.Object}`). You will find this identification as part of how the docstring shows in the documentation; for example, note the "— Type" in the header of [` DocumenterInterLinks.InterLinks`](@ref). The `role` that will be written to the inventory is simply the lowercase string of this identification. Currently, `Documenter` uses the following:
