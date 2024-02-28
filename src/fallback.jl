@@ -98,8 +98,7 @@ function Selectors.matcher(
     doc,
     errors
 )
-    fallback = Documenter.getplugin(doc, ExternalFallbacks)
-    return (xref_unresolved(node) && haskey(fallback.mapping, slug))
+    return xref_unresolved(node)
 end
 
 
@@ -113,9 +112,28 @@ function Selectors.runner(
     errors
 )
     links = Documenter.getplugin(doc, InterLinks)
-    fallback = Documenter.getplugin(doc, ExternalFallbacks)
+    fallbacks = Documenter.getplugin(doc, ExternalFallbacks)
     @assert node.element isa MarkdownAST.Link
-    extref = fallback.mapping[slug]
+    extref = "@extref $slug"
+    try
+        extref = fallbacks.mapping[slug]
+    catch
+        candidates = links(Regex("[`.]\\Q$slug\\E`"))
+        if length(candidates) == 0
+            # broaden the search
+            candidates = links(slug)
+        end
+        if length(candidates) > 0
+            extref = candidates[begin]
+            if length(candidates) > 1
+                msg = "ExternalFallbacks resolution of \"$slug\" is ambiguous. Candidates are\n  - "
+                msg *= join(repr.(candidates), "\n  - ")
+                @warn msg
+            end
+            @info "ExternalFallbacks automatic resolution of $(repr(slug)) => $(repr(extref))"
+            fallbacks.mapping[slug] = extref
+        end
+    end
     m = match(links.rx, extref)
     @assert !isnothing(m)  # Can't think of any way for the match to fail
     if isnothing(m["spec"])
