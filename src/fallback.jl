@@ -4,7 +4,8 @@ import Documenter: XRefResolvers, Selectors, xref_unresolved
 """Plugin for letting `@ref` links fall back to `@extref` links.
 
 !!! warning
-    This plugin is experimental.
+    This plugin is available only with `Documenter >= v1.3.0` and should be
+    considered as experimental.
 
 ```julia
 fallbacks = ExternalFallbacks(pairs...)

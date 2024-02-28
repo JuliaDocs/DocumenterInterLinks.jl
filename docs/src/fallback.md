@@ -1,7 +1,7 @@
 # Fallback Resolution
 
 !!! warning
-    The [`ExternalFallbacks`](@ref) plugin described here is experimental.
+    The [`ExternalFallbacks`](@ref) plugin described here is available only with `Documenter >= v1.3.0` and should be considered experimental.
 
 In some situations, you may need to include a docstring from an external package in your documentation – for example, you you are extending a function from that package, you may want to show the function docstring. If that docstrings contains an `@ref` link, you have a problem: that link is resolvable in the external documentation, but not in *your* documentation.
 

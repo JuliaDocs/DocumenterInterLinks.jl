@@ -12,14 +12,14 @@ function parse_md_link(text)
     mdpage = Markdown.parse(text)
     paragraph = first(convert(MarkdownAST.Node, mdpage).children)
     if length(paragraph.children) != 1
-        @error "citation $(repr(text)) must parse into a single MarkdownAST.Link" ast =
+        @error "link text $(repr(text)) must parse into a single MarkdownAST.Link" ast =
             collect(paragraph.children)
-        error("Invalid citation: $(repr(text))")
+        error("Invalid link text: $(repr(text))")
     end
     link = first(paragraph.children)
     if !(link.element isa MarkdownAST.Link)
         @error "citation $(repr(text)) must parse into MarkdownAST.Link" ast = link
-        error("Invalid citation: $(repr(text))")
+        error("Invalid link text: $(repr(text))")
     end
     return link
 end
