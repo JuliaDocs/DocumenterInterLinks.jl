@@ -32,7 +32,7 @@ If there are any unresolvable `@ref` links, and there is no explicit `@extref`-m
 in the output of [`Documenter.makedocs`](@extref). If this is correct, you should copy ```"Inventory-File-Formats" => "@extref DocInventories :std:label:`Inventory-File-Formats`"``` explicitly into the instantiation of the [`ExternalFallbacks`](@ref) plugin. The "automatic resolution" is both slow and has the potential for misidentifying the `@extref` link.
 
 !!! warning
-    Do not use `@ref` links in your documentation when you could use an `@extref` link! The [`ExternalFallbacks`](@ref) plugin is intended as a "last resort" to be used deliberately, not to automatically resolve all `@ref` links via [`InterLinks`](@ref) (the way the [Intersphinx](@extref sphinx :doc:`usage/extensions/intersphinx`) plugin does in [Sphinx](@extref sphinx :doc:`index`)).
+    Do not use `@ref` links in your documentation for known `@extref` targets! The [`ExternalFallbacks`](@ref) plugin is intended as a "last resort", to be used deliberately, not to automatically resolve all `@ref` links via [`InterLinks`](@ref).
 
 
 With an `@extref` mapping for `"Inventory-File-Formats"` in place, it is now possible to include the docstring for [`DocInventories.MIME_TYPES`](@extref):
