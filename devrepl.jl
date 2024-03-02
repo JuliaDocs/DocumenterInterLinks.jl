@@ -21,11 +21,11 @@ function _instantiate()
     else
         Pkg.add(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
     end
+    Pkg.develop(path=".")
     path = joinpath("..", "DocInventories.jl")
     if isdir(path)
         Pkg.develop(path=path)
     end
-    Pkg.develop(path=".")
 end
 
 if !isfile(joinpath("test", "Manifest.toml"))

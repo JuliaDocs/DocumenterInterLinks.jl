@@ -70,7 +70,7 @@ links = InterLinks(
     ),
     "Documenter" => (
         "https://documenter.juliadocs.org/stable/",
-        "https://documenter.juliadocs.org/previews/PR2424/objects.inv",  # TODO
+        "https://documenter.juliadocs.org/stable/objects.inv",
         joinpath(@__DIR__, "inventories", "Documenter.toml")
     ),
 );

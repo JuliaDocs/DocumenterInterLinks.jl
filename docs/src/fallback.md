@@ -19,7 +19,7 @@ fallbacks = ExternalFallbacks(
 ```
 
 !!! warning
-    Like any plugin (and like the [`InterLinks`](@ref) object), `fallbacks` must be passed to [`Documenter.makedocs`](@extref) as an element of `plugins`.
+    Like any plugin, `fallbacks` must be passed to [`Documenter.makedocs`](@extref) as an element of `plugins`.
 
 The "slug" on the left-hand-side of the mapping can be obtained from message that `Documenter` prints when it fails to resolve the `@ref` link. Generally, for `[Section Title](@ref)` or `[text](@ref "Section Title)`, the slug is a "sluggified" version of the title (determined internally by `Documenter`, mostly just replacing spaces with dashes); and for ```[`code`](@ref)``` or `[text](@ref code)`, it is `"code"`. The right-hand-side of the mapping is a full `@extref` link. The plugin simply replaces the link target of original `@ref` link with the given `@extref`.
 
