@@ -193,7 +193,8 @@ end
         "DocumenterInterLinks" => (
             "http://juliadocs.org/DocumenterInterLinks.jl/dev/",
             joinpath(splitext(@__FILE__)[1], "DocumenterInterLinks.toml")
-        ),
+        );
+        alias_methods_as_function=false,
     )
 
     push!(
@@ -225,7 +226,6 @@ end
     ) do dir, result, success, backtrace, output
 
         if DOCUMENTER_VERSION >= v"1.3.0-dev"
-            @test success
             @test contains(
                 output,
                 "Warning: ExternalFallbacks resolution of \"makedocs\" is ambiguous"

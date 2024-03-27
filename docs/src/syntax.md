@@ -55,7 +55,7 @@ where the latter two are unnecessarily verbose, as `Documenter.makedocs` is alre
 
 The short-circuit mechanism only works if the project name used in the instantiation of [`InterLinks`](@ref) matches the package name as it occurs in the fully specified name of any code object. That is, name the project `"Documenter"`, not, e.g., `"Documenter121"` for version `1.2.1` of `Documenter`.
 
-When this is not possible, e.g. for the `Julia` project which contains many different modules without a common prefix (`Base`, `Core`, `LinearAlgebra`, …), it is best to declare that project as the *first* element in [`InterLinks`](@ref). That way,
+When this is not possible, e.g., for the `Julia` project which contains many different modules without a common prefix (`Base`, `Core`, `LinearAlgebra`, …), it is best to declare that project as the *first* element in [`InterLinks`](@ref). That way,
 
 ```
 [`Base.sort!`](@extref)
@@ -78,11 +78,11 @@ looks in the `Julia` project first, avoiding the need for
 
 With the [Performance Tips](@ref) in mind, not all of the [10 possible Syntax forms](@ref Syntax) are recommended in practice. For maximum clarity and performance, use the following guidelines:
 
-1. When referencing section headers in another project, e.g. the [Basic Markdown](@extref Documenter Basic-Markdown) section in Documenter's documentation, look up the appropriate sluggified name:
+1. When referencing section headers in another project, e.g., the [Basic Markdown](@extref Documenter Basic-Markdown) section in Documenter's documentation, look up the appropriate sluggified name:
 
    ```@example syntax
    using DocumenterInterLinks # hide
-   links = InterLinks("Documenter" => ("https://documenter.juliadocs.org/stable/", joinpath(@__DIR__, "inventories", "Documenter.toml")),) # hide
+   links = InterLinks("Documenter" => ("https://documenter.juliadocs.org/stable/", joinpath(@__DIR__, "inventories", "Documenter.toml")),"Julia" => ("https://docs.julialang.org/en/v1/", joinpath(@__DIR__, "inventories", "Julia.toml")),) # hide
    links["Documenter"]("Basic Markdown")
    ```
 
@@ -100,19 +100,19 @@ With the [Performance Tips](@ref) in mind, not all of the [10 possible Syntax fo
 
    Make sure that `Documenter` is a project name in `links` (see [Performance Tips](@ref)).
 
-   This gets slightly more complicated when the code object is a "method" (where the docstring is for specific types of arguments), e.g., [`Documenter.parseblock`](@extref `Documenter.parseblock-Tuple{AbstractString, Any, Any}`). You will generally have to look up the full name
+   This gets slightly more complicated when the code object is a "method" (where the docstring is for specific types of arguments), e.g., [`Base.Filesystem.cd`](@extref `Base.Filesystem.cd-Tuple{AbstractString}`). You will generally have to look up the full name
 
    ```@example syntax
-   links["Documenter"]("parseblock")
+   links["Julia"]("Base.Filesystem.cd")
    ```
 
    and then use form (3),
 
    ```
-   [`Documenter.parseblock`](@extref `Documenter.parseblock-Tuple{AbstractString, Any, Any}`)
+   [`Base.Filesystem.cd`](@extref `Base.Filesystem.cd-Tuple{AbstractString}`)
    ```
 
-   The use of backticks around the full method name is optional, but recommended when there are spaces in the name.
+   to link to a specific method. The use of backticks around the full method name is optional, but recommended especially when there are spaces in the type description. Note that if there is only a single method for a function, [`InterLinks`](@ref) by default (due to `alias_methods_as_function`) will add an alias that links the function name to that method docstring, allowing to use the shorter function name as a convenient target for the reference.
 
    If the module name of the object cannot match the project name (e.g., for the `Julia` documentation, which contains docstrings for `Base`, `Core`, `LinearAlgebra`, etc.), use form (5),
 
@@ -120,7 +120,7 @@ With the [Performance Tips](@ref) in mind, not all of the [10 possible Syntax fo
    [`Base.sort!`](@extref Julia)
    ```
 
-3. When referencing a page, e.g. the [Home page of the Documenter documentation](@extref Documenter :doc:`index`), use form (9):
+3. When referencing a page, e.g., the [Home page of the Documenter documentation](@extref Documenter :doc:`index`), use form (9):
 
    ```
    [Home page of the Documenter documentation](@extref Documenter :doc:`index`)

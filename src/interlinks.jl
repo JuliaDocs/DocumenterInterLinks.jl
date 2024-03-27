@@ -1,5 +1,5 @@
 using Documenter: Plugin
-using DocInventories: Inventory, uri, spec, split_url
+using DocInventories: Inventory, InventoryItem, uri, spec, split_url, search_in_inventory
 
 
 """
@@ -13,7 +13,8 @@ links = InterLinks(
         "https://project3.url/",
         joinpath(@__DIR__, "src", "interlinks", "inventory.file")
     );
-    default_inventory_file="objects.inv"
+    default_inventory_file="objects.inv",
+    alias_methods_as_function=true,
 )
 ```
 
@@ -75,6 +76,29 @@ any of the following forms:
   location is unreachable, as in the last example.
 
 * A [`DocInventories.Inventory`](@extref) instance.
+
+# Keyword arguments
+
+* `default_inventory_file`: The file name for the inventory file to use if the
+  "inventory location" is given as the root URL. Since both Sphinx and
+  Documenter automatically write `objects.inv`, there is little conceivable
+  reason to set this to something other than the default `objects.inv`.
+* `alias_methods_as_function`: If `true` (default), for any inventory loaded
+  from a file or URL, automatically add a `:jl:function:` alias for any
+  `:jl:method` if that alias is unambiguous. This accounts for Documenter
+  preferentially generating method-docstrings from `@autodoc` blocks, even if
+  that method is the only method for the underlying function. For example, the
+  [`Documenter.Selectors.dispatch`](@extref) function only has a
+  method-docstring that would have to be referenced as the excessively long
+
+  ```
+  [`Documenter.Selectors.dispatch`](@extref `Documenter.Selectors.dispatch-Union{Tuple{T}, Tuple{Type{T}, Vararg{Any}}} where T<:Documenter.Selectors.AbstractSelector`)
+  ```
+
+  With the alias, this can be shortened to
+  ```[`Documenter.Selectors.dispatch`](@extref)```. No alias will be created
+  if there are docstrings for multiple methods of the same function, or if
+  there is an existing function docstring.
 
 # Properties
 
@@ -175,7 +199,11 @@ end
 
 
 
-function InterLinks(mapping...; default_inventory_file="objects.inv")
+function InterLinks(
+    mapping...;
+    default_inventory_file="objects.inv",
+    alias_methods_as_function=true
+)
     names = String[]
     inventories_list = Inventory[]
     try
@@ -204,6 +232,9 @@ function InterLinks(mapping...; default_inventory_file="objects.inv")
                     try
                         inventory = Inventory(source; root_url=root_url)
                         @debug "Successfully loaded inventory $(repr(project)) from source $(repr(source))."
+                        if alias_methods_as_function
+                            _set_method_aliases!(inventory)
+                        end
                         break  # stop after first successful source
                     catch exception
                         msg = "Failed to load inventory $(repr(project)) from possible source $(repr(source))."
@@ -263,6 +294,34 @@ function (links::InterLinks)(search)
 end
 
 
+function _set_method_aliases!(inventory)
+    aliases = Dict{String,Vector{String}}()
+    for method_item in search_in_inventory(inventory, ":jl:method:`")
+        func_name = replace(method_item.name, r"-.*$" => "")
+        if haskey(aliases, func_name)
+            push!(aliases[func_name], spec(method_item))
+        else
+            aliases[func_name] = [spec(method_item)]
+        end
+    end
+    for (func_name, method_specs) in aliases
+        func_spec = ":jl:function:`$func_name`"
+        if length(method_specs) == 1
+            method_spec = method_specs[1]
+            if isnothing(inventory[func_spec])
+                @debug "Setting alias $method_spec -> $func_spec"
+                push!(inventory, InventoryItem(func_spec => uri(inventory[method_spec])))
+            else
+                @debug "Not setting alias $method_spec -> $func_spec: function entry already exists"
+            end
+        else
+            @debug "Not setting alias to $func_spec: ambiguous" method_specs
+        end
+    end
+    return inventory
+end
+
+
 """Find an `@extref` link in any of the [`InterLinks`](@ref) inventories.
 
 ```julia
@@ -273,7 +332,7 @@ finds `extref` in `links` and returns the full URL that resolves the link.
 
 # Arguments
 
-* `links`: the [`InterLinks`] instance to resolve the reference in
+* `links`: the [`InterLinks`](@ref) instance to resolve the reference in
 * `extref`: a string of the form
    `"@extref [project] [[:domain][:role]:]name"`
 """

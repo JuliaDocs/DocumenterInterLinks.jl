@@ -1,3 +1,4 @@
+using Logging
 using Test
 using TestingUtilities: @Test
 using DocInventories
@@ -206,4 +207,38 @@ end
     @test search ==
           ["@extref Documenter :std:doc:`index`", "@extref Julia :std:doc:`index`",]
 
+end
+
+
+@testset "method aliases" begin
+    captured = IOCapture.capture(; passthrough=false) do
+        with_logger(ConsoleLogger(stdout, Logging.Debug)) do
+            InterLinks(
+                "Documenter" => (
+                    "https://documenter.juliadocs.org/stable/",
+                    joinpath(@__DIR__, "inventories", "Documenter.toml")
+                ),
+                "Julia" => (
+                    "https://docs.julialang.org/en/v1/",
+                    joinpath(@__DIR__, "inventories", "Julia.toml")
+                );
+                alias_methods_as_function=true,
+            )
+        end
+    end
+    @test contains(
+        captured.output,
+        "Setting alias :jl:method:`Documenter.nodocs-Tuple{Any}` -> :jl:function:`Documenter.nodocs`"
+    )
+    nodocs_items = captured.value["Documenter"]("Documenter.nodocs")
+    @test length(nodocs_items) == 2
+    @test Set([item.role for item in nodocs_items]) == Set(["function", "method"])
+    @test contains(
+        captured.output,
+        "Not setting alias to :jl:function:`Documenter.HTMLWriter.get_url`: ambiguous"
+    )
+    @test contains(
+        captured.output,
+        "Not setting alias :jl:method:`Base.first-Tuple{AbstractString, Integer}` -> :jl:function:`Base.first`: function entry already exists"
+    )
 end

@@ -135,7 +135,7 @@ Essentially, what we've done here is to open a Julia REPL like we normally would
 The above routine is how the local [inventory files](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) used in this documentation were generated. Using the TOML format is recommended for any inventory that will be committed to Git, as it is both human-readable and easier for `git` to track.
 
 !!! warning
-    Make sure that `prettyurls=true` in [`Documenter.makedocs`](@ref), or, more specifically, that the `prettyurls` option is not set conditionally with something like `prettyurls = get(ENV, "CI", nothing) == "true"`. This would cause a mismatch between the locally generated inventory and the deployed documentation.
+    Make sure that `prettyurls=true` in [`Documenter.makedocs`](@extref), or, more specifically, that the `prettyurls` option is not set conditionally with something like `prettyurls = get(ENV, "CI", nothing) == "true"`. This would cause a mismatch between the locally generated inventory and the deployed documentation.
 
 
 Some local inventory files are also available in the [project wiki](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository). You may contribute your own generated inventories there.
