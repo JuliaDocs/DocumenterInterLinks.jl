@@ -8,7 +8,7 @@
 
 A plugin for [Documenter.jl](https://documenter.juliadocs.org/) that enables linking between projects.
 
-The package provides an [`InterLinks`](https://juliadocs.org/DocumenterInterLinks.jl/stable/internals/#DocumenterInterLinks.InterLinks) plugin that loads [inventory files](#inventories) from other project documentations built with [Documenter](https://documenter.juliadocs.org/) or [Sphinx](https://www.sphinx-doc.org/en/master/). It then extends Documenter's markdown link syntax to recognize an `@extref` link target and resolve it with a link to the external project (similarly to the built-in `@ref` links for internal links), see [External References](#external-references).
+The package provides an [`InterLinks`](http://juliadocs.org/DocumenterInterLinks.jl/stable/api/internals/#DocumenterInterLinks.InterLinks) plugin that loads [inventory files](#inventories) from other project documentations built with [Documenter](https://documenter.juliadocs.org/) or [Sphinx](https://www.sphinx-doc.org/en/master/). It then extends Documenter's markdown link syntax to recognize an `@extref` link target and resolve it with a link to the external project (similarly to the built-in `@ref` links for internal links), see [External References](#external-references).
 
 
 ## Installation
@@ -30,7 +30,7 @@ to the relevant `Project.toml` file (e.g., `docs/Project.toml`).
 
 ## Plugin Instantiation
 
-In `docs/make.jl`, instantiate an [`InterLinks`](https://juliadocs.org/DocumenterInterLinks.jl/stable/internals/#DocumenterInterLinks.InterLinks) object, e.g.,
+In `docs/make.jl`, instantiate an [`InterLinks`](http://juliadocs.org/DocumenterInterLinks.jl/stable/api/internals/#DocumenterInterLinks.InterLinks) object, e.g.,
 
 ```julia
 using DocumenterInterLinks

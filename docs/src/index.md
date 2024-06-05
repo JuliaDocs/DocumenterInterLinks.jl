@@ -77,13 +77,15 @@ links = InterLinks(
 nothing # hide
 ```
 
-defines the external projects "[sphinx](https://www.sphinx-doc.org/)", "[matplotlib](https://matplotlib.org)", and "[Julia](https://docs.julialang.org/en/v1/)". For each project, it specifies the root URL of that project's online documentation and the location of an [inventory file](@ref Inventories).
+defines the external projects "[sphinx](https://www.sphinx-doc.org/)", "[matplotlib](https://matplotlib.org)", "[Julia](https://docs.julialang.org/en/v1/)" and "[Documenter](https://documenter.juliadocs.org/stable/)". For each project, it specifies the root URL of that project's online documentation and the location of an [inventory file](@ref Inventories).
 
-The above examples illustrates three possibilities for specifying the root url and inventory location
+The above examples illustrates three possibilities for specifying the root URL and inventory location:
 
-* Map that project name to project root URL. This will look for an inventory file `objects.inv` directly underneath the given URL. This is the recommended from in most cases.
-* Map the project name to the URL of an inventory file. The project root URL is the given URL without the filename.
+* Map that project name to project root URL. This will look for an inventory file `objects.inv` directly underneath the given URL. In the `"sphinx"` entry of the example, the inventory file would be loaded from `https://www.sphinx-doc.org/en/master/objects.inv`. This is the recommended form in most cases.
+* Map the project name to the URL of an inventory file. The project root URL is the given URL without the filename. In the `"matplotlib"` entry of the example, the project root URL would be `https://matplotlib.org/3.7.3/`. This form would only be used if the name of the inventory file is not the standard `objects.inv`.
 * Map the project name to a tuple containing the root URL first, and then one or more possible locations for an inventory file. These may be local file paths, which allows using [a self-maintained inventory file](https://github.com/JuliaDocs/DocumenterInterLinks.jl/tree/master/docs/src/inventories) for a project that does not provide one.
+  * In the `"Julia"` entry of the example, the inventory would be loaded *only* from the local file `docs/src/inventories/Julia.toml`. As of Julia 1.11, the [online documentation](https://docs.julialang.org/en/v1/) provides an inventory file, so using a local inventory for Julia is no longer necessary.
+  * In the `"Documenter"` entry of the example, the inventory would first be loaded from the standard online location. Only if this fails (e.g., because the network connection fails), a "backup inventory" is loaded from `docs/src/inventories/Documenter.toml`.
 
 See the doc-string of [`InterLinks`](@ref) for details.
 

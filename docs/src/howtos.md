@@ -15,6 +15,7 @@ The documentation generator [should generate an inventory file](@ref Inventory-G
 
 For example, you will find `objects.inv` inventory files under the following URLs:
 
+* [https://docs.julialang.org/en/v1/objects.inv](https://docs.julialang.org/en/v1/objects.inv)
 * [https://www.sphinx-doc.org/en/master/objects.inv](https://www.sphinx-doc.org/en/master/objects.inv)
 * [https://matplotlib.org/3.7.3/objects.inv](https://matplotlib.org/3.7.3/objects.inv)
 * [https://docs.python.org/3/objects.inv](https://docs.python.org/3/objects.inv)
@@ -22,9 +23,6 @@ For example, you will find `objects.inv` inventory files under the following URL
 * [https://juliadocs.org/DocInventories.jl/v0.2/objects.inv](https://juliadocs.org/DocInventories.jl/v0.2/objects.inv)
 * [https://documenter.juliadocs.org/stable/objects.inv](https://documenter.juliadocs.org/stable/objects.inv)
 
-The [Julia language](@extref Julia :doc:`index`) currently does not provide an inventory file, but if it did, it would be immediately underneath
-
-* [https://docs.julialang.org/en/v1/](https://docs.julialang.org/en/v1/)
 
 If it is not obvious where an inventory file is located, simply try to load it in the REPL until you find a working URL:
 

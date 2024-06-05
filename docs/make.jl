@@ -10,10 +10,7 @@ AUTHORS = join(PROJECT_TOML["authors"], ", ") * " and contributors"
 GITHUB = "https://github.com/JuliaDocs/DocumenterInterLinks.jl"
 
 links = InterLinks(
-    "Julia" => (
-        "https://docs.julialang.org/en/v1/",
-        joinpath(@__DIR__, "src", "inventories", "Julia.toml")
-    ),
+    "Julia" => "https://docs.julialang.org/en/v1/",
     "Documenter" => "https://documenter.juliadocs.org/stable/",
     "DocInventories" => "https://juliadocs.org/DocInventories.jl/stable/",
     "sphinx" => "https://www.sphinx-doc.org/en/master/",

@@ -59,7 +59,7 @@ dependencies = [
   "ipython",
   "sphinx-rtd-theme",
   "six",
-  "sphinx",
+  "sphinx~=7.3",
   "sphinx-autodoc-typehints",
 ]
 

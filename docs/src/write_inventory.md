@@ -5,7 +5,7 @@ The inventory files that get loaded into [`InterLinks`](@ref) should be automati
 * The [Sphinx documentation generator](@extref sphinx :doc:`index`) used by most Python packages automatically [creates an `objects.inv` inventory file](@extref sphinx :doc:`usage/extensions/intersphinx`) in the root of every HTML build.
 * For Julia projects that build their documentation with [`Documenter`](@extref Documenter :doc:`index`) `≥ v1.3`, an `objects.inv` inventory file in the same format is automatically created in the `docs/build/` folder.
 * [`DocumenterInventoryWritingBackport.jl`](https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl) backports the automatic inventory writing to older versions of `Documenter` (`≥ v0.25`). This package simply needs to be loaded in a project's `docs/make.jl` file.
-* Any package loading `DocumenterInterLinks` in `docs/make.jl` also gets the `DocumenterInventoryWritingBackport` automatically.
+* Any package loading `DocumenterInterLinks` in `docs/make.jl` also gets the `DocumenterInventoryWritingBackport` automatically. This is an experimental feature that may be removed in any future version.
 
 The inventory file should be deployed together with the rest of the documentation, so that it is [accessible to other projects](@ref howto-inventory-location). When a project does not use a documentation generator that writes an inventory file, it may be possible to [maintain an inventory by hand](@ref howto-manual-inventory). See also the [Wiki](https://github.com/JuliaDocs/DocumenterInterLinks.jl/wiki/Inventory-File-Repository) for a collection of inventory files for Julia and other projects.
 

@@ -10,7 +10,10 @@ We can link to various elements of the :external+DocumenterInterLinks:doc:`Docum
 * ``:jl:type:`DocumenterInterLinks.InterLinks``` renders as :jl:type:`DocumenterInterLinks.InterLinks`
 * ``:jl:const:`DocInventories.MIME_TYPES``` renders as :jl:const:`DocInventories.MIME_TYPES`
 * ``:jl:method:`DocInventories.save``` renders as :jl:method:`DocInventories.save`
-*  ``:jl:method:`DocInventories.spec-Tuple{InventoryItem}``` renders as :jl:method:`DocInventories.spec-Tuple{InventoryItem}`
+* ``:jl:method:`DocInventories.spec-Tuple{InventoryItem}``` renders as :jl:method:`DocInventories.spec-Tuple{InventoryItem}`
 * ``:external+DocInventories:doc:`DocInventories<index>``` renders as :external+DocInventories:doc:`DocInventories<index>`
-* Referencing a heading is currently not possible due to a bug in Sphinx: ``:external+DocumenterInterLinks:std:ref:`Syntax``` does not work because Sphinx lowercases the "Syntax"
-* In Python, anchor names are lowercased, so referencing headings works: ``:external+sphinx:std:ref:`glossary``` renders as :external+sphinx:std:ref:`glossary`
+* ``:external+DocumenterInterLinks:std:ref:`Syntax``` renders as
+  :external+DocumenterInterLinks:std:ref:`Syntax`. Note that this
+  `requires Sphinx 7.3 <https://www.sphinx-doc.org/en/master/changes.html#release-7-3-0-released-apr-16-2024>`_.
+  In older versions of Sphinx, linking to a heading in a Julia project is not possible due to
+  `issue #12008 <https://github.com/sphinx-doc/sphinx/issues/12008>`_.

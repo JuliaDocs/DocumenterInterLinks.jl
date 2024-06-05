@@ -7,12 +7,7 @@ Plugin for enabling external links in `Documenter.jl.`
 
 ```julia
 links = InterLinks(
-    "project1" => "https://project1.url/",
-    "project2" => "https://project2.url/inventory.file",
-    "project3" => (
-        "https://project3.url/",
-        joinpath(@__DIR__, "src", "interlinks", "inventory.file")
-    );
+    mapping;
     default_inventory_file="objects.inv",
     alias_methods_as_function=true,
 )
@@ -21,7 +16,22 @@ links = InterLinks(
 instantiates a plugin object that must be passed as an element of the `plugins`
 keyword argument to [`Documenter.makedocs`](@extref). This then
 enables `@extref` links in the project's documentation to be resolved, see the
-Documentation for details.
+[Syntax](@ref) documentation for details. The `mapping` connects project names
+to project root URLs and inventories, e.g.,
+
+```julia
+links = InterLinks(
+    "Julia" => (
+        "https://docs.julialang.org/en/v1/",
+        "https://docs.julialang.org/en/v1/objects.inv",
+        joinpath(@__DIR__, "inventories", "Julia.toml")
+    ),
+    "Documenter" => "https://documenter.juliadocs.org/stable/objects.inv",
+    "sphinx" => "https://www.sphinx-doc.org/en/master/";
+)
+```
+
+See the details below.
 
 # Arguments
 
@@ -33,49 +43,28 @@ string. For Julia projects, it should be the name of the package without the
 should be the name of project's main module.
 
 The root url / inventory location (the value of the mapping), can be given in
-any of the following forms:
+any of the following forms (from most common to least common):
 
-* A single string with a URL of the inventory file, e.g.
-
-  ```
-  "sphinx" => "https://www.sphinx-doc.org/en/master/objects.inv"
-  ````
-
-  The root URL relative which all URIs inside the inventory are taken to be
-  relative is everything up to the final slash in the inventory URL,
-  `"https://www.sphinx-doc.org/en/master/"` in this case.
-
-* A single string with a project root URL, for example,
-
-  ```
-  "sphinx" => "https://www.sphinx-doc.org/en/master/",
-  ````
-
-  which must end with slash. This looks for the inventory file with the name
-  corresponding to `default_inventory_file` directly underneath the given root
-  URL.
+* A single string with a project root URL, e.g., the `"sphinx"` entry in the
+  above example. The URL must end with a slash. This looks for the inventory
+  file with the name corresponding to `default_inventory_file` directly
+  underneath the given root URL. This is the most common form.
 
 * A tuple of strings, where the first element is the project root URL and all
   subsequent elements are locations (URLs or local file paths) to an inventory
-  file, e.g.,
-
-  ```
-  "Julia" => (
-      "https://docs.julialang.org/en/v1/",
-      joinpath(@__DIR__, "src", "interlinks", "Julia.toml")
-  ),
-  "Documenter" => (
-      "https://documenter.juliadocs.org/stable/",
-      "https://documenter.juliadocs.org/stable/inventory.toml.gz",
-      joinpath(@__DIR__, "src", "interlinks", "Documenter.toml")
-  )
-  ```
-
-  The first reachable inventory file will be used. This enables, e.g., to
+  file. The first reachable inventory file will be used. This enables, e.g., to
   define a local inventory file as a fallback in case the online inventory file
-  location is unreachable, as in the last example.
+  location is unreachable, as in the `"Julia"` entry in the above example.
 
-* A [`DocInventories.Inventory`](@extref) instance.
+* A single string with a URL of the inventory file, e.g., the `"Documenter"`
+  entry in the above example. The root URL relative to which all URIs inside
+  the inventory are taken is everything up to the final slash in the inventory
+  URL, `"https://documenter.juliadocs.org/stable/"` in this case. Note that the
+  string has to be a URL, not a local file path, as a file path contains no
+  implicit information about a project's root URL.
+
+* A [`DocInventories.Inventory`](@extref) instance. This may be useful for
+  using a dynamically constructed inventory.
 
 # Keyword arguments
 
