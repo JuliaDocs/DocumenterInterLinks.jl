@@ -30,7 +30,7 @@ end
 [DocumenterInterLinks.jl](https://github.com/JuliaDocs/DocumenterInterLinks.jl#readme) is a plugin for [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) to link to external projects. It is interoperable with [Intersphinx](@extref sphinx :doc:`usage/extensions/intersphinx`) for Python projects.
 
 
-## Installation Instructions
+## Installation
 
 
 As usual, the package can be installed via
@@ -146,3 +146,8 @@ We can include the domain and role in an `@extref` link as
 ```
 
 using a [syntax](@ref Syntax) that is reminiscent of the [Sphinx cross-referencing syntax](@extref sphinx xref-syntax). The use of domains and roles in `DocumenterInterLinks` ([unlike in Sphinx](@ref Compatibility-with-Sphinx)) is for disambiguation only, in case there are multiple items with the same `name`. In general, follow the [Recommended Syntax](@ref) guidelines.
+
+
+## Public API and Changelog
+
+The `DocumenterInterLinks` project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html). See the [`CHANGELOG`](https://github.com/JuliaDocs/DocumenterInterLinks.jl/blob/master/CHANGELOG.md) for changes after `v1.0`. The "public API" extends to the documented `@extref` [Syntax](@ref) and to the instantiation of the [`InterLinks`](@ref) plugin. Other [Internals](@ref) or features marked as "experimental" may change in minor versions.

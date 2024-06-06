@@ -7,7 +7,7 @@ Plugin for enabling external links in `Documenter.jl.`
 
 ```julia
 links = InterLinks(
-    mapping;
+    mappings...;
     default_inventory_file="objects.inv",
     alias_methods_as_function=true,
 )
@@ -16,7 +16,7 @@ links = InterLinks(
 instantiates a plugin object that must be passed as an element of the `plugins`
 keyword argument to [`Documenter.makedocs`](@extref). This then
 enables `@extref` links in the project's documentation to be resolved, see the
-[Syntax](@ref) documentation for details. The `mapping` connects project names
+[Syntax](@ref) documentation for details. The `mappings` connect project names
 to project root URLs and inventories, e.g.,
 
 ```julia
@@ -68,10 +68,13 @@ any of the following forms (from most common to least common):
 
 # Keyword arguments
 
+The keyword arguments to `InterLinks` are experimental and may change in minor
+versions.
+
 * `default_inventory_file`: The file name for the inventory file to use if the
   "inventory location" is given as the root URL. Since both Sphinx and
   Documenter automatically write `objects.inv`, there is little conceivable
-  reason to set this to something other than the default `objects.inv`.
+  reason to set this to something other than the default `"objects.inv"`.
 * `alias_methods_as_function`: If `true` (default), for any inventory loaded
   from a file or URL, automatically add a `:jl:function:` alias for any
   `:jl:method` if that alias is unambiguous. This accounts for Documenter
