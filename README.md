@@ -58,7 +58,7 @@ Instead of [Documenter's `@ref`](https://documenter.juliadocs.org/stable/man/syn
 * See the section about Documenter's [Writers](@extref Documenter).
 ```
 
-See the [documentation](https://juliadocs.org/DocumenterInterLinks.jl/dev/#Using-External-References) and [recommended syntax](https://juliadocs.org/DocumenterInterLinks.jl/dev/syntax/#Recommended-Syntax) for details.
+See the [documentation](https://juliadocs.org/DocumenterInterLinks.jl/stable/#Using-External-References) and [recommended syntax](https://juliadocs.org/DocumenterInterLinks.jl/stable/syntax/#Recommended-Syntax) for details.
 
 
 ## Inventories
@@ -70,7 +70,7 @@ For some projects that do not (or not yet) provide an inventory, manually genera
 
 ## Documentation
 
-The [full documentation of this project is available online](https://juliadocs.org/DocumenterInterLinks.jl/dev/).
+The [full documentation of this project is available online](https://juliadocs.org/DocumenterInterLinks.jl/stable/).
 
 
 ## Related Projects
