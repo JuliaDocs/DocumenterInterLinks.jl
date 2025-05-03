@@ -50,7 +50,7 @@ See [`docs/src/inventories`](https://github.com/JuliaDocs/DocumenterInterLinks.j
 
 ## External References
 
-Instead of [Documenter's `@ref`](https://documenter.juliadocs.org/stable/man/syntax/#@ref-link), the `@extref` link target can be used to resolve the link via any of the available projects defined in the `InterLinks` plugin:
+Instead of [Documenter's `@ref`](https://documenter.juliadocs.org/stable/man/syntax/#at-ref-at-id-links), the `@extref` link target can be used to resolve the link via any of the available projects defined in the `InterLinks` plugin:
 
 ```
 * [`Documenter.makedocs`](@extref)

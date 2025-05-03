@@ -18,7 +18,7 @@ The most commonly used forms of syntax should be (2), (3), and (8) 🏅, with (5
 
 Assuming an [`InterLinks`](@ref) instance `links`, all of the above will reference the [`DocInventories.InventoryItem`](@extref) `links[project][":domain:role:name"]`. If `project` is not specified, the first project in `links` that contains a matching item will be used (up to a [performance shortcut](@ref Performance-Tips)). If `domain` or `role` are not given, any domain or role will match.
 
-Forms (1-3) most directly extend [Documenter's built-in `@ref` syntax](@extref Documenter `@ref-link`). Forms (4) and (5) take precedence over form (3) if `project` is a known element of `links`. The use of backticks around `name` in form (3) would avoid this ambiguity.
+Forms (1-3) most directly extend [Documenter's built-in `@ref` syntax](@extref Documenter `at-ref-at-id-links`). Forms (4) and (5) take precedence over form (3) if `project` is a known element of `links`. The use of backticks around `name` in form (3) would avoid this ambiguity.
 
 Forms (1) and (4) apply a [`sluggification`](@extref `Documenter.slugify-Tuple{AbstractString}`) to transform `title` into a `name`.  This matches Documenter's `@ref` behavior for linking to section titles. The specifics of the sluggification algorithm are not guaranteed to be stable between different versions of Documenter, and they do not match the sluggification used by other documentation generators like [Sphinx](@extref sphinx :doc:`index`). For this reason, forms (1) and (4) only have limited usefulness.
 

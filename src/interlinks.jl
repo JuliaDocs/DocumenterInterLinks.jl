@@ -219,7 +219,7 @@ function InterLinks(
                 end
             else  # assume Tuple
                 root_url = spec[begin]
-                sources = spec[begin+1:end]
+                sources = spec[(begin+1):end]
                 for source in sources
                     try
                         inventory = Inventory(source; root_url=root_url)

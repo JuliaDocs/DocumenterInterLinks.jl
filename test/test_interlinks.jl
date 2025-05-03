@@ -228,11 +228,11 @@ end
     end
     @test contains(
         captured.output,
-        "Setting alias :jl:method:`Documenter.nodocs-Tuple{Any}` -> :jl:function:`Documenter.nodocs`"
+        "Setting alias :jl:method:`Base.AsyncCondition-Tuple{Function}` -> :jl:function:`Base.AsyncCondition`"
     )
-    nodocs_items = captured.value["Documenter"]("Documenter.nodocs")
-    @test length(nodocs_items) == 2
-    @test Set([item.role for item in nodocs_items]) == Set(["function", "method"])
+    async_items = captured.value["Julia"]("Base.AsyncCondition")
+    @test length(async_items) == 3
+    @test Set([item.role for item in async_items]) == Set(["function", "type", "method"])
     @test contains(
         captured.output,
         "Not setting alias to :jl:function:`Documenter.HTMLWriter.get_url`: ambiguous"

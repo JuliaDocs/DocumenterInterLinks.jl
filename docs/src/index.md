@@ -107,7 +107,7 @@ The [`DocInventories` package](@extref DocInventories :doc:`index`) provides too
 
 ## Using External References
 
-The `DocumenterInterLinks` plugin adds support for `@extref` link targets to `Documenter`. At the most fundamental level, they work just like [Documenter's standard `@ref` link targets](@extref Documenter `@ref-link`). Replacing `@ref` with `@extref` switches from a *local* reference to an *external* one:
+The `DocumenterInterLinks` plugin adds support for `@extref` link targets to `Documenter`. At the most fundamental level, they work just like [Documenter's standard `@ref` link targets](@extref Documenter `at-ref-at-id-links`). Replacing `@ref` with `@extref` switches from a *local* reference to an *external* one:
 
 ```
 * [`Documenter.makedocs`](@extref)

@@ -248,7 +248,7 @@ end
             )
             @test contains(
                 output,
-                "ExternalFallbacks automatic resolution of \"Documenter.getplugin\" => \"@extref Documenter :jl:method:`Documenter.getplugin-Union{Tuple{T}, Tuple{Documenter.Document, Type{T}}} where T<:Documenter.Plugin`\""
+                "ExternalFallbacks automatic resolution of \"Documenter.getplugin\" => \"@extref Documenter :jl:function:`Documenter.getplugin`\""
             )
         else
             @test !success
