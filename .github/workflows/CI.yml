@@ -51,9 +51,9 @@ jobs:
       - name: "Summarize coverage"
         run: julia --project=test -L devrepl.jl -e 'display(show_coverage())'
       - uses: julia-actions/julia-processcoverage@v1
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
-          file: lcov.info
+          files: lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
   testolder:
     name: Test with Documenter 1.2
@@ -80,9 +80,9 @@ jobs:
       - name: "Summarize coverage"
         run: julia --project=test -L devrepl.jl -e 'display(show_coverage())'
       - uses: julia-actions/julia-processcoverage@v1
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
-          file: lcov.info
+          files: lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
   testoldest:
     name: Test Lower Compat Bounds
