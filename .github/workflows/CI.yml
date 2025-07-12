@@ -36,21 +36,14 @@ jobs:
           version: ${{ matrix.version }}
       - uses: julia-actions/cache@v2
       - name: "Instantiate test environment"
-        shell: julia --color=yes --project=test {0}
-        run: |
-          import Pkg
-          Pkg.develop(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
-          Pkg.develop(url="https://github.com/JuliaDocs/Documenter.jl")
-          Pkg.develop(path=".")
-          Pkg.develop(url="https://github.com/JuliaDocs/DocInventories.jl")
-          Pkg.instantiate()
+        run: julia --project=test devrepl.jl
       - name: "Run tests"
         shell: julia --color=yes --project=test --code-coverage="@" --depwarn="yes" --check-bounds="yes" {0}
         run: |
           include(joinpath(pwd(), "test", "runtests.jl"))
-      - name: "Summarize coverage"
-        run: julia --project=test -L devrepl.jl -e 'display(show_coverage())'
       - uses: julia-actions/julia-processcoverage@v1
+      - name: "Summarize coverage"
+        run: julia --project=test -L devrepl.jl -e 'show_coverage()'
       - uses: codecov/codecov-action@v5
         with:
           files: lcov.info
@@ -63,43 +56,10 @@ jobs:
           path: |
             ${{ steps.julia-cache.outputs.cache-paths }}
           key: ${{ steps.julia-cache.outputs.cache-key }}
-  testolder:
-    name: Test with Documenter 1.2
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: julia-actions/setup-julia@v2
+      - uses: actions/upload-artifact@v4
         with:
-          version: 1.9
-      - uses: julia-actions/cache@v2
-      - name: "Instantiate test environment"
-        shell: julia --color=yes --project=test {0}
-        run: |
-          import Pkg
-          Pkg.develop(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
-          Pkg.pin([Pkg.PackageSpec(name="Documenter", version="1.2.0")])
-          Pkg.develop(path=".")
-          Pkg.develop(url="https://github.com/JuliaDocs/DocInventories.jl")
-          Pkg.instantiate()
-      - name: "Run tests"
-        shell: julia --color=yes --project=test --code-coverage="@" --depwarn="yes" --check-bounds="yes" {0}
-        run: |
-          include(joinpath(pwd(), "test", "runtests.jl"))
-      - name: "Summarize coverage"
-        run: julia --project=test -L devrepl.jl -e 'display(show_coverage())'
-      - uses: julia-actions/julia-processcoverage@v1
-      - uses: codecov/codecov-action@v5
-        with:
-          files: lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Save Julia depot cache on cancel or failure
-        id: julia-cache-save
-        if: cancelled() || failure()
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            ${{ steps.julia-cache.outputs.cache-paths }}
-          key: ${{ steps.julia-cache.outputs.cache-key }}
+          name: manifest-${{ matrix.os }}
+          path: test/Manifest.toml
   testoldest:
     name: Test Lower Compat Bounds
     runs-on: ubuntu-latest
@@ -110,7 +70,7 @@ jobs:
           version: 1.6
       - uses: julia-actions/cache@v2
       - name: "Instantiate test environment"
-        shell: julia --color=yes --project=test {0}
+        shell: julia --project=test {0}
         run: |
           import Pkg
           println("*** Dev-Installing DocumenterInventoryWritingBackport")
@@ -142,6 +102,7 @@ jobs:
     name: Documentation
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: write
       statuses: write
       pages: write
@@ -150,29 +111,15 @@ jobs:
       - uses: julia-actions/setup-julia@v2
         with:
           version: '1'
-      - uses: julia-actions/cache@v2
-      - name: "Instantiate build environment"
-        shell: julia --color=yes --project=test {0}
+      - name: Configure doc environment
+        shell: julia --project=docs --color=yes {0}
         run: |
-          import Pkg
-          Pkg.develop(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
-          Pkg.develop(url="https://github.com/JuliaDocs/Documenter.jl")
-          Pkg.develop(path=".")
-          Pkg.develop(url="https://github.com/JuliaDocs/DocInventories.jl")
+          using Pkg
           Pkg.instantiate()
-      - name: "Build documentation"
-        run: julia --project=test docs/make.jl
+      - uses: julia-actions/julia-docdeploy@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
-      - name: Save Julia depot cache on cancel or failure
-        id: julia-cache-save
-        if: cancelled() || failure()
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            ${{ steps.julia-cache.outputs.cache-paths }}
-          key: ${{ steps.julia-cache.outputs.cache-key }}
       - uses: actions/upload-artifact@v4
         with:
           name: documenter-interlinks-docs
@@ -189,12 +136,9 @@ jobs:
         # This will use the latest version by default but you can set the version like so:
         #
         # julia  -e 'using Pkg; Pkg.add(PackageSpec(name="JuliaFormatter", version="0.13.0"))'
-        shell: julia {0}
         run: |
-          using Pkg
-          Pkg.add(PackageSpec(name="JuliaFormatter"))
-          using JuliaFormatter
-          format(["src", "docs", "test", "devrepl.jl"], verbose=true)
+          julia  -e 'using Pkg; Pkg.add(PackageSpec(name="JuliaFormatter"))'
+          julia  -e 'using JuliaFormatter; format(["src", "docs", "test", "devrepl.jl"], verbose=true)'
       - name: Format Check
         shell: julia {0}
         run: |
@@ -235,4 +179,49 @@ jobs:
           else
               println("Version $VERSION OK on $BRANCH")
           end
+          exit(0)
+      - name: Changelog Check
+        shell: julia {0}
+        run: |
+          using Pkg
+          using Dates
+          VERSION = VersionNumber(Pkg.TOML.parsefile("Project.toml")["version"])
+          BRANCH = ENV["GITHUB_REF_NAME"]
+          CHANGELOG = read("CHANGELOG.md", String)
+          TODAY = string(Dates.today())
+          if ("dev" in VERSION.prerelease) || ("dev" in VERSION.build)
+              if !contains(CHANGELOG, "## [Unreleased]")
+                  @error "CHANGELOG.md for dev-version must contain Unreleased heading"
+                  exit(1)
+              end
+          end
+          if startswith(BRANCH, "release-")
+              if contains(CHANGELOG, "## [Unreleased]")
+                  @error "CHANGELOG.md for releases must not contain Unreleased heading"
+                  exit(1)
+              end
+              release_header =  "## [Version $VERSION][$VERSION] - $TODAY"
+              if !contains(CHANGELOG, release_header)
+                  @error "CHANGELOG.md must contain release header $(repr(release_header))"
+                  exit(1)
+              end
+              rx_release_link = Regex(replace("[$VERSION]: https://github.com/JuliaDocs/DocumenterCitations.jl/compare/v(\\d.\\d.\\d)...v$VERSION", "."=>"\\.", "[" => "\\[", "]" => "\\]"))
+              release_link = match(rx_release_link, CHANGELOG)
+              if isnothing(release_link)
+                  @error "CHANGELOG.md must contain a link for the release $VERSION with the pattern $(repr(rx_release_link.pattern)) comparing $VERSION with the previous release"
+                  exit(1)
+              else
+                  previous_version = VersionNumber(release_link.captures[1])
+                  if previous_version >= VERSION
+                      @error "The release link $(repr(release_link.match)) must compare the range from the previous version, not $(previous_version)"
+                      exit(1)
+                  end
+              end
+              unreleased_link = "[Unreleased]: https://github.com/JuliaDocs/DocumenterCitations.jl/compare/v$VERSION...HEAD"
+              if !contains(CHANGELOG, unreleased_link)
+                  @error "CHANGELOG.md must contain link for future unreleased changes $(repr(unreleased_link)) (but no Unreleased header)"
+                  exit(1)
+              end
+          end
+          println("CHANGELOG.md OK")
           exit(0)
