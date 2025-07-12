@@ -5,6 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Other
+
+* Bumped minimum compatible version of `Documenter` to `v1.3.0`.
+
+
 ## Version 1.0.0 - 2024-06-07
 
 * Initial stable release. This is functionally identical to the `v0.3.3` release.
