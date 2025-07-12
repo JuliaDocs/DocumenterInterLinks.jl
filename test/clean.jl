@@ -31,7 +31,7 @@ function clean(; distclean=false, _exit=true)
 
     ###########################################################################
     DISTCLEAN = String[]
-    for folder in ["", "test"]
+    for folder in ["", "docs", "test"]
         _push!(DISTCLEAN, joinpath(joinpath(ROOT, folder), "Manifest.toml"))
     end
     ###########################################################################

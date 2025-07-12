@@ -12,20 +12,12 @@
 # You may also run this in vscode to initialize a development REPL
 #
 using Pkg
+
+cd(@__DIR__)
 Pkg.activate("test")
 
 function _instantiate()
-    path = joinpath("..", "DocumenterInventoryWritingBackport.jl")
-    if isdir(path)
-        Pkg.develop(path=path)
-    else
-        Pkg.add(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
-    end
     Pkg.develop(path=".")
-    path = joinpath("..", "DocInventories.jl")
-    if isdir(path)
-        Pkg.develop(path=path)
-    end
 end
 
 if !isfile(joinpath("test", "Manifest.toml"))

@@ -1,4 +1,4 @@
-.PHONY: help devrepl test docs clean codestyle distclean
+.PHONY: help test docs clean distclean devrepl codestyle servedocs
 .DEFAULT_GOAL := help
 
 JULIA ?= julia
@@ -21,19 +21,26 @@ help:  ## show this help
 	@julia -e "$$PRINT_HELP_JLSCRIPT" < $(MAKEFILE_LIST)
 
 
+test:  ## Run the test suite
+	$(JULIA) --project=test --banner=no --startup-file=yes -e 'include("devrepl.jl"); test()'
+	@echo "Done. Consider using 'make devrepl'"
+
+
 devrepl:  ## Start an interactive REPL for testing and building documentation
 	$(JULIA) --project=test --banner=no --startup-file=yes -i devrepl.jl
 
-test:  ## Run the test suite
-	$(JULIA) --project=test --code-coverage=.coverage/tracefile-%p.info --banner=no --startup-file=yes -e 'include("devrepl.jl"); include("test/runtests.jl")'
-	$(JULIA) --project=test -e 'include("devrepl.jl"); display(show_coverage())'
-
-docs: test/Manifest.toml ## Build the documentation
-	$(JULIA) --project=test docs/make.jl
-	@echo "Done. Consider using 'make devrepl'"
-
 test/Manifest.toml:
 	$(JULIA) --project=test --banner=no --startup-file=yes -e 'include("devrepl.jl")'
+
+docs/Manifest.toml:
+	$(JULIA) --project=docs --banner=no --startup-file=yes -e 'import Pkg; Pkg.instantiate()'
+
+docs: docs/Manifest.toml ## Build the documentation
+	$(JULIA) --project=docs docs/make.jl
+	@echo "Done. Consider using 'make devrepl'"
+
+servedocs: test/Manifest.toml  ## Build (auto-rebuild) and serve documentation at PORT=8000
+	$(JULIA) --project=test -e 'include("devrepl.jl"); servedocs(port=$(PORT), verbose=true)'
 
 clean: ## Clean up build/doc/testing artifacts
 	make -C docs/src/sphinx-to-documenter-links clean
