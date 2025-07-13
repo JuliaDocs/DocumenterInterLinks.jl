@@ -73,8 +73,6 @@ jobs:
         shell: julia --project=test {0}
         run: |
           import Pkg
-          println("*** Dev-Installing DocumenterInventoryWritingBackport")
-          Pkg.develop(url="https://github.com/JuliaDocs/DocumenterInventoryWritingBackport.jl")
           println("*** Dev-Installing DocumenterInterLinks")
           Pkg.develop(path=".")
           println("*** Pinning minimal dependencies")

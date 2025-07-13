@@ -4,11 +4,10 @@ import Documenter: XRefResolvers, Selectors, xref_unresolved
 """Plugin for letting `@ref` links fall back to `@extref` links.
 
 !!! warning
-    This plugin is available only with `Documenter >= v1.3.0` and should be
-    considered as experimental.
+    This plugin should be considered as experimental.
 
 ```julia
-fallbacks = ExternalFallbacks(pairs...)
+fallbacks = ExternalFallbacks(pairs...; automatic=false)
 ```
 
 defines a mapping of `@ref`-slugs to `@external` links. If an `@ref` cannot be
@@ -32,7 +31,8 @@ The "slug" is the string inside the quotes. It should be mapped to a complete
 ```julia
 fallbacks = ExternalFallbacks(
     "makedocs" => "@extref Documenter.makedocs",
-    "Other-Output-Formats" =>  "@extref Documenter `Other-Output-Formats`",
+    "Other-Output-Formats" =>  "@extref Documenter `Other-Output-Formats`";
+    automatic=false
 )
 ```
 
@@ -41,10 +41,15 @@ written as ```[`makedocs`](@extref Documenter.makedocs)```, and
 `[Other Output Format](@ref)` as if it had been written as
 ```[Other Output Format](@extref Documenter `Other-Output-Formats`)```
 and link to [`makedocs`](@ref) and [Other Output Formats](@ref), respectively.
+
+If the plugin is instantiated with `automatic=true`, _any_ unresolvable `@ref`
+reference will be attempted to be resolved by searching through all available
+external sources for a matching name.
 """
 struct ExternalFallbacks <: Plugin
     mapping::Dict{String,String}
-    function ExternalFallbacks(pairs::Pair{String,String}...)
+    automatic::Bool
+    function ExternalFallbacks(pairs::Pair{String,String}...; automatic=false)
         mapping = Dict{String,String}()
         for (k, v) in pairs
             if startswith(v, "@extref ")
@@ -53,7 +58,7 @@ struct ExternalFallbacks <: Plugin
                 throw(ArgumentError("value in mapping must start with \"@extref \""))
             end
         end
-        new(mapping)
+        new(mapping, automatic)
     end
 end
 
@@ -118,20 +123,22 @@ function Selectors.runner(
     try
         extref = fallbacks.mapping[slug]
     catch
-        candidates = links(Regex("[`.]\\Q$slug\\E`"))
-        if length(candidates) == 0
-            # broaden the search
-            candidates = links(slug)
-        end
-        if length(candidates) > 0
-            extref = candidates[begin]
-            if length(candidates) > 1
-                msg = "ExternalFallbacks resolution of \"$slug\" is ambiguous. Candidates are\n  - "
-                msg *= join(repr.(candidates), "\n  - ")
-                @warn msg
+        if fallbacks.automatic
+            candidates = links(Regex("[`.]\\Q$slug\\E`"))
+            if length(candidates) == 0
+                # broaden the search
+                candidates = links(slug)
             end
-            @info "ExternalFallbacks automatic resolution of $(repr(slug)) => $(repr(extref))"
-            fallbacks.mapping[slug] = extref
+            if length(candidates) > 0
+                extref = candidates[begin]
+                if length(candidates) > 1
+                    msg = "ExternalFallbacks resolution of \"$slug\" is ambiguous. Candidates are\n  - "
+                    msg *= join(repr.(candidates), "\n  - ")
+                    @warn msg
+                end
+                @info "ExternalFallbacks automatic resolution of $(repr(slug)) => $(repr(extref))"
+                fallbacks.mapping[slug] = extref
+            end
         end
     end
     m = match(links.rx, extref)
