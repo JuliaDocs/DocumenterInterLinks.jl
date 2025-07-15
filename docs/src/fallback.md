@@ -1,8 +1,5 @@
 # Fallback Resolution
 
-!!! warning
-    The [`ExternalFallbacks`](@ref) plugin described here is available only with `Documenter >= v1.3.0` and should be considered experimental.
-
 In some situations, you may need to include a docstring from an external package in your documentation – for example, you you are extending a function from that package, you may want to show the function docstring. If that docstrings contains an `@ref` link, you have a problem: that link is resolvable in the external documentation, but not in *your* documentation.
 
 If the `@ref` link is to another code object, you could include that docstring in your documentation as well, and so forth, until all references can be resolved. Unfortunately, you might end up having to include a significant portion of the external package's documentation, which is less than ideal.
@@ -23,7 +20,7 @@ fallbacks = ExternalFallbacks(
 
 The "slug" on the left-hand-side of the mapping can be obtained from the message that `Documenter` prints when it fails to resolve the `@ref` link. Generally, for `[Section Title](@ref)` or `[text](@ref "Section Title)`, the slug is a "sluggified" version of the title (determined internally by `Documenter`, mostly just replacing spaces with dashes); and for ```[`code`](@ref)``` or `[text](@ref code)`, it is `"code"`. The right-hand-side of the mapping is a full `@extref` link. The plugin simply replaces the link target of original `@ref` link with the given `@extref`.
 
-If there are any unresolvable `@ref` links, and there is no explicit `@extref`-mapping, [`ExternalFallbacks`](@ref) will search in all available inventories to resolve the link in an "automatic" mode. In this case, you will see messages like
+If there are any unresolvable `@ref` links, and there is no explicit `@extref`-mapping, [`ExternalFallbacks`](@ref) will search in all available inventories to resolve the link in an "automatic" mode if the `ExternalFallbacks` plugin was instantiated with `automatic=true`. In this case, you will see messages like
 
 ```
 [ Info: ExternalFallbacks automatic resolution of "Inventory-File-Formats" => "@extref DocInventories :std:label:`Inventory-File-Formats`"

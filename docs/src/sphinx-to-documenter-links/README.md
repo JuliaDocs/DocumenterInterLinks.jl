@@ -2,7 +2,7 @@
 
 This Python project demos a Sphinx documentation that links to an external Julia project documentation via Intersphinx.
 
-See the [Compatibility with Sphinx](http://juliadocs.org/DocumenterInterLinks.jl/stable/sphinx/) section in the [`DocumenterInterLinks`](http://juliadocs.org/DocumenterInterLinks.jl/stable/) documentation.
+See the [Compatibility with Sphinx](https://juliadocs.org/DocumenterInterLinks.jl/stable/sphinx/) section in the [`DocumenterInterLinks`](https://juliadocs.org/DocumenterInterLinks.jl/stable/) documentation.
 
 
 ## Building the Documentation
