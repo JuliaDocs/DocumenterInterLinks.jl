@@ -203,19 +203,13 @@ jobs:
                   @error "CHANGELOG.md must contain release header $(repr(release_header))"
                   exit(1)
               end
-              rx_release_link = Regex(replace("[$VERSION]: https://github.com/JuliaDocs/DocumenterCitations.jl/compare/v(\\d.\\d.\\d)...v$VERSION", "."=>"\\.", "[" => "\\[", "]" => "\\]"))
+              rx_release_link = Regex(replace("[$VERSION]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/releases/tag/v$VERSION", "."=>"\\.", "[" => "\\[", "]" => "\\]"))
               release_link = match(rx_release_link, CHANGELOG)
               if isnothing(release_link)
-                  @error "CHANGELOG.md must contain a link for the release $VERSION with the pattern $(repr(rx_release_link.pattern)) comparing $VERSION with the previous release"
+                  @error "CHANGELOG.md must contain a link for the release $VERSION"
                   exit(1)
-              else
-                  previous_version = VersionNumber(release_link.captures[1])
-                  if previous_version >= VERSION
-                      @error "The release link $(repr(release_link.match)) must compare the range from the previous version, not $(previous_version)"
-                      exit(1)
-                  end
               end
-              unreleased_link = "[Unreleased]: https://github.com/JuliaDocs/DocumenterCitations.jl/compare/v$VERSION...HEAD"
+              unreleased_link = "[Unreleased]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/compare/v$VERSION...HEAD"
               if !contains(CHANGELOG, unreleased_link)
                   @error "CHANGELOG.md must contain link for future unreleased changes $(repr(unreleased_link)) (but no Unreleased header)"
                   exit(1)

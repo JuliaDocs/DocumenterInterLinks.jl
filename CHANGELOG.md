@@ -3,7 +3,7 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Version 1.1.0][1.1.0] - 2025-07-15
 
 ### Added
 
@@ -22,7 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Initial stable release. This is functionally identical to the `v0.3.3` release.
 
-[Unreleased]: https://github.com/JuliaDocs/DocumenterCitations.jl/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/compare/v1.1.0...HEAD
 [1.0.0]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/releases/tag/v1.0.0
+[1.1.0]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/releases/tag/v1.1.0
 [#14]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/issues/14
 [#17]: https://github.com/JuliaDocs/DocumenterInterLinks.jl/pull/17
