@@ -119,7 +119,7 @@ function Selectors.runner(
     links = Documenter.getplugin(doc, InterLinks)
     fallbacks = Documenter.getplugin(doc, ExternalFallbacks)
     @assert node.element isa MarkdownAST.Link
-    extref = "@extref $slug"
+    extref = ""
     try
         extref = fallbacks.mapping[slug]
     catch
@@ -141,15 +141,17 @@ function Selectors.runner(
             end
         end
     end
-    m = match(links.rx, extref)
-    @assert !isnothing(m)  # Can't think of any way for the match to fail
-    if isnothing(m["spec"])
-        push!(errors, "$(repr(extref)) is not a complete @extref link")
-    end
-    try
-        node.element.destination = find_in_interlinks(links, extref)
-    catch exc
-        push!(errors, "Cannot resolve $(repr(extref))")
+    if !isempty(extref)
+        m = match(links.rx, extref)
+        @assert !isnothing(m)  # Can't think of any way for the match to fail
+        if isnothing(m["spec"])
+            push!(errors, "$(repr(extref)) is not a complete @extref link")
+        end
+        try
+            node.element.destination = find_in_interlinks(links, extref)
+        catch exc
+            push!(errors, "Cannot resolve $(repr(extref))")
+        end
     end
 
 end
