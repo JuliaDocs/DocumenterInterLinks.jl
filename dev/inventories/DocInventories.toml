@@ -1,0 +1,129 @@
+# DocInventory version 1
+project = "DocInventories.jl"
+version = "0.2.0-dev"
+
+[[jl.constant]]
+name = "DocInventories.MIME_TYPES"
+uri = "#readme"
+
+[[jl.method]]
+name = "DocInventories.auto_mime-Tuple{Any}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.dispname-Tuple{InventoryItem}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.find_in_inventory-Tuple{Any, Any}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.root_url-Tuple{AbstractString}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.save-Tuple{AbstractString, Any}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.show_full-Tuple{Any}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.spec-Tuple{InventoryItem}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.split_url-Tuple{Any}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.uri-Tuple{Inventory, Any}"
+uri = "#readme"
+[[jl.method]]
+name = "DocInventories.uri-Tuple{InventoryItem}"
+uri = "#readme"
+
+[[jl.type]]
+name = "DocInventories.Inventory"
+uri = "#readme"
+[[jl.type]]
+name = "DocInventories.InventoryFormatError"
+uri = "#readme"
+[[jl.type]]
+name = "DocInventories.InventoryItem"
+uri = "#readme"
+
+[[std.doc]]
+dispname = "API"
+name = "api"
+uri = "#readme"
+[[std.doc]]
+dispname = "Creating Inventory Files"
+name = "creating"
+uri = "#readme"
+[[std.doc]]
+dispname = "Inventory File Formats"
+name = "formats"
+uri = "#readme"
+[[std.doc]]
+dispname = "Home"
+name = "index"
+uri = "#readme"
+[[std.doc]]
+dispname = "Usage"
+name = "usage"
+uri = "#readme"
+
+[[std.label]]
+name = "API"
+uri = "#readme"
+[[std.label]]
+name = "Contents"
+uri = "#readme"
+[[std.label]]
+dispname = "Creating Inventory Files"
+name = "Creating-Inventory-Files"
+uri = "#readme"
+[[std.label]]
+name = "DocInventories.jl"
+uri = "#readme"
+[[std.label]]
+dispname = "Exploring Inventories"
+name = "Exploring-Inventories"
+uri = "#readme"
+[[std.label]]
+name = "Installation"
+uri = "#readme"
+[[std.label]]
+dispname = "Inventory File Formats"
+name = "Inventory-File-Formats"
+uri = "#readme"
+[[std.label]]
+dispname = "Inventory Items"
+name = "Inventory-Items"
+uri = "#readme"
+[[std.label]]
+dispname = "Loading Inventories"
+name = "Loading-Inventories"
+uri = "#readme"
+[[std.label]]
+dispname = "Maintain an Inventory TOML File by Hand"
+name = "Maintain-an-Inventory-TOML-File-by-Hand"
+uri = "#readme"
+[[std.label]]
+dispname = "Plain Text Format"
+name = "Plain-Text-Format"
+uri = "#readme"
+[[std.label]]
+dispname = "Populate an Inventory in the REPL"
+name = "Populate-an-Inventory-in-the-REPL"
+uri = "#readme"
+[[std.label]]
+dispname = "Saving Inventories to File"
+name = "Saving-Inventories-to-File"
+uri = "#readme"
+[[std.label]]
+dispname = "Sphinx Inventory Format"
+name = "Sphinx-Inventory-Format"
+uri = "#readme"
+[[std.label]]
+dispname = "TOML Format"
+name = "TOML-Format"
+uri = "#readme"
+[[std.label]]
+name = "Usage"
+uri = "#readme"
