@@ -1,0 +1,1682 @@
+# DocInventory version 0
+project = "Documenter.jl"
+version = "1.2.1"
+
+[[jl.constant]]
+name = "Documenter.DocMeta.META"
+uri = "lib/internals/docmeta/#$"
+[[jl.constant]]
+name = "Documenter.DocMeta.METAMODULES"
+uri = "lib/internals/docmeta/#$"
+[[jl.constant]]
+name = "Documenter.DocMeta.VALIDMETA"
+uri = "lib/internals/docmeta/#$"
+[[jl.constant]]
+name = "Documenter.GIT_REMOTE_CACHE"
+uri = "lib/internals/utilities/#$"
+[[jl.constant]]
+name = "Documenter.HTMLWriter.ASSETS"
+uri = "lib/internals/writers/#$"
+[[jl.constant]]
+name = "Documenter.HTMLWriter.ASSETS_SASS"
+uri = "lib/internals/writers/#$"
+[[jl.constant]]
+name = "Documenter.HTMLWriter.ASSETS_THEMES"
+uri = "lib/internals/writers/#$"
+[[jl.constant]]
+name = "Documenter.HTMLWriter.OUTDATED_VERSION_ATTR"
+uri = "lib/internals/writers/#$"
+[[jl.constant]]
+name = "Documenter.HTMLWriter.THEMES"
+uri = "lib/internals/writers/#$"
+[[jl.constant]]
+name = "Documenter.julia_remote"
+uri = "lib/internals/utilities/#$"
+
+[[jl.function]]
+name = "Documenter.DocMeta.getdocmeta"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.DocMeta.initdocmeta!"
+uri = "lib/internals/docmeta/#Documenter.DocMeta.initdocmeta%21"
+[[jl.function]]
+name = "Documenter.DocMeta.setdocmeta!"
+uri = "lib/public/#Documenter.DocMeta.setdocmeta%21"
+[[jl.function]]
+name = "Documenter.DocSystem.getspecificdocs"
+uri = "lib/internals/docsystem/#$"
+[[jl.function]]
+name = "Documenter.DocSystem.multidoc"
+uri = "lib/internals/docsystem/#$"
+[[jl.function]]
+name = "Documenter.HTMLWriter.MathJax"
+uri = "lib/internals/writers/#$"
+[[jl.function]]
+name = "Documenter.HTMLWriter.RD.highlightjs!"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.RD.highlightjs%21"
+[[jl.function]]
+name = "Documenter.HTMLWriter.asset"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.HTMLWriter.render_html"
+uri = "lib/internals/writers/#$"
+[[jl.function]]
+name = "Documenter.JSDependencies.parse_snippet"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.function]]
+name = "Documenter.JSDependencies.writejs"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.function]]
+name = "Documenter.Remotes.fileurl"
+uri = "lib/remote-links/#$"
+[[jl.function]]
+name = "Documenter.Remotes.issueurl"
+uri = "lib/remote-links/#$"
+[[jl.function]]
+name = "Documenter.Remotes.repofile"
+uri = "lib/internals/utilities/#$"
+[[jl.function]]
+name = "Documenter.Remotes.repourl"
+uri = "lib/remote-links/#$"
+[[jl.function]]
+name = "Documenter.Selectors.matcher"
+uri = "lib/internals/selectors/#$"
+[[jl.function]]
+name = "Documenter.Selectors.order"
+uri = "lib/internals/selectors/#$"
+[[jl.function]]
+name = "Documenter.Selectors.runner"
+uri = "lib/internals/selectors/#$"
+[[jl.function]]
+name = "Documenter.authenticated_repo_url"
+uri = "man/hosting/#$"
+[[jl.function]]
+name = "Documenter.authentication_method"
+uri = "man/hosting/#$"
+[[jl.function]]
+name = "Documenter.crossref"
+uri = "lib/internals/documenter/#$"
+[[jl.function]]
+name = "Documenter.deploy_folder"
+uri = "man/hosting/#$"
+[[jl.function]]
+name = "Documenter.deploydocs"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.docs"
+uri = "lib/internals/utilities/#$"
+[[jl.function]]
+name = "Documenter.doctest"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.documenter_key"
+uri = "man/hosting/#$"
+[[jl.function]]
+name = "Documenter.documenter_key_previews"
+uri = "man/hosting/#$"
+[[jl.function]]
+name = "Documenter.except"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.find_object"
+uri = "lib/internals/documenter/#$"
+[[jl.function]]
+name = "Documenter.git_push"
+uri = "lib/internals/documenter/#$"
+[[jl.function]]
+name = "Documenter.gitrm_copy"
+uri = "lib/internals/documenter/#$"
+[[jl.function]]
+name = "Documenter.hide"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.makedocs"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "Documenter.user_host_upstream"
+uri = "lib/internals/documenter/#$"
+[[jl.function]]
+name = "Documenter.xrefname"
+uri = "lib/internals/documenter/#$"
+[[jl.function]]
+name = "DocumenterTools.OutdatedWarning.generate"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "DocumenterTools.Themes.compile"
+uri = "lib/internals/documentertools/#$"
+[[jl.function]]
+name = "DocumenterTools.generate"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "DocumenterTools.genkeys"
+uri = "lib/public/#$"
+[[jl.function]]
+name = "DocumenterTools.package_devpath"
+uri = "lib/internals/documentertools/#$"
+[[jl.function]]
+name = "Main.DocumenterShowcase.bar"
+uri = "showcase/#$"
+[[jl.function]]
+name = "Main.DocumenterShowcase.bar-showcase"
+uri = "showcase/#$"
+[[jl.function]]
+name = "Main.DocumenterShowcase.baz"
+uri = "showcase/#$"
+
+[[jl.macro]]
+name = "Documenter.@docerror-Tuple{Any, Any, Any, Vararg{Any}}"
+uri = "lib/internals/utilities/#Documenter.%40docerror-Tuple%7BAny%2C%20Any%2C%20Any%2C%20Vararg%7BAny%7D%7D"
+[[jl.macro]]
+name = "Documenter.DOM.@tags-Tuple"
+uri = "lib/internals/dom/#Documenter.DOM.%40tags-Tuple"
+
+[[jl.method]]
+name = "Documenter.DOM.escapehtml-Tuple{AbstractString}"
+uri = "lib/internals/dom/#Documenter.DOM.escapehtml-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Documenter.DOM.flatten!-Tuple{Any, Any, Union{AbstractString, Symbol, Documenter.DOM.Node, Pair}}"
+uri = "lib/internals/dom/#Documenter.DOM.flatten%21-Tuple%7BAny%2C%20Any%2C%20Union%7BAbstractString%2C%20Symbol%2C%20Documenter.DOM.Node%2C%20Pair%7D%7D"
+[[jl.method]]
+name = "Documenter.DocSystem.binding-Tuple{Any}"
+uri = "lib/internals/docsystem/#Documenter.DocSystem.binding-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.DocSystem.convertmeta-Tuple{IdDict{Any, Any}}"
+uri = "lib/internals/docsystem/#Documenter.DocSystem.convertmeta-Tuple%7BIdDict%7BAny%2C%20Any%7D%7D"
+[[jl.method]]
+name = "Documenter.DocSystem.docstr-Tuple{Markdown.MD}"
+uri = "lib/internals/docsystem/#Documenter.DocSystem.docstr-Tuple%7BMarkdown.MD%7D"
+[[jl.method]]
+name = "Documenter.DocSystem.parsedoc-Tuple{Base.Docs.DocStr}"
+uri = "lib/internals/docsystem/#Documenter.DocSystem.parsedoc-Tuple%7BBase.Docs.DocStr%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.canonical_url-Tuple{Any, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.canonical_url-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.collect_subsections-Tuple{MarkdownAST.Node}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.collect_subsections-Tuple%7BMarkdownAST.Node%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.copy_asset-Tuple{Any, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.copy_asset-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.dataslug-Tuple{Union{AbstractString, Vector{UInt8}}}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.dataslug-Tuple%7BUnion%7BAbstractString%2C%20Vector%7BUInt8%7D%7D%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.edit_link-Tuple{Any, Any, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.edit_link-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.format_units-Tuple{Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.format_units-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.get_url-Tuple{Any, AbstractString}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.get_url-Tuple%7BAny%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.get_url-Tuple{Any, Documenter.NavNode}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.get_url-Tuple%7BAny%2C%20Documenter.NavNode%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.getpage-Tuple{Documenter.HTMLWriter.HTMLContext, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.getpage-Tuple%7BDocumenter.HTMLWriter.HTMLContext%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.navhref-Tuple{Any, Any, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.navhref-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.navitem-Tuple{Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.navitem-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.pagetitle-Tuple{MarkdownAST.Node}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.pagetitle-Tuple%7BMarkdownAST.Node%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.pretty_url-Tuple{Any, AbstractString}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.pretty_url-Tuple%7BAny%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.relhref-Tuple{Any, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.relhref-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.render_page-Tuple{Any, Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.render_page-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.render_settings-Tuple{Any}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.render_settings-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.write_data_file-Tuple{Documenter.HTMLWriter.DCtx, Union{AbstractString, Vector{UInt8}}}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.write_data_file-Tuple%7BDocumenter.HTMLWriter.DCtx%2C%20Union%7BAbstractString%2C%20Vector%7BUInt8%7D%7D%7D"
+[[jl.method]]
+name = "Documenter.HTMLWriter.write_html-Tuple{Documenter.HTMLWriter.HTMLContext, Documenter.NavNode, Documenter.DOM.HTMLDocument}"
+uri = "lib/internals/writers/#Documenter.HTMLWriter.write_html-Tuple%7BDocumenter.HTMLWriter.HTMLContext%2C%20Documenter.NavNode%2C%20Documenter.DOM.HTMLDocument%7D"
+[[jl.method]]
+name = "Documenter.JSDependencies.jsescape-Tuple{Any}"
+uri = "lib/internals/jsdependencies/#Documenter.JSDependencies.jsescape-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.JSDependencies.json_jsescape-Tuple"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.method]]
+name = "Documenter.JSDependencies.verify-Tuple{Documenter.JSDependencies.RequireJS}"
+uri = "lib/internals/jsdependencies/#Documenter.JSDependencies.verify-Tuple%7BDocumenter.JSDependencies.RequireJS%7D"
+[[jl.method]]
+name = "Documenter.MDFlatten.mdflatten-Tuple{Any}"
+uri = "lib/internals/mdflatten/#Documenter.MDFlatten.mdflatten-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.Selectors.disable-Union{Tuple{Type{T}}, Tuple{T}} where T<:Documenter.Selectors.AbstractSelector"
+uri = "lib/internals/selectors/#Documenter.Selectors.disable-Union%7BTuple%7BType%7BT%7D%7D%2C%20Tuple%7BT%7D%7D%20where%20T%3C%3ADocumenter.Selectors.AbstractSelector"
+[[jl.method]]
+name = "Documenter.Selectors.dispatch-Union{Tuple{T}, Tuple{Type{T}, Vararg{Any}}} where T<:Documenter.Selectors.AbstractSelector"
+uri = "lib/internals/selectors/#Documenter.Selectors.dispatch-Union%7BTuple%7BT%7D%2C%20Tuple%7BType%7BT%7D%2C%20Vararg%7BAny%7D%7D%7D%20where%20T%3C%3ADocumenter.Selectors.AbstractSelector"
+[[jl.method]]
+name = "Documenter.Selectors.leaf_subtypes-Union{Tuple{Type{T}}, Tuple{T}} where T"
+uri = "lib/internals/selectors/#Documenter.Selectors.leaf_subtypes-Union%7BTuple%7BType%7BT%7D%7D%2C%20Tuple%7BT%7D%7D%20where%20T"
+[[jl.method]]
+name = "Documenter.Selectors.strict-Union{Tuple{Type{T}}, Tuple{T}} where T<:Documenter.Selectors.AbstractSelector"
+uri = "lib/internals/selectors/#Documenter.Selectors.strict-Union%7BTuple%7BType%7BT%7D%7D%2C%20Tuple%7BT%7D%7D%20where%20T%3C%3ADocumenter.Selectors.AbstractSelector"
+[[jl.method]]
+name = "Documenter.TextDiff.splitby-Tuple{Regex, AbstractString}"
+uri = "lib/internals/textdiff/#Documenter.TextDiff.splitby-Tuple%7BRegex%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Documenter._doctest-Tuple{Documenter.DocumentBlueprint, Documenter.Document}"
+uri = "lib/internals/doctests/#Documenter._doctest-Tuple%7BDocumenter.DocumentBlueprint%2C%20Documenter.Document%7D"
+[[jl.method]]
+name = "Documenter.anchor-Tuple{Documenter.AnchorMap, Any}"
+uri = "lib/internals/anchors/#Documenter.anchor-Tuple%7BDocumenter.AnchorMap%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.anchor_add!-Tuple{Documenter.AnchorMap, Documenter.Anchor, Any, Any}"
+uri = "lib/internals/anchors/#Documenter.anchor_add%21-Tuple%7BDocumenter.AnchorMap%2C%20Documenter.Anchor%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.anchor_exists-Tuple{Documenter.AnchorMap, Any, Any, Any}"
+uri = "lib/internals/anchors/#Documenter.anchor_exists-Tuple%7BDocumenter.AnchorMap%2C%20Any%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.anchor_fragment-Tuple{Documenter.Anchor}"
+uri = "lib/internals/anchors/#Documenter.anchor_fragment-Tuple%7BDocumenter.Anchor%7D"
+[[jl.method]]
+name = "Documenter.anchor_isunique-Tuple{Documenter.AnchorMap, Any}"
+uri = "lib/internals/anchors/#Documenter.anchor_isunique-Tuple%7BDocumenter.AnchorMap%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.anchor_label-Tuple{Documenter.Anchor}"
+uri = "lib/internals/anchors/#Documenter.anchor_label-Tuple%7BDocumenter.Anchor%7D"
+[[jl.method]]
+name = "Documenter.assetsdir-Tuple{}"
+uri = "lib/internals/utilities/#Documenter.assetsdir-Tuple%7B%7D"
+[[jl.method]]
+name = "Documenter.codelang-Tuple{AbstractString}"
+uri = "lib/internals/utilities/#Documenter.codelang-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Documenter.currentdir-Tuple{}"
+uri = "lib/internals/utilities/#Documenter.currentdir-Tuple%7B%7D"
+[[jl.method]]
+name = "Documenter.doccat-Tuple{Documenter.Object}"
+uri = "lib/internals/utilities/#Documenter.doccat-Tuple%7BDocumenter.Object%7D"
+[[jl.method]]
+name = "Documenter.expand_recursively-Tuple{Any, Any, Any}"
+uri = "lib/internals/expanders/#Documenter.expand_recursively-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.filterdocs-Tuple{Markdown.MD, Set{Module}}"
+uri = "lib/internals/utilities/#Documenter.filterdocs-Tuple%7BMarkdown.MD%2C%20Set%7BModule%7D%7D"
+[[jl.method]]
+name = "Documenter.find_root_parent-Tuple{Any, Any}"
+uri = "lib/internals/utilities/#Documenter.find_root_parent-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.footnotes-Tuple{Documenter.Document}"
+uri = "lib/internals/docchecks/#Documenter.footnotes-Tuple%7BDocumenter.Document%7D"
+[[jl.method]]
+name = "Documenter.getplugin-Union{Tuple{T}, Tuple{Documenter.Document, Type{T}}} where T<:Documenter.Plugin"
+uri = "lib/internals/documents/#Documenter.getplugin-Union%7BTuple%7BT%7D%2C%20Tuple%7BDocumenter.Document%2C%20Type%7BT%7D%7D%7D%20where%20T%3C%3ADocumenter.Plugin"
+[[jl.method]]
+name = "Documenter.getremote-Tuple{AbstractString}"
+uri = "lib/internals/utilities/#Documenter.getremote-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Documenter.git_remote_head_branch-Tuple{Any, Any}"
+uri = "lib/internals/utilities/#Documenter.git_remote_head_branch-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.is_git_repo_root-Tuple{AbstractString}"
+uri = "lib/internals/utilities/#Documenter.is_git_repo_root-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Documenter.is_strict-Tuple{Documenter.Document, Symbol}"
+uri = "lib/internals/documents/#Documenter.is_strict-Tuple%7BDocumenter.Document%2C%20Symbol%7D"
+[[jl.method]]
+name = "Documenter.isabsurl-Tuple{Any}"
+uri = "lib/internals/utilities/#Documenter.isabsurl-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.issubmodule-Tuple{Any, Any}"
+uri = "lib/internals/utilities/#Documenter.issubmodule-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.linkcheck-Tuple{Documenter.Document}"
+uri = "lib/internals/docchecks/#Documenter.linkcheck-Tuple%7BDocumenter.Document%7D"
+[[jl.method]]
+name = "Documenter.lt_page-Tuple{Any, Any}"
+uri = "lib/internals/builder/#Documenter.lt_page-Tuple%7BAny%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.mdparse-Tuple{AbstractString}"
+uri = "lib/internals/utilities/#Documenter.mdparse-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Documenter.missingdocs-Tuple{Documenter.Document}"
+uri = "lib/internals/docchecks/#Documenter.missingdocs-Tuple%7BDocumenter.Document%7D"
+[[jl.method]]
+name = "Documenter.navpath-Tuple{Documenter.NavNode}"
+uri = "lib/internals/documents/#Documenter.navpath-Tuple%7BDocumenter.NavNode%7D"
+[[jl.method]]
+name = "Documenter.nodocs-Tuple{Any}"
+uri = "lib/internals/utilities/#Documenter.nodocs-Tuple%7BAny%7D"
+[[jl.method]]
+name = "Documenter.object-Tuple{Union{Expr, Symbol}, AbstractString}"
+uri = "lib/internals/utilities/#Documenter.object-Tuple%7BUnion%7BExpr%2C%20Symbol%7D%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Documenter.parseblock-Tuple{AbstractString, Any, Any}"
+uri = "lib/internals/utilities/#Documenter.parseblock-Tuple%7BAbstractString%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.populate!-Tuple{Documenter.Document}"
+uri = "lib/internals/documents/#Documenter.populate%21-Tuple%7BDocumenter.Document%7D"
+[[jl.method]]
+name = "Documenter.relpath_from_remote_root-Tuple{Documenter.Document, AbstractString}"
+uri = "lib/internals/documents/#Documenter.relpath_from_remote_root-Tuple%7BDocumenter.Document%2C%20AbstractString%7D"
+[[jl.method]]
+name = "Documenter.render-Tuple{Documenter.Document}"
+uri = "lib/internals/writers/#Documenter.render-Tuple%7BDocumenter.Document%7D"
+[[jl.method]]
+name = "Documenter.shortcommit-Tuple{Documenter.RemoteRepository}"
+uri = "lib/internals/documents/#Documenter.shortcommit-Tuple%7BDocumenter.RemoteRepository%7D"
+[[jl.method]]
+name = "Documenter.slugify-Tuple{AbstractString}"
+uri = "lib/internals/utilities/#Documenter.slugify-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Documenter.srcpath-Tuple{Any, Any, Any}"
+uri = "lib/internals/utilities/#Documenter.srcpath-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "Documenter.submodules-Tuple{Vector{Module}}"
+uri = "lib/internals/utilities/#Documenter.submodules-Tuple%7BVector%7BModule%7D%7D"
+[[jl.method]]
+name = "Documenter.walk_navpages-NTuple{6, Any}"
+uri = "lib/internals/builder/#Documenter.walk_navpages-NTuple%7B6%2C%20Any%7D"
+[[jl.method]]
+name = "DocumenterTools.Generator.gitignore-Tuple{}"
+uri = "lib/internals/documentertools/#DocumenterTools.Generator.gitignore-Tuple%7B%7D"
+[[jl.method]]
+name = "DocumenterTools.Generator.index-Tuple{Any}"
+uri = "lib/internals/documentertools/#DocumenterTools.Generator.index-Tuple%7BAny%7D"
+[[jl.method]]
+name = "DocumenterTools.Generator.make-Tuple{Any}"
+uri = "lib/internals/documentertools/#DocumenterTools.Generator.make-Tuple%7BAny%7D"
+[[jl.method]]
+name = "DocumenterTools.Generator.mkdocs-Tuple{Any}"
+uri = "lib/internals/documentertools/#DocumenterTools.Generator.mkdocs-Tuple%7BAny%7D"
+[[jl.method]]
+name = "DocumenterTools.Generator.project-Tuple{}"
+uri = "lib/internals/documentertools/#DocumenterTools.Generator.project-Tuple%7B%7D"
+[[jl.method]]
+name = "DocumenterTools.Generator.savefile-Tuple{Any, Any, Any}"
+uri = "lib/internals/documentertools/#DocumenterTools.Generator.savefile-Tuple%7BAny%2C%20Any%2C%20Any%7D"
+[[jl.method]]
+name = "DocumenterTools.Themes.compile_native_theme-Tuple{Any}"
+uri = "lib/internals/documentertools/#DocumenterTools.Themes.compile_native_theme-Tuple%7BAny%7D"
+[[jl.method]]
+name = "DocumenterTools.Themes.themewatcher-Tuple{}"
+uri = "lib/internals/documentertools/#DocumenterTools.Themes.themewatcher-Tuple%7B%7D"
+[[jl.method]]
+name = "Main.DocumenterShowcase.Foo-Tuple{}"
+uri = "showcase/#Main.DocumenterShowcase.Foo-Tuple%7B%7D"
+[[jl.method]]
+name = "Main.DocumenterShowcase.Foo-Union{Tuple{}, Tuple{T}} where T"
+uri = "showcase/#Main.DocumenterShowcase.Foo-Union%7BTuple%7B%7D%2C%20Tuple%7BT%7D%7D%20where%20T"
+[[jl.method]]
+name = "Main.DocumenterShowcase.foo-Tuple{AbstractString}"
+uri = "showcase/#Main.DocumenterShowcase.foo-Tuple%7BAbstractString%7D"
+[[jl.method]]
+name = "Main.DocumenterShowcase.foo-Tuple{Integer}"
+uri = "showcase/#Main.DocumenterShowcase.foo-Tuple%7BInteger%7D"
+
+[[jl.module]]
+name = "Documenter"
+uri = "lib/public/#$"
+[[jl.module]]
+name = "Documenter.Builder"
+uri = "lib/internals/builder/#$"
+[[jl.module]]
+name = "Documenter.DOM"
+uri = "lib/internals/dom/#$"
+[[jl.module]]
+name = "Documenter.DocMeta"
+uri = "lib/public/#$"
+[[jl.module]]
+name = "Documenter.DocSystem"
+uri = "lib/internals/docsystem/#$"
+[[jl.module]]
+name = "Documenter.HTMLWriter"
+uri = "lib/internals/writers/#$"
+[[jl.module]]
+name = "Documenter.HTMLWriter.RD"
+uri = "lib/internals/writers/#$"
+[[jl.module]]
+name = "Documenter.JSDependencies"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.module]]
+name = "Documenter.LaTeXWriter"
+uri = "lib/internals/writers/#$"
+[[jl.module]]
+name = "Documenter.MDFlatten"
+uri = "lib/internals/mdflatten/#$"
+[[jl.module]]
+name = "Documenter.Remotes"
+uri = "lib/remote-links/#$"
+[[jl.module]]
+name = "Documenter.Selectors"
+uri = "lib/internals/selectors/#$"
+[[jl.module]]
+name = "DocumenterShowcase"
+uri = "showcase/#$"
+[[jl.module]]
+name = "DocumenterTools.Generator"
+uri = "lib/internals/documentertools/#$"
+[[jl.module]]
+name = "DocumenterTools.Themes"
+uri = "lib/internals/documentertools/#$"
+
+[[jl.type]]
+name = "Documenter.Anchor"
+uri = "lib/internals/anchors/#$"
+[[jl.type]]
+name = "Documenter.AnchorMap"
+uri = "lib/internals/anchors/#$"
+[[jl.type]]
+name = "Documenter.Builder.CheckDocument"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.CrossReferences"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.Doctest"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.DocumentPipeline"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.ExpandTemplates"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.Populate"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.RenderDocument"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Builder.SetupBuildDirectory"
+uri = "lib/internals/builder/#$"
+[[jl.type]]
+name = "Documenter.Buildkite"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Documenter.DOM.HTMLDocument"
+uri = "lib/internals/dom/#$"
+[[jl.type]]
+name = "Documenter.DOM.Node"
+uri = "lib/internals/dom/#$"
+[[jl.type]]
+name = "Documenter.DOM.Tag"
+uri = "lib/internals/dom/#$"
+[[jl.type]]
+name = "Documenter.Default"
+uri = "lib/internals/utilities/#$"
+[[jl.type]]
+name = "Documenter.DeployConfig"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Documenter.DeployDecision"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Documenter.DocMeta.METATYPE"
+uri = "lib/internals/docmeta/#$"
+[[jl.type]]
+name = "Documenter.Document"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.Expanders.AutoDocsBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.ContentsBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.DocsBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.EvalBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.ExampleBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.ExpanderPipeline"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.IndexBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.MetaBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.NestedExpanderPipeline"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.REPLBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.SetupBlocks"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.Expanders.TrackHeaders"
+uri = "lib/internals/expanders/#$"
+[[jl.type]]
+name = "Documenter.GitHubActions"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Documenter.GitLab"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Documenter.Globals"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.HTMLWriter.HTML"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.HTMLWriter.HTMLContext"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.HTMLWriter.KaTeX"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.HTMLWriter.MathJax2"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.HTMLWriter.MathJax3"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.Internal"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.JSDependencies.RemoteLibrary"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.type]]
+name = "Documenter.JSDependencies.RequireJS"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.type]]
+name = "Documenter.JSDependencies.Snippet"
+uri = "lib/internals/jsdependencies/#$"
+[[jl.type]]
+name = "Documenter.LaTeXWriter.LaTeX"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.LocalImage"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.LocalLink"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.MissingRemoteError"
+uri = "lib/public/#$"
+[[jl.type]]
+name = "Documenter.NavNode"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.Object"
+uri = "lib/internals/utilities/#$"
+[[jl.type]]
+name = "Documenter.Page"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.Plugin"
+uri = "lib/internals/writers/#$"
+[[jl.type]]
+name = "Documenter.Remotes.GitHub"
+uri = "lib/remote-links/#$"
+[[jl.type]]
+name = "Documenter.Remotes.GitLab"
+uri = "lib/remote-links/#$"
+[[jl.type]]
+name = "Documenter.Remotes.Remote"
+uri = "lib/remote-links/#$"
+[[jl.type]]
+name = "Documenter.Remotes.URL"
+uri = "lib/internals/utilities/#$"
+[[jl.type]]
+name = "Documenter.Selectors.AbstractSelector"
+uri = "lib/internals/selectors/#$"
+[[jl.type]]
+name = "Documenter.Travis"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Documenter.User"
+uri = "lib/internals/documents/#$"
+[[jl.type]]
+name = "Documenter.Woodpecker"
+uri = "man/hosting/#$"
+[[jl.type]]
+name = "Main.DocumenterShowcase.Foo"
+uri = "showcase/#$"
+
+[[std.doc]]
+dispname = "Checklists"
+name = "checklists"
+uri = "checklists/"
+[[std.doc]]
+dispname = "Contributing"
+name = "contributing"
+uri = "contributing/"
+[[std.doc]]
+dispname = "Home"
+name = "index"
+uri = ""
+[[std.doc]]
+dispname = "Anchors"
+name = "lib/internals/anchors"
+uri = "lib/internals/anchors/"
+[[std.doc]]
+dispname = "Builder"
+name = "lib/internals/builder"
+uri = "lib/internals/builder/"
+[[std.doc]]
+dispname = "DocChecks"
+name = "lib/internals/docchecks"
+uri = "lib/internals/docchecks/"
+[[std.doc]]
+dispname = "DocMeta"
+name = "lib/internals/docmeta"
+uri = "lib/internals/docmeta/"
+[[std.doc]]
+dispname = "DocSystem"
+name = "lib/internals/docsystem"
+uri = "lib/internals/docsystem/"
+[[std.doc]]
+dispname = "DocTests"
+name = "lib/internals/doctests"
+uri = "lib/internals/doctests/"
+[[std.doc]]
+dispname = "Documenter"
+name = "lib/internals/documenter"
+uri = "lib/internals/documenter/"
+[[std.doc]]
+dispname = "DocumenterTools"
+name = "lib/internals/documentertools"
+uri = "lib/internals/documentertools/"
+[[std.doc]]
+dispname = "Documents"
+name = "lib/internals/documents"
+uri = "lib/internals/documents/"
+[[std.doc]]
+dispname = "DOM"
+name = "lib/internals/dom"
+uri = "lib/internals/dom/"
+[[std.doc]]
+dispname = "Expanders"
+name = "lib/internals/expanders"
+uri = "lib/internals/expanders/"
+[[std.doc]]
+dispname = "JSDependencies"
+name = "lib/internals/jsdependencies"
+uri = "lib/internals/jsdependencies/"
+[[std.doc]]
+dispname = "MDFlatten"
+name = "lib/internals/mdflatten"
+uri = "lib/internals/mdflatten/"
+[[std.doc]]
+dispname = "Selectors"
+name = "lib/internals/selectors"
+uri = "lib/internals/selectors/"
+[[std.doc]]
+dispname = "TextDiff"
+name = "lib/internals/textdiff"
+uri = "lib/internals/textdiff/"
+[[std.doc]]
+dispname = "Utilities"
+name = "lib/internals/utilities"
+uri = "lib/internals/utilities/"
+[[std.doc]]
+dispname = "Writers"
+name = "lib/internals/writers"
+uri = "lib/internals/writers/"
+[[std.doc]]
+dispname = "Public API"
+name = "lib/public"
+uri = "lib/public/"
+[[std.doc]]
+dispname = "Remote repository links"
+name = "lib/remote-links"
+uri = "lib/remote-links/"
+[[std.doc]]
+dispname = "Semantic versioning"
+name = "lib/semver"
+uri = "lib/semver/"
+[[std.doc]]
+dispname = "Doctests"
+name = "man/doctests"
+uri = "man/doctests/"
+[[std.doc]]
+dispname = "Examples"
+name = "man/examples"
+uri = "man/examples/"
+[[std.doc]]
+dispname = "Guide"
+name = "man/guide"
+uri = "man/guide/"
+[[std.doc]]
+dispname = "Hosting Documentation"
+name = "man/hosting"
+uri = "man/hosting/"
+[[std.doc]]
+dispname = "SSH Deploy Keys Walkthrough"
+name = "man/hosting/walkthrough"
+uri = "man/hosting/walkthrough/"
+[[std.doc]]
+dispname = "LaTeX Syntax"
+name = "man/latex"
+uri = "man/latex/"
+[[std.doc]]
+dispname = "Other Output Formats"
+name = "man/other-formats"
+uri = "man/other-formats/"
+[[std.doc]]
+dispname = "Syntax"
+name = "man/syntax"
+uri = "man/syntax/"
+[[std.doc]]
+dispname = "Release notes"
+name = "release-notes"
+uri = "release-notes/"
+[[std.doc]]
+dispname = "Showcase"
+name = "showcase"
+uri = "showcase/"
+
+[[std.label]]
+dispname = "\"Script\" Examples"
+name = "\"Script\"-Examples"
+uri = "man/doctests/#%22Script%22-Examples"
+[[std.label]]
+name = ".gitignore"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "@autodocs block"
+name = "@autodocs-block"
+uri = "man/syntax/#%40autodocs-block"
+[[std.label]]
+dispname = "@contents block"
+name = "@contents-block"
+uri = "man/syntax/#%40contents-block"
+[[std.label]]
+dispname = "@docs block"
+name = "@docs-block"
+uri = "man/syntax/#%40docs-block"
+[[std.label]]
+dispname = "@eval block"
+name = "@eval-block"
+uri = "man/syntax/#%40eval-block"
+[[std.label]]
+dispname = "@example block"
+name = "@example-block"
+uri = "man/syntax/#%40example-block"
+[[std.label]]
+dispname = "@index block"
+name = "@index-block"
+uri = "man/syntax/#%40index-block"
+[[std.label]]
+dispname = "@meta block"
+name = "@meta-block"
+uri = "man/syntax/#%40meta-block"
+[[std.label]]
+dispname = "@raw <format> block"
+name = "@raw-format-block"
+uri = "man/syntax/#%40raw-format-block"
+[[std.label]]
+dispname = "@ref link"
+name = "@ref-link"
+uri = "man/syntax/#%40ref-link"
+[[std.label]]
+dispname = "@repl block"
+name = "@repl-block"
+uri = "man/syntax/#%40repl-block"
+[[std.label]]
+dispname = "@setup <name> block"
+name = "@setup-name-block"
+uri = "man/syntax/#%40setup-name-block"
+[[std.label]]
+dispname = "Add code coverage from documentation builds"
+name = "Add-code-coverage-from-documentation-builds"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Adding Some Docstrings"
+name = "Adding-Some-Docstrings"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Adding a logo or icon"
+name = "Adding-a-logo-or-icon"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Adding the Private Key"
+name = "Adding-the-Private-Key"
+uri = "man/hosting/walkthrough/#$"
+[[std.label]]
+dispname = "Adding the Public Key to GitHub or Gitea such as Codeberg"
+name = "Adding-the-Public-Key-to-GitHub-or-Gitea-such-as-Codeberg"
+uri = "man/hosting/walkthrough/#$"
+[[std.label]]
+name = "Admonitions"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "An index of docstrings"
+name = "An-index-of-docstrings"
+uri = "showcase/#$"
+[[std.label]]
+name = "Anchors"
+uri = "lib/internals/anchors/#$"
+[[std.label]]
+dispname = "Authentication: GITHUB_TOKEN"
+name = "Authentication:-GITHUB_TOKEN"
+uri = "man/hosting/#Authentication%3A-GITHUB_TOKEN"
+[[std.label]]
+dispname = "Authentication: SSH Deploy Keys"
+name = "Authentication:-SSH-Deploy-Keys"
+uri = "man/hosting/#Authentication%3A-SSH-Deploy-Keys"
+[[std.label]]
+name = "Backports"
+uri = "contributing/#$"
+[[std.label]]
+dispname = "Basic Markdown"
+name = "Basic-Markdown"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Block-level setup code"
+name = "Block-level-setup-code"
+uri = "man/doctests/#$"
+[[std.label]]
+name = "Branches"
+uri = "contributing/#$"
+[[std.label]]
+name = "Builder"
+uri = "lib/internals/builder/#$"
+[[std.label]]
+dispname = "Building an Empty Document"
+name = "Building-an-Empty-Document"
+uri = "man/guide/#$"
+[[std.label]]
+name = "Changed"
+uri = "release-notes/#$"
+[[std.label]]
+name = "Checklists"
+uri = "checklists/#$"
+[[std.label]]
+dispname = "Cleaning up gh-pages"
+name = "Cleaning-up-gh-pages"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Code blocks"
+name = "Code-blocks"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Color output"
+name = "Color-output"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Colored @example block output"
+name = "Colored-@example-block-output"
+uri = "showcase/#Colored-%40example-block-output"
+[[std.label]]
+dispname = "Colored @repl block output"
+name = "Colored-@repl-block-output"
+uri = "showcase/#Colored-%40repl-block-output"
+[[std.label]]
+dispname = "Compat admonition"
+name = "Compat-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Compiling to LaTeX only"
+name = "Compiling-to-LaTeX-only"
+uri = "man/other-formats/#$"
+[[std.label]]
+dispname = "Compiling using Tectonic"
+name = "Compiling-using-Tectonic"
+uri = "man/other-formats/#$"
+[[std.label]]
+dispname = "Compiling using docker image"
+name = "Compiling-using-docker-image"
+uri = "man/other-formats/#$"
+[[std.label]]
+dispname = "Compiling using natively installed latex"
+name = "Compiling-using-natively-installed-latex"
+uri = "man/other-formats/#$"
+[[std.label]]
+name = "Contents"
+uri = "lib/public/#$"
+[[std.label]]
+name = "Contributing"
+uri = "contributing/#$"
+[[std.label]]
+dispname = "Cross Referencing"
+name = "Cross-Referencing"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Custom preamble"
+name = "Custom-preamble"
+uri = "man/other-formats/#$"
+[[std.label]]
+name = "DOM"
+uri = "lib/internals/dom/#$"
+[[std.label]]
+dispname = "Danger admonition"
+name = "Danger-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Deploying from a monorepo"
+name = "Deploying-from-a-monorepo"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Deploying without the versioning scheme"
+name = "Deploying-without-the-versioning-scheme"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Deployment systems"
+name = "Deployment-systems"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Details admonition"
+name = "Details-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Display Equations"
+name = "Display-Equations"
+uri = "man/latex/#$"
+[[std.label]]
+name = "DocChecks"
+uri = "lib/internals/docchecks/#$"
+[[std.label]]
+name = "DocMeta"
+uri = "lib/internals/docmeta/#$"
+[[std.label]]
+name = "DocSystem"
+uri = "lib/internals/docsystem/#$"
+[[std.label]]
+dispname = "DocTestSetup in @meta blocks"
+name = "DocTestSetup-in-@meta-blocks"
+uri = "man/doctests/#DocTestSetup-in-%40meta-blocks"
+[[std.label]]
+name = "DocTests"
+uri = "lib/internals/doctests/#$"
+[[std.label]]
+name = "Docstrings"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Doctest showcase"
+name = "Doctest-showcase"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Doctesting as Part of Testing"
+name = "Doctesting-as-Part-of-Testing"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Doctesting example"
+name = "Doctesting-example"
+uri = "showcase/#$"
+[[std.label]]
+name = "Doctests"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Documentation Versions"
+name = "Documentation-Versions"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Documentation repositories"
+name = "Documentation-repositories"
+uri = "man/examples/#$"
+[[std.label]]
+name = "Documenter"
+uri = "lib/internals/documenter/#$"
+[[std.label]]
+dispname = "Documenter's API guarantees"
+name = "Documenter's-API-guarantees"
+uri = "lib/semver/#Documenter%27s-API-guarantees"
+[[std.label]]
+dispname = "Documenter & semantic versioning"
+name = "Documenter-and-semantic-versioning"
+uri = "lib/semver/#$"
+[[std.label]]
+name = "Documenter.jl"
+uri = "#$"
+[[std.label]]
+name = "Documents"
+uri = "lib/internals/documents/#$"
+[[std.label]]
+dispname = "Duplicate Headers"
+name = "Duplicate-Headers"
+uri = "man/syntax/#$"
+[[std.label]]
+dispname = "Escaping Characters in Docstrings"
+name = "Escaping-Characters-in-Docstrings"
+uri = "man/latex/#$"
+[[std.label]]
+name = "Examples"
+uri = "man/examples/#$"
+[[std.label]]
+name = "Exceptions"
+uri = "man/doctests/#$"
+[[std.label]]
+name = "Expanders"
+uri = "lib/internals/expanders/#$"
+[[std.label]]
+dispname = "Filtering Doctests"
+name = "Filtering-Doctests"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Filtering included docstrings"
+name = "Filtering-included-docstrings"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Fixing Outdated Doctests"
+name = "Fixing-Outdated-Doctests"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Fixing broken release deployments"
+name = "Fixing-broken-release-deployments"
+uri = "man/hosting/#$"
+[[std.label]]
+name = "Footnotes"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Generating an SSH Key"
+name = "Generating-an-SSH-Key"
+uri = "man/hosting/walkthrough/#$"
+[[std.label]]
+name = "Generator"
+uri = "lib/internals/documentertools/#$"
+[[std.label]]
+dispname = "GitHub Actions"
+name = "GitHub-Actions"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Heading level 3"
+name = "Heading-level-3"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Heading level 4"
+name = "Heading-level-4"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Heading level 5"
+name = "Heading-level-5"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Heading level 6"
+name = "Heading-level-6"
+uri = "showcase/#$"
+[[std.label]]
+name = "Headings"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Hosting Documentation"
+name = "Hosting-Documentation"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "If you do not have ssh-keygen"
+name = "If-you-do-not-have-ssh-keygen"
+uri = "man/hosting/walkthrough/#$"
+[[std.label]]
+dispname = "If you have ssh-keygen installed"
+name = "If-you-have-ssh-keygen-installed"
+uri = "man/hosting/walkthrough/#$"
+[[std.label]]
+name = "Images"
+uri = "showcase/#$"
+[[std.label]]
+name = "Index"
+uri = "lib/public/#$"
+[[std.label]]
+dispname = "Info admonition"
+name = "Info-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Inline Equations"
+name = "Inline-Equations"
+uri = "man/latex/#$"
+[[std.label]]
+name = "Installation"
+uri = "man/guide/#$"
+[[std.label]]
+name = "JSDependencies"
+uri = "lib/internals/jsdependencies/#$"
+[[std.label]]
+name = "Julia"
+uri = "contributing/#$"
+[[std.label]]
+dispname = "Library Outline"
+name = "Library-Outline"
+uri = "#$"
+[[std.label]]
+name = "Lists"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Load custom packages"
+name = "Load-custom-packages"
+uri = "man/other-formats/#$"
+[[std.label]]
+name = "MDFlatten"
+uri = "lib/internals/mdflatten/#$"
+[[std.label]]
+dispname = "Making a release"
+name = "Making-a-release"
+uri = "checklists/#$"
+[[std.label]]
+dispname = "Manual Outline"
+name = "Manual-Outline"
+uri = "#$"
+[[std.label]]
+name = "Markdown"
+uri = "contributing/#$"
+[[std.label]]
+dispname = "Markdown & MkDocs"
+name = "Markdown-and-MkDocs"
+uri = "man/other-formats/#$"
+[[std.label]]
+name = "Mathematics"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Module-level metadata"
+name = "Module-level-metadata"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Multiple uses of the same symbol"
+name = "Multiple-uses-of-the-same-symbol"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Named @refs"
+name = "Named-@refs"
+uri = "man/syntax/#Named-%40refs"
+[[std.label]]
+name = "Navigation"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Note admonition"
+name = "Note-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Other Output Formats"
+name = "Other-Output-Formats"
+uri = "man/other-formats/#$"
+[[std.label]]
+dispname = "Out-of-repo deployment"
+name = "Out-of-repo-deployment"
+uri = "man/hosting/#$"
+[[std.label]]
+name = "Overview"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Package Features"
+name = "Package-Features"
+uri = "#$"
+[[std.label]]
+dispname = "Package Guide"
+name = "Package-Guide"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Pages in the Sidebar"
+name = "Pages-in-the-Sidebar"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Preserving Definitions Between Blocks"
+name = "Preserving-Definitions-Between-Blocks"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Printing LaTeX from Julia"
+name = "Printing-LaTeX-from-Julia"
+uri = "man/latex/#$"
+[[std.label]]
+dispname = "Public Documentation"
+name = "Public-Documentation"
+uri = "lib/public/#$"
+[[std.label]]
+dispname = "Public Interface"
+name = "Public-Interface"
+uri = "lib/public/#$"
+[[std.label]]
+dispname = "REPL Examples"
+name = "REPL-Examples"
+uri = "man/doctests/#$"
+[[std.label]]
+name = "REPL-type"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Raw ANSI code output"
+name = "Raw-ANSI-code-output"
+uri = "showcase/#$"
+[[std.label]]
+name = "Registered"
+uri = "man/examples/#$"
+[[std.label]]
+dispname = "Release notes"
+name = "Release-notes"
+uri = "release-notes/#$"
+[[std.label]]
+dispname = "Remote link types"
+name = "Remote-link-types"
+uri = "lib/remote-links/#$"
+[[std.label]]
+dispname = "Remote repository links"
+name = "Remote-repository-links"
+uri = "lib/remote-links/#$"
+[[std.label]]
+dispname = "Running interactive code"
+name = "Running-interactive-code"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "SSH Deploy Keys Walkthrough"
+name = "SSH-Deploy-Keys-Walkthrough"
+uri = "man/hosting/walkthrough/#$"
+[[std.label]]
+name = "Selectors"
+uri = "lib/internals/selectors/#$"
+[[std.label]]
+dispname = "Set math engine and define macros for LaTeX"
+name = "Set-math-engine-and-define-macros-for-LaTeX"
+uri = "man/latex/#$"
+[[std.label]]
+dispname = "Setting up the Folder Structure"
+name = "Setting-up-the-Folder-Structure"
+uri = "man/guide/#$"
+[[std.label]]
+dispname = "Setup Code"
+name = "Setup-Code"
+uri = "man/doctests/#$"
+[[std.label]]
+name = "Showcase"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Skipping Doctests"
+name = "Skipping-Doctests"
+uri = "man/doctests/#$"
+[[std.label]]
+dispname = "Style Guide"
+name = "Style-Guide"
+uri = "contributing/#$"
+[[std.label]]
+name = "Syntax"
+uri = "man/syntax/#$"
+[[std.label]]
+dispname = "Table of contents"
+name = "Table-of-contents"
+uri = "showcase/#$"
+[[std.label]]
+name = "Tables"
+uri = "showcase/#$"
+[[std.label]]
+name = "TextDiff"
+uri = "lib/internals/textdiff/#$"
+[[std.label]]
+dispname = "The deploydocs Function"
+name = "The-deploydocs-Function"
+uri = "man/hosting/#$"
+[[std.label]]
+name = "Themes"
+uri = "lib/internals/documentertools/#$"
+[[std.label]]
+dispname = "Tip admonition"
+name = "Tip-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "Travis CI"
+name = "Travis-CI"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "Unknown admonition class"
+name = "Unknown-admonition-class"
+uri = "showcase/#$"
+[[std.label]]
+name = "Utilities"
+uri = "lib/internals/utilities/#$"
+[[std.label]]
+dispname = "Version v0.20.0 - 2018-10-27"
+name = "Version-[v0.20.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.20.0)-2018-10-27"
+uri = "release-notes/#Version-%5Bv0.20.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.20.0%29-2018-10-27"
+[[std.label]]
+dispname = "Version v0.21.0 - 2018-12-11"
+name = "Version-[v0.21.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.21.0)-2018-12-11"
+uri = "release-notes/#Version-%5Bv0.21.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.21.0%29-2018-12-11"
+[[std.label]]
+dispname = "Version v0.21.1 - 2019-01-29"
+name = "Version-[v0.21.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.21.1)-2019-01-29"
+uri = "release-notes/#Version-%5Bv0.21.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.21.1%29-2019-01-29"
+[[std.label]]
+dispname = "Version v0.21.2 - 2019-02-06"
+name = "Version-[v0.21.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.21.2)-2019-02-06"
+uri = "release-notes/#Version-%5Bv0.21.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.21.2%29-2019-02-06"
+[[std.label]]
+dispname = "Version v0.21.3 - 2019-02-12"
+name = "Version-[v0.21.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.21.3)-2019-02-12"
+uri = "release-notes/#Version-%5Bv0.21.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.21.3%29-2019-02-12"
+[[std.label]]
+dispname = "Version v0.21.4 - 2019-02-16"
+name = "Version-[v0.21.4](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.21.4)-2019-02-16"
+uri = "release-notes/#Version-%5Bv0.21.4%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.21.4%29-2019-02-16"
+[[std.label]]
+dispname = "Version v0.21.5 - 2019-02-22"
+name = "Version-[v0.21.5](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.21.5)-2019-02-22"
+uri = "release-notes/#Version-%5Bv0.21.5%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.21.5%29-2019-02-22"
+[[std.label]]
+dispname = "Version v0.22.0 - 2019-03-28"
+name = "Version-[v0.22.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.0)-2019-03-28"
+uri = "release-notes/#Version-%5Bv0.22.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.0%29-2019-03-28"
+[[std.label]]
+dispname = "Version v0.22.1 - 2019-03-30"
+name = "Version-[v0.22.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.1)-2019-03-30"
+uri = "release-notes/#Version-%5Bv0.22.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.1%29-2019-03-30"
+[[std.label]]
+dispname = "Version v0.22.2 - 2019-04-05"
+name = "Version-[v0.22.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.2)-2019-04-05"
+uri = "release-notes/#Version-%5Bv0.22.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.2%29-2019-04-05"
+[[std.label]]
+dispname = "Version v0.22.3 - 2019-04-12"
+name = "Version-[v0.22.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.3)-2019-04-12"
+uri = "release-notes/#Version-%5Bv0.22.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.3%29-2019-04-12"
+[[std.label]]
+dispname = "Version v0.22.4 - 2019-05-09"
+name = "Version-[v0.22.4](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.4)-2019-05-09"
+uri = "release-notes/#Version-%5Bv0.22.4%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.4%29-2019-05-09"
+[[std.label]]
+dispname = "Version v0.22.5 - 2019-07-03"
+name = "Version-[v0.22.5](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.5)-2019-07-03"
+uri = "release-notes/#Version-%5Bv0.22.5%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.5%29-2019-07-03"
+[[std.label]]
+dispname = "Version v0.22.6 - 2019-07-18"
+name = "Version-[v0.22.6](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.22.6)-2019-07-18"
+uri = "release-notes/#Version-%5Bv0.22.6%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.22.6%29-2019-07-18"
+[[std.label]]
+dispname = "Version v0.23.0 - 2019-07-18"
+name = "Version-[v0.23.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.23.0)-2019-07-18"
+uri = "release-notes/#Version-%5Bv0.23.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.23.0%29-2019-07-18"
+[[std.label]]
+dispname = "Version v0.23.1 - 2019-07-28"
+name = "Version-[v0.23.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.23.1)-2019-07-28"
+uri = "release-notes/#Version-%5Bv0.23.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.23.1%29-2019-07-28"
+[[std.label]]
+dispname = "Version v0.23.2 - 2019-08-04"
+name = "Version-[v0.23.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.23.2)-2019-08-04"
+uri = "release-notes/#Version-%5Bv0.23.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.23.2%29-2019-08-04"
+[[std.label]]
+dispname = "Version v0.23.3 - 2019-08-28"
+name = "Version-[v0.23.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.23.3)-2019-08-28"
+uri = "release-notes/#Version-%5Bv0.23.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.23.3%29-2019-08-28"
+[[std.label]]
+dispname = "Version v0.23.4 - 2019-10-09"
+name = "Version-[v0.23.4](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.23.4)-2019-10-09"
+uri = "release-notes/#Version-%5Bv0.23.4%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.23.4%29-2019-10-09"
+[[std.label]]
+dispname = "Version v0.24.0 - 2019-11-22"
+name = "Version-[v0.24.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.0)-2019-11-22"
+uri = "release-notes/#Version-%5Bv0.24.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.0%29-2019-11-22"
+[[std.label]]
+dispname = "Version v0.24.10 - 2020-04-26"
+name = "Version-[v0.24.10](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.10)-2020-04-26"
+uri = "release-notes/#Version-%5Bv0.24.10%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.10%29-2020-04-26"
+[[std.label]]
+dispname = "Version v0.24.11 - 2020-05-06"
+name = "Version-[v0.24.11](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.11)-2020-05-06"
+uri = "release-notes/#Version-%5Bv0.24.11%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.11%29-2020-05-06"
+[[std.label]]
+dispname = "Version v0.24.1 - 2019-11-25"
+name = "Version-[v0.24.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.1)-2019-11-25"
+uri = "release-notes/#Version-%5Bv0.24.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.1%29-2019-11-25"
+[[std.label]]
+dispname = "Version v0.24.2 - 2019-11-26"
+name = "Version-[v0.24.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.2)-2019-11-26"
+uri = "release-notes/#Version-%5Bv0.24.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.2%29-2019-11-26"
+[[std.label]]
+dispname = "Version v0.24.3 - 2019-12-16"
+name = "Version-[v0.24.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.3)-2019-12-16"
+uri = "release-notes/#Version-%5Bv0.24.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.3%29-2019-12-16"
+[[std.label]]
+dispname = "Version v0.24.4 - 2020-01-18"
+name = "Version-[v0.24.4](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.4)-2020-01-18"
+uri = "release-notes/#Version-%5Bv0.24.4%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.4%29-2020-01-18"
+[[std.label]]
+dispname = "Version v0.24.5 - 2020-01-31"
+name = "Version-[v0.24.5](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.5)-2020-01-31"
+uri = "release-notes/#Version-%5Bv0.24.5%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.5%29-2020-01-31"
+[[std.label]]
+dispname = "Version v0.24.6 - 2020-03-12"
+name = "Version-[v0.24.6](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.6)-2020-03-12"
+uri = "release-notes/#Version-%5Bv0.24.6%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.6%29-2020-03-12"
+[[std.label]]
+dispname = "Version v0.24.7 - 2020-03-23"
+name = "Version-[v0.24.7](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.7)-2020-03-23"
+uri = "release-notes/#Version-%5Bv0.24.7%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.7%29-2020-03-23"
+[[std.label]]
+dispname = "Version v0.24.8 - 2020-04-13"
+name = "Version-[v0.24.8](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.8)-2020-04-13"
+uri = "release-notes/#Version-%5Bv0.24.8%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.8%29-2020-04-13"
+[[std.label]]
+dispname = "Version v0.24.9 - 2020-04-15"
+name = "Version-[v0.24.9](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.24.9)-2020-04-15"
+uri = "release-notes/#Version-%5Bv0.24.9%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.24.9%29-2020-04-15"
+[[std.label]]
+dispname = "Version v0.25.0 - 2020-06-30"
+name = "Version-[v0.25.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.25.0)-2020-06-30"
+uri = "release-notes/#Version-%5Bv0.25.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.25.0%29-2020-06-30"
+[[std.label]]
+dispname = "Version v0.25.1 - 2020-07-21"
+name = "Version-[v0.25.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.25.1)-2020-07-21"
+uri = "release-notes/#Version-%5Bv0.25.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.25.1%29-2020-07-21"
+[[std.label]]
+dispname = "Version v0.25.2 - 2020-08-18"
+name = "Version-[v0.25.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.25.2)-2020-08-18"
+uri = "release-notes/#Version-%5Bv0.25.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.25.2%29-2020-08-18"
+[[std.label]]
+dispname = "Version v0.25.3 - 2020-10-28"
+name = "Version-[v0.25.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.25.3)-2020-10-28"
+uri = "release-notes/#Version-%5Bv0.25.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.25.3%29-2020-10-28"
+[[std.label]]
+dispname = "Version v0.25.4 - 2020-11-19"
+name = "Version-[v0.25.4](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.25.4)-2020-11-19"
+uri = "release-notes/#Version-%5Bv0.25.4%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.25.4%29-2020-11-19"
+[[std.label]]
+dispname = "Version v0.25.5 - 2020-11-23"
+name = "Version-[v0.25.5](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.25.5)-2020-11-23"
+uri = "release-notes/#Version-%5Bv0.25.5%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.25.5%29-2020-11-23"
+[[std.label]]
+dispname = "Version v0.26.0 - 2020-12-10"
+name = "Version-[v0.26.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.26.0)-2020-12-10"
+uri = "release-notes/#Version-%5Bv0.26.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.26.0%29-2020-12-10"
+[[std.label]]
+dispname = "Version v0.26.1 - 2020-12-16"
+name = "Version-[v0.26.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.26.1)-2020-12-16"
+uri = "release-notes/#Version-%5Bv0.26.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.26.1%29-2020-12-16"
+[[std.label]]
+dispname = "Version v0.26.2 - 2021-02-15"
+name = "Version-[v0.26.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.26.2)-2021-02-15"
+uri = "release-notes/#Version-%5Bv0.26.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.26.2%29-2021-02-15"
+[[std.label]]
+dispname = "Version v0.26.3 - 2021-03-02"
+name = "Version-[v0.26.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.26.3)-2021-03-02"
+uri = "release-notes/#Version-%5Bv0.26.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.26.3%29-2021-03-02"
+[[std.label]]
+dispname = "Version v0.27.0 - 2021-06-11"
+name = "Version-[v0.27.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.0)-2021-06-11"
+uri = "release-notes/#Version-%5Bv0.27.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.0%29-2021-06-11"
+[[std.label]]
+dispname = "Version v0.27.10 - 2021-10-20"
+name = "Version-[v0.27.10](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.10)-2021-10-20"
+uri = "release-notes/#Version-%5Bv0.27.10%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.10%29-2021-10-20"
+[[std.label]]
+dispname = "Version v0.27.11 - 2022-01-16"
+name = "Version-[v0.27.11](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.11)-2022-01-16"
+uri = "release-notes/#Version-%5Bv0.27.11%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.11%29-2022-01-16"
+[[std.label]]
+dispname = "Version v0.27.12 - 2022-01-17"
+name = "Version-[v0.27.12](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.12)-2022-01-17"
+uri = "release-notes/#Version-%5Bv0.27.12%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.12%29-2022-01-17"
+[[std.label]]
+dispname = "Version v0.27.13 - 2022-02-25"
+name = "Version-[v0.27.13](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.13)-2022-02-25"
+uri = "release-notes/#Version-%5Bv0.27.13%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.13%29-2022-02-25"
+[[std.label]]
+dispname = "Version v0.27.14 - 2022-03-02"
+name = "Version-[v0.27.14](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.14)-2022-03-02"
+uri = "release-notes/#Version-%5Bv0.27.14%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.14%29-2022-03-02"
+[[std.label]]
+dispname = "Version v0.27.15 - 2022-03-17"
+name = "Version-[v0.27.15](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.15)-2022-03-17"
+uri = "release-notes/#Version-%5Bv0.27.15%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.15%29-2022-03-17"
+[[std.label]]
+dispname = "Version v0.27.16 - 2022-04-19"
+name = "Version-[v0.27.16](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.16)-2022-04-19"
+uri = "release-notes/#Version-%5Bv0.27.16%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.16%29-2022-04-19"
+[[std.label]]
+dispname = "Version v0.27.17 - 2022-05-09"
+name = "Version-[v0.27.17](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.17)-2022-05-09"
+uri = "release-notes/#Version-%5Bv0.27.17%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.17%29-2022-05-09"
+[[std.label]]
+dispname = "Version v0.27.18 - 2022-05-25"
+name = "Version-[v0.27.18](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.18)-2022-05-25"
+uri = "release-notes/#Version-%5Bv0.27.18%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.18%29-2022-05-25"
+[[std.label]]
+dispname = "Version v0.27.19 - 2022-06-05"
+name = "Version-[v0.27.19](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.19)-2022-06-05"
+uri = "release-notes/#Version-%5Bv0.27.19%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.19%29-2022-06-05"
+[[std.label]]
+dispname = "Version v0.27.1 - 2021-06-17"
+name = "Version-[v0.27.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.1)-2021-06-17"
+uri = "release-notes/#Version-%5Bv0.27.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.1%29-2021-06-17"
+[[std.label]]
+dispname = "Version v0.27.20 - 2022-07-10"
+name = "Version-[v0.27.20](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.20)-2022-07-10"
+uri = "release-notes/#Version-%5Bv0.27.20%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.20%29-2022-07-10"
+[[std.label]]
+dispname = "Version v0.27.21 - 2022-07-13"
+name = "Version-[v0.27.21](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.21)-2022-07-13"
+uri = "release-notes/#Version-%5Bv0.27.21%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.21%29-2022-07-13"
+[[std.label]]
+dispname = "Version v0.27.22 - 2022-07-24"
+name = "Version-[v0.27.22](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.22)-2022-07-24"
+uri = "release-notes/#Version-%5Bv0.27.22%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.22%29-2022-07-24"
+[[std.label]]
+dispname = "Version v0.27.23 - 2022-08-26"
+name = "Version-[v0.27.23](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.23)-2022-08-26"
+uri = "release-notes/#Version-%5Bv0.27.23%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.23%29-2022-08-26"
+[[std.label]]
+dispname = "Version v0.27.24 - 2023-01-23"
+name = "Version-[v0.27.24](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.24)-2023-01-23"
+uri = "release-notes/#Version-%5Bv0.27.24%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.24%29-2023-01-23"
+[[std.label]]
+dispname = "Version v0.27.25 - 2023-07-03"
+name = "Version-[v0.27.25](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.25)-2023-07-03"
+uri = "release-notes/#Version-%5Bv0.27.25%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.25%29-2023-07-03"
+[[std.label]]
+dispname = "Version v0.27.2 - 2021-06-18"
+name = "Version-[v0.27.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.2)-2021-06-18"
+uri = "release-notes/#Version-%5Bv0.27.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.2%29-2021-06-18"
+[[std.label]]
+dispname = "Version v0.27.3 - 2021-06-29"
+name = "Version-[v0.27.3](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.3)-2021-06-29"
+uri = "release-notes/#Version-%5Bv0.27.3%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.3%29-2021-06-29"
+[[std.label]]
+dispname = "Version v0.27.4 - 2021-07-19"
+name = "Version-[v0.27.4](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.4)-2021-07-19"
+uri = "release-notes/#Version-%5Bv0.27.4%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.4%29-2021-07-19"
+[[std.label]]
+dispname = "Version v0.27.5 - 2021-07-27"
+name = "Version-[v0.27.5](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.5)-2021-07-27"
+uri = "release-notes/#Version-%5Bv0.27.5%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.5%29-2021-07-27"
+[[std.label]]
+dispname = "Version v0.27.6 - 2021-09-07"
+name = "Version-[v0.27.6](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.6)-2021-09-07"
+uri = "release-notes/#Version-%5Bv0.27.6%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.6%29-2021-09-07"
+[[std.label]]
+dispname = "Version v0.27.7 - 2021-09-27"
+name = "Version-[v0.27.7](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.7)-2021-09-27"
+uri = "release-notes/#Version-%5Bv0.27.7%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.7%29-2021-09-27"
+[[std.label]]
+dispname = "Version v0.27.8 - 2021-10-14"
+name = "Version-[v0.27.8](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.8)-2021-10-14"
+uri = "release-notes/#Version-%5Bv0.27.8%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.8%29-2021-10-14"
+[[std.label]]
+dispname = "Version v0.27.9 - 2021-10-18"
+name = "Version-[v0.27.9](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v0.27.9)-2021-10-18"
+uri = "release-notes/#Version-%5Bv0.27.9%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv0.27.9%29-2021-10-18"
+[[std.label]]
+dispname = "Version v1.0.0 - 2023-09-15"
+name = "Version-[v1.0.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.0.0)-2023-09-15"
+uri = "release-notes/#Version-%5Bv1.0.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.0.0%29-2023-09-15"
+[[std.label]]
+dispname = "Version v1.0.1 - 2023-09-18"
+name = "Version-[v1.0.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.0.1)-2023-09-18"
+uri = "release-notes/#Version-%5Bv1.0.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.0.1%29-2023-09-18"
+[[std.label]]
+dispname = "Version v1.1.0 - 2023-09-28"
+name = "Version-[v1.1.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.1.0)-2023-09-28"
+uri = "release-notes/#Version-%5Bv1.1.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.1.0%29-2023-09-28"
+[[std.label]]
+dispname = "Version v1.1.1 - 2023-10-12"
+name = "Version-[v1.1.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.1.1)-2023-10-12"
+uri = "release-notes/#Version-%5Bv1.1.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.1.1%29-2023-10-12"
+[[std.label]]
+dispname = "Version v1.1.2 - 2023-10-23"
+name = "Version-[v1.1.2](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.1.2)-2023-10-23"
+uri = "release-notes/#Version-%5Bv1.1.2%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.1.2%29-2023-10-23"
+[[std.label]]
+dispname = "Version v1.2.0 - 2023-11-29"
+name = "Version-[v1.2.0](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.2.0)-2023-11-29"
+uri = "release-notes/#Version-%5Bv1.2.0%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.2.0%29-2023-11-29"
+[[std.label]]
+dispname = "Version v1.2.1 - 2023-12-02"
+name = "Version-[v1.2.1](https://github.com/JuliaDocs/Documenter.jl/releases/tag/v1.2.1)-2023-12-02"
+uri = "release-notes/#Version-%5Bv1.2.1%5D%28https%3A%2F%2Fgithub.com%2FJuliaDocs%2FDocumenter.jl%2Freleases%2Ftag%2Fv1.2.1%29-2023-12-02"
+[[std.label]]
+dispname = "Warning admonition"
+name = "Warning-admonition"
+uri = "showcase/#$"
+[[std.label]]
+dispname = "What is not covered by SemVer"
+name = "What-is-not-covered-by-SemVer"
+uri = "lib/semver/#$"
+[[std.label]]
+dispname = "Woodpecker CI"
+name = "Woodpecker-CI"
+uri = "man/hosting/#$"
+[[std.label]]
+name = "Writers"
+uri = "lib/internals/writers/#$"
+[[std.label]]
+dispname = "Custom LaTeX style"
+name = "custom-latex"
+uri = "man/other-formats/#$"
+[[std.label]]
+name = "docs/Project.toml"
+uri = "man/hosting/#docs%2FProject.toml"
+[[std.label]]
+dispname = "gh-pages Branch"
+name = "gh-pages-Branch"
+uri = "man/hosting/#$"
+[[std.label]]
+dispname = "LaTeX Syntax"
+name = "latex_syntax"
+uri = "man/latex/#$"
+[[std.label]]
+dispname = "Index"
+name = "main-index"
+uri = "#$"
+[[std.label]]
+dispname = "@docs; canonical=false block"
+name = "noncanonical-block"
+uri = "man/syntax/#$"
+[[std.label]]
+dispname = "PDF Output via LaTeX"
+name = "pdf-output"
+uri = "man/other-formats/#$"
+[[std.label]]
+dispname = "release-* branches"
+name = "release-*-branches"
+uri = "contributing/#release-%2A-branches"
+[[std.label]]
+dispname = "Remotes API"
+name = "remotes-api"
+uri = "lib/remote-links/#$"
+[[std.label]]
+dispname = "Remotes for files"
+name = "remotes-for-files"
+uri = "lib/remote-links/#$"
+[[std.label]]
+dispname = "repo & remotes interaction"
+name = "repo-remote-interaction"
+uri = "lib/remote-links/#$"
+[[std.label]]
+dispname = "Authentication: SSH Deploy Keys"
+name = "travis-ssh"
+uri = "man/hosting/#$"
