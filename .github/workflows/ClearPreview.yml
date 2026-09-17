@@ -4,12 +4,22 @@ on:
   pull_request:
     types: [closed]
 
+permissions:
+  contents: read
+
 jobs:
   doc-preview-cleanup:
+    # Pull requests from forks and from Dependabot do not get a preview
+    # (see `docs-deploy` in CI.yml), so there is nothing to clean up
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # to push the removal of the preview to `gh-pages`
     steps:
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
       - name: Delete preview and history + push changes
