@@ -47,27 +47,46 @@ reference will be attempted to be resolved by searching through all available
 external sources for a matching name.
 """
 struct ExternalFallbacks <: Plugin
+    slugs::Vector{String}  # internal: keys of `mapping`, in insertion order
     mapping::Dict{String,String}
     automatic::Bool
     function ExternalFallbacks(pairs::Pair{String,String}...; automatic=false)
+        slugs = String[]
         mapping = Dict{String,String}()
         for (k, v) in pairs
             if startswith(v, "@extref ")
-                mapping[k] = v
+                _set_fallback!(slugs, mapping, k, v)
             else
                 throw(ArgumentError("value in mapping must start with \"@extref \""))
             end
         end
-        new(mapping, automatic)
+        new(slugs, mapping, automatic)
     end
 end
 
 
+# Set `mapping[slug] = extref`, keeping `slugs` in sync so that the order in
+# which fallbacks were defined is preserved for `show`.
+function _set_fallback!(
+    slugs::Vector{String},
+    mapping::Dict{String,String},
+    slug::AbstractString,
+    extref::AbstractString
+)
+    haskey(mapping, slug) || push!(slugs, slug)
+    mapping[slug] = extref
+    return extref
+end
+
+_set_fallback!(fallbacks::ExternalFallbacks, slug, extref) =
+    _set_fallback!(fallbacks.slugs, fallbacks.mapping, slug, extref)
+
+
 function Base.show(io::IO, fallbacks::ExternalFallbacks)
     print(io, "ExternalFallbacks(")
-    N = length(fallbacks.mapping)
-    for (i, (k, v)) in enumerate(fallbacks.mapping)
-        print(io, "$(repr(k)) => $(repr(v))")
+    N = length(fallbacks.slugs)
+    for (i, slug) in enumerate(fallbacks.slugs)
+        print(io, "$(repr(slug)) => $(repr(fallbacks.mapping[slug]))")
         (i < N) && print(io, ", ")
     end
     print(io, ")")
@@ -75,11 +94,11 @@ end
 
 
 function Base.show(io::IO, ::MIME"text/plain", fallbacks::ExternalFallbacks)
-    N = length(fallbacks.mapping)
+    N = length(fallbacks.slugs)
     if N > 2
         println(io, "ExternalFallbacks(")
-        for (k, v) in fallbacks.mapping
-            println(io, "  $(repr(k)) => $(repr(v)),")
+        for slug in fallbacks.slugs
+            println(io, "  $(repr(slug)) => $(repr(fallbacks.mapping[slug])),")
         end
         println(io, ")")
     else
@@ -137,7 +156,7 @@ function Selectors.runner(
                     @warn msg
                 end
                 @info "ExternalFallbacks automatic resolution of $(repr(slug)) => $(repr(extref))"
-                fallbacks.mapping[slug] = extref
+                _set_fallback!(fallbacks, slug, extref)
             end
         end
     end

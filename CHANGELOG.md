@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+* An `ExternalFallbacks` object now shows its entries in the order in which they were defined. Previously, the order was that of the underlying `Dict`, which changed in Julia 1.13.
+
 
 ## [Version 1.1.0][1.1.0] - 2025-07-15
 
