@@ -204,7 +204,7 @@ jobs:
           end
       - name: Spell Check
         # Pinned: new releases may flag new words. Dependabot updates the version.
-        uses: crate-ci/typos@v1.50.2
+        uses: crate-ci/typos@v1.50.3
       - name: Version Check
         shell: julia {0}
         run: |
